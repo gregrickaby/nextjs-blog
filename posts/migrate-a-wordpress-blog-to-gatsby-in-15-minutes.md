@@ -1,0 +1,184 @@
+---
+title: 'Migrate a WordPress Blog to Gatsby in 15 Minutes'
+date: '2020-05-18'
+---
+
+In around 15 you could migrate your WordPress blog to the JAMStack Before you jump in, you're going to need a few things:
+
+- Some familiarity of the command line
+- [Node v12+](https://nodejs.org)
+- [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/)
+- [Git](https://git-scm.com/)
+- A [Github](https://github.com/) repository
+- A JAMStack hosting account. Either [Netlify](https://app.netlify.com/) or [Vercel](https://vercel.com/) work, both are free
+- ~15 minutes
+
+## Step 1: Export your blog posts
+
+WordPress makes it easy to export your data to an `*.xml` file. In the WordPress dashboard go to `Tools --> Export`. Select **All content**, then smash the download button.
+
+![export](images/export-from-wordpress.png)
+
+Place the `*.xml` file somewhere easy to find, like `/Downloads`. Rename the file something easy to spell like, `export.xml`.
+
+## Step 2: Convert your blog posts to Markdown
+
+There's an awesome NPM package called [WordPress Export To Markdown](https://github.com/lonekorean/wordpress-export-to-markdown) by Will Boyd. This package will convert the contents of `export.xml` into markdown _and_ download all the images to your computer. It even comes with a handy wizard to make the conversion a breeze.
+
+**Use NPX to start the conversion:**
+
+```
+$ npx wordpress-export-to-markdown
+```
+
+**Now answer the wizard's questions:**
+
+![wordpress-export-to-markdown-wizard](images/wordpress-export-to-markdown.png)
+
+**Optional folder structure:**
+
+Gatsby supports using folders as a permalink, so I opted for the `year/month/blog-post-slug/` folder structure while answering the wizard's questions, but you can do whatever you want! Here's a peek at the structure:
+
+```
+├── 2017
+│   ├── 02
+│   │   ├── 2016-a-year-in-review
+│   │   │   ├── images
+│   │   │   └── index.md
+│   │   └── creating-a-website-for-dummies-jr
+│   │       ├── images
+│   │       └── index.md
+│   └── 06
+│       └── podcasting-sound-like-a-radio-dj
+│           └── index.md
+```
+
+## Step 3: Create a Gatsby Blog
+
+This starter creates a new Gatsby site that is pre-configured to work with the official Gatsby blog theme and supports MDX.
+
+**Clone down the blog starter:**
+
+```
+$ gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
+```
+
+## Step 4: Move your Markdown into Gatsby
+
+The Gatsby starter creates a couple of dummy posts, delete them! They're in the `content/posts` folder. Then drag and drop the `/Downloads/posts` folder you generated with the wizard into `/content`:
+
+![](images/move-posts-to-gatsby.gif)
+
+## Step 5: Configure Gatsby (Optional)
+
+If you are in a hurry, skip this step. You can always come back to it later.
+
+**Open up `gatsby-config.js` and customize:**
+
+```
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {}
+    }
+  ],
+  // Customize your site metadata:
+  siteMetadata: {
+    title: `Greg's Blog`,
+    author: `Greg Rickaby`,
+    description: `Blog posts so that I don't have to remember.`,
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/gregrickaby`
+      },
+      {
+        name: `github`,
+        url: `https://github.com/gregrickaby`
+      }
+    ]
+  }
+};
+```
+
+**Open `src/gatsby-theme-blog/components/bio-content.js` and customize:**
+
+```
+import React, { Fragment } from "react";
+import { Styled } from "theme-ui";
+
+export default () => (
+  <Fragment>
+    Director of Engineering{" "}
+    <Styled.a href="https://webdevstudios.com">@WebDevStudios</Styled.a> /
+    Author & Editor{" "}
+    <Styled.a href="https://www.wiley.com/">@WileyGlobal</Styled.a>
+  </Fragment>
+);
+```
+
+**Place your favorite selfie in `content/assets/` overwriting `avatar.jpg`**
+
+```
+content
+├── assets
+│   └── avatar.jpg
+└── posts
+```
+
+That should be it for now. You can certainly customize Gatsby to your liking, but that's outside the scope of this blog post.
+
+## Step 6: Start the Gatsby dev server
+
+```
+$ gatsby develop
+```
+
+This will verify that Gatsby can parse all the markdown files and create posts. Gatsby is also going to optimize images for the first time. This could take a while, depending on how many images you have!
+
+## Step 7: Commit your changes and push to Github
+
+Because Gatsby more-or-less clones down the stater, Git is already initialized.
+
+**Make sure you're in the root directory of your new blog, then add your Github repo:**
+
+```
+$ git remote add origin git@github.com/username/your-repo
+```
+
+**Commit your changes and push**
+
+```
+$ git add . && git commit --message "initial commit" && git push
+```
+
+Your repo should look like this:
+
+![github-repo-with-initial-commit](images/github-repo-with-initial-commit.png)
+
+## Step 8: Setup hosting
+
+For this example, I'm going to use [Vercel](https://vercel.com) because I already have several projects hosted there. You could totaly use Netlify or any other JAMStack host that supports Github integration.
+
+**Once you've signed up (or signed in), you can import a project**
+
+![import-project-into-vercel](images/import-project-into-vercel.png)
+
+**Under "From Git Repository" click "Continue"**
+
+![select-from-git-repo](images/select-from-git-repo.png)
+
+**Click "Import Project from Github" and select the Github repo you just pushed to. Click "Import"**
+
+![select-your-git-repo](images/select-your-repo.png)
+
+Vercel will automatically figure out this is a Gatsby site. Just click "Ok" and wait for the build to complete.
+
+![successful-build](images/successful-build.png)
+
+Once it's done, you can point your DNS at your new JAMStack blog. 💪
+
+## Conclusion
+
+How'd you do? Were you able to complete the WordPress to Gatsby migration in under 15 minutes? I'd love your feedback!

@@ -1,0 +1,42 @@
+---
+title: "Modify a Custom Post Type after it's been registered"
+date: '2016-06-09'
+---
+
+Today I was tasked with adding functionality to an existing custom post type. The problem was, the CPT was being registered in a plugin which I could not edit.
+
+After some digging, I found there's a filter for that (found in [post.php](https://core.trac.wordpress.org/browser/tags/4.5.2/src/wp-includes/post.php#L1017)) which allows you to modify a custom post type, after it's been registered some other way.
+
+```
+apply_filters( 'register_post_type_args', $args, $post_type );
+```
+
+Hooking into that filter, allowed me to pass additional options to an existing CPT:
+
+```
+<?php
+/**
+ * Filter the Products CPT to register more options.
+ *
+ * @param $args       array    The original CPT args.
+ * @param $post_type  string   The CPT slug.
+ *
+ * @return array
+ */
+function grd_client_filter_products_cpt( $args, $post_type ) {
+	// If not Products CPT, bail.
+	if ( 'products' !== $post_type ) {
+		return $args;
+	}
+	// Add additional Products CPT options.
+	$products_args = array(
+		'has_archive' => true,
+		'supports'    => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ),
+	);
+	// Merge args together.
+	return array_merge( $args, $product_args );
+}
+add_filter( 'register_post_type_args', 'grd_client_filter_products_cpt', 10, 2 );
+```
+
+Now "Products" has an archive, along with some other meta boxes in the post editor. Nice!
