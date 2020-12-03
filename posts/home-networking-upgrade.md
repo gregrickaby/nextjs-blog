@@ -1,5 +1,6 @@
 ---
 title: 'Home networking upgrade'
+date: '2019-08-26'
 excerpt: ''
 category:
   - 'personal'
