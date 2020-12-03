@@ -1,6 +1,17 @@
 ---
 title: 'Creating a Web Site: Design and Build Your First Site!'
 date: '2017-02-23'
+excerpt: ''
+category:
+  - 'books'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [![Click to pre-order how to create a website for dummies junior](images/9781119376514_p0_v1_s192x300.jpg)](https://gregslink.co/create-a-website-am)

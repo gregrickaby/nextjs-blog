@@ -1,6 +1,16 @@
 ---
 title: 'Home networking upgrade'
-date: '2019-08-04'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 ## The Setup

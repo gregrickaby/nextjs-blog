@@ -1,6 +1,17 @@
 ---
 title: 'The Perfect Pan Pizza'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'food'
+tags:
+  - 'pizza'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 This recipe is a hybrid between The Pizza Lab's *[Foolproof Pan Pizza](http://slice.seriouseats.com/archives/2013/01/the-pizza-lab-the-worlds-easiest-pizza-no-knead-no-stretch-pan-pizza.html)* and Top Secret Recipe's *[Pizza Hut Pan Pizza](http://www.topsecretrecipes.com/Pizza-Hut-Pan-Pizza-Recipe.html)*. It's real easy to make, and a whole lot of fun!

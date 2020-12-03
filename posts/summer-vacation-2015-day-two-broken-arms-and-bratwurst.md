@@ -1,6 +1,17 @@
 ---
 title: 'Summer Vacation 2015 - Day Two - Broken Arms and Bratwurst'
 date: '2015-06-08'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'vacation'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Around 7:30am we all walked into Cracker Barrell for some much-needed coffee and bathrooms, but what we all really wanted was a shower! Check-in wasn't until Noon, so we had a lot of time to kill. After breakfast, we drove to Wal-Mart to stock up on groceries and ice, then to an O'Reilly Auto Parts for extra fuses, and finally we topped off the van then headed back to Cracker Barrell. After everything was packed we headed for the campground.

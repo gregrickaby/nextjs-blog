@@ -1,6 +1,17 @@
 ---
 title: "Summer Vacation 2015 - Day Three - Trains, Ruby's, and Urban Flooding"
 date: '2015-06-08'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'vacation'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [![monday-morning-cornhole](images/monday-morning-cornhole-225x300.jpg)](https://gregrickaby.com/wp-content/uploads/2015/06/monday-morning-cornhole.jpg)The coffee pot finished brewing around 8:00am. The sun was beating down while Tara made some oatmeal and poured us some orange juice. By this time, Dad & Cindy were sitting on their front porch sipping on some coffee, so we decided to join them for breakfast.

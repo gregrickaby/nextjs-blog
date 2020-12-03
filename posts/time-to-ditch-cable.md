@@ -1,6 +1,17 @@
 ---
 title: "Yup, I think it's time to ditch cable. Buh Bye Time Warner."
 date: '2013-06-25'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Most of you know we just moved. I was very happy with Charter in Montgomery. We had 3 brand-new HD-DVRs each with 1TB drives, 30/4Mbps un-throttled Internet that [would burst to over 60Mbps](http://www.speedtest.net/result/2724151093.png), plus over 100 HD channels (all with excellent picture quality). Best of all, I didn't pay any silly fees. I paid for the channels, premium channels, Internet, and only $14.99 for all three DVR's. Total, I was paying $188 a month with Charter.

@@ -1,6 +1,17 @@
 ---
 title: 'i18n vs L10n'
 date: '2013-10-09'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Some quick definitions:

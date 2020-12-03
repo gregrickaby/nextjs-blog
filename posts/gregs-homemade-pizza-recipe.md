@@ -1,6 +1,17 @@
 ---
 title: "Greg's Homemade Pizza Recipe"
 date: '2014-01-17'
+excerpt: ''
+category:
+  - 'food'
+tags:
+  - 'pizza'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I love making homemade pizza. It's been a "Sunday staple" at our house for quite some time. Over the years, I've created a sort of Sicilian and Neapolitan style hybrid. This happened by accident when trying to copycat a Mellow Mushroom recipe. Personally, I love the chewiness of a Neapolitan, and the flavor of a Sicilian - and this dough brings the two together wonderfully. Yields two 12-14 inch pizzas.
@@ -312,28 +323,28 @@ Meat lovers.
 
 ## FAQ
 
-**Q)** Why spring water?  
+**Q)** Why spring water?
 **A)** Because tap water contains chlorine, which inhibits yeast. If you don't have any, it's OK...this time.
 
-**Q)** Why bread or 00 flour?  
+**Q)** Why bread or 00 flour?
 **A)** Because pizza dough needs to be stretchable. The higher protein content in these flours makes the dough stronger and more playful. I recommend [Antimo Caputo 00 Pizzeria Flour](https://amzn.to/2WNqVnS).
 
-**Q)** My dough won't rise!?  
+**Q)** My dough won't rise!?
 **A)** It's either because your yeast is dead, there is too much salt, or it has nothing to eat. Yes, you can kill yeast. Salt inhibits yeast. Sugar is yeast's favorite food. Give the yeast a treat, man!
 
-**Q)** Why the rising overnight? I'm hungry now.  
+**Q)** Why the rising overnight? I'm hungry now.
 **A)** Yeast eats sugar and poops carbon dioxide/alcohol. Yeast droppings force the dough to rise and give it flavor. _The more time we give the yeast to eat and poop, the better your dough will taste._ If you can't wait, have one delivered!
 
-**Q)** Why is the oven so hot?  
+**Q)** Why is the oven so hot?
 **A)** High heat is how we achieve a crisp crust with a chewy center. Cooking slow at a low temperature would result in a soggy, limp pizza. Yuck!
 
-**Q)** What pizza stone do you use?  
+**Q)** What pizza stone do you use?
 **A)** [Emile Henry](https://amzn.to/2UFKLP1)
 
-**Q)** What about your pizza peel?  
+**Q)** What about your pizza peel?
 A) [Norpro](https://amzn.to/2QQypT6)
 
-Q) And that cool looking silicone mat?  
+Q) And that cool looking silicone mat?
 A) [Roul'pat](https://amzn.to/1oxKpFB)
 
 ## Further Reading

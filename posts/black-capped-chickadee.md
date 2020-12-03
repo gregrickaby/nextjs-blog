@@ -1,9 +1,18 @@
 ---
 title: 'Black-capped Chickadee'
 date: '2020-01-25'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'wildlife'
+coverImage: '/assets/blog/images/20200125-20200125-P1150286-1438x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20200125-20200125-P1150286-1438x1080.jpg'
 ---
-
-![](images/20200125-20200125-P1150286-1438x1080.jpg)
 
 This little dude is giving me the stank eye as he patiently waited for me to leave! I love the look-through of this composition. Added a little vignetting, texture, and orange saturation in post.
 

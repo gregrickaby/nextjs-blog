@@ -1,6 +1,18 @@
 ---
 title: '7 steps for gainful, long-lasting employment'
 date: '2014-11-25'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'work'
+  - 'advice'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Over the years I've learned some things "the hard way" - and here are my steps for gainful, long-lasting employment.
@@ -44,5 +56,3 @@ Nothing gets managers turned on quite like an employee stepping up and taking on
 ### #7 Put down roots.
 
 Do you love what you do and where you work? If so, put down roots. Get your hands into everything. Offer to help another team, or volunteer to do odd jobs. Once you become the residence "expert", you become valuable. Valuable people are hard to replace.
-
-[Image source](https://www.flickr.com/photos/lox/33885582/in/photolist-3ZF1b-bkB6Td-cBxfg-buag2m-64z5b-dSV4DZ-cLhn9J-pFEg6L-8HtMzN-bXx6Fd-7NBB6K-6isxoD-7LWjJP-fkPEN-kz1spt-dKCTKg-6k46W9-2CJw8a-48bk3W-o5JQjn-dASDT2-p3qaEk-7tFpQY-dTouxf-7KjjUa-dXi9ck-hatbWY-7MgRG9-bArgHt-6XgbiQ-4V8Nu8-xYFTU-9o6Joo-625sFa-6fTwn7-jLi7Z-ph3FMd-436vzP-e245cN-4E5Wrc-m3DmzA-dCboQ-dxpWzD-bX4QDC-4sqivo-xzABC-opk5Pr-ebM9yw-e7WgWm-5MarHA)

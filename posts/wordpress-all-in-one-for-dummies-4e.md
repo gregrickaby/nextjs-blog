@@ -1,6 +1,17 @@
 ---
 title: 'WordPress All-in-One For Dummies 4E'
 date: '2019-02-14'
+excerpt: ''
+category:
+  - 'books'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [![The first book I served as Technical Editor for](images/wordpress-all-in-one.jpg)](https://amzn.to/37MMDLp)

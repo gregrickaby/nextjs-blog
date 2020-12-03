@@ -1,6 +1,17 @@
 ---
 title: 'I blew up my site. Deal with it.'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Since August  27, 2007 I've been chained to my very "How To" centric blog. For 5 years, 8 months, and 21 days 90% of my content has been about how to help others "do things" with code. The other 10% have been rants or raves about geeky-web-designer stuff.

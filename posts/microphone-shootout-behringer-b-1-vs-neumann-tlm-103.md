@@ -1,6 +1,17 @@
 ---
 title: 'Microphone Shootout: Behringer B-1 vs Neumann TLM 103'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'audio'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I'm a 15 year radio veteran. I've seen the debate between high-end and low-end microphones both in-person and on internet message boards. Usually, the argument ends with snide comment like: *"The Behringer is crap because it's only $100 bucks!"*... That's not very scientific, so I wanted to study this on a technical level.

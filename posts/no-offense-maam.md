@@ -1,6 +1,17 @@
 ---
 title: "I mean't no offense, ma'am"
 date: '2015-03-10'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Today, I learned that people take offense to being called "ma'am". Serious. Offense.

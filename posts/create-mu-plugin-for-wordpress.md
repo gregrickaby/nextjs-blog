@@ -1,6 +1,17 @@
 ---
 title: "Create a 'Must Use' Plugin for WordPress"
 date: '2013-10-10'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Some of you are like me: "frequent theme changer guy". Here's a trick I've learned to keep from having to re-write code every time I get bored with a theme: I use the "Must Use" Plugin.

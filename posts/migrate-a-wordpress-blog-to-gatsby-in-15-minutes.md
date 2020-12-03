@@ -1,6 +1,17 @@
 ---
 title: 'Migrate a WordPress Blog to Gatsby in 15 Minutes'
 date: '2020-05-18'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'gatsby'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 In around 15 you could migrate your WordPress blog to the JAMStack Before you jump in, you're going to need a few things:

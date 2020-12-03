@@ -1,6 +1,17 @@
 ---
 title: '2016: A Year In Review'
 date: '2017-02-02'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'reflection'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I'm terrible at blogging ([Instagram](https://instagram.com/gregoryrickaby) is just easier to post life events and memories too) so I figured I would write a "year in review" post instead. It's lengthy, so let's just get to it...

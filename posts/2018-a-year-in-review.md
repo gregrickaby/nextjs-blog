@@ -1,6 +1,18 @@
 ---
 title: '2018: A Year In Review'
 date: '2019-01-01'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'reflection'
+
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I didn't get around to posting a review for 2017, which was mega huge, since we bought a house, renovated it, and then helped launch a church. But since I've got a few minutes, here goes...

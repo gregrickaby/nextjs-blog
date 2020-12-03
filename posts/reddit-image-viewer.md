@@ -1,6 +1,18 @@
 ---
 title: 'Reddit Image Viewer'
 date: '2020-06-16'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'next.js'
+  - 'vercel'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 **TL;DR:** [**https://reddit-image-viewer.vercel.app**](https://reddit-image-viewer.vercel.app)

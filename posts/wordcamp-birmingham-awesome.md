@@ -1,6 +1,18 @@
 ---
 title: 'WordCamp Birmingham was...awesome'
 date: '2013-08-26'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'wordpress'
+  - 'wordcamp'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 This was my second WordCamp (of any kind), the first being WordCamp San Francisco just a few weeks ago.  I wanted to list out the key differences between camps:

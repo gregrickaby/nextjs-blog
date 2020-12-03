@@ -1,6 +1,17 @@
 ---
 title: 'Add Google Fonts to WordPress'
 date: '2014-05-30'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 When using Google Fonts with WordPress, you should NOT use `@import`, nor just place the HTML in the header. Instead use a function and enqueue them.

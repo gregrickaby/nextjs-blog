@@ -1,6 +1,18 @@
 ---
 title: 'Genesis Code Snippets'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+  - 'genesis'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Here is my collection of code snippets I use build child themes in [Genesis](https://gregslink.co/try-genesis).
@@ -15,8 +27,8 @@ Quickly navigate to a section:
 - [Template](#template)
 - [Body](#body)
 - [Sidebars](#sidebars)
-- [Footer](#thefooter)
-- [Development](#dev)
+- [Footer](#footer)
+- [Development](#development)
 
 ### Header
 

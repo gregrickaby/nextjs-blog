@@ -1,6 +1,17 @@
 ---
 title: 'Lock down the WordPress Dashboard'
 date: '2014-08-31'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Because of the recent increase in attacks on WordPress, we were recently chatting about locking down `/wp-admin` and `wp-login.php`.

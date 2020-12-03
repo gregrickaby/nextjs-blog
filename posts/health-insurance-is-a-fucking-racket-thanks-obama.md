@@ -1,6 +1,17 @@
 ---
 title: 'Nothing affordable about the Affordable Care Act'
 date: '2014-11-14'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I have _Individual Blue_ from Blue Cross Blue Shield. It's a health insurance plan for the self-employed and is a no frills, high deductible, catastrophic, "oh f#@& I just lost my left leg" kind of thing.

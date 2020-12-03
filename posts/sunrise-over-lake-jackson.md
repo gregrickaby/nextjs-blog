@@ -1,9 +1,18 @@
 ---
 title: 'Sunrise over Lake Jackson'
 date: '2014-06-09'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'landscape'
+coverImage: '/assets/blog/images/20200511-frank-jackson-lake-1920x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20200511-frank-jackson-lake-1920x1080.jpg'
 ---
-
-![](images/20200511-frank-jackson-lake-1920x1080.jpg)
 
 I woke up early on my birthday and snapped this with the only camera I had…a Samsung Galaxy S6.
 

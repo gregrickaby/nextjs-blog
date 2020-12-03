@@ -1,6 +1,17 @@
 ---
 title: 'Professional WordPress Plugin Development 2E'
 date: '2020-04-12'
+excerpt: ''
+category:
+  - 'books'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [![The latest book I served as Technical Editor for](images/professional-wordpress-plugin-dev.jpg)](https://amzn.to/2BgCg7i)

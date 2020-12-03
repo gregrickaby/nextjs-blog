@@ -1,9 +1,19 @@
 ---
 title: 'Misty Short-leaf Pine'
 date: '2020-01-24'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'landscape'
+  - 'tree'
+coverImage: '/assets/blog/images/20200124-P1150191-1438x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20200124-P1150191-1438x1080.jpg'
 ---
-
-[![](images/20200124-P1150191-1438x1080.jpg)](https://gregrickaby.com/wp-content/uploads/2020/06/20200124-P1150191.jpg)
 
 A dense fog rolled in this morning, and I just love how this bent Short-leaf Pine stood out against the horizon. I softened the texture and clarity to add to the hazy feel of the morning.
 

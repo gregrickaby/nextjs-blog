@@ -1,9 +1,18 @@
 ---
 title: 'Sunrise in Alabama'
 date: '2020-03-16'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'landscape'
+coverImage: '/assets/blog/images/20200316-20200316-P1150346-Pano-1920x630.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20200316-20200316-P1150346-Pano-1920x630.jpg'
 ---
-
-![](images/20200316-20200316-P1150346-Pano-1920x630.jpg)
 
 Panoramic shot from my front porch around 6:00 am. I love this view!
 

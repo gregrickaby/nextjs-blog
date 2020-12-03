@@ -1,6 +1,14 @@
 ---
 title: 'Displaying EXIF Data in WordPress'
 date: '2020-06-24'
+excerpt:
+category: code
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: Greg Rickaby
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Over the last 6-months I've taken a half-dozen or so courses on [LinkedIn Learning](https://www.linkedin.com/learning/), read a couple of books, and spent countless hours taking photos trying to level up my skills as a [very amateur photographer](https://gregrickaby.com/category/photos).

@@ -1,6 +1,18 @@
 ---
 title: 'How To: Install LAMP on Ubuntu'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'ubuntu'
+  - 'server'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 My brother called to talk about moving his company's web development and testing environment in-house. They had already downloaded Ubuntu, but didn't know how to get Apache, MySQL, or PHP installed. I sent him one command and 5 minutes later, they had a fully functional LAMP stack running.

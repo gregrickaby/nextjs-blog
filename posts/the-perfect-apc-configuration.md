@@ -1,6 +1,17 @@
 ---
 title: 'The Perfect APC Configuration'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'server'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Here was my setup on an Amazon Medium Instance using APC:

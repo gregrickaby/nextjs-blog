@@ -1,6 +1,17 @@
 ---
 title: 'Gatsby Themes and 45 bags of mulch before 9 am'
 date: '2019-07-27'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'gatsby'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 This morning I woke up at 4:15 for no good reason, and decided to take advantage of the quiet time, so I started a continuing education [course on Gatsby Themes](https://egghead.io/courses/gatsby-theme-authoring).

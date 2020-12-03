@@ -1,6 +1,17 @@
 ---
 title: 'First day of band camp, class of 2023 orientation'
 date: '2019-07-23'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'chase'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Chase starts the 9th grade at [Enterprise High School](https://www.enterpriseschools.net/site/Default.aspx?PageID=9) this fall. It's hard to believe that he’s going to graduate in 2023!

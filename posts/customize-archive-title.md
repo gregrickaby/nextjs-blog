@@ -1,6 +1,17 @@
 ---
 title: 'Filter and clean the Archive Title'
 date: '2016-04-13'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 This client wanted to feature their archive titles in a large hero area. The PSD excluded the prefixes like, "Category:", "Tag:", "Author:", etc...

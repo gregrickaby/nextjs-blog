@@ -1,6 +1,18 @@
 ---
 title: "Chase's first march @ EHS Wildcat Stadium"
 date: '2019-08-24'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'band'
+  - 'chase'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 The city of Enterprise takes [high school football](http://www.southeastsun.com/sports/article_4c5dee60-f8ce-11e8-9ac5-a7d86114f9d9.html) very seriously, and the Big Blue Marching Band is a huge part of the program.

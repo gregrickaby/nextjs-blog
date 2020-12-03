@@ -1,6 +1,18 @@
 ---
 title: '301 Redirects with .htaccess'
 date: '2013-05-21'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'apache'
+  - 'servers'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 After I dumped my database and blew up my site, I wanted to resurrect my most popular content. I needed to setup 301 redirects so both users and Google could find my (old) content in its (new) location.

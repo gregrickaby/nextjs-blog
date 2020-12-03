@@ -1,6 +1,17 @@
 ---
 title: 'Living Next Door To The Ex-Wife'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 In January 2010, I started as Chief Engineer at Bluewater Broadcasting. The new job required me to move to Montgomery, Alabama (about 2 hours from my son Chase). It’s been a very difficult 3 years, 5 months, and 19 days – not only for me, but Chase as well.

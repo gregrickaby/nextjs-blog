@@ -1,6 +1,17 @@
 ---
 title: 'Band Camp 2019'
 date: '2019-08-03'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'chase'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Chase started by trying out for drum line at the end of the school year. The freshmen are told beforehand, that drum line is mainly comprised of upperclassmen, but they're allowed to try out anyway.

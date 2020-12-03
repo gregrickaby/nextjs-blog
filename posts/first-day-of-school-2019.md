@@ -1,6 +1,17 @@
 ---
 title: 'First day of school 2019'
 date: '2019-08-10'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'chloe'
+coverImage: '/assets/blog/images/97170c1d-9047-4d54-9014-eb8cbf212724-640x640.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/97170c1d-9047-4d54-9014-eb8cbf212724-640x640.jpg'
 ---
 
 We've been getting Chloe ready for school for about a year. Even though she has zero trouble getting up on stage and dancing with the Center Stage Dance Company, she is an introvert like her dad (hi!) and has a hard time with new people, especially in large groups.
@@ -48,7 +59,5 @@ Enterprise Early Education Center
 ## The aftermath
 
 Chloe loved it! Of course, we knew she would. She was becoming more and more restless at home, and this was the next step in her development. She still struggles a bit with being away from home, drop off is always interesting...but at the end of the day? She always has a bunch of stories about her new friends Troy, Ariana, and Jackson.
-
-![](images/97170c1d-9047-4d54-9014-eb8cbf212724-640x640.jpg)
 
 Ready for day three

@@ -1,6 +1,17 @@
 ---
 title: 'WordPress For Dummies 9E'
 date: '2020-06-18'
+excerpt: ''
+category:
+  - 'books'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [![](images/wpfd9e.jpg)](https://smile.amazon.com/gp/product/1119696976/ref=pe_41006280_506051420_pe_re_csr_ea_lm)

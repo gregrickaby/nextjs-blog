@@ -1,6 +1,17 @@
 ---
 title: 'The Cold Flowchart'
 date: '2016-09-08'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/gregs-cold-flow-chart.png'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/gregs-cold-flow-chart.png'
 ---
 
 I love a good flow chart. So a few years ago, (while I had a cold) I was looking through our medicine cabinet at all the different pills and syrups and was a bit confused by all the claims on the boxes.
@@ -20,7 +31,5 @@ Determined, I did some research on what the best (over the counter) medicine was
 **Greg’s Cold Medicine Routine** -> Emergen-C (vitamin c + zinc), and _Theraflu_ (which covers all the above medicines in hot liquid form which, A) helps the body absorb them fast B) helps ease a sore throat)
 
 Get well soon!
-
-[![Greg's Cold Flow Chart. Click to download.](images/gregs-cold-flow-chart.png)](https://gregrickaby.com/wp-content/uploads/2016/09/gregs-cold-flow-chart.png)
 
 _Disclaimer: I am NOT a medical professional nor is this advice intended to replace that of your doctor. I'm just a geek who had some time on his hands._ _Please don't sue me._

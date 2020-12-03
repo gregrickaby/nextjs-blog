@@ -1,6 +1,17 @@
 ---
 title: "Web Typography: Using The Golden Ratio and REM's"
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'typography'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 When WordPress 3.5 beta 1 was released it came with, ["Twenty Twelve"](http://wordpress.org/extend/themes/twentytwelve). While looking at [style.css](http://core.trac.wordpress.org/browser/trunk/wp-content/themes/twentytwelve/style.css), I noticed the use of "REM" to set font sizes and margins. I had NO idea what an REM was. In fact, I just started using EM's in other child-themes. Immediately, I turned to Google and started researching.

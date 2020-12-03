@@ -1,6 +1,17 @@
 ---
 title: 'Set up localhost on VirtualBox'
 date: '2014-11-25'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 My local stack includes [MAMP](http://www.mamp.info/en/mamp-pro/), [VirtualBox](https://www.virtualbox.org/) and [ModernIE](https://www.modern.ie/). ModernIE is great for cross-browser testing, but you have configure your "hosts" file. Here are the steps to get localhost working through VirtualBox:
@@ -14,8 +25,7 @@ My local stack includes [MAMP](http://www.mamp.info/en/mamp-pro/), [VirtualBox]
 4. Navigate to `C:\Windows\System32\drivers\etc`
 5. Change permissions. Right click, `Properties -> Security -> Advanced.` Select `Users` ->`Change Permissions`. Click `Full Control -> Ok`.
 
-[![Screenshot 2014-11-25 09.22.23](images/Screenshot-2014-11-25-09.22.23.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-09.22.23.png)  
-6) Finally, open `hosts` with Notepad
+[![Screenshot 2014-11-25 09.22.23](images/Screenshot-2014-11-25-09.22.23.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-09.22.23.png) 6) Finally, open `hosts` with Notepad
 
 [![Screenshot 2014-11-25 08.39.42](images/Screenshot-2014-11-25-08.39.42.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-08.39.42.png)
 

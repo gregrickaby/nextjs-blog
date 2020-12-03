@@ -1,6 +1,17 @@
 ---
 title: 'Summer Vacation 2015 - Day One - Camp Cracker Barrell'
 date: '2015-06-07'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'vacation'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 For our 2015 summer vacation, we reserved a campsite at [Harrison Bay State Park](http://tnstateparks.com/parks/about/harrison-bay) near Chattanooga, Tennessee. My folks drove from Green Bay and we drove from Enterprise to "meet in the middle". I wanted to record each day in the event that we wanted to "relive" the fun.

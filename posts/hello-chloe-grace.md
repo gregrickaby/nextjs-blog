@@ -1,6 +1,17 @@
 ---
 title: 'Hello Chloe Grace'
 date: '2014-03-18'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'chloe'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 It happened so fast. One minute we're watching contractions on the monitor, the next we're prepping for a c-section. In just 40 weeks and 31 minutes, Tara and I went from expecting to holding our precious little girl.

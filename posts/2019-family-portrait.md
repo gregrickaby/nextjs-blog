@@ -1,9 +1,18 @@
 ---
 title: '2019 Family Portrait'
 date: '2019-11-28'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'portrait'
+coverImage: '/assets/blog/images/20191128-20191128-rickaby-family-fall-2019-1438x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20191128-20191128-rickaby-family-fall-2019-1438x1080.jpg'
 ---
-
-![](images/20191128-20191128-rickaby-family-fall-2019-1438x1080.jpg)
 
 Taken right after stuffing our faces at Tara's parents house for Thanksgiving. I had to do quite a bit of editing on the background to remove a fire hydrant. Gobble Gobble!
 

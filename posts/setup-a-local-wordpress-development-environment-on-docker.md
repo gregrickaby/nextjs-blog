@@ -1,6 +1,17 @@
 ---
 title: 'Setup a Local WordPress Development Environment on Docker'
 date: '2019-12-17'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 As I continue to explore Docker, this post will serve as my notes.
@@ -49,9 +60,9 @@ $ npm run build:dev
 
 Once you're up and running, you can view the local instance of WordPress: [http://localhost:8889/](http://localhost:8889/)
 
-Logging into WordPress is easy enough:  
-[http://localhost:8889/wp-admin/](http://localhost:8889/wp-admin/)  
-user: admin  
+Logging into WordPress is easy enough:
+[http://localhost:8889/wp-admin/](http://localhost:8889/wp-admin/)
+user: admin
 pass: password
 
 You can also open VS Code and inspect the file and directory structure. You should see something similar:

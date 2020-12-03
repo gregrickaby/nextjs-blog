@@ -1,6 +1,18 @@
 ---
 title: 'Remove WooCommerce Styles and Scripts'
 date: '2013-05-19'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+  - 'woocommerce'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 [WooCommerce](http://www.woothemes.com/woocommerce/) is absolutely *the most brilliant and easy-to-use shopping cart for WordPress* - but it's heavy! I'll show you how to remove the cruft!

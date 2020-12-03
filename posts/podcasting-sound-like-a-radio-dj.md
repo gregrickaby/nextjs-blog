@@ -1,6 +1,17 @@
 ---
 title: 'Podcasting: Sound Like a Radio DJ'
 date: '2017-06-02'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'audio'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 After listening to episode [#265 of Shop Talk Show](http://shoptalkshow.com/episodes/265-on-podcasting/), where Chris Coyer mentioned he wanted to sound "like the guy on the radio"; I was compelled to share my knowledge of radio studios.

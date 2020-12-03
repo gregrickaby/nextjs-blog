@@ -1,6 +1,17 @@
 ---
 title: 'Remove Emoji Support in WordPress 4.2+'
 date: '2015-05-25'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Did anyone actually ask around before making this "feature" mandatory? Let's get rid of this crap...

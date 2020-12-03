@@ -1,6 +1,18 @@
 ---
 title: 'Use Dropbox to take and share screenshots'
 date: '2014-01-08'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'macos'
+  - 'dropbox'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Did you know you can use Dropbox to take and share screenshots? You can and it's as easy as enabling the option.
@@ -15,12 +27,12 @@ Open Dropbox settings, and enable "Share screenshots using Dropbox".
 
 Now it's time to use a keyboard shortcut to take a screenshot. Don't worry, after a few times this will become second nature!
 
-**MacOS**  
-`CMD + SHIFT + 4` - captures a selected area  
+**MacOS**
+`CMD + SHIFT + 4` - captures a selected area
 `CMD + SHIFT + 3` - captures the whole desktop
 
-**Windows**  
-`ALT + PRINTSCREEN` - captures the active windows  
+**Windows**
+`ALT + PRINTSCREEN` - captures the active windows
 `CONTROL + PRINTSCREEN` - captures the whole desktop
 
 ### 3) Share the screenshot

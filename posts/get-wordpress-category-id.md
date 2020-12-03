@@ -1,6 +1,17 @@
 ---
 title: 'Get a WordPress Category ID'
 date: '2016-04-12'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I rode the struggle bus pretty hard on this one today. I needed to ignore the "featured" category in a loop, and to do so, `WP_Query()` requires the category ID. Luckily, I found a handy function: [get_term_by();](http://codex.wordpress.org/Function_Reference/get_term_by)

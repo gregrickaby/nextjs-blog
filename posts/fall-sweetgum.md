@@ -1,13 +1,22 @@
 ---
 title: 'Fall Sweetgum'
 date: '2019-12-14'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'landscape'
+coverImage: '/assets/blog/images/20191214-20191214-P1010119-1438x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20191214-20191214-P1010119-1438x1080.jpg'
 ---
-
-[![](images/20191214-20191214-P1010119-1438x1080.jpg)](https://gregrickaby.com/wp-content/uploads/2020/06/20191214-20191214-P1010119.jpg)
 
 Love this little Sweetgum tree in our backyard. I added a bit of texture and just a bit of split toning to bring out the reds.
 
-EXIF data:
+**EXIF Data:**
 
 - **Date:** December 14, 2019
 - **Location:** [Enterprise, Alabama](Location:Enterprise, Alabama)

@@ -1,6 +1,17 @@
 ---
 title: 'Responsive Web Design != Mobile'
 date: '2013-10-12'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'rant'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 I do PSD Conversions for a living. In other words, I turn photoshop designs into web sites - and I've sliced over one hundred. I'm (somewhat) of an expert when it comes to creating custom themes for WordPress.

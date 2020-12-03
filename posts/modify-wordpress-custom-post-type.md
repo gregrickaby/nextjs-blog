@@ -1,6 +1,17 @@
 ---
 title: "Modify a Custom Post Type after it's been registered"
 date: '2016-06-09'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Today I was tasked with adding functionality to an existing custom post type. The problem was, the CPT was being registered in a plugin which I could not edit.

@@ -1,6 +1,17 @@
 ---
 title: 'Perfect Movie Theater Popcorn ?'
 date: '2019-08-02'
+excerpt: ''
+category:
+  - 'food'
+tags:
+  - 'popcorn'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 Making delicious movie theater quality popcorn at home is waaaay easier than you think. The secret is the steam released from the kernels as the pop, and [Flavicol](https://amzn.to/2YIeBCM), a delicious popcorn salt used at movie theaters. Let's get poppin'!

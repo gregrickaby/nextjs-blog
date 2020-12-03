@@ -1,9 +1,18 @@
 ---
 title: 'Art of Animation Resort'
 date: '2019-12-08'
+excerpt: ''
+category:
+  - 'photos'
+tags:
+  - 'disney'
+coverImage: '/assets/blog/images/20191208-20191208-P1130781-1481x1080.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/20191208-20191208-P1130781-1481x1080.jpg'
 ---
-
-![](images/20191208-20191208-P1130781-1481x1080.jpg)
 
 Snapped this through the windshield as we were pulling into Disney's Art of Animation Resort for our family vacation. I just love all the colors!
 

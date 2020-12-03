@@ -1,6 +1,17 @@
 ---
 title: 'I bought a guitar'
 date: '2015-07-07'
+excerpt: ''
+category:
+  - 'personal'
+tags:
+  - 'music'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
 ---
 
 It all started in the third grade when I learned to play the trumpet. Throughout school and even shortly after I graduated high school I played that trumpet. Although I wasn't "the best", I really enjoyed making music.
