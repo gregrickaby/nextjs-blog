@@ -3,7 +3,14 @@ import DateFormatter from '../components/date-formatter'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 
-export default function PostHeader({title, coverImage, date, author}) {
+export default function PostHeader({
+  title,
+  coverImage,
+  date,
+  author,
+  category,
+  tags
+}) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -26,6 +33,15 @@ export default function PostHeader({title, coverImage, date, author}) {
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />
+          {!!category && category.length > 0 && <>Filed under {category}</>}.
+          {!!tags && tags.length > 0 && (
+            <>
+              Tagged with{' '}
+              {tags.map((tag, index) => (
+                <span key={index}>{tag} </span>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </>
