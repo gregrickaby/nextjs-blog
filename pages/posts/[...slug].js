@@ -5,11 +5,14 @@ import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import {getPostBySlug, getAllPosts} from '../../lib/api'
+import {
+  createSinglePost,
+  getAllPosts,
+  markdownToHtml
+} from '../../lib/functions'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import {CMS_NAME} from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
+import {SITE_TITLE} from '../../lib/constants'
 
 export default function Post({post, preview}) {
   const router = useRouter()
@@ -27,7 +30,7 @@ export default function Post({post, preview}) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | {SITE_TITLE}
                 </title>
                 <meta property="og:image" content={post?.ogImage?.url} />
               </Head>
@@ -49,7 +52,8 @@ export default function Post({post, preview}) {
 }
 
 export async function getStaticProps({params}) {
-  const post = getPostBySlug(params.slug, [
+  // Create a blog post based on a slug.
+  const post = createSinglePost(params.slug, [
     'title',
     'date',
     'slug',
@@ -60,6 +64,8 @@ export async function getStaticProps({params}) {
     'ogImage',
     'coverImage'
   ])
+
+  // Convert markdown to HTML.
   const content = await markdownToHtml(post.content || '')
 
   return {
@@ -73,16 +79,17 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
+  // Get all blog posts based on their slug.
   const posts = getAllPosts(['slug'])
 
   return {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug
+          slug: [post.slug]
         }
       }
     }),
-    fallback: false
+    fallback: 'blocking'
   }
 }
