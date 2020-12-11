@@ -1,0 +1,3 @@
+- Fix weird image path warnings in the console
+- Further style customizations
+- Find and remove old shortcodes in markdown files
