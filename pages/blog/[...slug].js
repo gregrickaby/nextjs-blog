@@ -5,7 +5,13 @@ import PostBody from '@/components/post-body'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import Layout from '@/components/layout'
-import {getSinglePostMeta, getAllPostsDesc, getHtml} from '@/lib/functions'
+import {
+  getSinglePost,
+  getPosts,
+  getHtml,
+  getSystemPath,
+  getPath
+} from '@/lib/functions'
 import PostTitle from '@/components/post-title'
 import Head from 'next/head'
 import {siteTitle} from '@/lib/config'
@@ -47,9 +53,31 @@ export default function Post({post, preview}) {
   )
 }
 
+export async function getStaticPaths() {
+  // Get all blog posts.
+  const posts = await getPosts()
+
+  // Get the paths we want to pre-render based on posts.
+  const paths = posts.map((post) => ({
+    params: {
+      slug: [post.fullPath]
+    }
+  }))
+
+  // We'll pre-render only these paths at build time.
+  return {
+    paths,
+    fallback: true
+  }
+}
+
 export async function getStaticProps({params}) {
-  // Create a blog post based on a slug.
-  const post = getSinglePostMeta(params.slug, [
+  // Convert browser slug into real paths.
+  const fullPath = getSystemPath(params.slug)
+  const path = getPath(params.slug)
+
+  // Get the blog post.
+  const post = getSinglePost(fullPath, path, [
     'title',
     'date',
     'slug',
@@ -64,6 +92,7 @@ export async function getStaticProps({params}) {
   // Convert markdown to HTML.
   const content = await getHtml(post.content || '')
 
+  // Pass blog post in as props.
   return {
     props: {
       post: {
@@ -71,21 +100,5 @@ export async function getStaticProps({params}) {
         content
       }
     }
-  }
-}
-
-export async function getStaticPaths() {
-  // Get all blog posts based on their slug.
-  const posts = getAllPostsDesc(['slug'])
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: [post.slug]
-        }
-      }
-    }),
-    fallback: 'blocking'
   }
 }
