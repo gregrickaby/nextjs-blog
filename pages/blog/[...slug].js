@@ -1,18 +1,14 @@
 import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import {
-  createSinglePost,
-  getAllPosts,
-  markdownToHtml
-} from '../../lib/functions'
-import PostTitle from '../../components/post-title'
+import Container from '@/components/container'
+import PostBody from '@/components/post-body'
+import Header from '@/components/header'
+import PostHeader from '@/components/post-header'
+import Layout from '@/components/layout'
+import {createSinglePost, getAllPosts, markdownToHtml} from '@/lib/functions'
+import PostTitle from '@/components/post-title'
 import Head from 'next/head'
-import {SITE_TITLE} from '../../lib/constants'
+import {SITE_TITLE} from '@/lib/constants'
 
 export default function Post({post, preview}) {
   const router = useRouter()
