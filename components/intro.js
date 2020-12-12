@@ -1,4 +1,4 @@
-import {SITE_TITLE, SITE_DESCRIPTION} from '../lib/constants'
+import {SITE_TITLE, SITE_DESCRIPTION} from '@/lib/constants'
 
 export default function Intro() {
   return (

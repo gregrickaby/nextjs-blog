@@ -1,5 +1,5 @@
 import Container from './container'
-import {TWITTER_PROFILE_URL, GITHUB_PROFILE_URL} from '../lib/constants'
+import {TWITTER_PROFILE_URL, GITHUB_PROFILE_URL} from '@/lib/constants'
 
 export default function Footer() {
   return (
