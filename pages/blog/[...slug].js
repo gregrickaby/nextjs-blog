@@ -5,13 +5,7 @@ import PostBody from '@/components/post-body'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import Layout from '@/components/layout'
-import {
-  getSinglePost,
-  getPosts,
-  getHtml,
-  getSystemPath,
-  getPath
-} from '@/lib/functions'
+import {getSinglePost, getPosts, getHtml, getPath} from '@/lib/functions'
 import PostTitle from '@/components/post-title'
 import Head from 'next/head'
 import {siteTitle} from '@/lib/config'
@@ -60,7 +54,7 @@ export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts.
   const paths = posts.map((post) => ({
     params: {
-      slug: [post.fullPath]
+      slug: [post.path]
     }
   }))
 
@@ -73,7 +67,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
   // Convert browser slug into real paths.
-  const fullPath = getSystemPath(params.slug)
+  const fullPath = getPath(params.slug, true)
   const path = getPath(params.slug)
 
   // Get the blog post.
