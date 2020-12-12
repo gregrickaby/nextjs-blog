@@ -61,7 +61,7 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
@@ -93,6 +93,7 @@ export async function getStaticProps({params}) {
         ...post,
         content
       }
-    }
+    },
+    revalidate: 60
   }
 }
