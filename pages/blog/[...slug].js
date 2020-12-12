@@ -5,7 +5,7 @@ import PostBody from '@/components/post-body'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import Layout from '@/components/layout'
-import {createSinglePost, getAllPosts, markdownToHtml} from '@/lib/functions'
+import {getSinglePostMeta, getAllPostsDesc, getHtml} from '@/lib/functions'
 import PostTitle from '@/components/post-title'
 import Head from 'next/head'
 import {SITE_TITLE} from '@/lib/constants'
@@ -49,7 +49,7 @@ export default function Post({post, preview}) {
 
 export async function getStaticProps({params}) {
   // Create a blog post based on a slug.
-  const post = createSinglePost(params.slug, [
+  const post = getSinglePostMeta(params.slug, [
     'title',
     'date',
     'slug',
@@ -62,7 +62,7 @@ export async function getStaticProps({params}) {
   ])
 
   // Convert markdown to HTML.
-  const content = await markdownToHtml(post.content || '')
+  const content = await getHtml(post.content || '')
 
   return {
     props: {
@@ -76,7 +76,7 @@ export async function getStaticProps({params}) {
 
 export async function getStaticPaths() {
   // Get all blog posts based on their slug.
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPostsDesc(['slug'])
 
   return {
     paths: posts.map((post) => {

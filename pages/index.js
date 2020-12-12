@@ -3,7 +3,7 @@ import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
-import {getAllPosts} from '@/lib/functions'
+import {getAllPostsDesc} from '@/lib/functions'
 import Head from 'next/head'
 import {SITE_TITLE} from '@/lib/constants'
 
@@ -36,7 +36,7 @@ export default function Index({allPosts}) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const allPosts = getAllPostsDesc([
     'title',
     'date',
     'slug',
