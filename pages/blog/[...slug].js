@@ -8,7 +8,7 @@ import Layout from '@/components/layout'
 import {getSinglePostMeta, getAllPostsDesc, getHtml} from '@/lib/functions'
 import PostTitle from '@/components/post-title'
 import Head from 'next/head'
-import {SITE_TITLE} from '@/lib/constants'
+import {siteTitle} from '@/lib/config'
 
 export default function Post({post, preview}) {
   const router = useRouter()
@@ -26,7 +26,7 @@ export default function Post({post, preview}) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | {SITE_TITLE}
+                  {post.title} | {siteTitle}
                 </title>
                 <meta property="og:image" content={post?.ogImage?.url} />
               </Head>

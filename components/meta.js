@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {SITE_DESCRIPTION, HOME_OG_IMAGE_URL} from '@/lib/constants'
+import {siteDescription, defaultImage} from '@/lib/config'
 
 export default function Meta() {
   return (
@@ -32,8 +32,8 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={SITE_DESCRIPTION} />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta name="description" content={siteDescription} />
+      <meta property="og:image" content={defaultImage} />
     </Head>
   )
 }

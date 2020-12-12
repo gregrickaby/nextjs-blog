@@ -1,11 +1,11 @@
 import Container from '@/components/container'
-import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
+import MoreStories from '@/components/more-stories'
+import {siteTitle} from '@/lib/config'
 import {getAllPostsDesc} from '@/lib/functions'
 import Head from 'next/head'
-import {SITE_TITLE} from '@/lib/constants'
 
 export default function Index({allPosts}) {
   const heroPost = allPosts[0]
@@ -14,7 +14,7 @@ export default function Index({allPosts}) {
     <>
       <Layout>
         <Head>
-          <title>{SITE_TITLE}</title>
+          <title>{siteTitle}</title>
         </Head>
         <Container>
           <Intro />
