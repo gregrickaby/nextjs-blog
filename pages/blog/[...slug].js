@@ -5,7 +5,13 @@ import PostBody from '@/components/post-body'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import Layout from '@/components/layout'
-import {getSinglePost, getPosts, getHtml, getPath} from '@/lib/functions'
+import {
+  getSinglePost,
+  getPosts,
+  getHtml,
+  getPath,
+  createSlug
+} from '@/lib/functions'
 import PostTitle from '@/components/post-title'
 import Head from 'next/head'
 import {siteTitle} from '@/lib/config'
@@ -52,11 +58,13 @@ export async function getStaticPaths() {
   const posts = await getPosts()
 
   // Get the paths we want to pre-render based on posts.
-  const paths = posts.map((post) => ({
-    params: {
-      slug: [post.path]
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: [createSlug(post.path)]
+      }
     }
-  }))
+  })
 
   // We'll pre-render only these paths at build time.
   return {
