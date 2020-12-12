@@ -61,7 +61,7 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   return {
     paths,
-    fallback: 'blocking'
+    fallback: false
   }
 }
 
