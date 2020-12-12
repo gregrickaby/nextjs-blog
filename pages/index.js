@@ -4,12 +4,12 @@ import Intro from '@/components/intro'
 import Layout from '@/components/layout'
 import MoreStories from '@/components/more-stories'
 import {siteTitle} from '@/lib/config'
-import {getAllPostsDesc} from '@/lib/functions'
+import {sortBlogPosts} from '@/lib/functions'
 import Head from 'next/head'
 
-export default function Index({allPosts}) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({posts}) {
+  const heroPost = posts[0]
+  const morePosts = posts.slice(1)
   return (
     <>
       <Layout>
@@ -36,7 +36,7 @@ export default function Index({allPosts}) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPostsDesc([
+  const posts = await sortBlogPosts([
     'title',
     'date',
     'slug',
@@ -46,6 +46,6 @@ export async function getStaticProps() {
   ])
 
   return {
-    props: {allPosts}
+    props: {posts}
   }
 }
