@@ -1,0 +1,78 @@
+---
+title: "Create a 'Must Use' Plugin for WordPress"
+date: '2013-10-10'
+slug: 'create-mu-plugin-for-wordpress'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
+---
+
+Some of you are like me: "frequent theme changer guy". Here's a trick I've learned to keep from having to re-write code every time I get bored with a theme: I use the "Must Use" Plugin.
+
+## What's an MU Plugin?
+
+> A "Must Use" Plugin is a perfect solution for setting up Custom Post Types, Taxonomies, Google Analytics, and other important - but not necessarily "updatable" code, that would otherwise be lost upon a theme change.
+
+The general consensus is: _CPT's & Taxonomies should not be handled at the theme level, but rather, at the plugin level._
+
+An MU Plugin is code that cannot be deactivated or deleted unless you have sFTP access. Check out the history of [Must Use Plugins](http://codex.wordpress.org/Must_Use_Plugins) and learn more at the [WordPress Codex](http://codex.wordpress.org/Must_Use_Plugins)
+
+## Why not create a normal plugin or use functions.php?
+
+You could. But there are extra steps to get it activated if you're running a multi-site network. Furthermore, if others have access to the Plugins section of the WP Dashboard, there's a chance it could be deleted or deactivated by mistake. Worse, if you load up important things in `functions.php`, You'll lose everything if the theme changes.
+
+By using an MU plugin, your code will always be "on", no matter what network, theme, or curious guest blogger might do otherwise!
+
+## Ok, how do I create a "Must Use" Plugin?
+
+1. You need to create a directory: `/wp-content/mu-plugins/`
+2. Next, create a PHP file. You can name it anything you want. Mine is named `grd_functions.php`. The full path would look like:`/wp-content/mu-plugins/grd_functions.php`
+3. Now add your code, save your file and upload
+
+That's it! Really!
+
+### How about an example?
+
+Here is an example Must Use plugin:
+
+```
+<?php
+/*
+Plugin Name: Must Use Functions
+Plugin URI: https://gregrickaby.com
+Description: This plugin contains important functionality that need to persist, even if the theme changes.
+Version: 1.0.0
+Author: Greg Rickaby
+Author URI: https://gregrickaby.com
+*/
+
+namespace GRD;
+
+/**
+ * Place Google Analytics in the header.
+ *
+ * @author Greg
+ * @version 1.0.0
+ */
+function google_analytics() {
+?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1212017-87"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-123456-78');
+</script>
+<?php
+}
+add_action( 'wp_head', 'GRD\google_analytics', 9999 );
+```

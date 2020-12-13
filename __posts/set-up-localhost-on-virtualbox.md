@@ -1,0 +1,64 @@
+---
+title: 'Set up localhost on VirtualBox'
+date: '2014-11-25'
+slug: 'set-up-localhost-on-virtualbox'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
+---
+
+My local stack includes [MAMP](http://www.mamp.info/en/mamp-pro/), [VirtualBox](https://www.virtualbox.org/) and [ModernIE](https://www.modern.ie/). ModernIE is great for cross-browser testing, but you have configure your "hosts" file. Here are the steps to get localhost working through VirtualBox:
+
+1. Click on `settings -> network`
+2. Select `bridged adapter` from the dropdown
+
+[![Screenshot 2014-11-25 08.37.00](images/Screenshot-2014-11-25-08.37.00.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-08.37.00.png)
+
+3. Boot up your virtual machine
+4. Navigate to `C:\Windows\System32\drivers\etc`
+5. Change permissions. Right click, `Properties -> Security -> Advanced.` Select `Users` ->`Change Permissions`. Click `Full Control -> Ok`.
+
+[![Screenshot 2014-11-25 09.22.23](images/Screenshot-2014-11-25-09.22.23.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-09.22.23.png) 6) Finally, open `hosts` with Notepad
+
+[![Screenshot 2014-11-25 08.39.42](images/Screenshot-2014-11-25-08.39.42.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-08.39.42.png)
+
+7. Enter the IP address of your localhost and the URL
+
+[![Screenshot 2014-11-25 08.40.58](images/Screenshot-2014-11-25-08.40.58.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-08.40.58.png)
+
+8. Save changes
+9. Open a web browser and type in your address. Your localhost should now resolve.
+
+[![Screenshot 2014-11-25 08.43.36](images/Screenshot-2014-11-25-08.43.36.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-11-25-08.43.36.png)
+
+## Ubuntu
+
+For testing on Ubuntu (via VirtualBox), you will need to bridge the network adapter and edit your host file as well. It's much easier than on Windows!
+
+1. After bridging the network adapter (like above) open Terminal, and type:
+
+```
+$ sudo nano /etc/hosts
+```
+
+[![Screenshot 2014-12-02 13.07.30](images/Screenshot-2014-12-02-13.07.30.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-12-02-13.07.30.png)
+
+2) Enter the IP address of your localhost and the URL
+
+[![Screenshot 2014-12-02 13.11.12](images/Screenshot-2014-12-02-13.11.12.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-12-02-13.11.12.png)
+
+3. Save the changes ( CTRL + X + Y ) and exit
+
+[![Screenshot 2014-12-02 13.15.14](images/Screenshot-2014-12-02-13.15.14.png)](https://gregrickaby.com/wp-content/uploads/2014/11/Screenshot-2014-12-02-13.15.14.png)
+
+That's it!
+
+_\*\*Note: If your localhost is setup for DHCP, you'll probably need to update the hosts file with your new IP on a regular basis._

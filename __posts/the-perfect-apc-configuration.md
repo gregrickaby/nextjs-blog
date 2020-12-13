@@ -1,0 +1,89 @@
+---
+title: 'The Perfect APC Configuration'
+date: '2013-05-19'
+slug: 'the-perfect-apc-configuration'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'server'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
+---
+
+Here was my setup on an Amazon Medium Instance using APC:
+
+**php.ini configuration**
+
+```
+[APC]
+extension=apc.so
+apc.enabled=1
+apc.shm_segments=1
+
+;32M per WordPress install
+apc.shm_size=128M
+
+;Relative to the number of cached files (you may need to watch your stats for a day or two to find out a good number)
+apc.num_files_hint=7000
+
+;Relative to the size of WordPress
+apc.user_entries_hint=4096
+
+;The number of seconds a cache entry is allowed to idle in a slot before APC dumps the cache
+apc.ttl=7200
+apc.user_ttl=7200
+apc.gc_ttl=3600
+
+;Setting this to 0 will give you the best performance, as APC will
+;not have to check the IO for changes. However, you must clear
+;the APC cache to recompile already cached files. If you are still
+;developing, updating your site daily in WP-ADMIN, and running W3TC
+;set this to 1
+apc.stat=1
+
+;This MUST be 0, WP can have errors otherwise!
+apc.include_once_override=0
+
+;Only set to 1 while debugging
+apc.enable_cli=0
+
+;Allow 2 seconds after a file is created before it is cached to prevent users from seeing half-written/weird pages
+apc.file_update_protection=2
+
+;Leave at 2M or lower. WordPress does't have any file sizes close to 2M
+apc.max_file_size=2M
+
+;Ignore files
+apc.filters = "/var/www/apc.php"
+
+apc.cache_by_default=1
+apc.use_request_time=1
+apc.slam_defense=0
+apc.mmap_file_mask=/var/www/temp/apc.XXXXXX
+apc.stat_ctime=0
+apc.canonicalize=1
+apc.write_lock=1
+apc.report_autofilter=0
+apc.rfc1867=0
+apc.rfc1867_prefix =upload_
+apc.rfc1867_name=APC_UPLOAD_PROGRESS
+apc.rfc1867_freq=0
+apc.rfc1867_ttl=3600
+apc.lazy_classes=0
+apc.lazy_functions=0
+```
+
+While this configuration works great for me, it may not for you. Finding "The Perfect APC Configuration" is like asking how many stars are in the sky. The are endless variables, like, "How much RAM, how many websites, do your websites support lazy classes, etc..." The best way to create your config is to do a little research. This post was meant to give you a push in the right direction.
+
+**P.S.** There seems to be a lot of debate about apc.stat = 0. The general thought is, set apc.stat=0 on production servers and it will prevent APC from actually going to the IO to check if the file has been changed. However, the WordPress dashboard and W3TC get kinda bitchy with this setting!
+
+My advice: Are working in the WordPress dashboard daily, and running W3TC? Then set: `apc.stat = 1`. Your fragmentation will be higher. Your sites will load _slightly_ slower, but when you click _Update Post_, APC will flush that piece of cache.
+
+**UPDATE 2013.08.01**
+
+[PHP 5.5](http://php.net/archive/2013.php#id2013-07-18-1)\+ is out (and APC is deprecated) and with it comes the new [OPcache](http://www.php.net/manual/en/opcache.installation.php).

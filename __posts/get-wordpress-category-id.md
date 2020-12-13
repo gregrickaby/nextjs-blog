@@ -1,0 +1,42 @@
+---
+title: 'Get a WordPress Category ID'
+date: '2016-04-12'
+slug: 'get-wordpress-category-id'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'wordpress'
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
+---
+
+I rode the struggle bus pretty hard on this one today. I needed to ignore the "featured" category in a loop, and to do so, `WP_Query()` requires the category ID. Luckily, I found a handy function: [get_term_by();](http://codex.wordpress.org/Function_Reference/get_term_by)
+
+```
+<?php
+// Get the "featured" category object.
+$featured_category = get_term_by( 'slug', 'featured', 'category' );
+
+// Set the "featured" category ID.
+$featured_category_ID = $featured_category->term_id;
+
+// Get the latest three posts, ignoring the current post
+// and any in the "featured" category.
+$args = array(
+	'post_type'              => 'post',
+	'posts_per_page'         => 3,
+	'post__not_in'           => array( get_the_ID() ),
+	'category__not_in'       => array( $featured_category_ID ),
+	'no_found_rows'          => true,
+	'update_post_meta_cache' => false,
+	'update_post_term_cache' => false,
+);
+
+// Run query.
+$data = new WP_Query( $args );
+```

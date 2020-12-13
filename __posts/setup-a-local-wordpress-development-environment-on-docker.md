@@ -1,0 +1,215 @@
+---
+title: 'Setup a Local WordPress Development Environment on Docker'
+date: '2019-12-17'
+slug: 'setup-a-local-wordpress-development-environment-on-docker'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - ''
+coverImage: '/assets/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/assets/blog/authors/greg.jpg'
+ogImage:
+  url: '/assets/blog/images/generic.jpg'
+---
+
+As I continue to explore Docker, this post will serve as my notes.
+
+I assume assume you already have the following technologies on your computer or know how to install them:
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Git](https://git-scm.com/downloads)
+- [Node & NPM](https://nodejs.org/en/)
+- A terminal app
+- Helpful, but optional: [VS Code](https://code.visualstudio.com/) w/ [Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+
+## Installation
+
+Clone WordPress:
+
+```
+$ git clone git@github.com:WordPress/wordpress-develop.git
+```
+
+Install dependencies:
+
+```
+$ cd wordpress-develop && npm i
+```
+
+Start Docker containers:
+
+```
+$ npm run env:start
+```
+
+Install WordPress:
+
+```
+$ npm run env:install
+```
+
+Build WordPress assets:
+
+```
+$ npm run build:dev
+```
+
+## Where is everything?
+
+Once you're up and running, you can view the local instance of WordPress: [http://localhost:8889/](http://localhost:8889/)
+
+Logging into WordPress is easy enough:
+[http://localhost:8889/wp-admin/](http://localhost:8889/wp-admin/)
+user: admin
+pass: password
+
+You can also open VS Code and inspect the file and directory structure. You should see something similar:
+
+```
+ ├── src
+ │   ├── js
+ │   ├── wp-admin
+ │   ├── wp-content
+ │   └── wp-includes
+ ├── tests
+ │   ├── e2e
+ │   ├── phpunit
+ │   └── qunit
+ └── tools
+     ├── local-env
+     └── webpack
+ ├── .editorconfig
+ ├── .env
+ ├── .gitignore
+ ├── etc....</code>
+```
+
+The `/src` directory is where WordPress is located. Here, you can work as you normally did using other local development applications like XAMPP, MAMP, or Local by Flywheel.
+
+The `/tests` directory houses all unit tests used by [@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts). You can run tests using NPM.
+
+Finally the `/tools` and root directory are where the scripts for setting up Docker, along with other development related configs are located. You can ignore those.
+
+## Development
+
+Watch for changes:
+
+```
+$ npm run watch
+```
+
+Run PHP unit tests:
+
+```
+$ npm run test:php
+```
+
+Run JavaScript unit tests:
+
+```
+$ npm run test:e2e
+```
+
+Use WP-CLI:
+
+```
+$ npm run env:cli
+```
+
+_Note:_ Where the documentation mentions running `wp`, run `npm run env:cli` instead. For example, `npm run env:cli scaffold plugin my-plugin --activate`
+
+Check out all the [useful WP-CLI commands](https://developer.wordpress.org/cli/commands/).
+
+## Other
+
+View Docker log files:
+
+```
+$ npm run env:logs
+```
+
+Pull the latest versions of containers:
+
+```
+$ npm run env:pull
+```
+
+Stop the containers:
+
+```
+$ npm run env:stop
+```
+
+Reset the containers:
+
+```
+$ npm run env:reset && npm run env:start
+```
+
+_Note: this will destroy the Docker containers and create new ones. Make sure you back up your data first!_
+
+Pruning dangling Docker stuffs:
+
+```
+$ docker system prune
+```
+
+[Learn more about cleaning up](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes) dangling Docker containers, images, volumes, and networks.
+
+## Gutenberg Development
+
+If you want to contribute to the development of Gutenberg, connecting it to your new local is very easy.
+
+Clone Gutenberg in a new directory outside of `/wordpress-develop`
+
+```
+$ git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
+```
+
+Install dependencies:
+
+```
+$ npm i && npm run build
+```
+
+Set the path to WordPress:
+
+```
+$ export WP_DEVELOP_DIR=../wordpress-develop
+```
+
+Connect Gutenberg and WordPress:
+
+```
+$ npm run env connect
+```
+
+If you open up the [WordPress dashboard](http://localhost:8889/wp-admin/plugins.php), you should now see the Gutenberg plugin, tests, and example blocks.
+
+![](/assets/blog/images/Screenshot-2019-12-17-15.20.55.png)
+
+Simply activate Gutenberg and any other plugins that you need. Learn more about [getting started](https://developer.wordpress.org/block-editor/contributors/develop/getting-started/), and read about the [Git Workflow](https://developer.wordpress.org/block-editor/contributors/develop/git-workflow/).
+
+## Staying Updated
+
+Because both WordPress and Gutenberg are version controlled, you can simply use `git pull` to bring in the latest changes:
+
+```
+$ cd wordpress-develop && git pull && cd ../gutenberg && git pull
+```
+
+If you want pull in the latest Docker containers:
+
+```
+$ npm run env:pull
+```
+
+## Further Reading
+
+- [https://make.wordpress.org/core/2019/08/05/wordpress-local-environment/](https://make.wordpress.org/core/2019/08/05/wordpress-local-environment/)
+- [https://make.wordpress.org/core/handbook/](https://make.wordpress.org/core/handbook/)
+- [https://github.com/WordPress/wordpress-develop/blob/master/README.md](https://github.com/WordPress/wordpress-develop/blob/master/README.md)
+- [https://github.com/WordPress/wordpress-develop/blob/master/package.json](https://github.com/WordPress/wordpress-develop/blob/master/package.json)
