@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {getPosts} from '@/lib/functions'
+import Layout from '@/components/Layout'
 
 export default function BlogPost({post}) {
   const {
@@ -8,24 +9,26 @@ export default function BlogPost({post}) {
     html
   } = post
   return (
-    <article>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"
+    <Layout>
+      <article>
+        <Head>
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"
+          />
+        </Head>
+        <Image
+          src={coverImage}
+          alt={`Cover Image for ${title}`}
+          layout="responsive"
+          width={960}
+          height={360}
         />
-      </Head>
-      <Image
-        src={coverImage}
-        alt={`Cover Image for ${title}`}
-        layout="responsive"
-        width={960}
-        height={360}
-      />
-      <h1 dangerouslySetInnerHTML={{__html: title}} />
-      <time>{date}</time>
-      <div dangerouslySetInnerHTML={{__html: html}}></div>
-    </article>
+        <h1 dangerouslySetInnerHTML={{__html: title}} />
+        <time>{date}</time>
+        <div dangerouslySetInnerHTML={{__html: html}}></div>
+      </article>
+    </Layout>
   )
 }
 
