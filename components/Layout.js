@@ -6,7 +6,7 @@ export default function Layout({children, ...props}) {
   return (
     <>
       <Meta title={props.title} description={props.description} />
-      <main className="container">{children}</main>
+      <main className="container m-auto">{children}</main>
     </>
   )
 }
