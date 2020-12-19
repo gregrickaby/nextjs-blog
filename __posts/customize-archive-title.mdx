@@ -25,7 +25,7 @@ Screenshot of the "clean" archive title.
 
 [Jeremy Pry](https://twitter.com/JPry) helped me solve this by inserting this [regular expression](https://regex101.com/r/zP2vI9/1) into PHP's `preg_replace();`  function. It executes a find and replace on the `$title` variable.
 
-```
+```php
 <?php
 /**
  * Remove archive title prefixes.

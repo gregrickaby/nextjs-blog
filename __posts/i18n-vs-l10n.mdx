@@ -26,19 +26,19 @@ Some quick definitions:
 
 By wrapping some text in a nifty PHP function, we allow that text to be translated into another language.
 
-```
+```php
 <?php esc_html_e( 'This text will be translated', 'text-domain' ); ?>
 ```
 
 Or
 
-```
+```php
 $foo = esc_html__( 'This text will also be translated', 'text-domain' );
 ```
 
 Or
 
-```
+```php
 echo '<h1 class="title">' . esc_html__( 'An awesome post title will be translated as well', 'text-domain' ) . '</h1>';
 ```
 
@@ -52,13 +52,13 @@ _[Lisa's slides](http://www.slideshare.net/LSWilson/internationalization-prepari
 
 If you've ever looked at the source code of any WordPress run web site, then you've seen:
 
-```
+```php
 /* <![CDATA[ ]]> */
 ```
 
 and thought? "What is this wacky code?" It's localization in action! Here is a real world example (from my Radio Theme) using localization to pass variables onto jQuery:
 
-```
+```php
 /* <![CDATA[ */
 var radioL10n = {"nivo_effect":"random","nivo_speed":"3000","fb_app_id":"123940271011545"};
 /* ]]> */
@@ -66,7 +66,7 @@ var radioL10n = {"nivo_effect":"random","nivo_speed":"3000","fb_app_id":"1239402
 
 Here is `/wp-content/themes/radio/lib/js/radio.js`
 
-```
+```javascript
 // Load Default Nivo Settings
 jQuery(document).ready(function($) {
  'use strict';
@@ -88,7 +88,7 @@ Notice the _radioL10n.nivo_effect_ in the above code? That is the jQuery script 
 
 Here's a working snippet from my Radio Theme's options page, where I use `wp_localize_script();`
 
-```
+```php
 /**
  * Load theme scripts.
  *

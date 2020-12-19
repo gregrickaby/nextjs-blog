@@ -19,13 +19,13 @@ Today I was tasked with adding functionality to an existing custom post type. Th
 
 After some digging, I found there's a filter for that (found in [post.php](https://core.trac.wordpress.org/browser/tags/4.5.2/src/wp-includes/post.php#L1017)) which allows you to modify a custom post type, after it's been registered some other way.
 
-```
+```php
 apply_filters( 'register_post_type_args', $args, $post_type );
 ```
 
 Hooking into that filter, allowed me to pass additional options to an existing CPT:
 
-```
+```php
 <?php
 /**
  * Filter the Products CPT to register more options.

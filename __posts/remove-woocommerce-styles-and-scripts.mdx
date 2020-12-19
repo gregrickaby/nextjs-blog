@@ -22,7 +22,7 @@ ogImage:
 
 There are a couple of ways to do this. The easiest is to remove the three primary stylesheets using a simple filter in `functions.php`
 
-```
+```php
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 ```
 
@@ -30,7 +30,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 If you want fine grain control over what appears where, then this function uses a conditional tag to dequeue styles and scripts.
 
-```
+```php
 /**
  * Manage WooCommerce styles and scripts.
  */
@@ -79,7 +79,7 @@ add_action( 'wp_enqueue_scripts', 'grd_woocommerce_script_cleaner', 99 );
 
 Kill all the things, forever. You'll write your own styles, because you're a fucking ninja.
 
-```
+```php
 /**
  * Remove all WooCommerce scripts and styles! Forever!
  */

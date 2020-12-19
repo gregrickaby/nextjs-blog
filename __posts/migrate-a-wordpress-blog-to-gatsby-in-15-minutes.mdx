@@ -39,7 +39,7 @@ There's an awesome NPM package called [WordPress Export To Markdown](https://git
 
 **Use NPX to start the conversion:**
 
-```
+```bash
 $ npx wordpress-export-to-markdown
 ```
 
@@ -51,7 +51,7 @@ $ npx wordpress-export-to-markdown
 
 Gatsby supports using folders as a permalink, so I opted for the `year/month/blog-post-slug/` folder structure while answering the wizard's questions, but you can do whatever you want! Here's a peek at the structure:
 
-```
+```bash
 ├── 2017
 │   ├── 02
 │   │   ├── 2016-a-year-in-review
@@ -71,7 +71,7 @@ This starter creates a new Gatsby site that is pre-configured to work with the o
 
 **Clone down the blog starter:**
 
-```
+```bash
 $ gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 ```
 
@@ -87,7 +87,7 @@ If you are in a hurry, skip this step. You can always come back to it later.
 
 **Open up `gatsby-config.js` and customize:**
 
-```
+```javascript
 module.exports = {
   plugins: [
     {
@@ -111,28 +111,28 @@ module.exports = {
       }
     ]
   }
-};
+}
 ```
 
 **Open `src/gatsby-theme-blog/components/bio-content.js` and customize:**
 
-```
-import React, { Fragment } from "react";
-import { Styled } from "theme-ui";
+```javascript
+import React, {Fragment} from 'react'
+import {Styled} from 'theme-ui'
 
 export default () => (
   <Fragment>
-    Director of Engineering{" "}
+    Director of Engineering{' '}
     <Styled.a href="https://webdevstudios.com">@WebDevStudios</Styled.a> /
-    Author & Editor{" "}
+    Author & Editor{' '}
     <Styled.a href="https://www.wiley.com/">@WileyGlobal</Styled.a>
   </Fragment>
-);
+)
 ```
 
 **Place your favorite selfie in `content/assets/` overwriting `avatar.jpg`**
 
-```
+```bash
 content
 ├── assets
 │   └── avatar.jpg
@@ -143,7 +143,7 @@ That should be it for now. You can certainly customize Gatsby to your liking, bu
 
 ## Step 6: Start the Gatsby dev server
 
-```
+```bash
 $ gatsby develop
 ```
 
@@ -155,13 +155,13 @@ Because Gatsby more-or-less clones down the stater, Git is already initialized.
 
 **Make sure you're in the root directory of your new blog, then add your Github repo:**
 
-```
+```bash
 $ git remote add origin git@github.com/username/your-repo
 ```
 
 **Commit your changes and push**
 
-```
+```bash
 $ git add . && git commit --message "initial commit" && git push
 ```
 

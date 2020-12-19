@@ -19,7 +19,7 @@ When using Google Fonts with WordPress, you should NOT use `@import`, nor just p
 
 First, create a function which sets up the Google Fonts...what's more is this function also allows the fonts to be translated.
 
-```
+```php
 function grd_register_google_fonts() {
 
 	$fonts_url = '';
@@ -56,7 +56,7 @@ function grd_register_google_fonts() {
 
 Finally, enqueue the Google Fonts:
 
-```
+```php
 function grd_enqueue_google_fonts() {
     wp_enqueue_style( 'theme-slug-fonts', grd_register_google_fonts(), array(), null );
 }
@@ -65,7 +65,7 @@ add_action( 'wp_enqueue_scripts', 'grd_enqueue_google_fonts' );
 
 If you want, you can also add the Google Fonts to the WordPress editor:
 
-```
+```php
 function grd_editor_styles() {
     add_editor_style( array( 'editor-style.css', grd_register_google_fonts() ) );
 }
