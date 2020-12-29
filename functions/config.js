@@ -1,5 +1,6 @@
 module.exports = {
   postDirectory: '__posts',
+  photosDirectory: 'public/photos',
   siteTitle: 'Greg Rickaby',
   siteDescription: 'Personal Blog',
   siteURL: 'https://gregrickaby.com',
