@@ -1,7 +1,7 @@
+import Layout from '@/components/Layout'
+import getPosts from '@/functions/getPosts'
 import Head from 'next/head'
 import Image from 'next/image'
-import {getPosts} from '@/lib/functions'
-import Layout from '@/components/Layout'
 
 export default function BlogPost({post}) {
   const {

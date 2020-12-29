@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import {getPosts} from '@/lib/functions'
+import getPosts from '@/functions/getPosts'
 import Layout from '@/components/Layout'
 
 export default function BlogPage({posts}) {

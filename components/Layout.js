@@ -1,4 +1,4 @@
-import config from '@/lib/config'
+import config from '@/functions/config'
 import PropTypes from 'prop-types'
 import Meta from './Meta'
 
