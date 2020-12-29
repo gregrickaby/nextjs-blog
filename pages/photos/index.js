@@ -9,16 +9,15 @@ export default function PhotosPage({photos}) {
         {photos?.length &&
           photos.map((photo, index) => {
             return (
-              <>
+              <div key={index}>
                 <Image
-                  key={index}
                   src={photo.pathRelative}
                   height={photo.height}
                   width={photo.width}
                   layout="fixed"
                 />
                 <p>{photo?.description}</p>
-              </>
+              </div>
             )
           })}
       </section>
