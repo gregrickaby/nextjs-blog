@@ -12,6 +12,10 @@ module.exports = {
   theme: {
     container: {
       center: true
+    },
+    fontFamily: {
+      sans: ['Oswald', 'sans-serif'],
+      serif: ['EB Garamond', 'serif']
     }
   },
   plugins: []

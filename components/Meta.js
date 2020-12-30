@@ -14,6 +14,11 @@ export default function Meta(props) {
       <meta name="msapplication-TileColor" content="#fffff" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#fff" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
