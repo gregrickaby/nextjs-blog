@@ -117,7 +117,7 @@ export async function processPhoto(photos) {
         dateFormatted: format(exif.CreateDate, 'LLLL d, yyyy'),
         dateUnix: getUnixTime(exif.CreateDate),
         description: description,
-        dimension: `${dimensions.width.toLocaleString()}x${dimensions.height.toLocaleString()}px`,
+        dimension: `${dimensions.width}x${dimensions.height}`,
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
         exposureCompensation: `${exif.ExposureCompensation} EV`,
         exposureTime: exposureTime.toFraction(true),
@@ -200,7 +200,7 @@ export function removeFileExtension(fileName) {
  */
 function formatFileSize(fileSize) {
   // No file size? Bail.
-  if (!fileSize?.length) {
+  if (!fileSize) {
     return null
   }
 
