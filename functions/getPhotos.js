@@ -110,12 +110,16 @@ export async function processPhoto(photos) {
         ? exif.longitude
         : false
 
+      const lens = Object.prototype.hasOwnProperty.call(exif, 'lens')
+        ? exif.lens
+        : false
+
       // Finally, return a nicely formatted object, containing lots of photo data.
       return {
         aperture: `ƒ/${exif.FNumber}`,
         artist: artist,
-        dateFormatted: format(exif.CreateDate, 'LLLL d, yyyy'),
-        dateUnix: getUnixTime(exif.CreateDate),
+        dateFormatted: format(exif.DateTimeOriginal, 'LLLL d, yyyy'),
+        dateUnix: getUnixTime(exif.DateTimeOriginal),
         description: description,
         dimension: `${dimensions.width}x${dimensions.height}`,
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
@@ -127,7 +131,7 @@ export async function processPhoto(photos) {
         height: dimensions.height,
         iso: exif.ISO,
         latitude: latitude,
-        lens: exif.LensModel,
+        lens: lens,
         longitude: longitude,
         make: exif.Make,
         metering: exif.MeteringMode,
