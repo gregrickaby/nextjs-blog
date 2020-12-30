@@ -1,19 +1,23 @@
 import config from '@/functions/config'
 import PropTypes from 'prop-types'
+import Footer from './Footer'
+import Header from './Header'
 import Meta from './Meta'
 
 export default function Layout({children, ...props}) {
   return (
-    <>
+    <div className="container text-center py-4 space-y-4">
       <Meta title={props.title} description={props.description} />
-      <main className="container m-auto">{children}</main>
-    </>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </div>
   )
 }
 
 Layout.defaultProps = {
   description: config.siteDescription,
-  title: config.siteTitle
+  title: config.siteName
 }
 
 Layout.propTypes = {
