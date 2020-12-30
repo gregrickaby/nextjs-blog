@@ -6,7 +6,7 @@ import Meta from './Meta'
 
 export default function Layout({children, ...props}) {
   return (
-    <div className="container py-4 space-y-8">
+    <div className="container max-w-prose py-4 space-y-8">
       <Meta title={props.title} description={props.description} />
       <Header />
       <main>{children}</main>
