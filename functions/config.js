@@ -6,14 +6,17 @@ module.exports = {
   siteURL: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
   defaultImage: '',
-  social: {
-    github: {
+  socialNetworks: [
+    {
       label: 'Github',
+      shield:
+        'https://img.shields.io/github/followers/gregrickaby?label=follow&style=social',
       url: 'https://github.com/gregrickaby/'
     },
-    twitter: {
+    {
       label: 'Twitter',
+      shield: 'https://img.shields.io/twitter/follow/gregrickaby?style=social',
       url: 'https://twitter.com/gregrickaby/'
     }
-  }
+  ]
 }
