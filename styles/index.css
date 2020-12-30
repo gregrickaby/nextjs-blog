@@ -20,6 +20,14 @@ body {
   @apply dark:bg-gray-900 dark:text-white;
 }
 
+a {
+  @apply underline;
+
+  &:hover {
+    @apply no-underline;
+  }
+}
+
 .grid {
   display: grid;
   gap: 10px;
