@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: {
     content: [
@@ -11,12 +13,24 @@ module.exports = {
   darkMode: 'media',
   theme: {
     container: {
-      center: true
+      center: true,
+      padding: {
+        DEFAULT: '2rem'
+      }
     },
     fontFamily: {
       sans: ['Oswald', 'sans-serif'],
       serif: ['EB Garamond', 'serif']
+    },
+    fontSize: {
+      'root-em': '18px'
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({addBase, config}) {
+      addBase({
+        html: {fontSize: config('theme.fontSize.root-em')}
+      })
+    })
+  ]
 }
