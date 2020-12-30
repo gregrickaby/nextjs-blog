@@ -9,9 +9,9 @@ import sizeOf from 'image-size'
 /**
  * Get all JPG photos.
  *
- * @return {object} The image, EXIF, and other metadata.
+ * @return {object}
  */
-export default async function getPhotos() {
+export async function getPhotos() {
   // Get the list of photos.
   const photos = getPhotosList()
 
@@ -24,6 +24,36 @@ export default async function getPhotos() {
 }
 
 /**
+ * Get a single photo.
+ *
+ * @param {string} fileName The file name of a photo.
+ * @return {array}
+ */
+export async function getPhotoByFileName(fileName) {
+  // No file name? Bail.
+  if (!fileName) {
+    return null
+  }
+
+  // Read a directory, and build a list of all files.
+  const allFiles = fs.readdirSync(photosDirectory)
+
+  // If there aren't any files at all, bail!
+  if (!allFiles?.length) {
+    return null
+  }
+
+  const fileNameWithExt = `${fileName}.jpg`
+
+  const doesItExist = fs.existsSync(path.join(photosDirectory, fileNameWithExt))
+
+  // If there's a match, push into an array.
+  if (doesItExist) {
+    return await processPhoto([fileNameWithExt])
+  }
+}
+
+/**
  * Extract and build photo data.
  *
  * Note: The exifr package is all Promise based.
@@ -33,7 +63,7 @@ export default async function getPhotos() {
  * @see https://www.npmjs.com/package/image-size
  * @return {object} The image EXIF and other metadata.
  */
-async function processPhoto(photos) {
+export async function processPhoto(photos) {
   // No photos? Bail.
   if (!photos?.length) {
     return null
@@ -90,6 +120,7 @@ async function processPhoto(photos) {
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
         exposureCompensation: `${exif.ExposureCompensation} EV`,
         exposureTime: exposureTime.toFraction(true),
+        fileName: photo,
         flash: exif.Flash,
         focalLength: `${exif.FocalLengthIn35mmFormat}mm`,
         height: dimensions.height,
@@ -104,6 +135,7 @@ async function processPhoto(photos) {
         pathFull: `${photosDirectory}/${photo}`,
         pathRelative: `/photos/${photo}`,
         size: formatFileSize(stats.size),
+        slug: removeFileExtension(photo),
         software: exif.Software,
         type: dimensions.type,
         width: dimensions.width
@@ -115,9 +147,9 @@ async function processPhoto(photos) {
 /**
  * Get all JPG images in a directory
  *
- * @return {array} A list of JPG images.
+ * @return {array}
  */
-function getPhotosList() {
+export async function getPhotosList() {
   // Read a directory, and build a list of all files.
   const allFiles = fs.readdirSync(photosDirectory)
 
@@ -145,10 +177,25 @@ function getPhotosList() {
 }
 
 /**
+ * Remove a file extension.
+ *
+ * @param {string} fileName A filename.
+ * @return {string}
+ */
+export function removeFileExtension(fileName) {
+  // No file name? Bail.
+  if (!fileName?.length) {
+    return null
+  }
+
+  return fileName.replace(/\.[^/.]+$/, '')
+}
+
+/**
  * Format number into human readable file size.
  *
  * @param {number} fileSize The file size in bytes.
- * @return {string}         The formatted file size.
+ * @return {string}
  */
 function formatFileSize(fileSize) {
   // No file size? Bail.
