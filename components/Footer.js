@@ -7,7 +7,7 @@ export default function Footer() {
         {!config?.length &&
           config.socialNetworks.map((network) => {
             return (
-              <a key={network?.label} href={network?.url}>
+              <a key={network?.label} href={network?.url} rel="noopener">
                 <img
                   src={network?.shield}
                   alt={`Follow ${config?.author} on ${network?.label}`}
@@ -18,8 +18,8 @@ export default function Footer() {
       </div>
       <p>
         &copy; 2007-{new Date().getFullYear()}{' '}
-        <a href={config.authorUrl} rel="noopener">
-          {config.siteAuthor}
+        <a href={config?.authorUrl} rel="noopener">
+          {config?.siteAuthor}
         </a>
       </p>
     </footer>
