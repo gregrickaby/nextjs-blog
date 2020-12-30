@@ -16,12 +16,7 @@ export default function Footer() {
             )
           })}
       </div>
-      <p>
-        &copy; 2007-{new Date().getFullYear()}{' '}
-        <a href={config?.authorUrl} rel="noopener">
-          {config?.siteAuthor}
-        </a>
-      </p>
+      <p>&copy; 2007-{new Date().getFullYear()} </p>
     </footer>
   )
 }
