@@ -1,6 +1,7 @@
-import Image from 'next/image'
-import getPhotos from '@/functions/getPhotos'
 import Layout from '@/components/Layout'
+import {getPhotos} from '@/functions/getPhotos'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function PhotosPage({photos}) {
   return (
@@ -10,13 +11,16 @@ export default function PhotosPage({photos}) {
           photos.map((photo, index) => {
             return (
               <div key={index}>
-                <Image
-                  src={photo.pathRelative}
-                  height={photo.height}
-                  width={photo.width}
-                  layout="fixed"
-                />
-                <p>{photo?.description}</p>
+                <Link href={`/photos/${photo.slug}`}>
+                  <a>
+                    <Image
+                      src={photo.pathRelative}
+                      height={photo.height}
+                      width={photo.width}
+                      layout="responsive"
+                    />
+                  </a>
+                </Link>
               </div>
             )
           })}
