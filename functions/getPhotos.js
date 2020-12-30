@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 import {photosDirectory, siteAuthor} from '@/functions/config'
-import {format} from 'date-fns'
+import {format, getUnixTime} from 'date-fns'
 import exifr from 'exifr'
 import Fraction from 'fraction.js'
 import sizeOf from 'image-size'
@@ -64,7 +64,6 @@ export async function getPhotoByFileName(fileName) {
  * @return {object} The image EXIF and other metadata.
  */
 export async function processPhoto(photos) {
-  console.log(photos)
   // No photos? Bail.
   if (!photos?.length) {
     return null
@@ -115,7 +114,8 @@ export async function processPhoto(photos) {
       return {
         aperture: `ƒ/${exif.FNumber}`,
         artist: artist,
-        date: format(exif.CreateDate, 'LLLL d, yyyy'),
+        dateFormatted: format(exif.CreateDate, 'LLLL d, yyyy'),
+        dateUnix: getUnixTime(exif.CreateDate),
         description: description,
         dimension: `${dimensions.width.toLocaleString()}x${dimensions.height.toLocaleString()}px`,
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
