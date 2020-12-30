@@ -13,7 +13,7 @@ import sizeOf from 'image-size'
  */
 export async function getPhotos() {
   // Get the list of photos.
-  const photos = getPhotosList()
+  const photos = await getPhotosList()
 
   // No photos? Bail.
   if (!photos?.length) {
@@ -64,6 +64,7 @@ export async function getPhotoByFileName(fileName) {
  * @return {object} The image EXIF and other metadata.
  */
 export async function processPhoto(photos) {
+  console.log(photos)
   // No photos? Bail.
   if (!photos?.length) {
     return null
