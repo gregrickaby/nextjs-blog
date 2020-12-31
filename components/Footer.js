@@ -2,8 +2,8 @@ import config from '@/functions/config'
 
 export default function Footer() {
   return (
-    <footer className="text-center text-xs font-mono space-y-2 pt-4 border-t-2">
-      <div className="flex justify-center space-x-4">
+    <footer className="text-center text-xs font-mono py-4 border-t-2">
+      <div className="flex justify-center space-x-4 mb-2">
         {!config?.length &&
           config.socialNetworks.map((network) => {
             return (
@@ -16,7 +16,7 @@ export default function Footer() {
             )
           })}
       </div>
-      <p>&copy; 2007-{new Date().getFullYear()} </p>
+      <small>&copy; 2007-{new Date().getFullYear()} </small>
     </footer>
   )
 }
