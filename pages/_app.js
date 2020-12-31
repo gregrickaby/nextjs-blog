@@ -1,4 +1,5 @@
 import '@/styles/index.css'
+import '@/styles/prism-vscode-theme.css'
 import PropTypes from 'prop-types'
 
 export default function App({Component, pageProps}) {
