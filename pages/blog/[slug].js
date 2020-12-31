@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import {postFiles, POSTS_PATH} from '@/functions/getPosts'
+import {mdxFileList, POSTS_PATH} from '@/functions/getMdx'
 import fs from 'fs'
 import matter from 'gray-matter'
 import hydrate from 'next-mdx-remote/hydrate'
@@ -30,7 +30,7 @@ export default function Post({source, frontMatter}) {
 }
 
 export const getStaticPaths = async () => {
-  const paths = postFiles
+  const paths = mdxFileList
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({params: {slug}}))
 

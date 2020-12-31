@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import {postFiles, POSTS_PATH} from '@/functions/getPosts'
+import {mdxFileList, POSTS_PATH} from '@/functions/getMdx'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from 'next/link'
@@ -30,7 +30,7 @@ export default function PostArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const posts = postFiles.map((filePath) => {
+  const posts = mdxFileList.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const {content, data} = matter(source)
 

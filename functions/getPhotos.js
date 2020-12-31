@@ -9,7 +9,7 @@ import path from 'path'
 /**
  * Create a list of all (.jpg) photos.
  */
-export const getPhotosList = fs
+export const getJpgList = fs
   .readdirSync(photosDirectory)
   .filter((path) => /\.jpg?$/.test(path))
 
@@ -20,7 +20,7 @@ export const getPhotosList = fs
  */
 export async function getPhotos() {
   // Get the list of photos.
-  const photos = getPhotosList
+  const photos = getJpgList
 
   // No photos? Bail.
   if (!photos?.length) {
