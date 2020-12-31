@@ -48,7 +48,7 @@ export const getStaticProps = async ({params}) => {
     mdxOptions: {
       remarkPlugins: [
         a11yEmoji,
-        dropcap,
+        [dropcap, {invisibleClass: 'sr-only'}],
         [oembed, {syncWidget: true}],
         [
           prism,
