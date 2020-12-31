@@ -173,7 +173,7 @@ export function removeFileExtension(fileName) {
  * @param {number} fileSize The file size in bytes.
  * @return {string}
  */
-function formatFileSize(fileSize) {
+export function formatFileSize(fileSize) {
   // No file size? Bail.
   if (!fileSize) {
     return null
