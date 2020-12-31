@@ -1,5 +1,6 @@
-import '@/styles/index.css'
+import '@/styles/tailwind.css'
 import '@/styles/prism.css'
+import '@/styles/global.css'
 import PropTypes from 'prop-types'
 
 export default function App({Component, pageProps}) {
