@@ -1,10 +1,17 @@
-const fs = require('fs')
-const path = require('path')
 import {photosDirectory, siteAuthor} from '@/functions/config'
 import {format, getUnixTime} from 'date-fns'
 import exifr from 'exifr'
 import Fraction from 'fraction.js'
+import fs from 'fs'
 import sizeOf from 'image-size'
+import path from 'path'
+
+/**
+ * Create a list of all (.jpg) photos.
+ */
+export const getPhotosList = fs
+  .readdirSync(photosDirectory)
+  .filter((path) => /\.jpg?$/.test(path))
 
 /**
  * Get all JPG photos.
@@ -13,7 +20,7 @@ import sizeOf from 'image-size'
  */
 export async function getPhotos() {
   // Get the list of photos.
-  const photos = await getPhotosList()
+  const photos = getPhotosList
 
   // No photos? Bail.
   if (!photos?.length) {
@@ -35,22 +42,20 @@ export async function getPhotoByFileName(fileName) {
     return null
   }
 
-  // Read a directory, and build a list of all files.
-  const allFiles = fs.readdirSync(photosDirectory)
+  // Append file extension.
+  const fileNameWithExt = `${fileName}.jpg`
 
-  // If there aren't any files at all, bail!
-  if (!allFiles?.length) {
+  // Check if photo with matching file name exists.
+  const doesFileExist = fs.existsSync(
+    path.join(photosDirectory, fileNameWithExt)
+  )
+
+  // No match? Bail.
+  if (!doesFileExist) {
     return null
   }
 
-  const fileNameWithExt = `${fileName}.jpg`
-
-  const doesItExist = fs.existsSync(path.join(photosDirectory, fileNameWithExt))
-
-  // If there's a match, push into an array.
-  if (doesItExist) {
-    return await processPhoto([fileNameWithExt])
-  }
+  return await processPhoto([fileNameWithExt])
 }
 
 /**
@@ -61,7 +66,8 @@ export async function getPhotoByFileName(fileName) {
  * @see https://www.npmjs.com/package/exifr
  * @see https://www.npmjs.com/package/fraction.js
  * @see https://www.npmjs.com/package/image-size
- * @return {object} The image EXIF and other metadata.
+ * @param {array} photos An array of photo(s).
+ * @return {object}
  */
 export async function processPhoto(photos) {
   // No photos? Bail.
@@ -87,10 +93,7 @@ export async function processPhoto(photos) {
       // Convert exposure time to industry standard fraction.
       const exposureTime = new Fraction(exif.ExposureTime)
 
-      /**
-       * The exifr package will only return object keys IF they hold data,
-       * therefore, verify irregular object keys are set.
-       */
+      // Verify object keys are set, before destructuring them.
       const artist = Object.prototype.hasOwnProperty.call(exif, 'artist')
         ? exif.artist
         : siteAuthor
@@ -147,38 +150,6 @@ export async function processPhoto(photos) {
       }
     })
   )
-}
-
-/**
- * Get all JPG images in a directory
- *
- * @return {array}
- */
-export async function getPhotosList() {
-  // Read a directory, and build a list of all files.
-  const allFiles = fs.readdirSync(photosDirectory)
-
-  // If there aren't any files at all, bail!
-  if (!allFiles?.length) {
-    return null
-  }
-
-  // Set an array for the photos.
-  let jpgPhotos = []
-
-  // Only build a list of JPG's.
-  allFiles.map((file) => {
-    if ('.jpg' === path.extname(file)) {
-      jpgPhotos.push(file)
-    }
-  })
-
-  // If there aren't any JPGs', bail!
-  if (!jpgPhotos?.length) {
-    return null
-  }
-
-  return jpgPhotos
 }
 
 /**
