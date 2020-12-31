@@ -5,29 +5,25 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
-import dynamic from 'next/dynamic'
 import path from 'path'
+import dropcap from 'remark-dropcap'
 import oembed from 'remark-oembed'
 import prism from 'remark-prism'
 
 /**
  * Dynamically import components into MDX files.
  */
-const components = {
-  Article: dynamic(() => import('../../components/Article'))
-}
+const components = {}
 
 export default function Post({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <div className="post-header">
+      <div className="pb-4">
         <h1>{frontMatter.title}</h1>
-        {frontMatter.excerpt && (
-          <p className="description">{frontMatter.excerpt}</p>
-        )}
+        {frontMatter.excerpt && <p>{frontMatter.excerpt}</p>}
       </div>
-      <main>{content}</main>
+      <main className="space-y-4">{content}</main>
     </Layout>
   )
 }
@@ -52,6 +48,7 @@ export const getStaticProps = async ({params}) => {
     mdxOptions: {
       remarkPlugins: [
         a11yEmoji,
+        dropcap,
         [oembed, {syncWidget: true}],
         [
           prism,
