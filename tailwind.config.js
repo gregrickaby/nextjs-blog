@@ -18,10 +18,6 @@ module.exports = {
         DEFAULT: '2rem'
       }
     },
-    fontFamily: {
-      sans: ['Oswald', 'sans-serif'],
-      serif: ['EB Garamond', 'serif']
-    },
     fontSize: {
       'root-em': '18px'
     }
