@@ -4,11 +4,11 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className="flex justify-between space-y-2">
-      <div className="flex flex-col space-y-2">
-        <h1 className="text-4xl">
+    <header className="flex flex-col text-center md:flex-row justify-between space-y-2">
+      <div className="flex flex-col">
+        <h1 className="text-4xl font-sans">
           <Link href="/">
-            <a>{config.siteName}</a>
+            <a className="no-underline">{config.siteName}</a>
           </Link>
         </h1>
         <p className="text-1xl">{config.siteDescription}</p>

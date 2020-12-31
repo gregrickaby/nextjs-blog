@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Nav() {
   return (
-    <nav className="flex space-x-4">
+    <nav className="md:flex space-x-4 font-sans">
       <Link href="/">
         <a>Home</a>
       </Link>
