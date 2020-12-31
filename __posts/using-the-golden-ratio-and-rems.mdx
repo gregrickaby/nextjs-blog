@@ -31,9 +31,9 @@ The problem with Pixels are, they absolutely do-not-scale in Internet Explorer
 
 First you need to set a default "root" font-size variable:
 
-```
+```scss
 html {
-    font-size: 62.5%
+  font-size: 62.5%;
 }
 ```
 
@@ -43,39 +43,39 @@ Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This
 
 Calculate other font sizes by dividing your desired size by the `$rembase` (in pixels). Let's say, you want your `<h1>` tags to be 26px?
 
-```
+```scss
 26 ÷ 10 = 2.6rem
 ```
 
 or
 
-```
+```scss
 32 ÷ 10 = 3.2rem
 48 ÷ 10 = 4.8rem
 ```
 
 and so on...Let's take a look at a sample Stylesheet:
 
-```
+```scss
 /* $rembase = 10px */
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.0rem; /* 10 ÷ $rembase */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem; /* 10 ÷ $rembase */
 }
 
 h1,
 h2 {
-    font-size: 2.6rem; /* 26 ÷ $rembase */
+  font-size: 2.6rem; /* 26 ÷ $rembase */
 }
 
 h3,
 h4 {
-    font-size: 1.8rem; /* 18 ÷ $rembase */
+  font-size: 1.8rem; /* 18 ÷ $rembase */
 }
 ```
 
@@ -95,42 +95,42 @@ Line heights have always given me headaches, that was until Chris Pearson releas
 
 The calculator tells us our default line height should be 26px. This variable is the **$line-height-base.**
 
-We're going to be using "[Unitless line heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)" as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the <body> tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
+We're going to be using "[Unitless line heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)" as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the `<body> `tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
 
 To calculate, you divide the **$line-height-base** by the font-size for that particular element (in pixels).
 
-```
+```scss
 26 ÷ 16 = 1.625
 ```
 
 How would that look in our sample style-sheet?
 
-```
+```scss
 /*
 $fontbase = 16
 $line-height-base = 26
 */
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.625; /* $line-height-base ÷ $fontbase */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.625; /* $line-height-base ÷ $fontbase */
 }
 
 h1,
 h2 {
-    font-size: 2.6rem;
-    line-height: 1; /* $line-height-base ÷ 26 */
+  font-size: 2.6rem;
+  line-height: 1; /* $line-height-base ÷ 26 */
 }
 
 h3,
 h4 {
-    font-size: 1.8rem;
-    line-height: 1.444 /* $line-height-base ÷ 18 */
+  font-size: 1.8rem;
+  line-height: 1.444; /* $line-height-base ÷ 18 */
 }
 ```
 
@@ -140,25 +140,25 @@ _Note: We'll only use three decimal places to right since most browsers only cal
 
 Yes, you can even use REM to set your margins. Margins, or "vertical spacing" is calculated using either 24px or 48px to maintain vertical rhythm. Let's divide 24px by our `$rembase:`
 
-```
+```scss
 24 ÷ 10 = 2.4rem
 ```
 
 Here's our sample stylesheet:
 
-```
+```scss
 /*
 $rembase = 10
 $line-height-base = 26
 */
 
 .some-div {
-     margin: 2.4rem 0; /* 24 ÷ $rembase */
+  margin: 2.4rem 0; /* 24 ÷ $rembase */
 }
 
 .another-div {
-    padding: 4.8rem; /* 48 ÷ $rembase */
-    margin-bottom: 2.4rem; /* 24 ÷ $rembase */
+  padding: 4.8rem; /* 48 ÷ $rembase */
+  margin-bottom: 2.4rem; /* 24 ÷ $rembase */
 }
 ```
 
@@ -172,34 +172,34 @@ Check out this list: [http://caniuse.com/rem](http://caniuse.com/rem)
 
 As is the case with most CSS3 wizardry, REM support in IE 6, 7, and 8 is lacking and will require a PX fallback. By declaring REM's after PX's in the CSS this example  will degrade gracefully to the PX:
 
-```
+```scss
 html {
-    font-size: 62.5;
+  font-size: 62.5;
 }
 
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    font-size: 1.6rem;
-    line-height: 1.625;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
 }
 
 h1,
 h2 {
-    font-size: 26px;
-    font-size: 2.6rem;
+  font-size: 26px;
+  font-size: 2.6rem;
 }
 
 h3,
 h4 {
-    font-size: 18px;
-    font-size: 1.8rem;
-    line-height: 1.444;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.444;
 }
 
 .some-div {
-     margin: 24px 0;
-     margin: 2.4rem 0;
+  margin: 24px 0;
+  margin: 2.4rem 0;
 }
 ```
 
@@ -207,7 +207,7 @@ The purpose of this post was not to stand on a soapbox and preach, but educate y
 
 ### PX to REM Sass Mixin
 
-```
+```scss
 // Create REM values with PX fall back
 //
 // Generate a REM with PX fallback from
@@ -237,58 +237,54 @@ $baseFontSize: 10; // Based on HTML reset html { font-size: 62.5%; }
 }
 
 @mixin rem($property, $values) {
-	$px : ();
-	$rem: ();
+  $px: ();
+  $rem: ();
 
-	$root: $baseFontSize;
+  $root: $baseFontSize;
 
-	@each $value in $values {
-		@if $value == 0 or $value == auto {
-			$px : append($px , $value);
-			$rem: append($rem, $value);
-		}
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else if type-of($value) == number {
+      $unit: unit($value);
+      $val: parseInt($value);
 
-		@else if type-of($value) == number {
-			$unit: unit($value);
-			$val: parseInt($value);
+      @if $unit == 'px' {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / $root + rem));
+      }
 
-			@if $unit == "px" {
-				$px : append($px,  $value);
-				$rem: append($rem, ($val / $root + rem));
-			}
+      @if $unit == 'rem' {
+        $px: append($px, ($val * $root + px));
+        $rem: append($rem, $value);
+      }
+    } @else {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    }
+  }
 
-			@if $unit == "rem" {
-				$px : append($px,  ($val * $root + px));
-				$rem: append($rem, $value);
-			}
-		}
-
-		@else {
-			$px : append($px,  $value);
-			$rem: append($rem, $value);
-		}
-	}
-
-	@if $px == $rem {
-		#{$property}: $px;
-	} @else {
-		#{$property}: $px;
-		#{$property}: $rem;
-	}
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
 }
 
 @function rem($value) {
-	$root: $baseFontSize;
-	$val: parseInt($value);
-	$return: ();
+  $root: $baseFontSize;
+  $val: parseInt($value);
+  $return: ();
 
-	@if unit($value) == "px" {
-		$return: append($return, ($val / $root + rem));
-	} @else {
-		$return: append($return, ($val * $root + px));
-	}
+  @if unit($value) == 'px' {
+    $return: append($return, ($val / $root + rem));
+  } @else {
+    $return: append($return, ($val * $root + px));
+  }
 
-	@return $return;
+  @return $return;
 }
 ```
 
