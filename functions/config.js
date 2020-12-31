@@ -1,6 +1,7 @@
 module.exports = {
-  postDirectory: '__posts',
-  pageDirectory: '__pages',
+  booksDirectory: '__books',
+  postsDirectory: '__posts',
+  pagesDirectory: '__pages',
   photosDirectory: 'public/photos',
   siteName: 'Greg Rickaby',
   siteDescription: 'My personal website',
