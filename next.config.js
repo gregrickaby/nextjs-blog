@@ -1,6 +1,15 @@
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/
-})
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'mdx']
-})
+module.exports = {
+  webpack(config) {
+    config.node = {fs: 'empty'}
+    return config
+  },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true
+      }
+    ]
+  }
+}
