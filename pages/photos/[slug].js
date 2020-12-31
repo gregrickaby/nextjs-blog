@@ -10,7 +10,7 @@ export default function SinglePhoto({data}) {
   const [photo] = data
   return (
     <Layout>
-      <section>
+      <main className="space-y-4">
         <Image
           src={photo.pathRelative}
           height={photo.height}
@@ -18,7 +18,7 @@ export default function SinglePhoto({data}) {
           layout="responsive"
         />
         <pre>{JSON.stringify(photo, null, 2)}</pre>
-      </section>
+      </main>
     </Layout>
   )
 }
