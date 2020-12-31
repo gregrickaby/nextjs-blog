@@ -1,12 +1,14 @@
 import Layout from '@/components/Layout'
 import {PAGES_PATH} from '@/functions/getMdx'
+import a11yEmoji from '@fec/remark-a11y-emoji'
 import fs from 'fs'
 import matter from 'gray-matter'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import path from 'path'
-
+import oembed from 'remark-oembed'
+import prism from 'remark-prism'
 /**
  * Dynamically import components into MDX files.
  */
@@ -36,8 +38,28 @@ export const getStaticProps = async () => {
   const mdxSource = await renderToString(content, {
     components,
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: []
+      remarkPlugins: [
+        a11yEmoji,
+        [oembed, {syncWidget: true}],
+        [
+          prism,
+          {
+            transformInlineCode: true,
+            plugins: [
+              'autolinker',
+              'command-line',
+              'clipboard',
+              'data-uri-highlight',
+              'diff-highlight',
+              'inline-color',
+              'keep-markup',
+              'line-numbers',
+              'show-invisibles',
+              'treeview'
+            ]
+          }
+        ]
+      ]
     },
     scope: data
   })
