@@ -10,12 +10,6 @@
       @apply no-underline;
     }
   }
-
-  pre {
-    @apply p-2 dark:bg-gray-900 overflow-x-auto;
-
-    font-size: 0.75rem;
-  }
 }
 
 html,
