@@ -24,8 +24,7 @@ export default function SinglePhoto({data}) {
 }
 
 export async function getStaticPaths() {
-  const photos = await getPhotosList()
-  const paths = photos.map((photo) => ({
+  const paths = getPhotosList.map((photo) => ({
     params: {slug: removeFileExtension(photo)}
   }))
 
