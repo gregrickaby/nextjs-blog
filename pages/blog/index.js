@@ -27,7 +27,7 @@ export default function PostArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const posts = mdxFileList(POSTS_PATH).map((filePath) => {
+  const data = mdxFileList(POSTS_PATH).map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const {content, data} = matter(source)
 
@@ -36,6 +36,11 @@ export function getStaticProps() {
       data,
       filePath
     }
+  })
+
+  // Sort posts by date, desc.
+  const posts = data.sort((post1, post2) => {
+    return post1.data.date > post2.data.date ? '-1' : '1'
   })
 
   return {props: {posts}}
