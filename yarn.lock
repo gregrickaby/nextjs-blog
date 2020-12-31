@@ -7567,6 +7567,13 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
+remark-dropcap@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/remark-dropcap/-/remark-dropcap-0.1.7.tgz#d296858fed9b7509b507877906c5d8321dcebde7"
+  integrity sha512-s6ypvGgQAiO+rNgMmxgM7EGSDgNXZKfZvVxEZ6o7eUqgB/Doo36hGaxxpvn1EWGswwvrpMvwtoLmLrMa3P+KeQ==
+  dependencies:
+    unist-util-visit "^2.0.0"
+
 remark-footnotes@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/remark-footnotes/-/remark-footnotes-2.0.0.tgz#9001c4c2ffebba55695d2dd80ffb8b82f7e6303f"
