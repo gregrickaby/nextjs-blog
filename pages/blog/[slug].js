@@ -56,7 +56,19 @@ export const getStaticProps = async ({params}) => {
         [
           prism,
           {
-            transformInlineCode: true
+            transformInlineCode: true,
+            plugins: [
+              'autolinker',
+              'command-line',
+              'clipboard',
+              'data-uri-highlight',
+              'diff-highlight',
+              'inline-color',
+              'keep-markup',
+              'line-numbers',
+              'show-invisibles',
+              'treeview'
+            ]
           }
         ]
       ]
