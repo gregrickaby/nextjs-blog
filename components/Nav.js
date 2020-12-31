@@ -3,6 +3,14 @@ import Link from 'next/link'
 export default function Nav() {
   return (
     <nav className="flex space-x-4">
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+
+      <Link href="/books">
+        <a>Books</a>
+      </Link>
+
       <Link href="/blog">
         <a>Blog</a>
       </Link>
