@@ -24,21 +24,27 @@
   h6 {
     font-size: 1rem;
   }
+
+  p {
+    @apply leading-relaxed break-words;
+
+    letter-spacing: -0.0035rem;
+  }
 }
 
 html,
 body {
-  @apply dark:bg-black dark:text-white;
+  @apply dark:bg-gray-900 dark:text-white font-serif;
 }
 
-.grid {
-  display: grid;
-  gap: 10px;
+.dropcap {
+  @apply float-left mt-2 p-2 leading-10;
+
+  font-size: 5rem;
 }
 
 @media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: masonry;
+  p {
+    font-size: 1.25rem;
   }
 }
