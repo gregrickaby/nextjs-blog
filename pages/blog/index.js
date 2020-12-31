@@ -8,8 +8,10 @@ import path from 'path'
 export default function PostArchive({posts}) {
   return (
     <Layout>
-      <h1>Blog Posts</h1>
-      <p>Entries from the blog.</p>
+      <div className="pb-4">
+        <h1>Blog</h1>
+        <p>My latest posts...</p>
+      </div>
       <ul>
         {posts.map((post) => (
           <li key={post.filePath}>

@@ -6,9 +6,11 @@ import Link from 'next/link'
 export default function PhotosPage({photos}) {
   return (
     <Layout>
-      <h1>Photos</h1>
-      <p>Some of my best photos.</p>
-      <section className="grid">
+      <div className="pb-4">
+        <h1>Photos</h1>
+        <p>Some of my best photos...</p>
+      </div>
+      <section className="space-y-8">
         {photos?.length &&
           photos.map((photo, index) => {
             return (
