@@ -27,7 +27,7 @@ export default function PostArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const posts = mdxFileList.map((filePath) => {
+  const posts = mdxFileList(POSTS_PATH).map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const {content, data} = matter(source)
 

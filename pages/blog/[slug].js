@@ -30,7 +30,7 @@ export default function Post({source, frontMatter}) {
 }
 
 export const getStaticPaths = async () => {
-  const paths = mdxFileList
+  const paths = mdxFileList(POSTS_PATH)
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({params: {slug}}))
 
