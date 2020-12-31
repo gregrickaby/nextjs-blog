@@ -1,52 +1,62 @@
 import Layout from '@/components/Layout'
-import getPosts from '@/functions/getPosts'
-import Head from 'next/head'
-import Image from 'next/image'
+import {postFiles, POSTS_PATH} from '@/functions/getPosts'
+import fs from 'fs'
+import matter from 'gray-matter'
+import hydrate from 'next-mdx-remote/hydrate'
+import renderToString from 'next-mdx-remote/render-to-string'
+import dynamic from 'next/dynamic'
+import path from 'path'
 
-export default function BlogPost({post}) {
-  const {
-    attributes: {coverImage, date, title},
-    html
-  } = post
+/**
+ * Dynamically import components into MDX files.
+ */
+const components = {
+  Article: dynamic(() => import('../../components/Article'))
+}
+
+export default function Post({source, frontMatter}) {
+  const content = hydrate(source, {components})
   return (
     <Layout>
-      <article>
-        <Head>
-          <link
-            rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"
-          />
-        </Head>
-        <Image
-          src={coverImage}
-          alt={`Cover Image for ${title}`}
-          layout="responsive"
-          width={960}
-          height={360}
-        />
-        <h1 dangerouslySetInnerHTML={{__html: title}} />
-        <time>{date}</time>
-        <div dangerouslySetInnerHTML={{__html: html}}></div>
-      </article>
+      <div className="post-header">
+        <h1>{frontMatter.title}</h1>
+        {frontMatter.excerpt && (
+          <p className="description">{frontMatter.excerpt}</p>
+        )}
+      </div>
+      <main>{content}</main>
     </Layout>
   )
 }
 
-export async function getStaticPaths() {
-  const posts = getPosts()
+export const getStaticPaths = async () => {
+  const paths = postFiles
+    .map((path) => path.replace(/\.mdx?$/, ''))
+    .map((slug) => ({params: {slug}}))
 
   return {
-    paths: posts.map((post) => ({params: {slug: post.attributes.slug}})),
+    paths,
     fallback: false
   }
 }
 
-export async function getStaticProps({params}) {
-  const posts = getPosts()
+export const getStaticProps = async ({params}) => {
+  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
+  const source = fs.readFileSync(postFilePath)
+  const {content, data} = matter(source)
+  const mdxSource = await renderToString(content, {
+    components,
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: []
+    },
+    scope: data
+  })
 
   return {
     props: {
-      post: posts.find((post) => post.attributes.slug === params.slug)
+      source: mdxSource,
+      frontMatter: data
     }
   }
 }

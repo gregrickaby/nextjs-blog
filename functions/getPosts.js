@@ -1,38 +1,15 @@
-const fs = require('fs')
-const marked = require('marked')
-const fm = require('front-matter')
-const hljs = require('highlight.js')
 import {postDirectory} from '@/functions/config'
+import fs from 'fs'
+import path from 'path'
 
-export default function getPosts(allPosts = []) {
-  marked.setOptions({
-    highlight: (code, lang) => {
-      if (lang) {
-        return hljs.highlight(lang, code).value
-      }
+/**
+ * Set the full post path.
+ */
+export const POSTS_PATH = path.join(process.cwd(), postDirectory)
 
-      return code
-    }
-  })
-
-  const postFiles = fs.readdirSync(postDirectory)
-
-  for (let i = 0; i < postFiles.length; i++) {
-    const postContent = fs.readFileSync(`${postDirectory}/${postFiles[i]}`, {
-      encoding: 'utf-8'
-    })
-
-    const {body, ...frontMatter} = fm(postContent)
-
-    allPosts.push({
-      html: marked(body),
-      ...frontMatter
-    })
-  }
-
-  const posts = allPosts.sort((post1, post2) => {
-    return post1.attributes.date > post2.attributes.date ? '-1' : '1'
-  })
-
-  return posts
-}
+/**
+ * List of all blog posts.
+ */
+export const postFiles = fs
+  .readdirSync(POSTS_PATH)
+  .filter((path) => /\.mdx?$/.test(path))
