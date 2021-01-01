@@ -16,6 +16,7 @@ export default function SinglePhoto({data}) {
           height={photo?.height}
           width={photo?.width}
           layout="responsive"
+          quality="100"
         />
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
