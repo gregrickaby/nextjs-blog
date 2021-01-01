@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import {mdxFileList, POSTS_PATH} from '@/functions/getMdx'
+import {getPostsPath, POSTS_PATH} from '@/functions/getMdx'
 import a11yEmoji from '@fec/remark-a11y-emoji'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -32,9 +32,7 @@ export default function Post({source, frontMatter}) {
 }
 
 export const getStaticPaths = async () => {
-  const paths = mdxFileList(POSTS_PATH)
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    .map((slug) => ({params: {slug}}))
+  const paths = getPostsPath(POSTS_PATH)
 
   return {
     paths,

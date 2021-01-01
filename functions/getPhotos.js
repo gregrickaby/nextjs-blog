@@ -14,7 +14,7 @@ export const getJpgList = fs
   .filter((path) => /\.jpg?$/.test(path))
 
 /**
- * Get all JPG photos.
+ * Get all JPG photos and their data.
  *
  * @return {object}
  */
@@ -192,4 +192,15 @@ export function formatFileSize(fileSize) {
     sizes.length - 1
   )
   return `${(fileSize / 1024 ** i).toFixed(i ? 1 : 0)} ${sizes[i]}`
+}
+
+/**
+ * Get all photo paths.
+ *
+ * @return {object}
+ */
+export function getPhotosPaths() {
+  return getJpgList?.map((photo) => ({
+    params: {slug: removeFileExtension(photo)}
+  }))
 }
