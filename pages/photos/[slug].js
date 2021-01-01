@@ -10,14 +10,22 @@ export default function SinglePhoto({data}) {
   const [photo] = data
   return (
     <Layout>
-      <main className="space-y-4">
-        <Image
-          src={photo?.pathRelative}
-          height={photo?.height}
-          width={photo?.width}
-          layout="responsive"
-          quality="100"
-        />
+      <main className="max-w-3xl">
+        <div className="full-width">
+          {photo?.description && (
+            <h1 className="post-title text-center my-8">
+              {photo?.description}
+            </h1>
+          )}
+          <Image
+            alt={photo?.description}
+            src={photo?.pathRelative}
+            height={photo?.height}
+            width={photo?.width}
+            layout="responsive"
+            quality="100"
+          />
+        </div>
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
     </Layout>
