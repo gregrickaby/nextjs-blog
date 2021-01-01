@@ -54,6 +54,11 @@ body {
   letter-spacing: -0.011em;
 }
 
+.full-width {
+  margin-left: calc(35% - 35vw);
+  margin-right: calc(35% - 35vw);
+}
+
 @media (min-width: 768px) {
   p {
     font-size: 1.25rem;
