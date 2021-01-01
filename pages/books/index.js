@@ -16,16 +16,17 @@ export default function PostArchive({posts}) {
         </p>
       </div>
       <ul>
-        {posts.map((post) => (
-          <li key={post.filePath}>
-            <Link
-              as={`/books/${post.filePath.replace(/\.mdx?$/, '')}`}
-              href={`/books/[slug]`}
-            >
-              <a>{post.data.title}</a>
-            </Link>
-          </li>
-        ))}
+        {posts?.length &&
+          posts?.map((post) => (
+            <li key={post?.filePath}>
+              <Link
+                as={`/books/${post?.filePath.replace(/\.mdx?$/, '')}`}
+                href={`/books/[slug]`}
+              >
+                <a>{post?.data.title}</a>
+              </Link>
+            </li>
+          ))}
       </ul>
     </Layout>
   )

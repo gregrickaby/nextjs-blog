@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="border-t-2"></div>
       <div className="flex justify-center space-x-4">
         {!config?.length &&
-          config.socialNetworks.map((network) => {
+          config?.socialNetworks.map((network) => {
             return (
               <a key={network?.label} href={network?.url} rel="noopener">
                 <img

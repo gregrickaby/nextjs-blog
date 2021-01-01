@@ -13,16 +13,17 @@ export default function PostArchive({posts}) {
         <p>My latest posts...</p>
       </div>
       <ul>
-        {posts.map((post) => (
-          <li key={post.filePath}>
-            <Link
-              as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`}
-              href={`/blog/[slug]`}
-            >
-              <a>{post.data.title}</a>
-            </Link>
-          </li>
-        ))}
+        {posts?.length &&
+          posts?.map((post) => (
+            <li key={post?.filePath}>
+              <Link
+                as={`/blog/${post?.filePath.replace(/\.mdx?$/, '')}`}
+                href={`/blog/[slug]`}
+              >
+                <a>{post?.data.title}</a>
+              </Link>
+            </li>
+          ))}
       </ul>
     </Layout>
   )
@@ -42,7 +43,7 @@ export function getStaticProps() {
 
   // Sort posts by date, desc.
   const posts = data.sort((post1, post2) => {
-    return post1.data.date > post2.data.date ? '-1' : '1'
+    return post1?.data.date > post2?.data.date ? '-1' : '1'
   })
 
   return {props: {posts}}

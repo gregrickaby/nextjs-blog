@@ -7,12 +7,12 @@ export default function Header() {
     <header className="flex flex-col md:flex-row justify-between text-center">
       <div className="md:flex">
         <Image
-          alt={config.siteAuthor}
+          alt={config?.siteAuthor}
           className="rounded-full"
           height="96"
           layout="fixed"
           quality="100"
-          src={config.authorAvatar}
+          src={config?.authorAvatar}
           width="96"
         />
         <div className="flex flex-col justify-center md:ml-4 font-sans mb-4 md:mx-0">

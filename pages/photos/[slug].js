@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout'
 import {
-  getPhotoByFileName,
   getJpgList,
+  getPhotoByFileName,
   removeFileExtension
 } from '@/functions/getPhotos'
 import Image from 'next/image'
@@ -12,9 +12,9 @@ export default function SinglePhoto({data}) {
     <Layout>
       <main className="space-y-4">
         <Image
-          src={photo.pathRelative}
-          height={photo.height}
-          width={photo.width}
+          src={photo?.pathRelative}
+          height={photo?.height}
+          width={photo?.width}
           layout="responsive"
         />
         <pre>{JSON.stringify(photo, null, 2)}</pre>
@@ -24,7 +24,7 @@ export default function SinglePhoto({data}) {
 }
 
 export async function getStaticPaths() {
-  const paths = getJpgList.map((photo) => ({
+  const paths = getJpgList?.map((photo) => ({
     params: {slug: removeFileExtension(photo)}
   }))
 

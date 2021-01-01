@@ -12,15 +12,15 @@ export default function PhotosPage({photos}) {
       </div>
       <section className="space-y-8">
         {photos?.length &&
-          photos.map((photo, index) => {
+          photos?.map((photo, index) => {
             return (
               <div key={index}>
-                <Link href={`/photos/${photo.slug}`}>
+                <Link href={`/photos/${photo?.slug}`}>
                   <a>
                     <Image
-                      src={photo.pathRelative}
-                      height={photo.height}
-                      width={photo.width}
+                      src={photo?.pathRelative}
+                      height={photo?.height}
+                      width={photo?.width}
                       layout="responsive"
                     />
                   </a>
@@ -37,8 +37,8 @@ export async function getStaticProps() {
   const data = await getPhotos()
 
   // Sort photos by date, desc.
-  const photos = data.sort((photo1, photo2) => {
-    return photo1.dateUnix > photo2.dateUnix ? '-1' : '1'
+  const photos = data?.sort((photo1, photo2) => {
+    return photo1?.dateUnix > photo2?.dateUnix ? '-1' : '1'
   })
 
   return {

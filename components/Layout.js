@@ -7,7 +7,7 @@ import Meta from './Meta'
 export default function Layout({children, ...props}) {
   return (
     <div className="grid gap-y-8 max-w-2xl mx-auto py-8">
-      <Meta title={props.title} description={props.description} />
+      <Meta title={props?.title} description={props?.description} />
       <Header />
       <main>{children}</main>
       <Footer />

@@ -20,8 +20,8 @@ export default function Post({source, frontMatter}) {
   return (
     <Layout>
       <div className="pb-4">
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.excerpt && <p>{frontMatter.excerpt}</p>}
+        <h1>{frontMatter?.title}</h1>
+        {frontMatter?.excerpt && <p>{frontMatter?.excerpt}</p>}
       </div>
       <main className="space-y-4">{content}</main>
     </Layout>
