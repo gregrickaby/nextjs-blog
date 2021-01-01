@@ -6,7 +6,6 @@ import matter from 'gray-matter'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import path from 'path'
-import dropcap from 'remark-dropcap'
 import oembed from 'remark-oembed'
 import prism from 'remark-prism'
 
@@ -52,7 +51,6 @@ export const getStaticProps = async ({params}) => {
     mdxOptions: {
       remarkPlugins: [
         a11yEmoji,
-        [dropcap, {invisibleClass: 'sr-only'}],
         [oembed, {syncWidget: true}],
         [
           prism,
