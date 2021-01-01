@@ -1,9 +1,5 @@
 import Layout from '@/components/Layout'
-import {
-  getJpgList,
-  getPhotoByFileName,
-  removeFileExtension
-} from '@/functions/getPhotos'
+import {getPhotosPaths, getPhotoByFileName} from '@/functions/getPhotos'
 import Image from 'next/image'
 import styles from './Photo.module.css'
 
@@ -34,9 +30,7 @@ export default function SinglePhoto({data}) {
 }
 
 export async function getStaticPaths() {
-  const paths = getJpgList?.map((photo) => ({
-    params: {slug: removeFileExtension(photo)}
-  }))
+  const paths = getPhotosPaths()
 
   return {
     paths: paths,
