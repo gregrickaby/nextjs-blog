@@ -13,12 +13,16 @@ module.exports = {
       label: 'Github',
       shield:
         'https://img.shields.io/github/followers/gregrickaby?label=follow&style=social',
-      url: 'https://github.com/gregrickaby/'
+      url: 'https://github.com/gregrickaby/',
+      height: 20,
+      width: 96
     },
     {
       label: 'Twitter',
       shield: 'https://img.shields.io/twitter/follow/gregrickaby?style=social',
-      url: 'https://twitter.com/gregrickaby/'
+      url: 'https://twitter.com/gregrickaby/',
+      height: 20,
+      width: 172
     }
   ]
 }
