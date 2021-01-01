@@ -35,7 +35,7 @@ export async function getPostData(directory, slug, components) {
  * @param {string} directory The directory of posts.
  * @return {object}
  */
-export function getPosts(directory) {
+export function getAllPosts(directory) {
   const data = mdxFileList(directory).map((filePath) => {
     const source = fs.readFileSync(path.join(directory, filePath))
     const {content, data} = matter(source)

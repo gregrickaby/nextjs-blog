@@ -1,7 +1,7 @@
 import ArchiveHeader from '@/components/ArchiveHeader'
 import Layout from '@/components/Layout'
 import {BOOKS_PATH} from '@/functions/getMdx'
-import {getPosts} from '@/functions/getPosts'
+import {getAllPosts} from '@/functions/getPosts'
 import Link from 'next/link'
 
 export default function BooksArchive({books}) {
@@ -30,7 +30,7 @@ export default function BooksArchive({books}) {
 }
 
 export function getStaticProps() {
-  const books = getPosts(BOOKS_PATH)
+  const books = getAllPosts(BOOKS_PATH)
 
   return {
     props: {

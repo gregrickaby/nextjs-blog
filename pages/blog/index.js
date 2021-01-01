@@ -1,7 +1,7 @@
 import ArchiveHeader from '@/components/ArchiveHeader'
 import Layout from '@/components/Layout'
 import {POSTS_PATH} from '@/functions/getMdx'
-import {getPosts} from '@/functions/getPosts'
+import {getAllPosts} from '@/functions/getPosts'
 import Link from 'next/link'
 
 export default function BlogArchive({posts}) {
@@ -26,7 +26,7 @@ export default function BlogArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const posts = getPosts(POSTS_PATH)
+  const posts = getAllPosts(POSTS_PATH)
 
   return {
     props: {
