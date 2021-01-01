@@ -9,15 +9,15 @@ export default function Header() {
         <Image
           alt={config?.siteAuthor}
           className="rounded-full"
-          height="96"
+          height="80"
           layout="fixed"
           quality="100"
           src={config?.authorAvatar}
-          width="96"
+          width="80"
         />
         <div className="flex flex-col justify-center md:ml-4 font-sans md:mx-0">
           <h1 className="leading-none font-bold">{config?.siteName}</h1>
-          <p>{config?.siteDescription}</p>
+          <p className="sr-only">{config?.siteDescription}</p>
         </div>
       </div>
       <Nav />
