@@ -3,6 +3,8 @@ import Layout from '@/components/Layout'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
+import {NextSeo} from 'next-seo'
+import config from '@/functions/config'
 
 /**
  * Dynamically import components into MDX files.
@@ -15,6 +17,7 @@ export default function Homepage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
+      <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
       <Article frontMatter={frontMatter}>{content}</Article>
     </Layout>
   )

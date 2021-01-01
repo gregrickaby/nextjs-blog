@@ -1,11 +1,29 @@
 import Layout from '@/components/Layout'
-import {getPhotosPaths, getPhotoByFileName} from '@/functions/getPhotos'
+import config from '@/functions/config'
+import {getPhotoByFileName, getPhotosPaths} from '@/functions/getPhotos'
+import {NextSeo} from 'next-seo'
 import Image from 'next/image'
 
 export default function SinglePhoto({data}) {
   const [photo] = data
   return (
     <Layout>
+      <NextSeo
+        title={`${config?.siteName} - Photo`}
+        description={photo?.description}
+        openGraph={{
+          title: `${config?.siteName} - Photo`,
+          description: photo?.description,
+          images: [
+            {
+              url: photo?.url,
+              width: photo?.width,
+              height: photo?.height,
+              alt: photo?.description
+            }
+          ]
+        }}
+      />
       <main className="max-w-3xl">
         <div className="full-width">
           {photo?.description && (
@@ -21,15 +39,15 @@ export default function SinglePhoto({data}) {
             layout="responsive"
             quality="100"
           />
+          <style jsx>{`
+            .full-width {
+              margin-left: calc(35% - 35vw);
+              margin-right: calc(35% - 35vw);
+            }
+          `}</style>
         </div>
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
-      <style jsx>{`
-        .full-width {
-          margin-left: calc(35% - 35vw);
-          margin-right: calc(35% - 35vw);
-        }
-      `}</style>
     </Layout>
   )
 }
