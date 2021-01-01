@@ -1,3 +1,4 @@
+import ArchiveHeader from '@/components/ArchiveHeader'
 import Layout from '@/components/Layout'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getPosts} from '@/functions/getPosts'
@@ -6,10 +7,7 @@ import Link from 'next/link'
 export default function BlogArchive({posts}) {
   return (
     <Layout>
-      <div className="pb-4">
-        <h1>Blog</h1>
-        <p>My latest posts...</p>
-      </div>
+      <ArchiveHeader title="Blog" description="My latest posts..." />
       <ul>
         {posts?.length &&
           posts?.map((post) => (

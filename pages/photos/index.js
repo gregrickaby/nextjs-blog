@@ -1,15 +1,13 @@
+import ArchiveHeader from '@/components/ArchiveHeader'
 import Layout from '@/components/Layout'
 import {getPhotos} from '@/functions/getPhotos'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function PhotosPage({photos}) {
+export default function PhotosArchive({photos}) {
   return (
     <Layout>
-      <div className="pb-4">
-        <h1>Photos</h1>
-        <p>Some of my best photos...</p>
-      </div>
+      <ArchiveHeader title="Photos" description="Some of my best photos..." />
       <section className="space-y-8">
         {photos?.length &&
           photos?.map((photo, index) => {
