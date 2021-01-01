@@ -20,14 +20,21 @@ export const getJpgList = fs
  */
 export async function getPhotos() {
   // Get the list of photos.
-  const photos = getJpgList
+  const jpgs = getJpgList
 
   // No photos? Bail.
-  if (!photos?.length) {
+  if (!jpgs?.length) {
     return null
   }
 
-  return await processPhoto(photos)
+  const data = await processPhoto(jpgs)
+
+  // Sort photos by date, desc.
+  const photos = data?.sort((photo1, photo2) => {
+    return photo1?.dateUnix > photo2?.dateUnix ? '-1' : '1'
+  })
+
+  return photos
 }
 
 /**
