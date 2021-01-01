@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout'
-import {BOOKS_PATH, getPostsPath} from '@/functions/getMdx'
+import {BOOKS_PATH} from '@/functions/getMdx'
+import {getPostsPath} from '@/functions/getPosts'
 import a11yEmoji from '@fec/remark-a11y-emoji'
 import fs from 'fs'
 import matter from 'gray-matter'
