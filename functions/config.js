@@ -7,8 +7,26 @@ module.exports = {
   siteDescription: 'My personal website',
   siteURL: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
-  authorAvatar: 'blog/authors/greg.jpg',
+  authorAvatar: '/blog/authors/greg.jpg',
   defaultImage: '',
+  navigation: [
+    {
+      label: 'Home',
+      url: '/'
+    },
+    {
+      label: 'Books',
+      url: '/books'
+    },
+    {
+      label: 'Blog',
+      url: '/blog'
+    },
+    {
+      label: 'Photos',
+      url: '/photos'
+    }
+  ],
   socialNetworks: [
     {
       label: 'Github',
