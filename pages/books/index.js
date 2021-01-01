@@ -1,11 +1,9 @@
 import Layout from '@/components/Layout'
-import {BOOKS_PATH, mdxFileList} from '@/functions/getMdx'
-import fs from 'fs'
-import matter from 'gray-matter'
+import {BOOKS_PATH} from '@/functions/getMdx'
+import {getPosts} from '@/functions/getPosts'
 import Link from 'next/link'
-import path from 'path'
 
-export default function PostArchive({posts}) {
+export default function BooksArchive({books}) {
   return (
     <Layout>
       <div className="pb-4">
@@ -16,14 +14,14 @@ export default function PostArchive({posts}) {
         </p>
       </div>
       <ul>
-        {posts?.length &&
-          posts?.map((post) => (
-            <li key={post?.filePath}>
+        {books?.length &&
+          books?.map((book) => (
+            <li key={book?.filePath}>
               <Link
-                as={`/books/${post?.filePath.replace(/\.mdx?$/, '')}`}
+                as={`/books/${book?.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/books/[slug]`}
               >
-                <a>{post?.data.title}</a>
+                <a>{book?.data.title}</a>
               </Link>
             </li>
           ))}
@@ -33,21 +31,11 @@ export default function PostArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const data = mdxFileList(BOOKS_PATH).map((filePath) => {
-    const source = fs.readFileSync(path.join(BOOKS_PATH, filePath))
-    const {content, data} = matter(source)
+  const books = getPosts(BOOKS_PATH)
 
-    return {
-      content,
-      data,
-      filePath
+  return {
+    props: {
+      books
     }
-  })
-
-  // Sort posts by date, desc.
-  const posts = data.sort((post1, post2) => {
-    return post1.data.date > post2.data.date ? '-1' : '1'
-  })
-
-  return {props: {posts}}
+  }
 }

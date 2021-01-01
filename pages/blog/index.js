@@ -1,11 +1,9 @@
 import Layout from '@/components/Layout'
-import {mdxFileList, POSTS_PATH} from '@/functions/getMdx'
-import fs from 'fs'
-import matter from 'gray-matter'
+import {POSTS_PATH} from '@/functions/getMdx'
+import {getPosts} from '@/functions/getPosts'
 import Link from 'next/link'
-import path from 'path'
 
-export default function PostArchive({posts}) {
+export default function BlogArchive({posts}) {
   return (
     <Layout>
       <div className="pb-4">
@@ -30,21 +28,11 @@ export default function PostArchive({posts}) {
 }
 
 export function getStaticProps() {
-  const data = mdxFileList(POSTS_PATH).map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-    const {content, data} = matter(source)
+  const posts = getPosts(POSTS_PATH)
 
-    return {
-      content,
-      data,
-      filePath
+  return {
+    props: {
+      posts
     }
-  })
-
-  // Sort posts by date, desc.
-  const posts = data.sort((post1, post2) => {
-    return post1?.data.date > post2?.data.date ? '-1' : '1'
-  })
-
-  return {props: {posts}}
+  }
 }
