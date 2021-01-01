@@ -34,12 +34,7 @@ export default function PhotosPage({photos}) {
 }
 
 export async function getStaticProps() {
-  const data = await getPhotos()
-
-  // Sort photos by date, desc.
-  const photos = data?.sort((photo1, photo2) => {
-    return photo1?.dateUnix > photo2?.dateUnix ? '-1' : '1'
-  })
+  const photos = await getPhotos()
 
   return {
     props: {
