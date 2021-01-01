@@ -3,6 +3,12 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
+/**
+ * Get posts and their data.
+ *
+ * @param {string} directory The directory of posts.
+ * @return {object}
+ */
 export function getPosts(directory) {
   const data = mdxFileList(directory).map((filePath) => {
     const source = fs.readFileSync(path.join(directory, filePath))
@@ -21,4 +27,16 @@ export function getPosts(directory) {
   })
 
   return posts
+}
+
+/**
+ * Get all post paths.
+ *
+ * @param {string} directory The directory of posts.
+ * @return {object}
+ */
+export function getPostsPath(directory) {
+  return mdxFileList(directory)
+    .map((path) => path.replace(/\.mdx?$/, ''))
+    .map((slug) => ({params: {slug}}))
 }
