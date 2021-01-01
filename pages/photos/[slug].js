@@ -5,13 +5,14 @@ import {
   removeFileExtension
 } from '@/functions/getPhotos'
 import Image from 'next/image'
+import styles from './Photo.module.css'
 
 export default function SinglePhoto({data}) {
   const [photo] = data
   return (
     <Layout>
       <main className="max-w-3xl">
-        <div className="full-width">
+        <div className={styles.fullWidth}>
           {photo?.description && (
             <h1 className="post-title text-center my-8">
               {photo?.description}
