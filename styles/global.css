@@ -43,6 +43,17 @@ body {
   font-size: 5rem;
 }
 
+.navigation-item {
+  @apply no-underline;
+
+  font-size: 1.25rem;
+}
+
+.post-title {
+  font-size: 2.666rem;
+  letter-spacing: -0.011em;
+}
+
 @media (min-width: 768px) {
   p {
     font-size: 1.25rem;

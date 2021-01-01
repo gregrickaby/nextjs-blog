@@ -3,12 +3,12 @@ import config from '@/functions/config'
 
 export default function Nav() {
   return (
-    <nav className="align-center space-x-4">
+    <nav className="font-sans self-center space-x-4">
       {config.navigation?.length &&
         config?.navigation.map((nav, index) => {
           return (
             <Link key={index} href={nav?.url}>
-              <a>{nav?.label}</a>
+              <a className="navigation-item">{nav?.label}</a>
             </Link>
           )
         })}

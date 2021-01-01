@@ -12,6 +12,12 @@ module.exports = {
   },
   darkMode: 'media',
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '2rem'
+      }
+    },
     fontSize: {
       'root-em': '18px'
     }
