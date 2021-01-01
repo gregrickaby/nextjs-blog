@@ -1,6 +1,7 @@
+import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 import {POSTS_PATH} from '@/functions/getMdx'
-import {getPostsPath, getPostData} from '@/functions/getPosts'
+import {getPostData, getPostsPath} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**
@@ -14,15 +15,7 @@ export default function BlogPost({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <div className="pb-2">
-        <h1 className="post-title leading-tight mt-2 mb-1 text-center md:text-left">
-          {frontMatter?.title}
-        </h1>
-        {frontMatter?.excerpt && (
-          <p className="font-sans text-gray-500 mb-8">{frontMatter?.excerpt}</p>
-        )}
-      </div>
-      <main className="space-y-6">{content}</main>
+      <Article frontMatter={frontMatter}>{content}</Article>
     </Layout>
   )
 }

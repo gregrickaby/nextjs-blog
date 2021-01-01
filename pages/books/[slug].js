@@ -1,3 +1,4 @@
+import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 import {BOOKS_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
@@ -14,11 +15,7 @@ export default function BookPost({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <div className="pb-4">
-        <h1>{frontMatter?.title}</h1>
-        {frontMatter?.excerpt && <p>{frontMatter?.excerpt}</p>}
-      </div>
-      <main className="space-y-4">{content}</main>
+      <Article frontMatter={frontMatter}>{content}</Article>
     </Layout>
   )
 }
