@@ -19,11 +19,15 @@ export default function Post({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <div className="pb-4">
-        <h1>{frontMatter?.title}</h1>
-        {frontMatter?.excerpt && <p>{frontMatter?.excerpt}</p>}
+      <div className="pb-2">
+        <h1 className="post-title leading-tight mt-2 mb-1 text-center md:text-left">
+          {frontMatter?.title}
+        </h1>
+        {frontMatter?.excerpt && (
+          <p className="font-sans text-gray-500 mb-8">{frontMatter?.excerpt}</p>
+        )}
       </div>
-      <main className="space-y-4">{content}</main>
+      <main className="space-y-6">{content}</main>
     </Layout>
   )
 }
