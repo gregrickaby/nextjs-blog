@@ -5,10 +5,10 @@ module.exports = {
   photosDirectory: 'public/photos',
   siteName: 'Greg Rickaby',
   siteDescription: 'My personal website',
-  siteURL: 'https://gregrickaby.com',
+  siteUrl: 'https://gregrickaby.vercel.app',
   siteAuthor: 'Greg Rickaby',
   authorAvatar: '/blog/authors/greg.jpg',
-  defaultImage: '',
+  ogImage: '/favicon/android-icon-192x192.png',
   navigation: [
     {
       label: 'Home',
@@ -40,6 +40,7 @@ module.exports = {
       label: 'Twitter',
       shield: 'https://img.shields.io/twitter/follow/gregrickaby?style=social',
       url: 'https://twitter.com/gregrickaby/',
+      handle: '@gregrickaby',
       height: 20,
       width: 172
     }
