@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="text-center text-xs font-mono grid gap-y-4">
       <div className="border-t-2"></div>
       <div className="flex justify-center space-x-4">
-        {!config.socialNetworks?.length &&
+        {config.socialNetworks?.length &&
           config?.socialNetworks.map((network) => {
             return (
               <a key={network?.label} href={network?.url} rel="noopener">
