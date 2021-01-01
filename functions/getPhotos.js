@@ -1,4 +1,4 @@
-import {photosDirectory, siteAuthor} from '@/functions/config'
+import config from '@/functions/config'
 import {format, getUnixTime} from 'date-fns'
 import exifr from 'exifr'
 import Fraction from 'fraction.js'
@@ -10,7 +10,7 @@ import path from 'path'
  * Create a list of all (.jpg) photos.
  */
 export const getJpgList = fs
-  .readdirSync(photosDirectory)
+  .readdirSync(config?.photosDirectory)
   .filter((path) => /\.jpg?$/.test(path))
 
 /**
@@ -54,7 +54,7 @@ export async function getPhotoByFileName(fileName) {
 
   // Check if photo with matching file name exists.
   const doesFileExist = fs.existsSync(
-    path.join(photosDirectory, fileNameWithExt)
+    path.join(config?.photosDirectory, fileNameWithExt)
   )
 
   // No match? Bail.
@@ -86,7 +86,7 @@ export async function processPhoto(photos) {
     // Map over each photo...
     photos.map(async (photo) => {
       // Get full path to photo.
-      const photoPath = path.join(photosDirectory, photo)
+      const photoPath = path.join(config.photosDirectory, photo)
 
       // Parse the photo with exifr.
       const exif = await exifr.parse(photoPath)
@@ -103,7 +103,7 @@ export async function processPhoto(photos) {
       // Verify object keys are set, before destructuring them.
       const artist = Object.prototype.hasOwnProperty.call(exif, 'artist')
         ? exif.artist
-        : siteAuthor
+        : config?.siteAuthor
 
       const description = Object.prototype.hasOwnProperty.call(
         exif,
@@ -147,12 +147,13 @@ export async function processPhoto(photos) {
         metering: exif.MeteringMode,
         mode: exif.ExposureProgram,
         model: exif.Model,
-        pathFull: `${photosDirectory}/${photo}`,
+        pathFull: `${config?.photosDirectory}/${photo}`,
         pathRelative: `/photos/${photo}`,
         size: formatFileSize(stats.size),
         slug: removeFileExtension(photo),
         software: exif.Software,
         type: dimensions.type,
+        url: `${config?.siteUrl}/photos/${photo}`,
         width: dimensions.width
       }
     })
