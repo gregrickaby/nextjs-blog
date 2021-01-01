@@ -1,14 +1,13 @@
 import Layout from '@/components/Layout'
 import {getPhotosPaths, getPhotoByFileName} from '@/functions/getPhotos'
 import Image from 'next/image'
-import styles from './Photo.module.css'
 
 export default function SinglePhoto({data}) {
   const [photo] = data
   return (
     <Layout>
       <main className="max-w-3xl">
-        <div className={styles.fullWidth}>
+        <div className="full-width">
           {photo?.description && (
             <h1 className="post-title text-center my-8">
               {photo?.description}
@@ -25,6 +24,12 @@ export default function SinglePhoto({data}) {
         </div>
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
+      <style jsx>{`
+        .full-width {
+          margin-left: calc(35% - 35vw);
+          margin-right: calc(35% - 35vw);
+        }
+      `}</style>
     </Layout>
   )
 }
