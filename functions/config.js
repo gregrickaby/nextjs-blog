@@ -7,6 +7,7 @@ module.exports = {
   siteDescription: 'My personal website',
   siteURL: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
+  authorAvatar: 'blog/authors/greg.jpg',
   defaultImage: '',
   socialNetworks: [
     {
