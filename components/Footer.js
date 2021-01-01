@@ -9,8 +9,11 @@ export default function Footer() {
             return (
               <a key={network?.label} href={network?.url} rel="noopener">
                 <img
-                  src={network?.shield}
                   alt={`Follow ${config?.author} on ${network?.label}`}
+                  height={config?.height}
+                  loading="lazy"
+                  src={network?.shield}
+                  width={config?.width}
                 />
               </a>
             )
