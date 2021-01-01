@@ -2,8 +2,9 @@ import config from '@/functions/config'
 
 export default function Footer() {
   return (
-    <footer className="text-center text-xs font-mono py-4 border-t-2">
-      <div className="flex justify-center space-x-4 mb-2">
+    <footer className="text-center text-xs font-mono grid gap-y-4">
+      <div className="border-t-2"></div>
+      <div className="flex justify-center space-x-4">
         {!config?.length &&
           config.socialNetworks.map((network) => {
             return (
