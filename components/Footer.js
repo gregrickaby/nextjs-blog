@@ -8,9 +8,14 @@ export default function Footer() {
         {config.socialNetworks?.length &&
           config?.socialNetworks.map((network) => {
             return (
-              <a key={network?.label} href={network?.url} rel="noopener">
+              <a
+                className="shadow-none no-underline"
+                key={network?.label}
+                href={network?.url}
+              >
                 <img
                   alt={`Follow ${config?.siteAuthor} on ${network?.label}`}
+                  className="m-0"
                   height={network?.height}
                   loading="lazy"
                   src={network?.shield}
@@ -20,7 +25,10 @@ export default function Footer() {
             )
           })}
       </div>
-      <small>&copy; 2007-{new Date().getFullYear()} </small>
+      <small>
+        &copy; 2007-{new Date().getFullYear()} &middot; Powered by{' '}
+        <a href="https://nextjs.org">Next.js</a>
+      </small>
     </footer>
   )
 }
