@@ -25,18 +25,15 @@ ol {
 
 .masonry-grid {
   display: flex;
-  margin-left: -30px; /* gutter size offset */
+  margin-left: -2rem;
   width: auto;
 }
 
 .masonry-grid-column {
-  padding-left: 30px; /* gutter size */
+  padding-left: 2rem;
   background-clip: padding-box;
 }
 
-/* Style your items */
 .masonry-grid-column > div {
-  /* change div to reference your elements you put in <Masonry> */
-  background: grey;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
