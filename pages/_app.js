@@ -1,6 +1,6 @@
-import '@/styles/prism.css'
-import '@/styles/tailwind.css'
 import config from '@/functions/config'
+import '@/styles/index.css'
+import '@/styles/prism.css'
 import {DefaultSeo} from 'next-seo'
 import PropTypes from 'prop-types'
 
