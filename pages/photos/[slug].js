@@ -48,7 +48,67 @@ export default function SinglePhoto({data}) {
             `}
           </style>
         </div>
-        <pre>{JSON.stringify(photo, null, 2)}</pre>
+
+        <dl className="grid md:grid-cols-3 mt-8 text-center">
+          <div>
+            <dt>Aperture</dt>
+            <dd>{photo?.aperture}</dd>
+          </div>
+          <div>
+            <dt>ISO</dt>
+            <dd>{photo?.iso}</dd>
+          </div>
+          <div>
+            <dt>Shutter Speed</dt>
+            <dd>{photo?.exposureTime} sec</dd>
+          </div>
+          <div>
+            <dt>Camera</dt>
+            <dd>
+              {photo?.make} {photo?.model}
+            </dd>
+          </div>
+          <div>
+            <dt>Lens</dt>
+            <dd>{photo?.lens}</dd>
+          </div>
+          <div>
+            <dt>Focal Length</dt>
+            <dd>{photo?.focalLength}</dd>
+          </div>
+          <div>
+            <dt>Exposure Compensation</dt>
+            <dd>{photo?.exposureCompensation}</dd>
+          </div>
+          <div>
+            <dt>Mode</dt>
+            <dd>{photo?.mode}</dd>
+          </div>
+          <div>
+            <dt>Flash</dt>
+            <dd>{photo?.flash}</dd>
+          </div>
+          <div>
+            <dt>Metering</dt>
+            <dd>{photo?.metering}</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
+            <dd>{photo?.dateFormatted}</dd>
+          </div>
+          <div>
+            <dt>Dimensions</dt>
+            <dd>{photo?.dimension}</dd>
+          </div>
+          <div>
+            <dt>Size</dt>
+            <dd>{photo?.size}</dd>
+          </div>
+          <div>
+            <dt>Software</dt>
+            <dd>{photo?.software}</dd>
+          </div>
+        </dl>
       </main>
     </Layout>
   )
