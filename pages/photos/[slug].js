@@ -25,7 +25,7 @@ export default function SinglePhoto({data}) {
         }}
       />
       <main className="max-w-3xl">
-        <div className="full-width">
+        <div className="extra-wide">
           {photo?.description && (
             <h1 className="post-title text-center my-8">
               {photo?.description}
@@ -39,6 +39,14 @@ export default function SinglePhoto({data}) {
             layout="responsive"
             quality="100"
           />
+          <style jsx>
+            {`
+              .extra-wide {
+                margin-left: calc(33% - 33vw);
+                margin-right: calc(33% - 33vw);
+              }
+            `}
+          </style>
         </div>
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
