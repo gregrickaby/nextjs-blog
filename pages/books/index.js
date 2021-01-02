@@ -1,10 +1,10 @@
 import ArchiveHeader from '@/components/ArchiveHeader'
+import Card from '@/components/Card'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {BOOKS_PATH} from '@/functions/getMdx'
 import {getAllPosts} from '@/functions/getPosts'
 import {NextSeo} from 'next-seo'
-import Link from 'next/link'
 
 export default function BooksArchive({books}) {
   return (
@@ -19,19 +19,12 @@ export default function BooksArchive({books}) {
         description="A list of books that I&lsquo;ve either written or provided technical
           editorial services for..."
       />
-      <ul>
+      <div className="grid gap-12 md:grid-cols-2">
         {books?.length &&
-          books?.map((book) => (
-            <li key={book?.filePath}>
-              <Link
-                as={`/books/${book?.filePath.replace(/\.mdx?$/, '')}`}
-                href={`/books/[slug]`}
-              >
-                <a>{book?.data.title}</a>
-              </Link>
-            </li>
+          books?.map((book, index) => (
+            <Card key={index} props={book} path="books" />
           ))}
-      </ul>
+      </div>
     </Layout>
   )
 }
