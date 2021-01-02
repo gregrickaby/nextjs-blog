@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Typography from 'typography'
-import wordpress2016Theme from 'typography-theme-wordpress-2016'
-const typography = new Typography(wordpress2016Theme)
+import wordpress2015Theme from 'typography-theme-wordpress-2015'
+const typography = new Typography(wordpress2015Theme)
 
 export default function Meta() {
   return (
