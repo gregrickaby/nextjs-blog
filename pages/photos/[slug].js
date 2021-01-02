@@ -31,14 +31,16 @@ export default function SinglePhoto({data}) {
               {photo?.description}
             </h1>
           )}
-          <Image
-            alt={photo?.description}
-            src={photo?.pathRelative}
-            height={photo?.height}
-            width={photo?.width}
-            layout="responsive"
-            quality="100"
-          />
+          <a href={photo?.src} target="_blank" rel="noreferrer noopener">
+            <Image
+              alt={photo?.description}
+              src={photo?.pathRelative}
+              height={photo?.height}
+              width={photo?.width}
+              layout="responsive"
+              quality="100"
+            />
+          </a>
           <style jsx>
             {`
               .extra-wide {
