@@ -152,8 +152,8 @@ export async function processPhoto(photos) {
         size: formatFileSize(stats.size),
         slug: removeFileExtension(photo),
         software: exif.Software,
+        src: `${config?.siteUrl}/photos/${photo}`,
         type: dimensions.type,
-        url: `${config?.siteUrl}/photos/${photo}`,
         width: dimensions.width
       }
     })
