@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function Article(props) {
   return (
     <>
-      <article className="space-y-4">
+      <article>
         <PostHeader
           title={props?.frontMatter?.title}
           excerpt={props?.frontMatter?.excerpt}
