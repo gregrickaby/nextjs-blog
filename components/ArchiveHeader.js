@@ -4,7 +4,7 @@ export default function ArchiveHeader(props) {
   return (
     <div className="pb-4">
       <h1>{props?.title}</h1>
-      <p>{props?.description}</p>
+      <p className="my-4">{props?.description}</p>
     </div>
   )
 }
