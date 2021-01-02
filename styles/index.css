@@ -23,24 +23,19 @@ ol {
   margin-right: calc(12% - 12vw);
 }
 
-.fill-width {
-  margin-left: calc(100% - 100vw);
-  margin-right: calc(100% - 100vw);
-}
-
-.my-masonry-grid {
+.masonry-grid {
   display: flex;
   margin-left: -30px; /* gutter size offset */
   width: auto;
 }
 
-.my-masonry-grid_column {
+.masonry-grid-column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.my-masonry-grid_column > div {
+.masonry-grid-column > div {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
   margin-bottom: 30px;
