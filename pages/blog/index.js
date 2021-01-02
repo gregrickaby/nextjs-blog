@@ -1,10 +1,10 @@
 import ArchiveHeader from '@/components/ArchiveHeader'
+import Card from '@/components/Card'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getAllPosts} from '@/functions/getPosts'
 import {NextSeo} from 'next-seo'
-import Link from 'next/link'
 
 export default function BlogArchive({posts}) {
   return (
@@ -14,19 +14,12 @@ export default function BlogArchive({posts}) {
         description="My latest posts..."
       />
       <ArchiveHeader title="Blog" description="My latest posts..." />
-      <ul>
+      <div className="grid gap-12 md:grid-cols-2">
         {posts?.length &&
-          posts?.map((post) => (
-            <li key={post?.filePath}>
-              <Link
-                as={`/blog/${post?.filePath.replace(/\.mdx?$/, '')}`}
-                href={`/blog/[slug]`}
-              >
-                <a>{post?.data.title}</a>
-              </Link>
-            </li>
+          posts?.map((post, index) => (
+            <Card key={index} props={post} path="blog" />
           ))}
-      </ul>
+      </div>
     </Layout>
   )
 }
