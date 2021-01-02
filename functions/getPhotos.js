@@ -124,10 +124,15 @@ export async function processPhoto(photos) {
         ? exif.LensModel
         : false
 
+      const copyright = Object.prototype.hasOwnProperty.call(exif, 'Copyright')
+        ? exif.Copyright
+        : false
+
       // Finally, return a nicely formatted object, containing lots of photo data.
       return {
         aperture: `ƒ/${exif.FNumber}`,
         artist: artist,
+        copyright: copyright,
         dateFormatted: format(exif.DateTimeOriginal, 'LLLL d, yyyy'),
         dateUnix: getUnixTime(exif.DateTimeOriginal),
         description: description,
