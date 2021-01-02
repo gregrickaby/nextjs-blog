@@ -120,8 +120,8 @@ export async function processPhoto(photos) {
         ? exif.longitude
         : false
 
-      const lens = Object.prototype.hasOwnProperty.call(exif, 'lens')
-        ? exif.lens
+      const lens = Object.prototype.hasOwnProperty.call(exif, 'LensModel')
+        ? exif.LensModel
         : false
 
       // Finally, return a nicely formatted object, containing lots of photo data.
