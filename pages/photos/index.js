@@ -28,7 +28,7 @@ export default function PhotosArchive({photos}) {
                   <Link href={`/photos/${photo?.slug}`}>
                     <a>
                       <Image
-                        alt={photo?.title}
+                        alt={photo?.description}
                         className="rounded"
                         src={photo?.pathRelative}
                         height={photo?.height}
