@@ -20,11 +20,11 @@ export default function Header() {
             />
           </a>
         </Link>
-        <div className="flex flex-col justify-center md:ml-4 font-sans md:mx-0">
+        <div className="flex flex-col justify-center md:ml-4 md:mx-0">
           <h1 className="text-2xl m-0 leading-none font-bold">
             {config?.siteName}
           </h1>
-          <p className="m-0">{config?.siteDescription}</p>
+          <p className="m-0 text-center">{config?.siteDescription}</p>
         </div>
       </div>
       <Nav />
