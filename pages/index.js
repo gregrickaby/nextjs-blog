@@ -1,10 +1,10 @@
-import Article from '@/components/Article'
 import Layout from '@/components/Layout'
+import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
 import {NextSeo} from 'next-seo'
-import config from '@/functions/config'
+import Image from 'next/image'
 
 /**
  * Dynamically import components into MDX files.
@@ -18,7 +18,16 @@ export default function Homepage({source, frontMatter}) {
   return (
     <Layout>
       <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
-      <Article frontMatter={frontMatter}>{content}</Article>
+      <div className="cover-image">
+        <Image
+          alt="Rickaby Family"
+          height="1149"
+          layout="responsive"
+          src={frontMatter?.coverImage}
+          width="1530"
+        />
+      </div>
+      <article>{content}</article>
     </Layout>
   )
 }
