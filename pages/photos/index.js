@@ -12,9 +12,9 @@ export default function PhotosArchive({photos}) {
     <Layout>
       <NextSeo
         title={`Photos - ${config?.siteName}`}
-        description="Some of my best photos..."
+        description="Some of my best photos."
       />
-      <ArchiveHeader title="Photos" description="Some of my best photos..." />
+      <ArchiveHeader title="Photos" description="Some of my best photos." />
       <section>
         <Masonry
           breakpointCols={2}
@@ -28,6 +28,8 @@ export default function PhotosArchive({photos}) {
                   <Link href={`/photos/${photo?.slug}`}>
                     <a>
                       <Image
+                        alt={photo?.title}
+                        className="rounded"
                         src={photo?.pathRelative}
                         height={photo?.height}
                         width={photo?.width}

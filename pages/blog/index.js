@@ -11,9 +11,9 @@ export default function BlogArchive({posts}) {
     <Layout>
       <NextSeo
         title={`Blog - ${config?.siteName}`}
-        description="My latest posts..."
+        description="My latest posts."
       />
-      <ArchiveHeader title="Blog" description="My latest posts..." />
+      <ArchiveHeader title="Blog" description="My latest posts." />
       <div className="grid gap-12 md:grid-cols-2">
         {posts?.length &&
           posts?.map((post, index) => (

@@ -12,12 +12,12 @@ export default function BooksArchive({books}) {
       <NextSeo
         title={`Books - ${config?.siteName}`}
         description="A list of books that I&lsquo;ve either written or provided technical
-          editorial services for.."
+          editorial services for."
       />
       <ArchiveHeader
         title="Books"
         description="A list of books that I&lsquo;ve either written or provided technical
-          editorial services for..."
+          editorial services for."
       />
       <div className="grid gap-12 md:grid-cols-2">
         {books?.length &&
