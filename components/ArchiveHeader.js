@@ -2,9 +2,15 @@ import PropTypes from 'prop-types'
 
 export default function ArchiveHeader(props) {
   return (
-    <div className="pb-4">
-      <h1>{props?.title}</h1>
-      <p className="my-4">{props?.description}</p>
+    <div className="text-center pb-4">
+      <h1 className="mb-3" dangerouslySetInnerHTML={{__html: props?.title}} />
+      {props?.description && (
+        <p
+          className="text-gray-500"
+          dangerouslySetInnerHTML={{__html: props?.description}}
+        />
+      )}
+      <hr />
     </div>
   )
 }

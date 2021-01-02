@@ -6,7 +6,7 @@ export default function PostHeader(props) {
       <h1 className="mb-3" dangerouslySetInnerHTML={{__html: props?.title}} />
       {props?.excerpt && (
         <p
-          className="font-sans text-gray-500"
+          className="text-gray-500"
           dangerouslySetInnerHTML={{__html: props?.excerpt}}
         />
       )}
