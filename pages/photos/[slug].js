@@ -16,7 +16,7 @@ export default function SinglePhoto({data}) {
           description: photo?.description,
           images: [
             {
-              url: photo?.url,
+              url: photo?.src,
               width: photo?.width,
               height: photo?.height,
               alt: photo?.description
@@ -39,12 +39,6 @@ export default function SinglePhoto({data}) {
             layout="responsive"
             quality="100"
           />
-          <style jsx>{`
-            .full-width {
-              margin-left: calc(35% - 35vw);
-              margin-right: calc(35% - 35vw);
-            }
-          `}</style>
         </div>
         <pre>{JSON.stringify(photo, null, 2)}</pre>
       </main>
