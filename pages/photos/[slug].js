@@ -110,6 +110,10 @@ export default function SinglePhoto({data}) {
             <dt>Software</dt>
             <dd>{photo?.software}</dd>
           </div>
+          <div>
+            <dt>Copyright</dt>
+            <dd>{photo?.copyright}</dd>
+          </div>
         </dl>
       </main>
     </Layout>
