@@ -21,6 +21,7 @@ export default function Homepage({source, frontMatter}) {
       <div className="cover-image">
         <Image
           alt="Rickaby Family"
+          className="rounded"
           height="1149"
           layout="responsive"
           src={frontMatter?.coverImage}
