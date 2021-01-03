@@ -1,5 +1,4 @@
 import Article from '@/components/Article'
-import DisqusComments from '@/components/Comments'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
@@ -33,7 +32,6 @@ export default function BlogPost({source, frontMatter}) {
         }}
       />
       <Article frontMatter={frontMatter}>{content}</Article>
-      <DisqusComments title={frontMatter?.title} slug={frontMatter?.slug} />
     </Layout>
   )
 }
