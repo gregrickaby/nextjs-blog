@@ -4,7 +4,7 @@ module.exports = {
   pagesDirectory: '__pages',
   photosDirectory: 'public/photos',
   siteName: 'Greg Rickaby',
-  siteDescription: 'My blog',
+  siteDescription: 'Personal Blog',
   siteUrl: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
   authorAvatar: '/blog/authors/greg.jpg',
