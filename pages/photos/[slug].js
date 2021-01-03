@@ -111,7 +111,7 @@ export default function SinglePhoto({data}) {
             <dd>{photo?.software}</dd>
           </div>
           <div>
-            <dt>Copyright</dt>
+            <dt>&copy; Copyright</dt>
             <dd>{photo?.copyright}</dd>
           </div>
         </dl>
