@@ -13,7 +13,7 @@ import Image from 'next/image'
  */
 const components = {}
 
-export default function Homepage({source, frontMatter}) {
+export default function HomePage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
