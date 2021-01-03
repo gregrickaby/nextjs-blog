@@ -18,7 +18,10 @@ export default function ResourcesPage({source, frontMatter}) {
   return (
     <Layout>
       <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
-      <ArchiveHeader title={frontMatter?.title} />
+      <ArchiveHeader
+        title={frontMatter?.title}
+        description={frontMatter.excerpt}
+      />
       <article>{content}</article>
     </Layout>
   )
