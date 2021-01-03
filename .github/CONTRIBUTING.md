@@ -6,7 +6,7 @@ This repo is maintained by [Greg Rickaby](https://gregrickaby.com/).
 
 ## Submitting issues
 
-Before submitting your issue, make sure it has not been discussed earlier. You can search for existing tickets [here](https://github.com/gregrickaby/nextjs-blog/issues).
+Before submitting your issue, make sure it has not been discussed earlier. You can search for existing tickets [here](https://github.com/gregrickaby/gregrickaby-blog/issues).
 
 ## Contributing code
 

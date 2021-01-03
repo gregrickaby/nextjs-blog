@@ -1,15 +1,15 @@
 {
-  "name": "nextjs-blog",
+  "name": "gregrickaby-blog",
   "version": "0.1.0",
-  "description": "My personal website built with Next.js.",
-  "homepage": "https://github.com/gregrickaby/nextjs-blog/blob/main/README.md",
+  "description": "My blog built on Next.js and hosted at Vercel.",
+  "homepage": "https://github.com/gregrickaby/gregrickaby-blog/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gregrickaby/nextjs-blog.git"
+    "url": "git+https://github.com/gregrickaby/gregrickaby-blog.git"
   },
   "author": "Greg Rickaby <gregrickaby@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gregrickaby/nextjs-blog/issues"
+    "url": "https://github.com/gregrickaby/gregrickaby-blog/issues"
   },
   "private": true,
   "license": "GPL-2.0",
