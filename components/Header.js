@@ -24,7 +24,7 @@ export default function Header() {
           <h1 className="text-2xl m-0 leading-none font-bold">
             {config?.siteName}
           </h1>
-          <p className="m-0 text-center">{config?.siteDescription}</p>
+          <p className="m-0">{config?.siteDescription}</p>
         </div>
       </div>
       <Nav />
