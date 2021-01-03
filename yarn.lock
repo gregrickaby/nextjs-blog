@@ -3107,6 +3107,11 @@ direction@^1.0.0:
   resolved "https://registry.yarnpkg.com/direction/-/direction-1.0.4.tgz#2b86fb686967e987088caf8b89059370d4837442"
   integrity sha512-GYqKi1aH7PJXxdhTeZBFrg8vUBeKXi+cNprXsC1kpJcbcVnV9wBsrOu1cQEdG0WeQwlfHiy3XvnKfIrJ2R0NzQ==
 
+disqus-react@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.0.10.tgz#75f1553856157d08fa76d8339d53d783ec1e4a62"
+  integrity sha512-TFd+pSl9m9QpqGcNAmewH/V795I9ObJMcEbLCIyPBy1VvUUl8DUoP+OiWhx24UjRygfV8y6saZVTBJRNYGJvkQ==
+
 doctrine@1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-1.5.0.tgz#379dce730f6166f76cefa4e6707a159b02c5a6fa"
