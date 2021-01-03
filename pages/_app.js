@@ -12,7 +12,7 @@ export default function App({Component, pageProps}) {
           type: 'website',
           locale: 'en_US',
           url: config?.siteUrl,
-          site_name: config?.siteName
+          site_name: `${config?.siteName} - ${config?.siteDescription}`
         }}
         twitter={{
           handle: `${config?.socialNetworks[1]?.handle}`,

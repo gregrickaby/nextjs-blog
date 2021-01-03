@@ -18,7 +18,7 @@ export default function HomePage({source, frontMatter}) {
   return (
     <Layout>
       <NextSeo
-        title={config?.siteName}
+        title={`${config?.siteName} - ${config?.siteDescription}`}
         description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
       />
       <div className="cover-image">
