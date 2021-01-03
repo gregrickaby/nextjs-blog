@@ -23,8 +23,16 @@ module.exports = {
       url: '/blog'
     },
     {
+      label: 'Contact',
+      url: '/contact'
+    },
+    {
       label: 'Photos',
       url: '/photos'
+    },
+    {
+      label: 'Resources',
+      url: '/resources'
     }
   ],
   socialNetworks: [
