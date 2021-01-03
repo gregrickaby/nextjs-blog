@@ -11,10 +11,6 @@ module.exports = {
   ogImage: '/favicon/android-icon-192x192.png',
   navigation: [
     {
-      label: 'Home',
-      url: '/'
-    },
-    {
       label: 'Books',
       url: '/books'
     },
