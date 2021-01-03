@@ -12,9 +12,11 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta
         name="google-site-verification"
-        content="0PUGqjMrRpKLYS-xwUSphYDN9vN8S8BjErGiO3LGzh0"
+        content={process.env.GOOGLE_SITE_VERIFICATION}
       />
       <meta name="theme-color" content="#fff" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -34,6 +36,22 @@ export default function Meta() {
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+          });
+        `
+        }}
+      />
       {typography.injectStyles()}
     </Head>
   )
