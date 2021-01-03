@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Card({props, path}) {
   return (
-    <div className="shadow-lg rounded-b">
+    <div className="shadow rounded-b">
       <div
         className="bg-size bg-cover bg-center rounded-t"
         style={{
