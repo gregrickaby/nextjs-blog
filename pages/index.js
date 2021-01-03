@@ -17,7 +17,10 @@ export default function HomePage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
+      <NextSeo
+        title={config?.siteName}
+        description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
+      />
       <div className="cover-image">
         <Image
           alt="Rickaby Family"
