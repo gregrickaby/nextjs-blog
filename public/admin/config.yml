@@ -5,10 +5,9 @@ backend:
 publish_mode: editorial_workflow
 display_url: https://gregrickaby.com
 media_folder: public/blog/images
+public_folder: /blog/images
 slug:
-  encoding: 'ascii'
   clean_accents: true
-  sanitize_replacement: '_'
 collections:
   - name: "blog"
     label: "Blog"
@@ -16,17 +15,19 @@ collections:
     extension: "mdx"
     format: frontmatter
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - {label: "Title", name: "title", required: true, widget: "string"}
       - {label: "Body", name: "body", required: true, widget: "markdown"}
-      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
+      - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Category", name: "category", max: 1, widget: "list"}
       - {label: "Tags", name: "tags", hint: "Add comma delimited list of tags.", widget: "list"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
       - label: "Author"
         name: "author"
+        collapsed: true
         widget: "object"
         fields:
         - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
@@ -37,15 +38,17 @@ collections:
     extension: "mdx"
     format: frontmatter
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - {label: "Title", name: "title", required: true, widget: "string"}
       - {label: "Body", name: "body", required: true, widget: "markdown"}
-      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
+      - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
       - label: "Author"
         name: "author"
+        collapsed: true
         widget: "object"
         fields:
         - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
@@ -56,15 +59,17 @@ collections:
     extension: "mdx"
     format: frontmatter
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - {label: "Title", name: "title", required: true, widget: "string"}
       - {label: "Body", name: "body", required: true, widget: "markdown"}
-      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
+      - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
       - label: "Author"
         name: "author"
+        collapsed: true
         widget: "object"
         fields:
         - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
