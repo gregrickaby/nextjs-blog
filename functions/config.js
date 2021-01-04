@@ -37,13 +37,13 @@ module.exports = {
       url: 'https://github.com/gregrickaby/'
     },
     {
+      label: 'LinkedIn',
+      url: 'https://linkedin.com/in/gregrickaby/'
+    },
+    {
       label: 'Twitter',
       url: 'https://twitter.com/gregrickaby/',
       handle: '@gregrickaby'
-    },
-    {
-      label: 'LinkedIn',
-      url: 'https://linkedin.com/in/gregrickaby/'
     }
   ]
 }
