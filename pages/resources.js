@@ -17,7 +17,10 @@ export default function ResourcesPage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
+      <NextSeo
+        title={`Resources - ${config?.siteName}`}
+        description={frontMatter?.excerpt}
+      />
       <ArchiveHeader
         title={frontMatter?.title}
         description={frontMatter.excerpt}

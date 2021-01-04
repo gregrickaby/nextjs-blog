@@ -17,7 +17,10 @@ export default function ContactPage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <Layout>
-      <NextSeo title={config?.siteName} description={frontMatter?.excerpt} />
+      <NextSeo
+        title={`Contact - ${config?.siteName}`}
+        description={frontMatter?.excerpt}
+      />
       <ArchiveHeader title={frontMatter?.title} />
       <article>{content}</article>
     </Layout>
