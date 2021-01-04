@@ -134,6 +134,7 @@ export async function processPhoto(photos) {
         artist: artist,
         copyright: copyright,
         dateFormatted: dayjs(exif.DateTimeOriginal).format('MMM DD, YYYY'),
+        dateUnix: dayjs(exif.DateTimeOriginal).valueOf(),
         description: description,
         dimension: `${dimensions.width}x${dimensions.height}`,
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
