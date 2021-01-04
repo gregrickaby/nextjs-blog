@@ -2,6 +2,8 @@
 
 My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 
+---
+
 ## Install
 
 Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running with either Yarn or NPX:
@@ -14,15 +16,17 @@ or
 $ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextjs-blog
 ```
 
+---
+
 ## Packages
 
 - [Day.js](https://day.js.org/en/)
-- [Disqus](https://github.com/disqus/disqus-react)
 - [ESLint](https://eslint.org/)
 - [EXIFR](https://github.com/MikeKovarik/exifr)
 - [Husky](https://github.com/typicode/husky)
 - [Lint Staged](https://github.com/okonet/lint-staged)
 - [MDX](https://mdxjs.com/)
+- [Netlify CMS](https://www.netlifycms.org//)
 - [Next SEO](https://github.com/garmeeh/next-seo#usage)
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - [Next.js](https://nextjs.org/)
@@ -33,6 +37,8 @@ $ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextj
 - [TailwindCSS](https://tailwindcss.com/)
 - [Typography.js](https://github.com/KyleAMathews/typography.js)
 - [Vercel Ready](https://vercel.com/)
+
+---
 
 ## ENV Variables
 
