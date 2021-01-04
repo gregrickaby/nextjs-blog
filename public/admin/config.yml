@@ -1,0 +1,76 @@
+backend:
+  name: github
+  repo: gregrickaby/gregrickaby-blog
+  branch: main
+publish_mode: editorial_workflow
+display_url: https://gregrickaby.com
+media_folder: public/blog/images
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '_'
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "__posts"
+    extension: "mdx"
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", required: true, widget: "string"}
+      - {label: "Body", name: "body", required: true, widget: "markdown"}
+      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, widget: "string"}
+      - {label: "Category", name: "category", max: 1, widget: "list"}
+      - {label: "Tags", name: "tags", hint: "Add comma delimited list of tags.", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+        - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
+        - {label: "Avatar", name: "picture", default: "/blog/authors/greg.jpg", widget: "image"}
+  - name: "books"
+    label: "Book"
+    folder: "__books"
+    extension: "mdx"
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", required: true, widget: "string"}
+      - {label: "Body", name: "body", required: true, widget: "markdown"}
+      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentance about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, widget: "string"}
+      - {label: "Category", name: "category", max: 1, widget: "list"}
+      - {label: "Tags", name: "tags", hint: "Add comma delimited list of tags.", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+        - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
+        - {label: "Avatar", name: "picture", default: "/blog/authors/greg.jpg", widget: "image"}
+  - name: "pages"
+    label: "Page"
+    folder: "__pages"
+    extension: "mdx"
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", required: true, widget: "string"}
+      - {label: "Body", name: "body", required: true, widget: "markdown"}
+      - {label: "Excerpt", name: "excerpt", hint: "Add a short sentance about this post. This will also be used as SEO description.", widget: "string"}
+      - {label: "Slug", name: "slug", required: true, widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "coverImage", hint: "Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+        - {label: "Name", name: "name", default: "Greg Rickaby", widget: "string"}
+        - {label: "Avatar", name: "picture", default: "/blog/authors/greg.jpg", widget: "image"}
