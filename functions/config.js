@@ -34,19 +34,16 @@ module.exports = {
   socialNetworks: [
     {
       label: 'Github',
-      shield:
-        'https://img.shields.io/github/followers/gregrickaby?label=follow&style=social',
-      url: 'https://github.com/gregrickaby/',
-      height: 20,
-      width: 96
+      url: 'https://github.com/gregrickaby/'
     },
     {
       label: 'Twitter',
-      shield: 'https://img.shields.io/twitter/follow/gregrickaby?style=social',
       url: 'https://twitter.com/gregrickaby/',
-      handle: '@gregrickaby',
-      height: 20,
-      width: 172
+      handle: '@gregrickaby'
+    },
+    {
+      label: 'LinkedIn',
+      url: 'https://linkedin.com/in/gregrickaby/'
     }
   ]
 }
