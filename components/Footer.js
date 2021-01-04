@@ -13,14 +13,7 @@ export default function Footer() {
                 key={network?.label}
                 href={network?.url}
               >
-                <img
-                  alt={`Follow ${config?.siteAuthor} on ${network?.label}`}
-                  className="m-0"
-                  height={network?.height}
-                  loading="lazy"
-                  src={network?.shield}
-                  width={network?.width}
-                />
+                {network?.label}
               </a>
             )
           })}
