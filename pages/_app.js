@@ -15,8 +15,8 @@ export default function App({Component, pageProps}) {
           site_name: `${config?.siteName} - ${config?.siteDescription}`
         }}
         twitter={{
-          handle: `${config?.socialNetworks[1]?.handle}`,
-          site: `${config?.socialNetworks[1]?.handle}`,
+          handle: `${config?.socialNetworks[2]?.handle}`,
+          site: `${config?.socialNetworks[2]?.handle}`,
           cardType: 'summary_large_image'
         }}
       />
