@@ -17,23 +17,3 @@ ol {
     @apply mb-0;
   }
 }
-
-.cover-image {
-  margin-left: calc(12% - 12vw);
-  margin-right: calc(12% - 12vw);
-}
-
-.masonry-grid {
-  display: flex;
-  margin-left: -2rem;
-  width: auto;
-}
-
-.masonry-grid-column {
-  padding-left: 2rem;
-  background-clip: padding-box;
-}
-
-.masonry-grid-column > div {
-  margin-bottom: 2rem;
-}
