@@ -4,7 +4,8 @@ import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
-import {NextSeo} from 'next-seo'
+import {NextSeo, BlogJsonLd} from 'next-seo'
+import dayjs from 'dayjs'
 
 /**
  * Dynamically import components into MDX files.
@@ -30,6 +31,14 @@ export default function BlogPost({source, frontMatter}) {
             }
           ]
         }}
+      />
+      <BlogJsonLd
+        url={`${config?.siteUrl}/${frontMatter?.slug}`}
+        title={frontMatter?.title}
+        images={[`${config.siteUrl}${frontMatter?.ogImage?.url}`]}
+        datePublished={dayjs(frontMatter?.date).toISOString()}
+        authorName={frontMatter?.author?.name}
+        description={frontMatter?.excerpt}
       />
       <Article frontMatter={frontMatter}>{content}</Article>
     </Layout>
