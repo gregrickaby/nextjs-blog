@@ -16,6 +16,7 @@ $ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextj
 
 ## Packages
 
+- [Day.js](https://day.js.org/en/)
 - [Disqus](https://github.com/disqus/disqus-react)
 - [ESLint](https://eslint.org/)
 - [EXIFR](https://github.com/MikeKovarik/exifr)
