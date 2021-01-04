@@ -1,5 +1,5 @@
 import config from '@/functions/config'
-import {format, getUnixTime} from 'date-fns'
+import dayjs from 'dayjs'
 import exifr from 'exifr'
 import Fraction from 'fraction.js'
 import fs from 'fs'
@@ -133,8 +133,7 @@ export async function processPhoto(photos) {
         aperture: `ƒ/${exif.FNumber}`,
         artist: artist,
         copyright: copyright,
-        dateFormatted: format(exif.DateTimeOriginal, 'LLLL d, yyyy'),
-        dateUnix: getUnixTime(exif.DateTimeOriginal),
+        dateFormatted: dayjs(exif.DateTimeOriginal).format('MMM DD, YYYY'),
         description: description,
         dimension: `${dimensions.width}x${dimensions.height}`,
         exposure: `${exposureTime.toFraction(true)} sec at ƒ/${exif.FNumber}`,
