@@ -31,7 +31,6 @@ $ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextj
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - [Next.js](https://nextjs.org/)
 - [Prettier](https://github.com/prettier/prettier)
-- [React Masonry CSS](https://github.com/paulcollett/react-masonry-css)
 - [Stylelint](https://stylelint.io/)
 - [Syntax Highlighting](https://github.com/sergioramos/remark-prism)
 - [TailwindCSS](https://tailwindcss.com/)
