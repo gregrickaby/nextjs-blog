@@ -42,7 +42,6 @@
     "autoprefixer": "^10.1.0",
     "classnames": "2.2.6",
     "dayjs": "^1.10.1",
-    "disqus-react": "^1.0.10",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
