@@ -5,7 +5,6 @@ import {getPhotos} from '@/functions/getPhotos'
 import {NextSeo} from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
-import Masonry from 'react-masonry-css'
 
 export default function PhotosArchive({photos}) {
   return (
@@ -15,32 +14,39 @@ export default function PhotosArchive({photos}) {
         description="Some of my best photos."
       />
       <ArchiveHeader title="Photos" description="Some of my best photos." />
-      <section>
-        <Masonry
-          breakpointCols={2}
-          className="masonry-grid"
-          columnClassName="masonry-grid-column"
-        >
-          {photos?.length &&
-            photos?.map((photo, index) => {
-              return (
-                <div key={index}>
-                  <Link href={`/photos/${photo?.slug}`}>
-                    <a>
-                      <Image
-                        alt={photo?.description}
-                        className="rounded"
-                        src={photo?.pathRelative}
-                        height={photo?.height}
-                        width={photo?.width}
-                        layout="responsive"
-                      />
-                    </a>
-                  </Link>
-                </div>
-              )
-            })}
-        </Masonry>
+      <section className="grid">
+        {photos?.length &&
+          photos?.map((photo, index) => {
+            return (
+              <Link key={index} href={`/photos/${photo?.slug}`}>
+                <a>
+                  <Image
+                    alt={photo?.description}
+                    className="rounded"
+                    src={photo?.pathRelative}
+                    height={photo?.height}
+                    width={photo?.width}
+                    layout="responsive"
+                  />
+                </a>
+              </Link>
+            )
+          })}
+        <style jsx>{`
+          .grid {
+            display: grid;
+            gap: 12px;
+            margin-left: calc(12% - 12vw);
+            margin-right: calc(12% - 12vw);
+          }
+
+          @media (min-width: 768px) {
+            .grid {
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: masonry;
+            }
+          }
+        `}</style>
       </section>
     </Layout>
   )
