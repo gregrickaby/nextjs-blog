@@ -9,10 +9,10 @@ export default function SinglePhoto({data}) {
   return (
     <Layout>
       <NextSeo
-        title={`${config?.siteName} - ${photo?.description}`}
+        title={`Photo: ${photo?.description} - ${config?.siteName}`}
         description={photo?.description}
         openGraph={{
-          title: `${config?.siteName} - Photo`,
+          title: `Photo: ${photo?.description} - ${config?.siteName}`,
           description: photo?.description,
           images: [
             {
