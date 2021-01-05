@@ -9,6 +9,6 @@ module.exports = {
     return redirects
   },
   async rewrites() {
-    return [{source: '/(?!slides/?)(.*)', destination: '/slides/index.html'}]
+    return [{source: '/slides/', destination: '/slides/index.html'}]
   }
 }
