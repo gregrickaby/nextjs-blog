@@ -75,7 +75,7 @@ export default function SinglePhoto({data}) {
             <dd>{photo?.lens}</dd>
           </div>
           <div>
-            <dt>Focal Length</dt>
+            <dt>Focal Length (@35mm)</dt>
             <dd>{photo?.focalLength}</dd>
           </div>
           <div>
