@@ -4,7 +4,7 @@ import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
-import {NextSeo, BlogJsonLd} from 'next-seo'
+import {BlogJsonLd} from 'next-seo'
 import dayjs from 'dayjs'
 
 /**
@@ -17,25 +17,24 @@ const components = {}
 export default function BlogPost({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
-    <Layout>
-      <NextSeo
-        title={`${frontMatter.title} - ${config?.siteName}`}
-        description={frontMatter?.excerpt}
-        openGraph={{
-          title: `${frontMatter.title} - ${config?.siteName}`,
-          description: frontMatter?.excerpt,
-          images: [
-            {
-              url: `${config.siteUrl}${frontMatter?.ogImage?.url}`,
-              alt: frontMatter?.excerpt
-            }
-          ]
-        }}
-      />
+    <Layout
+      title={`${frontMatter.title} - ${config?.siteName}`}
+      description={frontMatter?.excerpt}
+      openGraph={{
+        title: `${frontMatter.title} - ${config?.siteName}`,
+        description: frontMatter?.excerpt,
+        images: [
+          {
+            url: `${config.siteUrl}${frontMatter?.coverImage}`,
+            alt: frontMatter?.title
+          }
+        ]
+      }}
+    >
       <BlogJsonLd
         url={`${config?.siteUrl}/${frontMatter?.slug}`}
         title={frontMatter?.title}
-        images={[`${config.siteUrl}${frontMatter?.ogImage?.url}`]}
+        images={[`${config?.siteUrl}${frontMatter?.coverImage}`]}
         datePublished={dayjs(frontMatter?.date).toISOString()}
         authorName={frontMatter?.author?.name}
         description={frontMatter?.excerpt}

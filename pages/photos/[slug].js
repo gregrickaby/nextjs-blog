@@ -1,29 +1,27 @@
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {getPhotoByFileName, getPhotosPaths} from '@/functions/getPhotos'
-import {NextSeo} from 'next-seo'
 import Image from 'next/image'
 
 export default function SinglePhoto({data}) {
   const [photo] = data
   return (
-    <Layout>
-      <NextSeo
-        title={`Photo: ${photo?.description} - ${config?.siteName}`}
-        description={photo?.description}
-        openGraph={{
-          title: `Photo: ${photo?.description} - ${config?.siteName}`,
-          description: photo?.description,
-          images: [
-            {
-              url: photo?.src,
-              width: photo?.width,
-              height: photo?.height,
-              alt: photo?.description
-            }
-          ]
-        }}
-      />
+    <Layout
+      title={`Photo: ${photo?.description} - ${config?.siteName}`}
+      description={photo?.description}
+      openGraph={{
+        title: `Photo: ${photo?.description} - ${config?.siteName}`,
+        description: photo?.description,
+        images: [
+          {
+            url: photo?.src,
+            width: photo?.width,
+            height: photo?.height,
+            alt: photo?.description
+          }
+        ]
+      }}
+    >
       <main className="max-w-3xl">
         <div className="extra-wide">
           {photo?.description && (
