@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>What's For Dinner?</title>
+<style>
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 2.4rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.results {
+	font-weight: 700;
+}
+
+.generator {
+	background-color: #666;
+	border: 1px solid #444;
+	color: #fff;
+	font-size: 1.6rem;
+	margin: 24px 0;
+	outline: 0;
+	padding: 10px;
+	text-shadow: 1px 1px #000;
+}
+
+.generator:hover {
+	cursor: pointer;
+}
+
+.generator:active {
+	border: 1px solid #fff;
+}
+</style>
+</head>
+
+<body>
+	<header>
+		<h1>What's for dinner?</h1>
+	</header>
+	<section>
+		<p id="results">Click the button.</p>
+	</section>
+	<section>
+		<button class="generator" onclick="getGrub()">Tell me what to eat!</button>
+	</section>
+</body>
+<script>
+/**
+ * Generate a random meal.
+ */
+function getGrub() {
+
+	// The list of meals
+	var meals = [
+		"Meatball Sub Casserole",
+		"Pork Chops",
+		"Tacos",
+		"Chicken Bundles",
+		"Spaghetti",
+		"Lasagna",
+		"Chili",
+		"Chicken Pot Pie",
+		"Homemade Pizza",
+		"Soup & Sandwiches",
+		"Quesadillas",
+		"Cheeseburgers",
+		"Meatloaf",
+		"Steak Sandwiches",
+		"Fajitas",
+		"Pierogies",
+		"BBQ Chicken",
+		"Steak & Potatoes",
+		"Quiche",
+		"Enchilladas",
+		"Fish Sticks",
+		"Homemade Pizza Rolls",
+		"Beer Pulled Pork",
+		"Chicken Fingers",
+		"Hamburger Helper",
+		"Chimichangas",
+		"Brisket with Mushroom and Onion Gravy",
+		"Chicken Alfredo",
+		"Pork Tenderloin",
+		"Chicken Enchiladas",
+		"Ravioli",
+		"Pasty",
+		"Chicken Nachos",
+	];
+
+	// Get a random meal
+	var randomMeal = Math.floor( ( Math.random() * meals.length ) + 0 );
+
+	// Print results
+	document.getElementById( "results" ).innerHTML = meals[randomMeal];
+}
+</script>
+
+</html>
