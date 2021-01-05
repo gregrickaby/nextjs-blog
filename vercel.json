@@ -3,10 +3,10 @@
   "builds": [
     {
       "use": "@vercel/next@canary",
-      "src": "package.json"
-    },
-    {
+      "src": "package.json",
       "routes": [
+        {"src": "/(?!meals/?)(.*)", "dest": "/meals/$1", "continue": true},
+        {"src": "/(?!memes/?)(.*)", "dest": "/memes/$1", "continue": true},
         {"src": "/(?!slides/?)(.*)", "dest": "/slides/$1", "continue": true}
       ]
     }
