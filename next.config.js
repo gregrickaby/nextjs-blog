@@ -7,5 +7,8 @@ module.exports = {
   },
   async redirects() {
     return redirects
+  },
+  async rewrites() {
+    return [{source: '/(?!slides/?)(.*)', destination: '/slides/index.html'}]
   }
 }
