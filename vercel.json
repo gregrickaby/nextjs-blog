@@ -4,6 +4,11 @@
     {
       "use": "@vercel/next@canary",
       "src": "package.json"
+    },
+    {
+      "routes": [
+        {"src": "/(?!slides/?)(.*)", "dest": "/slides/$1", "continue": true}
+      ]
     }
   ]
 }
