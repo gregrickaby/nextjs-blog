@@ -4,15 +4,10 @@ import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getAllPosts} from '@/functions/getPosts'
-import {NextSeo} from 'next-seo'
 
 export default function BlogArchive({posts}) {
   return (
-    <Layout>
-      <NextSeo
-        title={`Blog - ${config?.siteName}`}
-        description="My latest posts."
-      />
+    <Layout title={`Blog - ${config?.siteName}`} description="My latest posts.">
       <ArchiveHeader title="Blog" description="My latest posts." />
       <div className="grid gap-12 md:grid-cols-2">
         {posts?.length &&

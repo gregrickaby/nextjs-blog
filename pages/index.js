@@ -3,7 +3,7 @@ import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
-import {NextSeo, SocialProfileJsonLd} from 'next-seo'
+import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
 
 /**
@@ -16,11 +16,10 @@ const components = {}
 export default function HomePage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
-    <Layout>
-      <NextSeo
-        title={`${config?.siteName} - ${config?.siteDescription}`}
-        description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
-      />
+    <Layout
+      title={`${config?.siteName} - ${config?.siteDescription}`}
+      description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
+    >
       <SocialProfileJsonLd
         type="Person"
         name={frontMatter?.author?.name}
