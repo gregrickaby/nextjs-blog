@@ -1,0 +1,249 @@
+/*--------------------------------------------------------------
+3.0 - Slideshow Engine
+--------------------------------------------------------------*/
+
+/* variables */
+.slide,
+.delayed,
+.delayed-children > * {
+	transition: .5s;
+	transition-property: transform, opacity, left, top, right, bottom, background;
+}
+
+/* slide defaults */
+.slide {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	display: none;
+
+		&.previous,
+		&:target,
+		&.next {
+			display: block;
+			visibility: hidden;
+			overflow: hidden;
+		}
+
+		&:target {
+			z-index: 100;
+			visibility: visible;
+			overflow: visible;
+			opacity: 1;
+		}
+
+		/* If there's nothing selected, show the first */
+		&:first-child {
+			z-index: 2;
+		}
+}
+
+/* slide numbers */
+#indicator {
+	position: absolute;
+	top: .05in;
+	right: .5em;
+	z-index: 1010;
+	box-sizing: border-box;
+	padding: .1em .3em 0;
+	min-width: 1.6em;
+	border-radius: 999px;
+	background: rgba(0,0,0,.25);
+}
+
+/* Delayed items that are shown incrementally after the slide is */
+.delayed,
+.delayed-children > * {
+	opacity: 0;
+}
+
+.delayed.displayed,
+.delayed-children > .displayed {
+	opacity: .3;
+}
+
+.delayed.current,
+.delayed-children > .current,
+.delayed.displayed.non-dismissable,
+.delayed-children > .displayed.non-dismissable, /* non-dismissable name is deprecated */
+.delayed.displayed.persistent,
+.delayed-children > .displayed.persistent,
+.delayed-children.persistent > .displayed {
+	opacity: 1;
+}
+
+/* onscreen nav */
+button.onscreen-nav {
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+	padding: .2em .4em;
+	border: 0;
+	border-radius: .3em;
+	background: rgba(0,0,0,.5);
+}
+
+/* iframe slides */
+.iframe.slide {
+
+	> h1 {
+		position: absolute; right: 0;
+		bottom: 0; left: 0;
+		background: rgba(0,0,0,.5);
+	}
+
+		&.slide > h1 > a {
+			display: inline-block;
+			padding: .2em .5em;
+		}
+
+	.slide > iframe:only-of-type {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+}
+
+/* show thumbnails */
+.show-thumbnails {
+	overflow-x: hidden;
+}
+
+.show-thumbnails .slide,
+.presenter .slide.next {
+	position: static;
+	float: left;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin: -292px -395px;
+	width: 1024px;
+	height: 768px;
+	opacity: 1;
+	cursor: pointer;
+	transition: 1s transform;
+	transform: scale(.2, .2);
+}
+
+.show-thumbnails.headers-only .slide {
+	display: none;
+}
+
+.show-thumbnails.headers-only header.slide {
+	display: block;
+}
+
+.show-thumbnails .slide .delayed,
+.presenter .slide:target + .slide .delayed {
+	opacity: 1;
+}
+
+.show-thumbnails .slide:hover,
+.show-thumbnails .slide:target,
+.presenter .slide:target + .slide {
+	outline: 20px solid rgba(255, 255, 255, .6);
+	box-shadow: 5px 5px 10px black;
+	outline-radius: 5px;
+}
+
+.show-thumbnails {
+
+	.slide:target {
+		outline-color: rgba(255, 255, 255, .3);
+	}
+
+	.slide:target:hover {
+		outline-color: rgba(255, 255, 255, .9);
+	}
+}
+
+/* display titles */
+.show-thumbnails {
+	.slide[data-title]:after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: .1em 0;
+		background: rgba(0,0,0,.5);
+		transform: none;
+	}
+}
+
+/* Hide all elements in slide by hitting Ctrl + J or Shift + J */
+.hide-elements {
+	.slide:target > * {
+		opacity: 0;
+		transition: .5s;
+	}
+}
+
+/* Timer */
+#timer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 0 5px;
+	width: 0%;
+	height: 16px;
+	background: rgba(0,0,0,.5);
+	transition: linear;
+
+		&:before {
+			content: 'Progress ';
+		}
+
+		&.end {
+			width: 100%;
+		}
+
+		&.end.overtime {
+			right: 0;
+			left: auto;
+			width: 0%;
+		}
+}
+
+/* presenter & projector views */
+.projector #timer {
+	display: none;
+}
+
+.presenter-notes {
+	position: fixed;
+	right: 230px;
+	bottom: 0;
+	left: 0;
+	display: none;
+	overflow: auto;
+	padding: .6em 1em;
+	max-height: 6em;
+	background: rgba(255, 255, 255, .5);
+	box-shadow: .1em .1em .3em rgba(0,0,0,.5) inset;
+	resize: vertical;
+}
+
+.presenter {
+
+	.slide.next {
+		position: fixed;
+		top: auto;
+		right: 0;
+		bottom: 0;
+		left: auto;
+		z-index: 100;
+	}
+
+	.slide:target > .presenter-notes {
+		display: block;
+	}
+}

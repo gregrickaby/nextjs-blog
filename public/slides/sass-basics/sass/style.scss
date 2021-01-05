@@ -1,0 +1,34 @@
+/*
+Theme Name: Sass Basics
+Author: Lea Verou
+Author URI: http://lea.verou.me/
+Author: Greg Rickaby
+Author URI: http://gregrickaby.com
+License: MIT License
+License URI: license.txt
+
+Based on "CSSS" by the lovely Lea Verou http://lea.verou.me/
+Resetting and rebuilding styles have been helped along thanks
+to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Elements
+3.0 - Slideshow Engine
+4.0 - Content
+5.0 - Typography
+6.0 - Media Queries
+--------------------------------------------------------------*/
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/reset";
+@import "partials/elements";
+@import "partials/slideshow";
+@import "partials/typography";
+@import "partials/content";
+@import "partials/media-queries";

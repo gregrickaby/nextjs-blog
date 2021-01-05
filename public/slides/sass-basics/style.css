@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/*
+Theme Name: Sass Basics
+Author: Lea Verou
+Author URI: http://lea.verou.me/
+Author: Greg Rickaby
+Author URI: http://gregrickaby.com
+License: MIT License
+License URI: license.txt
+
+Based on "CSSS" by the lovely Lea Verou http://lea.verou.me/
+Resetting and rebuilding styles have been helped along thanks
+to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Elements
+3.0 - Slideshow Engine
+4.0 - Content
+5.0 - Typography
+6.0 - Media Queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+html { overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */ font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */ opacity: 0; /* Set opacity to zero so we can create fade in effect */ -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */ -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */ }
+html.wf-active { -webkit-transition: .5s ease-in; -moz-transition: .5s ease-in; -o-transition: .5s ease-in; transition: .5s ease-in; /* Using webfont.js, we'll fade in page after all fonts have loaded */ opacity: 1; }
+
+*, *:before, *:after { -moz-box-sizing: border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */ box-sizing: border-box; /* Apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */ -webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */ }
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section { display: block; }
+
+ol, ul { list-style: none; }
+
+table { border-spacing: 0; /* Tables still need 'cellspacing="0"' in the markup */ border-collapse: separate; }
+
+caption, th, td { text-align: left; font-weight: normal; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+
+blockquote, q { quotes: "" ""; }
+
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+a img { border: 0; }
+
+/* pace */
+.pace { -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+.pace .pace-activity { display: block; position: fixed; z-index: 2000; top: 0; right: 0; width: 300px; height: 300px; background: #cc6699; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s; -webkit-transform: translateX(100%) translateY(-100%) rotate(45deg); transform: translateX(100%) translateY(-100%) rotate(45deg); pointer-events: none; }
+.pace.pace-active .pace-activity { -webkit-transform: translateX(50%) translateY(-50%) rotate(45deg); transform: translateX(50%) translateY(-50%) rotate(45deg); }
+.pace .pace-activity::before, .pace .pace-activity::after { position: absolute; bottom: 30px; left: 50%; display: block; border: 5px solid #fff; border-radius: 50%; content: ''; }
+.pace .pace-activity::before { margin-left: -40px; width: 80px; height: 80px; border-right-color: rgba(0, 0, 0, 0.2); border-left-color: rgba(0, 0, 0, 0.2); -webkit-animation: pace-rotation 3s linear infinite; animation: pace-rotation 3s linear infinite; }
+.pace .pace-activity::after { bottom: 50px; margin-left: -20px; width: 40px; height: 40px; border-top-color: rgba(0, 0, 0, 0.2); border-bottom-color: rgba(0, 0, 0, 0.2); -webkit-animation: pace-rotation 1s linear infinite; animation: pace-rotation 1s linear infinite; }
+@-webkit-keyframes pace-rotation { 0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); } }
+@keyframes pace-rotation { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); } }
+/*--------------------------------------------------------------
+2.0 - Elements
+--------------------------------------------------------------*/
+html { background: black url(img/background.jpg) bottom center; background-size: cover; }
+
+a { color: #fff; text-decoration: underline; }
+
+a:hover { text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; line-height: normal; }
+
+button { padding: 3px 8px; }
+
+code, pre, style, textarea, input { margin: 0; padding: 0; border: 1px solid rgba(0, 0, 0, 0.5); background: rgba(0, 0, 0, 0.4); }
+
+code { padding: 2px 4px; border-radius: 3px; vertical-align: middle; }
+
+pre, style, textarea { overflow: auto; max-width: 100%; padding: 10px; }
+
+pre > code { padding: 0; border: 0; background: 0; box-shadow: none; white-space: pre; }
+
+textarea { box-sizing: border-box; width: 100%; }
+
+blockquote:before { margin: 0 15px 0 0; }
+
+blockquote { margin: 24px 0; padding: 14px; border-left: 10px solid #cc6699; }
+
+blockquote p { display: inline; }
+
+cite { display: block; float: right; margin: 5px 0 0; }
+
+dt, dl { display: inline; }
+
+/*--------------------------------------------------------------
+3.0 - Slideshow Engine
+--------------------------------------------------------------*/
+/* variables */
+.slide, .delayed, .delayed-children > * { transition: .5s; transition-property: transform, opacity, left, top, right, bottom, background; }
+
+/* slide defaults */
+.slide { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; display: none; /* If there's nothing selected, show the first */ }
+.slide.previous, .slide:target, .slide.next { display: block; visibility: hidden; overflow: hidden; }
+.slide:target { z-index: 100; visibility: visible; overflow: visible; opacity: 1; }
+.slide:first-child { z-index: 2; }
+
+/* slide numbers */
+#indicator { position: absolute; top: .05in; right: .5em; z-index: 1010; box-sizing: border-box; padding: .1em .3em 0; min-width: 1.6em; border-radius: 999px; background: rgba(0, 0, 0, 0.25); }
+
+/* Delayed items that are shown incrementally after the slide is */
+.delayed, .delayed-children > * { opacity: 0; }
+
+.delayed.displayed, .delayed-children > .displayed { opacity: .3; }
+
+.delayed.current, .delayed-children > .current, .delayed.displayed.non-dismissable, .delayed-children > .displayed.non-dismissable, .delayed.displayed.persistent, .delayed-children > .displayed.persistent, .delayed-children.persistent > .displayed { opacity: 1; }
+
+/* onscreen nav */
+button.onscreen-nav { position: absolute; right: 1em; bottom: 1em; padding: .2em .4em; border: 0; border-radius: .3em; background: rgba(0, 0, 0, 0.5); }
+
+/* iframe slides */
+.iframe.slide > h1 { position: absolute; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
+.iframe.slide.slide > h1 > a { display: inline-block; padding: .2em .5em; }
+.iframe.slide .slide > iframe:only-of-type { position: absolute; top: 0; left: 0; margin: 0; width: 100%; height: 100%; border: 0; }
+
+/* show thumbnails */
+.show-thumbnails { overflow-x: hidden; }
+
+.show-thumbnails .slide, .presenter .slide.next { position: static; float: left; overflow: hidden; box-sizing: border-box; margin: -292px -395px; width: 1024px; height: 768px; opacity: 1; cursor: pointer; transition: 1s transform; transform: scale(0.2, 0.2); }
+
+.show-thumbnails.headers-only .slide { display: none; }
+
+.show-thumbnails.headers-only header.slide { display: block; }
+
+.show-thumbnails .slide .delayed, .presenter .slide:target + .slide .delayed { opacity: 1; }
+
+.show-thumbnails .slide:hover, .show-thumbnails .slide:target, .presenter .slide:target + .slide { outline: 20px solid rgba(255, 255, 255, 0.6); box-shadow: 5px 5px 10px black; outline-radius: 5px; }
+
+.show-thumbnails .slide:target { outline-color: rgba(255, 255, 255, 0.3); }
+.show-thumbnails .slide:target:hover { outline-color: rgba(255, 255, 255, 0.9); }
+
+/* display titles */
+.show-thumbnails .slide[data-title]:after { position: absolute; right: 0; bottom: 0; left: 0; padding: .1em 0; background: rgba(0, 0, 0, 0.5); transform: none; }
+
+/* Hide all elements in slide by hitting Ctrl + J or Shift + J */
+.hide-elements .slide:target > * { opacity: 0; transition: .5s; }
+
+/* Timer */
+#timer { position: absolute; top: 0; left: 0; z-index: 101; overflow: hidden; box-sizing: border-box; padding: 0 5px; width: 0%; height: 16px; background: rgba(0, 0, 0, 0.5); transition: linear; }
+#timer:before { content: 'Progress '; }
+#timer.end { width: 100%; }
+#timer.end.overtime { right: 0; left: auto; width: 0%; }
+
+/* presenter & projector views */
+.projector #timer { display: none; }
+
+.presenter-notes { position: fixed; right: 230px; bottom: 0; left: 0; display: none; overflow: auto; padding: .6em 1em; max-height: 6em; background: rgba(255, 255, 255, 0.5); box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.5) inset; resize: vertical; }
+
+.presenter .slide.next { position: fixed; top: auto; right: 0; bottom: 0; left: auto; z-index: 100; }
+.presenter .slide:target > .presenter-notes { display: block; }
+
+/*--------------------------------------------------------------
+5.0 - Typography
+--------------------------------------------------------------*/
+.pink { color: #ff0000; }
+
+/* defaults */
+body { font-size: 16px; font-size: 1.6rem; font-family: "Open Sans", sans-serif; line-height: 1.6; }
+
+h1 { text-align: center; text-shadow: rgba(255, 255, 255, 0.9); font-size: 10vw; }
+
+h2 { font-weight: 300; font-size: 5vw; }
+
+.slide p.small, p.small, .small { font-size: 1vw; }
+
+a:hover { text-shadow: 0 0 8px white, 0 0 16px white; }
+
+blockquote:before { color: #cc6699; content: "\f10d"; font-size: 3vw; font-family: fontAwesome; }
+
+blockquote { quotes: "" "”" "‘" "’"; }
+
+cite { color: #999; }
+
+cite:before { content: "\2014 \2009"; }
+
+blockquote, blockquote p { font-style: italic; font-size: 2vw; }
+
+select { color: black; }
+
+code, pre, style, textarea, input { font-size: 1.5vw; word-wrap: break-word; font-family: Consolas, "Liberation Mono", Courier, monospace; }
+
+pre { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; }
+pre strong { color: #cc6699; text-shadow: 0 0 1px black; }
+
+code { white-space: nowrap; }
+
+strong, b { font-weight: 700; }
+
+dt { color: #fd90ac; }
+
+dl { color: #cc6699; }
+
+#intro .attribution { font-size: 3vw; color: rgba(255, 255, 255, 0.6); text-align: center; text-shadow: none; font-weight: 700; }
+
+#indicator { color: black; text-align: center; text-shadow: 1px 1px 2px white; font-weight: 700; font-size: 8px; }
+
+/* slide */
+.slide { font-size: 3vw; color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
+.slide li li { font-size: 1.5vw; }
+.slide > ul > li:before, .slide li li:before { color: #cc6699; content: '\f0a4'; font-family: FontAwesome; }
+.slide p, .slide li { font-weight: 700; font-size: 2vw; }
+.slide > ul { list-style: none; }
+.slide .emphasis { color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); letter-spacing: -1px; font-weight: 700; line-height: .85; }
+.slide .emphasis:before { font-size: 20px; font-size: 2rem; color: rgba(255, 255, 255, 0.5); content: '\279C'; text-align: center; text-shadow: none; line-height: 0; }
+
+.attribution { font-size: 1vw; color: white; text-shadow: 1px 1px 2px black; }
+.attribution a { text-decoration: none; }
+.attribution a::after { content: " (" attr(href) ")"; }
+
+button.onscreen-nav { color: white; text-transform: uppercase; text-shadow: 0 -1px 1px black; }
+
+/* iframe slides */
+.iframe.slide { text-align: center; }
+.iframe.slide > h1 { font-size: 1.8vw; }
+.iframe.slide > h1 > a { color: white; text-align: center; text-decoration: none; text-shadow: 0  1px 1px black; }
+
+/* show thumbnails */
+.show-thumbnails .slide[data-title]:after { font-size: 4vw; color: white; content: attr(data-title); text-align: center; text-shadow: 1px 1px 2px black; }
+
+/* timer */
+#timer { text-align: right; line-height: 8px; }
+#timer:before { font-size: 0.5vw; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; }
+
+/* presenter notes */
+.presenter-notes { font-size: 0.5vw; color: black; text-shadow: 0 1px white; font-weight: 300; line-height: 1.3; }
+
+/* Syntax highlighting */
+.comment { color: #999; }
+
+.string { color: yellow; }
+
+.keyword { color: deeppink; font-weight: 700; }
+
+.number, .boolean { color: #0cf; }
+
+.regex { color: orange; }
+
+/*--------------------------------------------------------------
+4.0 - Content
+--------------------------------------------------------------*/
+#intro { padding: 0; border: 0; background: rgba(0, 0, 0, 0.4); }
+#intro h1 { margin: 5% auto 0; min-height: 700px; width: 60%; }
+#intro .attribution { overflow: hidden; }
+
+#css-controls-demo label { display: block; }
+
+#indicator { background: rgba(255, 255, 255, 0.6); }
+
+.slide { padding: 20px 40px; border: 30px solid transparent; background: rgba(0, 0, 0, 0.5); background-clip: padding-box; }
+.slide ol { margin-left: 2em; }
+.slide > ul ul { margin-left: 2em; list-style: none; }
+.slide li { margin: 1em 0; }
+.slide > ul > li:before, .slide li li:before { padding-right: .5em; }
+.slide img { margin: 20px; max-width: 100%; }
+.slide .emphasis { margin: .3em 0; padding: .4em .5em .3em; border-radius: .3em; background: #f80; background: linear-gradient(#fa0, #f80); box-shadow: .1em .1em .5em black; }
+.slide .emphasis::before { float: left; margin: -.2em .2em 0 -.25em; padding: .45em 0 .3em; width: .75em; height: 0; border: .12em solid; border-radius: 999px; transform: rotate(45deg); }
+
+section > header.slide { background-color: rgba(0, 0, 0, 0.8); }
+
+section > header.slide > h1 { position: absolute; top: 35%; right: 0; left: 0; }
+
+.light.slide .emphasis { box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.4); }
+
+.attribution { position: absolute; right: 0; bottom: 1em; left: 0; display: block; padding: .5em 1em; background: rgba(0, 0, 0, 0.8); }
+
+/*--------------------------------------------------------------
+6.0 - Media Queries
+--------------------------------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 0) { /* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+  object[type="image/svg+xml"] { display: none; }
+  #intro h1 { background: url(img/logo.svg) no-repeat center; background-size: 100% auto; } }

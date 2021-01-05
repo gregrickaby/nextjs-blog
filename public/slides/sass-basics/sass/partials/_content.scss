@@ -1,0 +1,104 @@
+/*--------------------------------------------------------------
+4.0 - Content
+--------------------------------------------------------------*/
+
+#intro {
+	padding: 0;
+	border: 0;
+	background: rgba(0,0,0,.4);
+
+		h1 {
+			margin: 5% auto 0;
+			min-height: 700px;
+			width: 60%;
+		}
+
+		.attribution {
+			overflow: hidden;
+		}
+}
+
+#css-controls-demo {
+	label {
+		display: block;
+	}
+}
+
+#indicator {
+	background: rgba(255, 255, 255, .6);
+}
+
+.slide {
+	padding: 20px 40px;
+	border: 30px solid transparent;
+	background: rgba(0,0,0,.5);
+	background-clip: padding-box;
+
+		ol {
+			margin-left: 2em;
+		}
+
+		> ul ul {
+			margin-left: 2em;
+			list-style: none;
+		}
+
+		li {
+			margin: 1em 0;
+		}
+
+		> ul > li:before,
+		li li:before {
+			padding-right: .5em;
+		}
+
+		img {
+			margin: 20px;
+			max-width: 100%;
+		}
+
+		.emphasis {
+			margin: .3em 0;
+			padding: .4em .5em .3em;
+			border-radius: .3em;
+			background: #f80;
+			background: linear-gradient(#fa0, #f80);
+			box-shadow:.1em .1em .5em black;
+
+				&::before {
+					float: left;
+					margin: -.2em .2em 0 -.25em;
+					padding: .45em 0 .3em;
+					width: .75em;
+					height: 0;
+					border: .12em solid;
+					border-radius: 999px;
+					transform: rotate(45deg);
+			}
+		}
+}
+
+section > header.slide {
+	background-color: rgba(0,0,0,.8);
+}
+
+section > header.slide > h1 {
+	position: absolute;
+	top: 35%;
+	right: 0;
+	left: 0;
+}
+
+.light.slide .emphasis {
+	box-shadow: .1em .1em .5em rgba(0,0,0,.4);
+}
+
+.attribution {
+	position: absolute;
+	right: 0;
+	bottom: 1em;
+	left: 0;
+	display: block;
+	padding: .5em 1em;
+	background: rgba(0,0,0,.8);
+}

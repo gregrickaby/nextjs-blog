@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Sass Basics - by Greg Rickaby</title>
+	<link href="style.css" rel="stylesheet" />
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon.png">
+	<link rel="icon" href="favicon.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon.png">
+</head>
+<body data-duration="30">
+
+<header id="intro" class="slide">
+	<h1>
+		<object data="img/logo.svg" width="100%" type="image/svg+xml">
+			<img src="img/logo.png" alt="Sass: Syntactically Awesome Style Sheets" />
+		</object>
+	</h1>
+	<p class="attribution">Sass Basics by Greg Rickaby</p>
+</header>
+
+<section>
+
+	<header class="slide">
+		<h1>Introductions</h1>
+	</header>
+
+	<section class="slide" id="whoami">
+		<h2>Hi, I'm Greg! (@gregrickaby)</h2>
+		<ul style="float:left;">
+			<li>Design Lead at WebDevStudios</li>
+			<li>Audio Engineer at Wiregrass Church</li>
+			<li>Certified Broadcast Engineer</li>
+			<li>Father of two</li>
+			<li>The guy who got Sass into the Underscores</li>
+		</ul>
+		<img style="float:right;max-width:40%;" src="img/whoami.jpg" alt="Greg and Family" />
+	</section>
+
+	<section class="slide" id="definition">
+		<h2>Sass. What is it?</h2>
+		<ul>
+			<li class="delayed">NOUN<br>1) Impudent or disrespectful back talk. "My mother refuses to take any <em>sass</em> from me."</li>
+			<li class="delayed">VERB<br>2) To answer back in an impudent manner. "Don't <em>sass</em> mom."</li>
+			<li class="delayed">STYLESHEET LANGUAGE<br>3) Sass is a stylesheet language, that, when compiled, writes traditional CSS.</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="history">
+		<h2>Brief History</h2>
+		<ul>
+			<li>Sass was initially designed in 2007 by Hampton Catlin and developed by Nathan Weizenbaum.</li>
+			<li>The orginal markup, <code>.sass</code> was modeled after another language named, "Haml" and uses indentation to seperate CSS blocks.</li>
+			<li>The newer markup, <code>.scss</code> closley models traditional CSS blocks and indentation, making the transition from CSS to Sass easier.</li>
+			<li>Sass runs on Ruby and has influenced other stylesheet languages, such as: LESS, Stylus, and Tritium.</li>
+		</ul>
+		<p>For the remainder of this presentation, I will concentrate on the <code>.scss</code> markup</p>
+	</section>
+
+	<section class="slide" id="definition2">
+		<h2>Did You Know?</h2>
+		<ul>
+			<li>Sass is the most mature, stable, and powerful CSS preprocessor in the world.</li>
+			<li>Sass is open-source, and is actively developed by several tech companies and hundreds of developers wordwide at <a href="http://github.com/nex3/sass">http://github.com/nex3/sass</a></li>
+			<li>Sass is the preprocessor of choice at Automattic.</li>
+			<li>Sass is, of course, Sassy! Which means it's also the preprocessor of chioce here at WebDevStudios.</li>
+		</ul>
+	</section>
+
+	<header class="slide">
+		<h1>Misconceptions</h1>
+	</header>
+
+	<section class="slide" id="misconceptions">
+		<h2>Misconsceptions</h2>
+		<blockquote>To install Sass I needed to install Gems, and to install Gems I needed to install Ruby, and to install Ruby I need to Grunt and sudo the oskeychain helper...</blockquote>
+		<p class="delayed">No!! You can download one of many apps (which I will highlight in a minute), point, click, and be compiling in minutes. No command line needed.</p>
+		<blockquote class="delayed">I don't have Admin access to my web server. So, why even bother learning Sass?</blockquote>
+		<p class="delayed">Sass lives and breathes on your local machine. It doesn't do anything (nor does it even belong on a web server). Browsers can't read or even interperate Sass. This is why Sass is a PRE-processor. It's processed before being uploaded to your web server.</p>
+	</section>
+
+	<header class="slide">
+		<h1>Testimonials</h1>
+	</header>
+
+	<section class="slide" id="testimonials">
+		<h2>Negative Nancy's</h2>
+		<p>Do any of these sayings, sound familiar?</p>
+		<ul class="delayed">
+			<li >"Sass will change my workflow."</li>
+			<li>"I'm perfectly okay writing 4,000 lines of CSS, by hand."</li>
+			<li>"I'm the creative type, and Sass will change the way I think and turn me into a developer."</li>
+			<li>"I really don't have time for Sass. I could write all the CSS for this project faster than I ccould get Sass setup and running."</li>
+			<li>"I'm afraid of the command line."</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="testimonials2">
+		<h2>Testimonials from Famous People</h2>
+		<blockquote>I write CSS everyday. I know CSS pretty well. My workflow is fine. I'm productive. Why does anything need to change?</blockquote>
+		<blockquote class="delayed">
+			<img src="img/chris-coyer.jpg" alt="Chris Coyer" style="float:right;height:300px;" />
+			I can tell you that after making the jump, I am actually more productive. And I write better CSS. And the projects I work on are in better, more maintainable shape because of it. And in some cases, faster. <cite>Chris Coyer, css-tricks.com</cite>
+		</blockquote>
+
+	</section>
+
+	<section class="slide" id="testimonials3">
+		<h2>Testimonials from Famous People</h2>
+		<blockquote>
+			I was a reluctant believer in Sass. I write stylesheets by hand! I don’t need help! And I certainly don’t want to add extra complexity to my workflow. Go away!
+		</blockquote>
+		<blockquote class="delayed">
+			<img src="img/dan-cederholm.jpg" alt="Dan Cederholm" style="float:right;height:300px;" />
+			This was partly due to a lot of misconceptions I had prior to using it. Do I need to know Ruby or advanced command-line shenanigans? Will I need to completely change the way I’ve been writing stylesheets? Will the CSS it outputs be bloated and unreadable? Thankfully, the answer is “nope” for each of those questions. <cite>Dan Cederholm, Owner SimpleBits.com, Author Sass for Web Designers</cite>
+		</blockquote>
+	</section>
+
+	<header class="slide">
+		<h1>Getting Started</h1>
+	</header>
+
+	<section class="slide" id="structure">
+		<h2>Basic File Structure</h2>
+		<p>Sass and it's stylesheets reside inside your theme's directory.</p>
+<pre class="delayed" style="font-size:1.2vw;"><dt>/_s</dt>
+  <dt>/images</dt>
+  <dt>/js</dt>
+  <dt>/sass</dt>
+     <dt>/partials</dt>
+        <dl>_content.scss</dl>      &lt;-- partial stylesheet
+        <dl>_header.scss</dl>       &lt;-- partial
+        <dl>_navigation.scss</dl>   &lt;-- partial
+        <dl>_mixins.scss</dl>       &lt;-- partial (mixins)
+        <dl>_sidebar.scss</dl>      &lt;-- partial
+        <dl>_variables.scss</dl>    &lt;-- partial (variables)
+        <dl>_widgets.scss</dl>      &lt;-- partial
+    <dl>config.rb</dl>    &lt;-- config file for compiler
+    <dl>style.scss</dl>   &lt;-- non-partial primary SASS stylesheet
+  <dt>index.php</dt>
+  <dt>style.css</dt>   &lt;-- the compiled stylesheet</pre>
+	</section>
+
+	<section class="slide" id="compiler">
+		<h2>What is a Compiler</h2>
+		<ul>
+			<li>A compiler is simply a program, that when ran, turns one thing into another.</p>
+			<li>In this case, it compiles <code>style.scss</code> into <code>style.css</code>.<img src="img/compiler.png" style="margin-bottom: 0;" /></li>
+			<li>Without a compiler? Sass doesn't "do" anything.</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="compiler2">
+		<h2>Compiler Workflow</h2>
+		<p>The compiler can "watch" for changes to your Sass directory.</p>
+		<ul>
+			<li class="delayed">Anytime you save your changes, the compiler will compile - and update your <code>style.css</code> ...automatically!</li>
+			<li class="delayed">If you're developing locally and using LiveReload, then your browser would refresh showing the udpated style</li>
+			<li class="delayed">At that point you would upload/push <code>style.css</code> to the web server.</li>
+	</section>
+
+	<section class="slide" id="compiler3">
+		<h2>Compiler Config File</h2>
+		<p>This is a basic configuration file (<code>config.rb</code>) which provides instructions to the compiler. Without it, the compiler wouldn't know where to look - or where to output the CSS.</p>
+<pre>sass_dir      = "/"           &lt;-- Sass stylesheet directory
+http_path     = "../"         &lt;-- Path to your website
+css_dir       = "../"         &lt;-- CSS directory (the output of compiler)
+output_style  = expanded      &lt;-- Output style (can be "compact" or "expanded")
+line_comments = false         &lt;-- Helpful during development
+</pre>
+	<ul>
+		<li class="delayed">I could speak at ad nauseam about the different ways to setup <code>config.rb</code>.</li>
+		<li class="delayed">Reference: <a href="http://compass-style.org/help/tutorials/configuration-reference/">http://compass-style.org/help/tutorials/configuration-reference/</a></li>
+	</ul>
+	</section>
+
+	<section class="slide" id="compiler4">
+		<h2>Finding a Compiler</h2>
+		<p>If your first thought when I say "compiler" is the command line, then I have good news. There are PLENTY of GUI compilers out there.</p>
+		<ul class="delayed">
+			<li>Compass.app (<a href="http://compass.kkbox.com/">http://compass.kkbox.com/</a>)</li>
+			<li>Scout (<a href="http://mhs.github.io/scout-app/">http://mhs.github.io/scout-app/</a>)</li>
+			<li>CodeKit (<a href="http://incident57.com/codekit/">http://incident57.com/codekit/</a>)</li>
+			<li>LiveReload (<a href="http://livereload.com/">http://livereload.com/</a>)</li>
+			<li>Prepos App (<a href="http://alphapixels.com/prepros/">http://alphapixels.com/prepros/</a>)</li>
+		</ul>
+		<p class="delayed">Grunt - not a GUI, but super easy to learn! (<a href="http://gruntjs.com/">http://gruntjs.com/</a>)</p>
+	</section>
+
+	<header class="slide">
+		<h1>The Lingo</h1>
+	</header>
+
+	<section class="slide" id="partials">
+		<h2>Partials</h2>
+		<p>"Partials" are simply partial stylesheets which contain little snippets of CSS. This is a great way to modularize your CSS and help keep things easier to maintain.</p>
+		<ul>
+			<li class="delayed">A partial is simply a stylesheet starting with a leading underscore. You might name it something like <code>_typography.scss</code>.</li>
+			<li class="delayed">Break up theme and content parts into a content heirarchy: <code>_header.scss</code>, <code>_content.scss</code>, <code>_sidebar.scss</code>, <code>_footer.scss</code>, etc...</li>
+			<li class="delayed">The leading underscore lets the compiler know, "Hey, I'm only one piece of the puzzle!"</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="partials2">
+		<h2>Partials</h2>
+		<p>Partial stylesheets are included into the primary Sass stylesheet via the <code>@import</code> directive. Here is an example <code>style.scss</code></p>
+<pre style="font-size:1.3vw;">/*
+Theme Name: _s
+Theme URI: http://underscores.me/
+Author: Automattic
+Author URI: http://automattic.com/
+*/
+@import "variables";  <dt>&lt;-- Notice we don't have to include the leading _</dt>
+@import "mixins";     <dt>&lt;-- or the .scss file extension</dt>
+@import "header";
+@import "typography";
+@import "content";
+@import "footer";
+</pre>
+	</section>
+
+
+	<section class="slide" id="variables">
+		<h2>Variables</h2>
+		<p>Think of variables as a way to store information that you want to reuse throughout your stylesheets. You can store things like colors, font stacks, or any CSS value you'd want to re-use throughout your theme. Just like PHP, Sass uses the <code>$</code> symbol.</p>
+		<div>
+<pre><dt>body</dt> {
+  background-color: #f5f5f5;
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}</pre>
+<p>Above is some very basic CSS. Instead of writing <code>#f5f5f5;</code> over and over and over...</p>
+		</div>
+	</section>
+
+
+	<section class="slide" id="variables2">
+		<h2>Variables</h2>
+		<p>Let's use a variable! First, create <code>_variables.scss</code></p>
+		<div class="delayed">
+<pre><dt>_variables.scss</dt><br>
+<dl>$color-background</dl>: #f5f5f5;
+<dl>$color-font</dl>: #111;
+<dl>$font-sans</dl>: "Open Sans", sans-serif;</pre>
+		</div>
+		<p class="delayed">Now create a new file named, <code>_defaults.scss</code> and plug in your new variables:</p>
+		<div class="delayed">
+<pre><dt>body</dt> {
+  background-color: <dl>$color-background;</dl>
+  color: <dl>$color-font;</dl>
+  font-family: <dl>$font-sans;</dl>
+}</pre>
+		</div>
+	</section>
+
+
+	<section class="slide" id="variables3">
+		<h2>Variables</h2>
+		<p>After being compiled, the end result would be:</p>
+<pre><dt>body</dt> {
+  background-color: #f5f5f5;
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+}</pre>
+	</section>
+
+	<section class="slide" id="nesting">
+		<h2>Nesting</h2>
+		<p>When you write HTML, you probably use a fairly clear nested, visual hierarchy with indentation. With CSS? Nesting can get confusing in a hurry. Sass lets you nest your CSS selectors, in the same visual hierarchy of HTML.</p>
+<pre class="delayed small" style="font-size:1.2vw;float:left;width:48%"><dt>nav ul</dt> {
+  list-style: none;
+}
+
+<dt>nav ul li</dt> {
+  display: inline-block;
+}
+
+<dt>nav ul li a</dt> {
+  color: #111;
+  text-decoration: none;
+}</pre>
+<pre class="delayed" style="font-size:1.2vw;float:right;width:48%"><dt>nav</dt> {
+   <dt>ul</dt> {
+      list-style: none;
+      <dt>li</dt> {
+         display: inline-block;
+        <dt>a</dt> {
+           color: #111;
+           text-decoration: none;
+        }
+      }
+   }
+}
+</pre>
+	</section>
+
+	<section class="slide" id="nesting2">
+		<h2>Nesting</h2>
+		<p>When compiled, it looks like:</p>
+<pre><dt>nav ul</dt> {
+  list-style: none;
+}
+
+<dt>nav ul li</dt> {
+  display: inline-block;
+}
+
+<dt>nav ul li a</dt> {
+  color: #111;
+  text-decoration: none;
+}</pre>
+
+	</section>
+
+	<section class="slide" id="nesting3">
+		<h2>Nesting</h2>
+		<p>Use an ampersand <code>&amp;</code> as a "shorthand" way to include a parent.</p>
+<pre style="float:left;width:48%"><dt>.stupid-long-selector-name</dt> {
+   background: $color-background;
+    <dt>&amp;:hover</dt> {
+      background: $color-hover;
+   }
+}
+</pre>
+<pre class="delayed" style="float:right;width:48%;"><dt>.stupid-long-selector-name</dt> {
+   background: #f5f5f5;
+    <dt>.stupid-long-selector-name:hover</dt> {
+        background: #d3d3d3;
+    }
+}
+</pre>
+
+	</section>
+
+	<section class="slide" id="import">
+		<h2>Import</h2>
+		<ul>
+			<li>The CSS <code>@import</code> feature allows you to import several stylesheets into one. The caveat however, is each <code>@import</code> creates a new HTTP request.</li>
+			<li class="delayed">But Sass is compiled locally remember? Sass builds on top of the current CSS <code>@import</code> function and combines everything into a single CSS file.</li>
+		</ul>
+		<img class="delayed" src="img/import.png">
+	</section>
+
+	<section class="slide" id="mixins">
+		<h2>Mixins</h2>
+		<p>Some things in CSS are a bit tedious to write, especially vendor prefixes. A mixin lets you make groups of CSS declarations, or "functions" that you could reuse throughout your theme. You can even pass in arguments! Here's an example for <code>border-radius</code>.</p>
+<pre style="float:left;width:48%;">
+<dt>_mixin.scss</dt>
+
+<dt>@mixin border-radius($radius)</dt> {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+</pre>
+<pre class="delayed" style="float:right;width:48%;">
+<dt>_content.scss</dt>
+
+<dt>.box</dt> {
+   @include border-radius(10px);
+}
+</pre>
+	</section>
+
+	<section class="slide" id="mixins2">
+		<h2>Mixins</h2>
+		<p>When compiled, <code>style.css</code> shows:</p>
+<pre>
+<dt>.box</dt> {
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+          border-radius: 10px;
+}
+</pre>
+	<ul><li class="delayed">If the thought of writing a bunch of mixins seems a bit overwhelming, don't worry! Mixins are included with Sass frameworks such as <a href="http://compass-style.org/">Compass</a> or <a href="http://bourbon.io/">Bourbon</a>. More on those later...</li></ul>
+	</section>
+
+	<section class="slide" id="extend">
+		<h2>Extend/Inheritance</h2>
+		<p>Using <code>@extend</code> lets you share a set of CSS properties from one selector to another. Think of <code>@extend</code> like variables, only they're chunks of code.</p>
+<pre class="delayed small" style="font-size:1.2vw;float:left;width:48%;">
+<dt>.message</dt> {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+<dt>.success</dt> {
+  @extend .message;
+  border-color: green;
+}
+
+<dt>.error</dt> {
+  @extend .message;
+  border-color: red;
+}
+</pre>
+<pre class="delayed small" style="font-size:1vw;float:right;width:48%;">
+<dt>.message</dt> {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+<dt>.success</dt> {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: green;
+}
+
+<dt>.error</dt> {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: red;
+}
+</pre>
+	</section>
+
+	<section class="slide" id="operators">
+		<h2>Operators</h2>
+		<p>Doing math in your CSS is very helpful. Sass has a handful of standard math operators like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code>. Here is a simple fluid grid, based on 960px:</p>
+<pre class="delayed" style="float:left;width:48%;">
+<dt>.container</dt> { width: 100%; }
+
+<dt>article[role="main"]</dt> {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+<dt>aside[role="complimentary"]</dt> {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+</pre>
+<pre class="delayed" style="float:right;width:48%;">
+<dt>.container</dt> { width: 100%; }
+
+<dt>article[role="main"]</dt> {
+  float: left;
+  width: 62.5%;
+}
+
+<dt>aside[role="complimentary"]</dt> {
+  float: right;
+  width: 31.25%;
+}
+</pre>
+	</section>
+
+	<section class="slide" id="frameworks">
+		<h2>Frameworks</h2>
+		<p>Because Sass is all about writing less code, and just like theme frameworks for WordPress (_s, Genesis, Hybrid, etc...) are about giving you a head start; there are a few Sass frameworks (namely <a href="http://compass-style.org/">Compass</a> and <a href="http://bourbon.io/">Bourbon</a>) that provide a ton of mixins and snippets.</p>
+		<p class="delayed"><em>Some clarifications about Compass and Compass.app. Compass.app is simply the name of a compiler - that comes pre-bundled with the Compass Framework.</em></p>
+	</section>
+
+	<section class="slide" id="frameworks2">
+		<h2>Frameworks</h2>
+		<p>Installing frameworks can be done via the command line. (Unless it comes pre-bundled, then it's already there!)</p>
+		<p class="delayed">Compass <code>gem install compass</code></p>
+		<p class="delayed">Bourbon <code>gem install bourbon</code></p>
+		<p class="delayed">Neat (requires Bourbon) <code>gem install neat</code></p>
+		<p class="delayed">Bitters (requires Bourbon) <code>gem install bitters</code></p>
+	</section>
+
+	<section class="slide" id="frameworks3">
+		<h2>Frameworks</h2>
+		<p>Including a framework is as easy as using <code>@import</code>. Now we have all kinds of mixins available for our project!</p>
+<pre class="delayed" style="float:left;width:48%;">
+<dt>style.scss</dt>
+
+@import "compass";
+@import "variables"
+@import "mixins"    etc...
+</pre>
+<pre class="delayed" style="float:right;width:48%;  ">
+<dt>_content.scss</dt>
+
+<dt>.foo</dt> {
+	color: tint( $color, $percentage );
+	@include transition( all 0.8s );
+}</pre>
+	</section>
+
+	<section class="slide" id="#livedemo">
+		<h2>Live Demo</h2>
+		<p class="pink" style="font-size:4vw;">I'm going to change the color of this text.</p>
+	</section>
+
+	<section class="slide" id="theend">
+		<h2>Wrap Up</h2>
+		<p>Sass is an essential tool for any front-end development project (big or small). I hope I've shown you that Sass is NOT scary, nor are you required to think like a developer to use it! Slides can be found anytime at <a href="http://gregrickaby.com/slides/sass-basics/">gregrickaby.com/slides/sass-basics/</a></p>
+
+		<div class="delayed" style="text-align:center;">
+			<h2>Thank you, and stay Sassy Peoria!</h2>
+			<img src="img/wordpress-meetup-peoria.jpg" style="max-height:250px;" />
+		</div>
+	</section>
+
+	<header class="slide" id="questions">
+		<h1>Any Questions?</h1>
+	</header>
+
+	<section class="slide" id="credits">
+		<ul>
+			<li>Sass Basics Guide at <a href="http://sass-lang.com/guide">http://sass-lang.com</a></li>
+			<li>CSS Tricks <a href="http://css-tricks.com">http://css-tricks.com</a></li>
+			<li>Slideshow code forked from "CSSS" written by Lea Verou <a href="http://lea.verou.me/">http://lea.verou.me/</a></li>
+		</ul>
+	</section>
+
+</section>
+
+<script src="js/pace.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="plugins/css-edit.js"></script>
+<script src="plugins/css-snippets.js"></script>
+<script src="plugins/css-controls.js"></script>
+<script src="plugins/code-highlight.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/functions.js"></script>
+</body>
+</html>
