@@ -73,5 +73,10 @@ module.exports = [
     source: '/tag/:slug*',
     destination: '/',
     permanent: true
+  },
+  {
+    source: '/feed',
+    destination: '/rss.xml',
+    permanent: true
   }
 ]
