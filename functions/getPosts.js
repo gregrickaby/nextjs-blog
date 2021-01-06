@@ -6,6 +6,8 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import path from 'path'
 import oembed from 'remark-oembed'
 import prism from 'remark-prism'
+import config, {postsDirectory} from '@/functions/config'
+import dayjs from 'dayjs'
 
 /**
  * Process MDX and front matter for getStaticProps().
@@ -107,4 +109,39 @@ export async function parseMDX(content, components, data) {
     },
     scope: data
   })
+}
+
+/**
+ * Create an RSS feed.
+ */
+export async function generateRssFeed() {
+  const posts = getAllPosts(postsDirectory)
+
+  const feed = `
+    <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+      <channel>
+        <title>${config?.siteName}</title>
+        <link>${config?.siteUrl}</link>
+        <description>${config?.siteDescription}</description>
+        <language>en</language>
+        <lastBuildDate>${dayjs(posts[0]?.date).toISOString()}</lastBuildDate>
+        <atom:link href="${
+          config?.siteUrl
+        }" rel="self" type="application/rss+xml"/>
+        ${posts.map((post) => {
+          return `
+            <item>
+              <guid>${config?.siteUrl}/blogs/${post?.data?.slug}</guid>
+              <title>${post?.data?.title}</title>
+              <description>${post?.data?.excerpt}</description>
+              <link>${config?.siteUrl}/posts/${post?.data?.slug}</link>
+              <pubDate>${dayjs(post?.data?.date).toISOString()}</pubDate>
+              <content:encoded><![CDATA[${post?.content}]]></content:encoded>
+            </item>`
+        })}
+      </channel>
+    </rss>
+  `
+
+  fs.writeFileSync('./public/rss.xml', feed)
 }
