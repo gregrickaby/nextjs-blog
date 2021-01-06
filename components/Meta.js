@@ -1,3 +1,4 @@
+import config from '@/functions/config'
 import Head from 'next/head'
 import Typography from 'typography'
 import wordpress2015Theme from 'typography-theme-wordpress-2015'
@@ -8,6 +9,12 @@ export default function Meta() {
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${config?.siteName} - Feed`}
+        href={`${config?.siteUrl}/rss.xml`}
+      />
       <meta name="msapplication-TileColor" content="#fffff" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta
