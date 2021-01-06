@@ -1,23 +1,20 @@
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 
-export default function PostHeader({props}) {
+export default function PostHeader(props) {
   return (
     <header className="text-center pb-4">
       <time
         className="font-sans text-sm text-gray-500"
-        dateTime={dayjs(props?.frontMatter?.date).toISOString()}
+        dateTime={dayjs(props?.date).toISOString()}
       >
-        {dayjs(props?.frontMatter?.date).format('MMM DD, YYYY')}
+        {dayjs(props?.date).format('MMM DD, YYYY')}
       </time>
-      <h1
-        className="mb-3"
-        dangerouslySetInnerHTML={{__html: props?.frontMatter?.title}}
-      />
-      {props?.frontMatter?.excerpt && (
+      <h1 className="mb-3" dangerouslySetInnerHTML={{__html: props?.title}} />
+      {props?.excerpt && (
         <p
           className="font-sans leading-tight tracking-tight text-gray-500"
-          dangerouslySetInnerHTML={{__html: props?.frontMatter?.excerpt}}
+          dangerouslySetInnerHTML={{__html: props?.excerpt}}
         />
       )}
       <hr />

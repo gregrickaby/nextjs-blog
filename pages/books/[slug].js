@@ -29,7 +29,7 @@ export default function BookPost({source, frontMatter}) {
         ]
       }}
     >
-      <Article frontMatter={frontMatter}>{content}</Article>
+      <Article {...frontMatter}>{content}</Article>
     </Layout>
   )
 }

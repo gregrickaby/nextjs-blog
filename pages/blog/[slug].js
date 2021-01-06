@@ -39,7 +39,7 @@ export default function BlogPost({source, frontMatter}) {
         authorName={frontMatter?.author?.name}
         description={frontMatter?.excerpt}
       />
-      <Article frontMatter={frontMatter}>{content}</Article>
+      <Article {...frontMatter}>{content}</Article>
     </Layout>
   )
 }

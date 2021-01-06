@@ -4,13 +4,12 @@ import PropTypes from 'prop-types'
 export default function Article(props) {
   return (
     <article>
-      <PostHeader props={props} />
+      <PostHeader {...props} />
       {props.children}
     </article>
   )
 }
 
 Article.propTypes = {
-  children: PropTypes.any.isRequired,
-  frontMatter: PropTypes.object.isRequired
+  children: PropTypes.any.isRequired
 }
