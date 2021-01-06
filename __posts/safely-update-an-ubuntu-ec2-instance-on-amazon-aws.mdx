@@ -1,0 +1,31 @@
+---
+title: '[Safely] Update an Ubuntu EC2 instance on Amazon AWS'
+date: '2013-05-19'
+slug: 'safely-update-an-ubuntu-ec2-instance-on-amazon-aws'
+excerpt: ''
+category:
+  - 'code'
+tags:
+  - 'server'
+  - 'ubuntu'
+coverImage: '/blog/images/generic.jpg'
+author:
+  name: 'Greg Rickaby'
+  picture: '/blog/authors/greg.jpg'
+---
+
+[Ubuntu 12.04.1 LTS](http://www.ubuntu.com/download/server) was released, and that meant it was time to upgrade my Ubuntu EC2 instances from 11.10 to 12.04.1 LTS.
+
+When I logged in via SSH I saw the nag to upgrade and thought, "crap...the last time I did this, I destroyed my EC2 instance". The upgrade went flawlessly this time because I created an AMI first, and after a few days I will delete that AMI and associated EBS volumes.
+
+## Step 1: Backup
+
+Create an Amazon Image (AMI) of your existing EC2 instance. If anything fails, you can simply launch the newly created AMI and re-associate your Elastic IP. _(You ARE using an Elastic IP, right?)_
+
+## Step 2: Upgrade
+
+When the AMI is finished, log into your EC2 instance via the terminal and start upgrade:
+
+```bash
+$ sudo apt-get update -y && do-release-upgrade
+```

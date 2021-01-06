@@ -10,11 +10,6 @@ module.exports = [
     permanent: true
   },
   {
-    source: '/2013/05/safely-update-an-ubuntu-ec2-instance-on-amazon-aws/',
-    destination: '/',
-    permanent: true
-  },
-  {
     source: '/2016/06/modify-wordpress-custom-post-type/',
     destination: '/blog/modify-wordpress-custom-post-type',
     permanent: true
