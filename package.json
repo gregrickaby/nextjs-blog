@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@fec/remark-a11y-emoji": "^3.0.0",
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.0",
     "classnames": "2.2.6",
     "dayjs": "^1.10.1",
     "eslint": "^7.17.0",
