@@ -19,7 +19,7 @@ export default function BlogArchive({posts}) {
   )
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
   const posts = getAllPosts(POSTS_PATH)
 
   return {
