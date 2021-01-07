@@ -3,7 +3,7 @@ import Card from '@/components/Card'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
-import {getAllPosts} from '@/functions/getPosts'
+import {getAllPosts, generateRssFeed} from '@/functions/getPosts'
 
 export default function BlogArchive({posts}) {
   return (
@@ -21,6 +21,7 @@ export default function BlogArchive({posts}) {
 
 export async function getStaticProps() {
   const posts = getAllPosts(POSTS_PATH)
+  await generateRssFeed()
 
   return {
     props: {

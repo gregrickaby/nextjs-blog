@@ -2,7 +2,7 @@ import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
-import {getPostData, getPostsPath, generateRssFeed} from '@/functions/getPosts'
+import {getPostData, getPostsPath} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
 import {BlogJsonLd} from 'next-seo'
 import dayjs from 'dayjs'
@@ -55,7 +55,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
   const post = await getPostData(POSTS_PATH, params.slug, components)
-  await generateRssFeed()
 
   return {
     props: {
