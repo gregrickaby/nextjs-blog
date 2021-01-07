@@ -118,26 +118,46 @@ export async function generateRssFeed() {
   const posts = getAllPosts(postsDirectory)
 
   const feed = `
-    <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <?xml version="1.0" encoding="UTF-8"?>
+      <rss version="2.0"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+        xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+      >
       <channel>
         <title>${config?.siteName}</title>
-        <link>${config?.siteUrl}</link>
-        <description>${config?.siteDescription}</description>
-        <language>en</language>
-        <lastBuildDate>${dayjs(posts[0]?.date).toISOString()}</lastBuildDate>
         <atom:link href="${
           config?.siteUrl
-        }" rel="self" type="application/rss+xml"/>
+        }/rss.xml" rel="self" type="application/rss+xml" />
+        <link>${config?.siteUrl}/rss.xml</link>
+        <description>${config?.siteDescription}</description>
+        <language>en</language>
+        <lastBuildDate>${dayjs(posts[0]?.date).format(
+          'ddd, DD MMM YYYY HH:mm:ss ZZ'
+        )}</lastBuildDate>
+        <sy:updatePeriod>weekly</sy:updatePeriod>
+        <sy:updateFrequency>2</sy:updateFrequency>
+        <generator>https://nextjs.org/</generator>
+        <image>
+          <url>${config?.siteUrl}${config?.ogImage}</url>
+          <title>${config?.siteName}</title>
+          <link>${config?.siteUrl}</link>
+        </image>
         ${posts.map((post) => {
           return `
-            <item>
-              <guid>${config?.siteUrl}/blogs/${post?.data?.slug}</guid>
-              <title>${post?.data?.title}</title>
-              <description>${post?.data?.excerpt}</description>
-              <link>${config?.siteUrl}/posts/${post?.data?.slug}</link>
-              <pubDate>${dayjs(post?.data?.date).toISOString()}</pubDate>
-              <content:encoded><![CDATA[${post?.content}]]></content:encoded>
-            </item>`
+        <item>
+          <title>${post?.data?.title}</title>
+          <link>${config?.siteUrl}/posts/${post?.data?.slug}</link>
+          <pubDate>${dayjs(post?.data?.date).format(
+            'ddd, DD MMM YYYY HH:mm:ss ZZ'
+          )}</pubDate>
+          <dc:creator><![CDATA[${post?.data?.author?.name}]]></dc:creator>
+          <description>${post?.data?.excerpt}</description>
+          <guid>${config?.siteUrl}/blogs/${post?.data?.slug}</guid>
+          <content:encoded><![CDATA[${post?.content}]]></content:encoded>
+        </item>`
         })}
       </channel>
     </rss>
