@@ -127,8 +127,6 @@ export async function generateRssFeed() {
         <lastBuildDate>${dayjs(posts[0]?.date).format(
           'ddd, DD MMM YYYY HH:mm:ss ZZ'
         )}</lastBuildDate>
-        <sy:updatePeriod>weekly</sy:updatePeriod>
-        <sy:updateFrequency>2</sy:updateFrequency>
         <webMaster>${config?.authorEmail}</webMaster>
         <generator>https://nextjs.org/</generator>
         <image>
