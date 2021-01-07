@@ -8,6 +8,7 @@ module.exports = {
   siteUrl: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
   authorAvatar: '/blog/authors/greg.jpg',
+  authorEmail: 'gregrickaby@gmail.com',
   ogImage: '/favicon/android-icon-192x192.png',
   navigation: [
     {
