@@ -118,43 +118,36 @@ export async function generateRssFeed() {
   const posts = getAllPosts(postsDirectory)
 
   const feed = `
-    <?xml version="1.0" encoding="UTF-8"?>
-      <rss version="2.0"
-        xmlns:content="http://purl.org/rss/1.0/modules/content/"
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:atom="http://www.w3.org/2005/Atom"
-        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-        xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-      >
+      <rss version="2.0">
       <channel>
         <title>${config?.siteName}</title>
-        <atom:link href="${
-          config?.siteUrl
-        }/rss.xml" rel="self" type="application/rss+xml" />
-        <link>${config?.siteUrl}/rss.xml</link>
         <description>${config?.siteDescription}</description>
-        <language>en</language>
+        <link>${config?.siteUrl}/rss.xml</link>
+        <language>en-us</language>
         <lastBuildDate>${dayjs(posts[0]?.date).format(
           'ddd, DD MMM YYYY HH:mm:ss ZZ'
         )}</lastBuildDate>
         <sy:updatePeriod>weekly</sy:updatePeriod>
         <sy:updateFrequency>2</sy:updateFrequency>
+        <webMaster>${config?.authorEmail}</webMaster>
         <generator>https://nextjs.org/</generator>
         <image>
           <url>${config?.siteUrl}${config?.ogImage}</url>
           <title>${config?.siteName}</title>
           <link>${config?.siteUrl}</link>
+          <width>192</width>
+          <height>192</height>
         </image>
         ${posts.map((post) => {
           return `
         <item>
           <title>${post?.data?.title}</title>
+          <description>${post?.data?.excerpt}</description>
           <link>${config?.siteUrl}/posts/${post?.data?.slug}</link>
           <pubDate>${dayjs(post?.data?.date).format(
             'ddd, DD MMM YYYY HH:mm:ss ZZ'
           )}</pubDate>
           <dc:creator><![CDATA[${post?.data?.author?.name}]]></dc:creator>
-          <description>${post?.data?.excerpt}</description>
           <guid>${config?.siteUrl}/blogs/${post?.data?.slug}</guid>
           <content:encoded><![CDATA[${post?.content}]]></content:encoded>
         </item>`
