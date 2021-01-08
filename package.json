@@ -70,7 +70,8 @@
     "stylelint-config-standard": "^20.0.0",
     "tailwindcss": "^2.0.2",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2015": "^0.16.19"
+    "typography-theme-wordpress-2015": "^0.16.19",
+    "use-dark-mode": "^2.3.1"
   },
   "husky": {
     "hooks": {
