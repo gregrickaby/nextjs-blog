@@ -1,11 +1,11 @@
 import useDarkMode from 'use-dark-mode'
 
-export default function ThemeToggle() {
+export default function DarkModeToggle() {
   const darkMode = useDarkMode(false)
 
   return (
-    <div className="theme-toggle-wrap">
-      <label className="theme-toggle" htmlFor="checkbox">
+    <div className="dark-mode-toggle-wrap">
+      <label className="dark-mode-toggle" htmlFor="checkbox">
         <span className="sr-only">Toggle dark mode</span>
         <input
           aria-label="Toggle dark mode"
@@ -15,9 +15,9 @@ export default function ThemeToggle() {
           onChange={darkMode.toggle}
           type="checkbox"
         />
-        <div className="theme-toggle-slider"></div>
+        <div className="dark-mode-toggle-slider"></div>
       </label>
-      <span className="theme-toggle-icon">☾</span>
+      <span className="dark-mode-toggle-icon">☾</span>
     </div>
   )
 }
