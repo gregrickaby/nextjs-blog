@@ -1,3 +1,4 @@
+import DisplayOptions from '@/components/DisplayOptions'
 import config from '@/functions/config'
 
 export default function Footer() {
@@ -22,6 +23,7 @@ export default function Footer() {
         &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
         <a href="https://nextjs.org">Next.js</a>
       </small>
+      <DisplayOptions />
     </footer>
   )
 }
