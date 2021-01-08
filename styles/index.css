@@ -27,3 +27,46 @@ ol {
     @apply mb-0;
   }
 }
+
+.dark-mode-toggle-wrap {
+  @apply flex items-center fixed;
+
+  top: 5px;
+  right: 5px;
+  z-index: 9999;
+}
+
+.dark-mode-toggle {
+  @apply relative h-4 w-6;
+
+  & input {
+    @apply hidden;
+  }
+}
+
+.dark-mode-toggle-slider {
+  @apply bg-gray-500 top-0 right-0 bottom-0 left-0 absolute cursor-pointer rounded-lg;
+
+  transition: 0.4s;
+
+  &::before {
+    @apply bg-white absolute h-2 w-2 rounded-lg;
+
+    bottom: 4px;
+    content: '';
+    left: 3px;
+    transition: 0.3s;
+  }
+}
+
+.dark-mode-toggle input:checked + .dark-mode-toggle-slider {
+  @apply bg-green-600;
+
+  &::before {
+    transform: translateX(10px);
+  }
+}
+
+.dark-mode-toggle-icon {
+  @apply ml-1;
+}
