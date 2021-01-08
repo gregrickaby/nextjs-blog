@@ -1,6 +1,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ComicNeue';
+  src: url(/fonts/ComicNeue-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url(/fonts/OpenDyslexic-Regular.woff2);
+}
+
 a {
   @apply text-black;
 
