@@ -1,8 +1,9 @@
+import DarkModeToggle from '@/components/DarkModeToggle'
 import cn from 'classnames'
 import {useEffect, useState} from 'react'
 
 export default function DisplayOptions() {
-  const [fontFamily, setFontFamily] = useState('font-sans')
+  const [fontFamily, setFontFamily] = useState('font-serif')
   const [fontSelector, toggleFontSelector] = useState(false)
 
   function clearFonts() {
@@ -70,6 +71,7 @@ export default function DisplayOptions() {
             <option value="font-comic">comic sans</option>
             <option value="font-dyslexic">open dyslexic</option>
           </select>
+          <DarkModeToggle />
         </div>
       )}
     </div>
