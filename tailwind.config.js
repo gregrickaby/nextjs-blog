@@ -15,6 +15,10 @@ module.exports = {
       padding: {
         DEFAULT: '2rem'
       }
+    },
+    fontFamily: {
+      comic: ['ComicNeue', 'sans-serif'],
+      dyslexic: ['OpenDyslexic', 'sans-serif']
     }
   },
   plugins: []
