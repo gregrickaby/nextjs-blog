@@ -74,16 +74,20 @@ export default function DisplayOptions() {
         <label htmlFor="display" className="sr-only">
           toggle display options
         </label>
-        <button id="display" className="bg-transparent px-2">
+        <button
+          id="display"
+          className="bg-transparent px-2 border-none dark:text-white"
+        >
           {fontSelector ? 'X' : 'Aa'}
         </button>
       </form>
 
       {fontSelector && (
         <div className="flex flex-col ml-2">
+          Select a font:
           <select
             id="fontSelect"
-            className="p-2 dark:text-gray-900"
+            className="p-2 mb-4 dark:text-gray-900"
             value={fontFamily}
             onChange={changeFont}
           >
@@ -93,17 +97,18 @@ export default function DisplayOptions() {
             <option value="font-comic">comic sans</option>
             <option value="font-dyslexic">open dyslexic</option>
           </select>
-          <div className="">
+          <div>
             <label htmlFor="checkbox">
               <input
                 aria-label="Toggle theme color"
                 checked={darkMode.value}
+                className="mr-1"
                 id="checkbox"
                 name="checkbox"
                 onChange={darkMode.toggle}
                 type="checkbox"
               />
-              Toggle theme color
+              Dark mode
             </label>
           </div>
         </div>
