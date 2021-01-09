@@ -11,8 +11,14 @@
   src: url(/fonts/OpenDyslexic-Regular.woff2);
 }
 
+body {
+  &.dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
 a {
-  @apply text-black;
+  @apply text-black dark:text-white;
 
   &:hover {
     @apply no-underline;
