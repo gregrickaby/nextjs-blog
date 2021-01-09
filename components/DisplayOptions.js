@@ -5,7 +5,7 @@ import useDarkMode from 'use-dark-mode'
 export default function DisplayOptions() {
   const [fontFamily, setFontFamily] = useState('font-serif')
   const [fontSelector, toggleFontSelector] = useState(false)
-  const darkMode = useDarkMode(false, {
+  const darkMode = useDarkMode(true, {
     classNameDark: 'dark',
     classNameLight: 'light'
   })
