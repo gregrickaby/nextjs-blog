@@ -8,7 +8,7 @@ module.exports = {
       safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
     }
   },
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
