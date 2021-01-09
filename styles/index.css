@@ -1,8 +1,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ComicNeue';
+  src: url(/fonts/ComicNeue-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url(/fonts/OpenDyslexic-Regular.woff2);
+}
+
+body {
+  &.dark {
+    @apply bg-gray-900 text-white;
+  }
+
+  &.font-sans {
+    font-family: sans-serif;
+  }
+
+  &.font-mono {
+    font-family: monospace;
+  }
+}
+
 a {
-  @apply text-black;
+  @apply text-black dark:text-white;
 
   &:hover {
     @apply no-underline;
@@ -16,4 +40,8 @@ ol {
   & li {
     @apply mb-0;
   }
+}
+
+hr {
+  @apply dark:bg-gray-100;
 }

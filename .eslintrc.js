@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
   rules: {
+    'jsx-a11y/no-onchange': 'off',
     'react/prop-types': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'react/react-in-jsx-scope': 'off',

@@ -8,13 +8,17 @@ module.exports = {
       safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
     }
   },
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
       padding: {
         DEFAULT: '2rem'
       }
+    },
+    fontFamily: {
+      comic: ['ComicNeue', 'sans-serif'],
+      dyslexic: ['OpenDyslexic', 'sans-serif']
     }
   },
   plugins: []
