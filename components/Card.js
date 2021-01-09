@@ -39,7 +39,7 @@ export default function Card({props, path}) {
       </div>
       <div className="p-4">
         <p
-          className="text-gray-600 text-sm mb-0"
+          className="text-gray-600 text-sm mb-0 dark:text-gray-100"
           dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
         />
       </div>

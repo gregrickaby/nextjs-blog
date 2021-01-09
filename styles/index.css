@@ -15,6 +15,14 @@ body {
   &.dark {
     @apply bg-gray-900 text-white;
   }
+
+  &.font-sans {
+    font-family: sans-serif;
+  }
+
+  &.font-mono {
+    font-family: monospace;
+  }
 }
 
 a {
@@ -32,4 +40,8 @@ ol {
   & li {
     @apply mb-0;
   }
+}
+
+hr {
+  @apply dark:bg-gray-100;
 }

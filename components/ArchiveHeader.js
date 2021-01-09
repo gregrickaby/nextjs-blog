@@ -6,7 +6,7 @@ export default function ArchiveHeader(props) {
       <h1 className="mb-3" dangerouslySetInnerHTML={{__html: props?.title}} />
       {props?.description && (
         <p
-          className="text-gray-500"
+          className="text-gray-500 dark:text-gray-200"
           dangerouslySetInnerHTML={{__html: props?.description}}
         />
       )}
