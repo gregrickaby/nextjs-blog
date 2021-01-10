@@ -2,18 +2,18 @@
  * Global styles.
  */
 @font-face {
-  font-family: 'ComicNeue';
+  font-family: 'Comic Neue';
   src: url(/fonts/ComicNeue-Regular.woff2);
 }
 
 @font-face {
-  font-family: 'OpenDyslexic';
-  src: url(/fonts/OpenDyslexic-Regular.woff2);
+  font-family: 'Dancing Script';
+  src: url(/fonts/DancingScript-Regular.woff2);
 }
 
 @font-face {
-  font-family: 'RobotoSlab';
-  src: url(/fonts/RobotoSlab-Regular.woff2);
+  font-family: 'Open Dyslexic';
+  src: url(/fonts/OpenDyslexic-Regular.woff2);
 }
 
 @font-face {
@@ -22,13 +22,13 @@
 }
 
 @font-face {
-  font-family: 'RobotoMono';
+  font-family: 'Roboto Mono';
   src: url(/fonts/RobotoMono-Regular.woff2);
 }
 
 @font-face {
-  font-family: 'DancingScript';
-  src: url(/fonts/DancingScript-Regular.woff2);
+  font-family: 'Roboto Slab';
+  src: url(/fonts/RobotoSlab-Regular.woff2);
 }
 
 a {

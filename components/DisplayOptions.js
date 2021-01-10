@@ -21,9 +21,9 @@ export default function DisplayOptions() {
    */
   function clearFonts() {
     document.documentElement.classList.remove(
-      'font-comic',
+      'font-comicneue',
       'font-dancingscript',
-      'font-dyslexic',
+      'font-opendyslexic',
       'font-roboto',
       'font-robotomono',
       'font-robotoslab'
@@ -91,19 +91,19 @@ export default function DisplayOptions() {
 
       {fontSelector && (
         <div className="flex flex-col ml-2">
-          Select a font:
+          Select a font style:
           <select
             id="fontSelect"
             className="p-2 mb-4 dark:text-gray-900"
             value={fontFamily}
             onChange={changeFont}
           >
-            <option value="font-robotoslab">serif (default)</option>
-            <option value="font-roboto">sans-serif</option>
-            <option value="font-dancingscript">handwriting</option>
-            <option value="font-robotomono">monospace</option>
-            <option value="font-comic">comic sans</option>
-            <option value="font-dyslexic">open dyslexic</option>
+            <option value="font-comicneue">Comic Sans</option>
+            <option value="font-dancingscript">Cursive</option>
+            <option value="font-opendyslexic">Open Dyslexic</option>
+            <option value="font-robotomono">Monospace</option>
+            <option value="font-roboto">Sans-serif</option>
+            <option value="font-robotoslab">Serif (default)</option>
           </select>
           <div>
             <label htmlFor="checkbox">

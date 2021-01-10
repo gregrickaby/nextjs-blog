@@ -24,9 +24,9 @@ module.exports = {
       }
     },
     fontFamily: {
-      comic: ['ComicNeue', 'sans-serif'],
+      comicneue: ['Comic Neue', 'sans-serif'],
       dancingscript: ['Dancing Script', 'cursive'],
-      dyslexic: ['OpenDyslexic', 'sans-serif'],
+      opendyslexic: ['Open Dyslexic', 'sans-serif'],
       roboto: ['Roboto', 'sans-serif'],
       robotomono: ['Roboto Mono', 'monospace'],
       robotoslab: ['Roboto Slab', 'serif']
