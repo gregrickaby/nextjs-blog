@@ -1,0 +1,39 @@
+/**
+ * Global styles.
+ */
+@font-face {
+  font-family: 'ComicNeue';
+  src: url(/fonts/ComicNeue-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url(/fonts/OpenDyslexic-Regular.woff2);
+}
+
+body {
+  &.dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+a {
+  @apply text-black dark:text-white;
+
+  &:hover {
+    @apply no-underline;
+  }
+}
+
+ul,
+ol {
+  @apply list-inside;
+
+  & li {
+    @apply mb-0;
+  }
+}
+
+hr {
+  @apply dark:bg-gray-100;
+}
