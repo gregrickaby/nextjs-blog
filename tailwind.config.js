@@ -25,7 +25,11 @@ module.exports = {
     },
     fontFamily: {
       comic: ['ComicNeue', 'sans-serif'],
-      dyslexic: ['OpenDyslexic', 'sans-serif']
+      dancingscript: ['Dancing Script', 'cursive'],
+      dyslexic: ['OpenDyslexic', 'sans-serif'],
+      roboto: ['Roboto', 'sans-serif'],
+      robotomono: ['Roboto Mono', 'monospace'],
+      robotoslab: ['Roboto Slab', 'serif']
     }
   },
   plugins: []

@@ -8,9 +8,9 @@ import useDarkMode from 'use-dark-mode'
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  */
 export default function DisplayOptions() {
-  const [fontFamily, setFontFamily] = useState('font-serif')
+  const [fontFamily, setFontFamily] = useState('font-robotoslab')
   const [fontSelector, toggleFontSelector] = useState(false)
-  const darkMode = useDarkMode(false, {
+  const darkMode = useDarkMode(true, {
     element: document.documentElement,
     classNameDark: 'dark',
     classNameLight: 'light'
@@ -21,11 +21,12 @@ export default function DisplayOptions() {
    */
   function clearFonts() {
     document.documentElement.classList.remove(
-      'font-serif',
-      'font-sans',
-      'font-mono',
       'font-comic',
-      'font-dyslexic'
+      'font-dancingscript',
+      'font-dyslexic',
+      'font-roboto',
+      'font-robotomono',
+      'font-robotoslab'
     )
   }
 
@@ -97,9 +98,10 @@ export default function DisplayOptions() {
             value={fontFamily}
             onChange={changeFont}
           >
-            <option value="font-serif">serif</option>
-            <option value="font-sans">sans-serif</option>
-            <option value="font-mono">monospace</option>
+            <option value="font-robotoslab">serif (default)</option>
+            <option value="font-roboto">sans-serif</option>
+            <option value="font-dancingscript">handwriting</option>
+            <option value="font-robotomono">monospace</option>
             <option value="font-comic">comic sans</option>
             <option value="font-dyslexic">open dyslexic</option>
           </select>

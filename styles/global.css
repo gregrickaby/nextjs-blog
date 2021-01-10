@@ -11,10 +11,24 @@
   src: url(/fonts/OpenDyslexic-Regular.woff2);
 }
 
-body {
-  &.dark {
-    @apply bg-gray-900 text-white;
-  }
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url(/fonts/RobotoSlab-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(/fonts/Roboto-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url(/fonts/RobotoMono-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'DancingScript';
+  src: url(/fonts/DancingScript-Regular.woff2);
 }
 
 a {
