@@ -69,58 +69,57 @@ export default function DisplayOptions() {
 
   useEffect(() => {
     setFontOnLoad()
-  })
+  }, [])
 
   return (
-    <div
-      className={cn('flex items-center fixed top-0 right-0 p-2', {
+    <aside
+      className={cn('flex fixed top-0 right-0 p-2', {
         'dark:bg-gray-900 bg-white': fontSelector
       })}
     >
-      <form onSubmit={toggleDisplayOptions}>
-        <label htmlFor="display" className="sr-only">
-          toggle display options
-        </label>
-        <button
-          id="display"
-          className="bg-transparent px-2 border-none dark:text-white"
-        >
-          {fontSelector ? 'X' : 'Aa'}
-        </button>
-      </form>
-
       {fontSelector && (
-        <div className="flex flex-col ml-2">
-          Select a font style:
-          <select
-            id="fontSelect"
-            className="p-2 mb-4 dark:text-gray-900"
-            value={fontFamily}
-            onChange={changeFont}
-          >
-            <option value="font-comicneue">Comic Sans</option>
-            <option value="font-dancingscript">Cursive</option>
-            <option value="font-opendyslexic">Open Dyslexic</option>
-            <option value="font-robotomono">Monospace</option>
-            <option value="font-roboto">Sans-serif</option>
-            <option value="font-robotoslab">Serif (default)</option>
-          </select>
+        <div className="p-6 -mr-6 space-y-4 text-left">
+          <div className="flex flex-col">
+            <span className="mb-1">Select font style:</span>
+            <select
+              id="fontSelect"
+              className="py-2 -ml-1 dark:text-gray-900 border"
+              value={fontFamily}
+              onChange={changeFont}
+            >
+              <option value="font-comicneue">Comic Sans</option>
+              <option value="font-dancingscript">Cursive</option>
+              <option value="font-opendyslexic">Open Dyslexic</option>
+              <option value="font-robotomono">Monospace</option>
+              <option value="font-roboto">Sans-serif</option>
+              <option value="font-robotoslab">Serif (default)</option>
+            </select>
+          </div>
           <div>
             <label htmlFor="checkbox">
               <input
                 aria-label="Toggle theme color"
                 checked={darkMode.value}
-                className="mr-1"
+                className="mr-2 align-middle"
                 id="checkbox"
                 name="checkbox"
                 onChange={darkMode.toggle}
                 type="checkbox"
               />
-              Dark mode
+              <span className="align-middle">Dark mode</span>
             </label>
           </div>
         </div>
       )}
-    </div>
+
+      <form onSubmit={toggleDisplayOptions}>
+        <label htmlFor="display" className="sr-only">
+          toggle display options
+        </label>
+        <button id="display" className="px-2 border-none dark:text-white">
+          {fontSelector ? 'X' : 'Aa'}
+        </button>
+      </form>
+    </aside>
   )
 }
