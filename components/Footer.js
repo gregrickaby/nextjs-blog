@@ -12,17 +12,13 @@ const DisplayOptions = dynamic(() => import('./DisplayOptions'), {
 
 export default function Footer() {
   return (
-    <footer className="text-center text-xs font-mono grid gap-y-3">
+    <footer className="text-center text-sm grid gap-y-4">
       <hr />
       <div className="flex justify-center space-x-4">
         {!!config.socialNetworks?.length &&
           config?.socialNetworks.map((network) => {
             return (
-              <a
-                className="shadow-none no-underline"
-                key={network?.label}
-                href={network?.url}
-              >
+              <a key={network?.label} href={network?.url}>
                 {network?.label}
               </a>
             )
