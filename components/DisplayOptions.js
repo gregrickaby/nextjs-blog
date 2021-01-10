@@ -2,10 +2,16 @@ import cn from 'classnames'
 import {useEffect, useState} from 'react'
 import useDarkMode from 'use-dark-mode'
 
+/**
+ * This component requires access to the browser, and **must be** used without SSR!
+ *
+ * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
+ */
 export default function DisplayOptions() {
   const [fontFamily, setFontFamily] = useState('font-serif')
   const [fontSelector, toggleFontSelector] = useState(false)
-  const darkMode = useDarkMode(true, {
+  const darkMode = useDarkMode(false, {
+    element: document.documentElement,
     classNameDark: 'dark',
     classNameLight: 'light'
   })
@@ -14,7 +20,7 @@ export default function DisplayOptions() {
    * Clear font class on <body>.
    */
   function clearFonts() {
-    document.body.classList.remove(
+    document.documentElement.classList.remove(
       'font-serif',
       'font-sans',
       'font-mono',
@@ -42,7 +48,7 @@ export default function DisplayOptions() {
     event.preventDefault()
     clearFonts()
     setFontFamily(event.target.value)
-    document.body.classList.add(event.target.value)
+    document.documentElement.classList.add(event.target.value)
     localStorage.setItem('font', event.target.value)
     toggleFontSelector(false)
   }
@@ -56,7 +62,7 @@ export default function DisplayOptions() {
     if (validateFont) {
       setFontFamily(validateFont)
       clearFonts()
-      document.body.classList.add(validateFont)
+      document.documentElement.classList.add(validateFont)
     }
   }
 
