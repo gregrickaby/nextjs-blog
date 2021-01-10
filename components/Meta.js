@@ -1,8 +1,5 @@
 import config from '@/functions/config'
 import Head from 'next/head'
-import Typography from 'typography'
-import wordpress2015Theme from 'typography-theme-wordpress-2015'
-const typography = new Typography(wordpress2015Theme)
 
 export default function Meta() {
   return (
@@ -59,7 +56,6 @@ export default function Meta() {
         `
         }}
       />
-      {typography.injectStyles()}
     </Head>
   )
 }
