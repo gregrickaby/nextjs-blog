@@ -31,6 +31,38 @@
   src: url(/fonts/RobotoSlab-Regular.woff2);
 }
 
+body {
+  @apply dark:bg-gray-900 dark:text-white;
+}
+
+h1 {
+  @apply text-4xl mt-8;
+}
+
+h2 {
+  @apply text-3xl mt-8;
+}
+
+h3 {
+  @apply text-2xl mt-8;
+}
+
+h4 {
+  @apply text-xl mt-8;
+}
+
+h5 {
+  @apply text-lg mt-8;
+}
+
+h6 {
+  @apply mt-8;
+}
+
+p {
+  @apply mt-8;
+}
+
 a {
   @apply text-black dark:text-white;
 
@@ -48,6 +80,22 @@ ol {
   }
 }
 
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
 hr {
   @apply dark:bg-gray-100;
+}
+
+blockquote {
+  @apply p-4 italic;
+
+  & p {
+    @apply m-0;
+  }
 }
