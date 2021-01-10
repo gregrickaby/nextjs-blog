@@ -1,8 +1,8 @@
 module.exports = {
   purge: {
     content: [
-      './components/**/*.{js,ts,jsx,tsx,mdx}',
-      './pages/**/*.{js,ts,jsx,tsx,mdx}'
+      './components/**/*.{js,ts,jsx,tsx,md,mdx}',
+      './pages/**/*.{js,ts,jsx,tsx,md,mdx}'
     ],
     options: {
       safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
@@ -10,6 +10,13 @@ module.exports = {
   },
   darkMode: 'class',
   theme: {
+    extend: {
+      colors: {
+        gray: {
+          900: '#111'
+        }
+      }
+    },
     container: {
       center: true,
       padding: {
