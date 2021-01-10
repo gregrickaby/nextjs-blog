@@ -1,5 +1,14 @@
-import DisplayOptions from '@/components/DisplayOptions'
 import config from '@/functions/config'
+import dynamic from 'next/dynamic'
+
+/**
+ * Only render <DisplayOptions /> client side.
+ *
+ * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
+ */
+const DisplayOptions = dynamic(() => import('./DisplayOptions'), {
+  ssr: false
+})
 
 export default function Footer() {
   return (
