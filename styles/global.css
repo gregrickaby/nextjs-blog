@@ -60,11 +60,11 @@ h6 {
 }
 
 p {
-  @apply mt-8;
+  @apply mt-8 leading-relaxed;
 }
 
 a {
-  @apply text-black dark:text-white;
+  @apply underline text-black dark:text-white;
 
   &:hover {
     @apply no-underline;
@@ -73,7 +73,7 @@ a {
 
 ul,
 ol {
-  @apply list-inside;
+  @apply mt-6 list-inside;
 
   & li {
     @apply mb-0;
@@ -98,4 +98,15 @@ blockquote {
   & p {
     @apply m-0;
   }
+}
+
+/* Slightly pull items out of the container */
+.wide {
+  margin-left: calc(12% - 12vw);
+  margin-right: calc(12% - 12vw);
+}
+
+.wider {
+  margin-left: calc(24% - 24vw);
+  margin-right: calc(24% - 24vw);
 }

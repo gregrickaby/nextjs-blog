@@ -26,7 +26,7 @@ export default function HomePage({source, frontMatter}) {
         url={config?.siteUrl}
         sameAs={config?.socialNetworks.map((network) => network?.url)}
       />
-      <div className="cover-image">
+      <div className="wide">
         <Image
           alt="Rickaby Family"
           className="rounded"
@@ -36,12 +36,6 @@ export default function HomePage({source, frontMatter}) {
           width="1530"
         />
       </div>
-      <style jsx>{`
-        .cover-image {
-          margin-left: calc(12% - 12vw);
-          margin-right: calc(12% - 12vw);
-        }
-      `}</style>
       <article>{content}</article>
     </Layout>
   )
