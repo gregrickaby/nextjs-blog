@@ -19,11 +19,17 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta
         name="google-site-verification"
-        content={process.env.GOOGLE_SITE_VERIFICATION}
+        content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
       />
       <meta name="theme-color" content="#fff" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preload" href="/fonts/ComicNeue-Regular.woff2" as="font" />
+      <link rel="preload" href="/fonts/DancingScript-Regular.woff2" as="font" />
+      <link rel="preload" href="/fonts/OpenDyslexic-Regular.woff2" as="font" />
+      <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" />
+      <link rel="preload" href="/fonts/RobotoMono-Regular.woff2" as="font" />
+      <link rel="preload" href="/fonts/RobotoSlab-Regular.woff2" as="font" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
