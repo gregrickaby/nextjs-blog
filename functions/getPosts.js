@@ -42,6 +42,9 @@ export function getAllPosts(directory) {
     const source = fs.readFileSync(path.join(directory, filePath))
     const {content, data} = matter(source)
 
+    // Force whatever the date format might be to YYYY-MM-DD.
+    data.date = dayjs(data.date).format('YYYY-MM-DD')
+
     return {
       content,
       data,
