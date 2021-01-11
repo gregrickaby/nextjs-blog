@@ -3,7 +3,7 @@
  */
 @font-face {
   font-family: 'Open Dyslexic';
-  font-display: auto;
+  font-display: swap;
   src: url(/fonts/OpenDyslexic-Regular.woff2);
 }
 
