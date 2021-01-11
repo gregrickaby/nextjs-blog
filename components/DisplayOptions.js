@@ -83,7 +83,7 @@ export default function DisplayOptions() {
             <span className="mb-1">Select font style:</span>
             <select
               id="fontSelect"
-              className="py-2 -ml-1 dark:text-gray-900 border"
+              className="p-2 -ml-1 dark:text-white dark:bg-gray-500 border"
               value={fontFamily}
               onChange={changeFont}
             >
@@ -92,7 +92,14 @@ export default function DisplayOptions() {
               <option value="font-opendyslexic">Open Dyslexic</option>
               <option value="font-robotomono">Monospace</option>
               <option value="font-roboto">Sans-serif</option>
-              <option value="font-robotoslab">Serif (default)</option>
+              <option value="font-robotoslab">Serif</option>
+              <style jsx>{`
+                select {
+                  appearance: none;
+                  -moz-appearance: none;
+                  -webkit-appearance: none;
+                }
+              `}</style>
             </select>
           </div>
           <div>
