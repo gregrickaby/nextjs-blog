@@ -24,17 +24,10 @@ export default function Meta() {
       <meta name="theme-color" content="#fff" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Dancing+Script&family=Roboto&family=Roboto+Mono&family=Roboto+Slab&display=swap"
         rel="stylesheet"
-      />
-      <link
-        rel="preload"
-        href="/fonts/OpenDyslexic-Regular.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin
       />
       <link
         rel="apple-touch-icon"
