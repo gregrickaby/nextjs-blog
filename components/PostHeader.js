@@ -5,7 +5,7 @@ export default function PostHeader(props) {
   return (
     <header className="text-center space-y-8">
       <time
-        className="font-roboto text-gray-500 dark:text-gray-100"
+        className="font-sans text-gray-500 dark:text-gray-100"
         dateTime={dayjs(props?.date).toISOString()}
       >
         {dayjs(props?.date).format('MMM DD, YYYY')}
@@ -16,7 +16,7 @@ export default function PostHeader(props) {
       />
       {props?.excerpt && (
         <p
-          className="font-roboto text-gray-500 dark:text-gray-100"
+          className="font-sans text-gray-500 dark:text-gray-100"
           dangerouslySetInnerHTML={{__html: props?.excerpt}}
         />
       )}
