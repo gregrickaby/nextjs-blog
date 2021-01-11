@@ -1,4 +1,5 @@
 import config from '@/functions/config'
+import '@/styles/fonts.css'
 import '@/styles/tailwind.css'
 import '@/styles/prism.css'
 import '@/styles/global.css'
