@@ -30,10 +30,10 @@ export default function HomePage({source, frontMatter}) {
         <Image
           alt="Rickaby Family"
           className="rounded"
-          height="1149"
+          height="729"
           layout="responsive"
           src={frontMatter?.coverImage}
-          width="1530"
+          width="971"
         />
       </div>
       <article>{content}</article>
