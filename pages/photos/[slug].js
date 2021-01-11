@@ -49,7 +49,7 @@ export default function SinglePhoto({data}) {
           </style>
         </div>
 
-        <dl className="grid md:grid-cols-3 mt-8 text-center">
+        <dl className="grid gap-8 md:grid-cols-3 mt-8 text-center">
           <div>
             <dt>Aperture</dt>
             <dd>{photo?.aperture}</dd>
