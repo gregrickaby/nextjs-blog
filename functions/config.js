@@ -45,6 +45,10 @@ module.exports = {
       label: 'Twitter',
       url: 'https://twitter.com/gregrickaby/',
       handle: '@gregrickaby'
+    },
+    {
+      label: 'RSS',
+      url: 'https://gregrickaby.com/rss.xml'
     }
   ]
 }
