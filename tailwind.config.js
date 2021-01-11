@@ -11,6 +11,11 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['Roboto Mono', 'monospace'],
+        sans: ['Roboto', 'sans-serif'],
+        serif: ['Roboto Slab', 'serif']
+      },
       colors: {
         gray: {
           900: '#111'
@@ -26,10 +31,7 @@ module.exports = {
     fontFamily: {
       comicneue: ['Comic Neue', 'sans-serif'],
       dancingscript: ['Dancing Script', 'cursive'],
-      opendyslexic: ['Open Dyslexic', 'sans-serif'],
-      roboto: ['Roboto', 'sans-serif'],
-      robotomono: ['Roboto Mono', 'monospace'],
-      robotoslab: ['Roboto Slab', 'serif']
+      opendyslexic: ['Open Dyslexic', 'sans-serif']
     }
   },
   plugins: []
