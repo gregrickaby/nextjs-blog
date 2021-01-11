@@ -15,39 +15,17 @@ export default function Meta() {
         title={`${config?.siteName} - Feed`}
         href={`${config?.siteUrl}/rss.xml`}
       />
-      <meta name="msapplication-TileColor" content="#fffff" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta
         name="google-site-verification"
         content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
       />
-      <meta name="theme-color" content="#fff" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Dancing+Script&family=Roboto&family=Roboto+Mono&family=Roboto+Slab&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicon/apple-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <link rel="apple-touch-icon" href="/favicon/icon.png" />
+      <link rel="icon" href="/favicon/icon.png" sizes="192x192" />
+      <meta name="msapplication-TileImage" content="/favicon/icon.png" />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

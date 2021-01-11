@@ -1,12 +1,6 @@
 /**
  * Global styles.
  */
-@font-face {
-  font-family: 'Open Dyslexic';
-  font-display: swap;
-  src: url(/fonts/OpenDyslexic-Regular.woff2);
-}
-
 body {
   @apply dark:bg-gray-900 dark:text-white;
 }
