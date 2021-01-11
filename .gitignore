@@ -37,7 +37,7 @@ yarn-error.log*
 # sitemap
 robots.txt
 sitemap.xml
-rss.xml
 
 # files
 123-test.mdx
+rss.xml
