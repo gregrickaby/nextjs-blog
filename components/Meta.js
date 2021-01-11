@@ -29,7 +29,13 @@ export default function Meta() {
         href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Dancing+Script&family=Roboto&family=Roboto+Mono&family=Roboto+Slab&display=swap"
         rel="stylesheet"
       />
-      <link rel="preload" href="/fonts/OpenDyslexic-Regular.woff2" as="font" />
+      <link
+        rel="preload"
+        href="/fonts/OpenDyslexic-Regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
