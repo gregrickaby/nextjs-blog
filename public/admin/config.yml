@@ -22,7 +22,7 @@ collections:
       - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
       - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
       - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", format: "YYYY-MM-DD", widget: "datetime"}
       - {label: "Category", name: "category", max: 1, widget: "list"}
       - {label: "Tags", name: "tags", hint: "Add comma delimited list of tags.", widget: "list"}
       - label: "Author"
@@ -45,7 +45,7 @@ collections:
       - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
       - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
       - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", format: "YYYY-MM-DD", widget: "datetime"}
       - label: "Author"
         name: "author"
         collapsed: true
@@ -66,7 +66,7 @@ collections:
       - {label: "Excerpt", name: "excerpt", required: true, hint: "Required. Add a short sentence about this post. This will also be used as SEO description.", widget: "string"}
       - {label: "Slug", name: "slug", required: true, hint: "Required. Please create a slug-using-dashes.",widget: "string"}
       - {label: "Featured Image", name: "coverImage", hint: "Required. Add a .JPG image at least 1200x630. This will also be used as the Open Graph image.", widget: "image"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", format: "YYYY-MM-DD", widget: "datetime"}
       - label: "Author"
         name: "author"
         collapsed: true
