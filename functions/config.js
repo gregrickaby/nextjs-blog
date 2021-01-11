@@ -7,7 +7,7 @@ module.exports = {
   siteDescription: 'Personal Blog',
   siteUrl: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
-  authorAvatar: '/blog/authors/greg.jpg',
+  authorAvatar: '/blog/authors/greg-80x80.jpg',
   authorEmail: 'gregrickaby@gmail.com',
   ogImage: '/favicon/android-icon-192x192.png',
   navigation: [

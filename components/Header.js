@@ -14,7 +14,7 @@ export default function Header() {
               className="rounded-full"
               height="80"
               layout="fixed"
-              quality="100"
+              quality="75"
               src={config?.authorAvatar}
               width="80"
             />
