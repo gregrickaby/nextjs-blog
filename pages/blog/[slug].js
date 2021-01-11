@@ -35,7 +35,7 @@ export default function BlogPost({source, frontMatter}) {
         url={`${config?.siteUrl}/${frontMatter?.slug}`}
         title={frontMatter?.title}
         images={[`${config?.siteUrl}${frontMatter?.coverImage}`]}
-        datePublished={dayjs(frontMatter?.date).toISOString()}
+        datePublished={dayjs(frontMatter?.date).format('DD/MM/YYYY')}
         authorName={frontMatter?.author?.name}
         description={frontMatter?.excerpt}
       />
