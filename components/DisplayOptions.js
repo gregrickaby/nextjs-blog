@@ -8,7 +8,7 @@ import useDarkMode from 'use-dark-mode'
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  */
 export default function DisplayOptions() {
-  const [fontFamily, setFontFamily] = useState('font-robotoslab')
+  const [fontFamily, setFontFamily] = useState('font-sans')
   const [fontSelector, toggleFontSelector] = useState(false)
   const darkMode = useDarkMode(true, {
     element: document.documentElement,
@@ -20,13 +20,13 @@ export default function DisplayOptions() {
    * Clear font class on <body>.
    */
   function clearFonts() {
-    document.documentElement.classList.remove(
+    document.body.classList.remove(
       'font-comicneue',
       'font-dancingscript',
+      'font-mono',
       'font-opendyslexic',
-      'font-roboto',
-      'font-robotomono',
-      'font-robotoslab'
+      'font-sans',
+      'font-serif'
     )
   }
 
@@ -49,7 +49,7 @@ export default function DisplayOptions() {
     event.preventDefault()
     clearFonts()
     setFontFamily(event.target.value)
-    document.documentElement.classList.add(event.target.value)
+    document.body.classList.add(event.target.value)
     localStorage.setItem('font', event.target.value)
     toggleFontSelector(false)
   }
@@ -63,7 +63,7 @@ export default function DisplayOptions() {
     if (validateFont) {
       setFontFamily(validateFont)
       clearFonts()
-      document.documentElement.classList.add(validateFont)
+      document.body.classList.add(validateFont)
     }
   }
 
@@ -90,16 +90,9 @@ export default function DisplayOptions() {
               <option value="font-comicneue">Comic Sans</option>
               <option value="font-dancingscript">Cursive</option>
               <option value="font-opendyslexic">Open Dyslexic</option>
-              <option value="font-robotomono">Monospace</option>
-              <option value="font-roboto">Sans-serif</option>
-              <option value="font-robotoslab">Serif</option>
-              <style jsx>{`
-                select {
-                  appearance: none;
-                  -moz-appearance: none;
-                  -webkit-appearance: none;
-                }
-              `}</style>
+              <option value="font-mono">Monospace</option>
+              <option value="font-sans">Sans-serif (default)</option>
+              <option value="font-serif">Serif</option>
             </select>
           </div>
           <div>
