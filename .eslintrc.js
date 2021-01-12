@@ -16,17 +16,21 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier'
+    'prettier',
+    'plugin:jsdoc/recommended'
   ],
   settings: {
     react: {
       version: 'detect'
+    },
+    jsdoc: {
+      tagNamePreference: {
+        returns: 'return'
+      }
     }
   },
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier', 'jsdoc'],
   rules: {
-    'jsx-a11y/no-onchange': 'off',
-    'react/prop-types': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
@@ -35,6 +39,10 @@ module.exports = {
         extensions: ['.js', '.jsx']
       }
     ],
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'func-style': ['error', 'declaration'],
+    'jsdoc/check-indentation': 1,
+    'jsdoc/check-line-alignment': [1, 'always'],
+    'no-console': ['error', {allow: ['warn', 'error']}]
   }
 }
