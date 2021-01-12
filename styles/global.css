@@ -5,36 +5,8 @@ body {
   @apply dark:bg-gray-900 dark:text-white;
 }
 
-h1 {
-  @apply text-4xl mt-8;
-}
-
-h2 {
-  @apply text-3xl mt-8;
-}
-
-h3 {
-  @apply text-2xl mt-8;
-}
-
-h4 {
-  @apply text-xl mt-8;
-}
-
-h5 {
-  @apply text-lg mt-8;
-}
-
-h6 {
-  @apply mt-8;
-}
-
-p {
-  @apply mt-8 leading-relaxed;
-}
-
 a {
-  @apply underline text-black dark:text-white;
+  @apply text-black dark:text-white;
 
   &:hover {
     @apply no-underline;
@@ -43,10 +15,10 @@ a {
 
 ul,
 ol {
-  @apply mt-6 list-inside;
+  @apply list-inside;
 
   & li {
-    @apply mb-0;
+    @apply text-xl;
   }
 }
 
@@ -72,6 +44,10 @@ blockquote {
 
 dt {
   @apply font-bold;
+}
+
+img {
+  @apply border;
 }
 
 /* Slightly pull items out of the container */

@@ -26,11 +26,11 @@ export default function Card({props, path}) {
             url(${props?.data?.coverImage})`
         }}
       >
-        <div className="p-4 h-32 flex items-end">
+        <div className="p-4 h-48 flex items-center">
           <Link as={`/${path}/${props?.data?.slug}`} href={`/${path}/[slug]`}>
             <a className="text-white shadow-lg no-underline hover:underline">
               <h3
-                className="mb-2"
+                className="m-0 p-0 leading-tight"
                 dangerouslySetInnerHTML={{__html: props?.data?.title}}
               />
             </a>

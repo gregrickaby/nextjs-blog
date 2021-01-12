@@ -30,9 +30,13 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 1rem;
+  margin: 2rem 0;
   overflow: auto;
+
+  & a {
+    color: white;
+  }
 }
 
 :not(pre) > code[class*='language-'],
@@ -42,8 +46,10 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em;
   border-radius: 0.3em;
+  line-height: inherit;
+  padding: 0.5rem;
+  vertical-align: text-top;
   white-space: normal;
 }
 

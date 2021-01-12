@@ -103,7 +103,6 @@ export async function parseMDX(content, components, data) {
               'inline-color',
               'keep-markup',
               'line-numbers',
-              'show-invisibles',
               'treeview'
             ]
           }
