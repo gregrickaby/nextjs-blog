@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
@@ -14,6 +15,15 @@ import dayjs from 'dayjs'
  */
 const components = {}
 
+/**
+ * Render the BlogPost component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props             The component attributes as props.
+ * @param {object} props.source      The post content.
+ * @param {object} props.frontMatter The post meta data.
+ * @return {Element}                 The BlogPost component.
+ */
 export default function BlogPost({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
@@ -44,6 +54,17 @@ export default function BlogPost({source, frontMatter}) {
   )
 }
 
+BlogPost.propTypes = {
+  frontMatter: PropTypes.object.isRequired,
+  source: PropTypes.object.isRequired
+}
+
+/**
+ * Get static paths.
+ *
+ * @author Greg Rickaby
+ * @return {object} All post paths.
+ */
 export async function getStaticPaths() {
   const paths = getPostsPath(POSTS_PATH)
 
@@ -53,6 +74,15 @@ export async function getStaticPaths() {
   }
 }
 
+/**
+ * Get static props.
+ *
+ * @author Greg Rickaby
+ * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+ * @param {object} context        Incoming context.
+ * @param {object} context.params The route parameters.
+ * @return {object}               All post props.
+ */
 export async function getStaticProps({params}) {
   const post = await getPostData(POSTS_PATH, params.slug, components)
 

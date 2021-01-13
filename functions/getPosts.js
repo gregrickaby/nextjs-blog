@@ -12,18 +12,19 @@ import dayjs from 'dayjs'
 /**
  * Process MDX and front matter for getStaticProps().
  *
+ * @author Greg Rickaby
  * @see https://github.com/hashicorp/next-mdx-remote
- *
- * @param {string} directory   The posts directory.
- * @param {string} slug        The post slug you want to query.
- * @param {object} components  Optional React components.
- * @return {object}
+ * @param {string} directory  The posts directory.
+ * @param {string} slug       The post slug you want to query.
+ * @param {object} components Optional React components.
+ * @return {object}           MDX and front matter.
  */
 export async function getPostData(directory, slug, components) {
   const postFilePath = path.join(directory, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
   const {content, data} = matter(source)
   const mdx = await parseMDX(content, components, data)
+  data.date = dateFormatter(data.date)
 
   return {
     mdx,
@@ -34,16 +35,15 @@ export async function getPostData(directory, slug, components) {
 /**
  * Get posts and their raw data.
  *
+ * @author Greg Rickaby
  * @param {string} directory The directory of posts.
- * @return {object}
+ * @return {object}          A list of all posts and their data.
  */
 export function getAllPosts(directory) {
   const data = mdxFileList(directory).map((filePath) => {
     const source = fs.readFileSync(path.join(directory, filePath))
     const {content, data} = matter(source)
-
-    // Force whatever the date format might be to YYYY-MM-DD.
-    data.date = dayjs(data.date).format('YYYY-MM-DD')
+    data.date = dateFormatter(data.date)
 
     return {
       content,
@@ -63,8 +63,9 @@ export function getAllPosts(directory) {
 /**
  * Get all post paths.
  *
+ * @author Greg Rickaby
  * @param {string} directory The directory of posts.
- * @return {object}
+ * @return {object}          A list of all posts and their paths.
  */
 export function getPostsPath(directory) {
   return mdxFileList(directory)
@@ -75,13 +76,13 @@ export function getPostsPath(directory) {
 /**
  * Parse MDX and front matter data.
  *
+ * @author Greg Rickaby
  * @see https://github.com/vercel/next.js/tree/master/examples/with-mdx-remote
  * @see https://github.com/remarkjs/remark/blob/main/doc/plugins.md
- *
- * @param {string} content     Markdown content.
- * @param {object} components  Any optional React components.
- * @param {object} data        Frontmatter data.
- * @return {object}
+ * @param {string} content    Markdown content.
+ * @param {object} components Any optional React components.
+ * @param {object} data       Front matter meta data.
+ * @return {object}           Processed post data.
  */
 export async function parseMDX(content, components, data) {
   return await renderToString(content, {
@@ -114,7 +115,20 @@ export async function parseMDX(content, components, data) {
 }
 
 /**
- * Create an RSS feed.
+ * Force whatever the date format might be to YYYY-MM-DD.
+ *
+ * @author Greg Rickaby
+ * @param {any} date The post date.
+ * @return {string}  Formatted post date.
+ */
+export function dateFormatter(date) {
+  return dayjs(date.toString()).format('YYYY-MM-DD')
+}
+
+/**
+ * Create and write rss.xml.
+ *
+ * @author Greg Rickaby
  */
 export async function generateRssFeed() {
   const posts = getAllPosts(postsDirectory)

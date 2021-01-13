@@ -3,9 +3,13 @@ import {useEffect, useState} from 'react'
 import useDarkMode from 'use-dark-mode'
 
 /**
- * This component requires access to the browser, and **must be** used without SSR!
+ * Render the DisplayOptions component.
  *
+ * Note: this must be used a dynamic component.
+ *
+ * @author Greg Rickaby
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
+ * @return {Element} The DisplayOptions component.
  */
 export default function DisplayOptions() {
   const [fontFamily, setFontFamily] = useState('font-sans')
@@ -33,7 +37,7 @@ export default function DisplayOptions() {
   /**
    * Toggle the display option drawer.
    *
-   * @param {object} event
+   * @param {object} event The click event.
    */
   function toggleDisplayOptions(event) {
     event.preventDefault()
@@ -43,7 +47,7 @@ export default function DisplayOptions() {
   /**
    * Font change handler.
    *
-   * @param {object} event
+   * @param {object} event The onchange event.
    */
   function changeFont(event) {
     event.preventDefault()
@@ -55,7 +59,7 @@ export default function DisplayOptions() {
   }
 
   /**
-   * Maybe set the font on load?
+   * Check localStorage for a font. If found, use it!
    */
   function setFontOnLoad() {
     const font = localStorage.getItem('font')
@@ -69,7 +73,7 @@ export default function DisplayOptions() {
 
   useEffect(() => {
     setFontOnLoad()
-  }, [])
+  }, []) // eslint-disable-line
 
   return (
     <aside

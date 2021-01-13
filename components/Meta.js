@@ -1,6 +1,12 @@
 import config from '@/functions/config'
 import Head from 'next/head'
 
+/**
+ * Render extra meta tags in the document head.
+ *
+ * @author Greg Rickaby
+ * @return {Element}  The Meta component.
+ */
 export default function Meta() {
   return (
     <Head>

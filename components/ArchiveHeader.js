@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types'
 
+/**
+ * Render the ArchiveHeader component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props The component attributes as props.
+ * @return {Element}     The ArchiveHeader component.
+ */
 export default function ArchiveHeader(props) {
   return (
     <div className="text-center space-y-8 mb-12">

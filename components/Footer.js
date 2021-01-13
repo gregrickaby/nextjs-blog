@@ -10,6 +10,12 @@ const DisplayOptions = dynamic(() => import('./DisplayOptions'), {
   ssr: false
 })
 
+/**
+ * Render the Footer component.
+ *
+ * @author Greg Rickaby
+ * @return {Element} The Footer component.
+ */
 export default function Footer() {
   return (
     <footer className="text-center text-sm grid gap-y-4">

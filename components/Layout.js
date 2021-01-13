@@ -4,6 +4,15 @@ import Header from '@/components/Header'
 import Meta from '@/components/Meta'
 import {NextSeo} from 'next-seo'
 
+/**
+ * Render the Layout component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props          The component attributes as props.
+ * @param {any}    props.children Child component(s) to render.
+ * @param {object} props.props    All remaining props.
+ * @return {Element}              The Layout component.
+ */
 export default function Layout({children, ...props}) {
   return (
     <>

@@ -3,6 +3,12 @@ import config from '@/functions/config'
 import Image from 'next/image'
 import Link from 'next/link'
 
+/**
+ * Render Header component.
+ *
+ * @author Greg Rickaby
+ * @return {Element}  The Header component.
+ */
 export default function Header() {
   return (
     <header className="flex flex-col md:flex-row justify-between text-center md:text-left">

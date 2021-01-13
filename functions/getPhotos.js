@@ -7,7 +7,7 @@ import sizeOf from 'image-size'
 import path from 'path'
 
 /**
- * Create a list of all (.jpg) photos.
+ * Create a list of all JPG photos.
  */
 export const getJpgList = fs
   .readdirSync(config?.photosDirectory)
@@ -16,7 +16,8 @@ export const getJpgList = fs
 /**
  * Get all JPG photos and their data.
  *
- * @return {object}
+ * @author Greg Rickaby
+ * @return {object} A list of all JPG photos.
  */
 export async function getPhotos() {
   // Get the list of photos.
@@ -27,6 +28,7 @@ export async function getPhotos() {
     return null
   }
 
+  // Process all photos.
   const data = await processPhoto(jpgs)
 
   // Sort photos by date, desc.
@@ -40,8 +42,9 @@ export async function getPhotos() {
 /**
  * Get a single photo.
  *
+ * @author Greg Rickaby
  * @param {string} fileName The file name of a photo.
- * @return {array}
+ * @return {Array}          A photo and it's EXIF data.
  */
 export async function getPhotoByFileName(fileName) {
   // No file name? Bail.
@@ -70,11 +73,12 @@ export async function getPhotoByFileName(fileName) {
  *
  * Note: The exifr package is all Promise based.
  *
+ * @author Greg Rickaby
  * @see https://www.npmjs.com/package/exifr
  * @see https://www.npmjs.com/package/fraction.js
  * @see https://www.npmjs.com/package/image-size
- * @param {array} photos An array of photo(s).
- * @return {object}
+ * @param {Array} photos An array of photo(s).
+ * @return {object}      An object with EXIF data.
  */
 export async function processPhoto(photos) {
   // No photos? Bail.
@@ -168,8 +172,9 @@ export async function processPhoto(photos) {
 /**
  * Remove a file extension.
  *
- * @param {string} fileName A filename.
- * @return {string}
+ * @author Greg Rickaby
+ * @param {string} fileName Any filename.
+ * @return {string}         Just the file name, no extension.
  */
 export function removeFileExtension(fileName) {
   // No file name? Bail.
@@ -181,10 +186,11 @@ export function removeFileExtension(fileName) {
 }
 
 /**
- * Format number into human readable file size.
+ * Format a number into human readable file size.
  *
+ * @author Greg Rickaby
  * @param {number} fileSize The file size in bytes.
- * @return {string}
+ * @return {string}         Human readable file size.
  */
 export function formatFileSize(fileSize) {
   // No file size? Bail.
@@ -192,18 +198,23 @@ export function formatFileSize(fileSize) {
     return null
   }
 
+  // List of file sizes.
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-  const i = Math.min(
+
+  // Calculate the file size.
+  const file = Math.min(
     parseInt(Math.floor(Math.log(fileSize) / Math.log(1024)).toString(), 10),
     sizes.length - 1
   )
-  return `${(fileSize / 1024 ** i).toFixed(i ? 1 : 0)} ${sizes[i]}`
+
+  return `${(fileSize / 1024 ** file).toFixed(file ? 1 : 0)} ${sizes[file]}`
 }
 
 /**
  * Get all photo paths.
  *
- * @return {object}
+ * @author Greg Rickaby
+ * @return {object} A list of all photos and their paths.
  */
 export function getPhotosPaths() {
   return getJpgList?.map((photo) => ({

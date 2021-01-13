@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
@@ -12,6 +13,15 @@ import hydrate from 'next-mdx-remote/hydrate'
  */
 const components = {}
 
+/**
+ * Render the BookPost component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props             The component attributes as props.
+ * @param {object} props.source      The book content.
+ * @param {object} props.frontMatter The book meta data.
+ * @return {Element}                 The BookPost component.
+ */
 export default function BookPost({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
@@ -34,6 +44,17 @@ export default function BookPost({source, frontMatter}) {
   )
 }
 
+BookPost.propTypes = {
+  frontMatter: PropTypes.object.isRequired,
+  source: PropTypes.object.isRequired
+}
+
+/**
+ * Get static paths.
+ *
+ * @author Greg Rickaby
+ * @return {object} All book paths.
+ */
 export async function getStaticPaths() {
   const paths = getPostsPath(BOOKS_PATH)
 
@@ -43,6 +64,15 @@ export async function getStaticPaths() {
   }
 }
 
+/**
+ * Get static props.
+ *
+ * @author Greg Rickaby
+ * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+ * @param {object} context        Incoming context.
+ * @param {object} context.params The route parameters.
+ * @return {object}               All book props.
+ */
 export async function getStaticProps({params}) {
   const post = await getPostData(BOOKS_PATH, params.slug, components)
 

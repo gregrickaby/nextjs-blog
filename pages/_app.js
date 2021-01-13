@@ -6,6 +6,15 @@ import '@/styles/global.css'
 import {DefaultSeo} from 'next-seo'
 import PropTypes from 'prop-types'
 
+/**
+ * Render the App component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props           The component attributes as props.
+ * @param {object} props.Component Default component provider.
+ * @param {object} props.pageProps All page props.
+ * @return {Element}               The App component.
+ */
 export default function App({Component, pageProps}) {
   return (
     <>

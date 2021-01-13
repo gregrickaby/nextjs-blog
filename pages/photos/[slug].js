@@ -1,8 +1,17 @@
+import PropTypes from 'prop-types'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {getPhotoByFileName, getPhotosPaths} from '@/functions/getPhotos'
 import Image from 'next/image'
 
+/**
+ * Render the SinglePhoto component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props      The component attributes as props.
+ * @param {object} props.data The photo content.
+ * @return {Element}          The SinglePhoto component.
+ */
 export default function SinglePhoto({data}) {
   const [photo] = data
   return (
@@ -118,6 +127,16 @@ export default function SinglePhoto({data}) {
   )
 }
 
+SinglePhoto.propTypes = {
+  data: PropTypes.object.isRequired
+}
+
+/**
+ * Get static paths.
+ *
+ * @author Greg Rickaby
+ * @return {object} All photo paths.
+ */
 export async function getStaticPaths() {
   const paths = getPhotosPaths()
 
@@ -127,6 +146,15 @@ export async function getStaticPaths() {
   }
 }
 
+/**
+ * Get static props.
+ *
+ * @author Greg Rickaby
+ * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+ * @param {object} context        Incoming context.
+ * @param {object} context.params The route parameters.
+ * @return {object}               All photo props.
+ */
 export async function getStaticProps({params}) {
   const photo = await getPhotoByFileName(params.slug)
 

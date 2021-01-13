@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
@@ -13,6 +14,15 @@ import Image from 'next/image'
  */
 const components = {}
 
+/**
+ * Render the HomePage component.
+ *
+ * @author Greg Rickaby
+ * @param {object} props             The component attributes as props.
+ * @param {object} props.source      The page content.
+ * @param {object} props.frontMatter The page meta data.
+ * @return {Element}                 The HomePage component.
+ */
 export default function HomePage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
@@ -41,6 +51,18 @@ export default function HomePage({source, frontMatter}) {
   )
 }
 
+HomePage.propTypes = {
+  frontMatter: PropTypes.object.isRequired,
+  source: PropTypes.object.isRequired
+}
+
+/**
+ * Get static props.
+ *
+ * @author Greg Rickaby
+ * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+ * @return {object} All page props.
+ */
 export async function getStaticProps() {
   const post = await getPostData(PAGES_PATH, 'homepage', components)
 
