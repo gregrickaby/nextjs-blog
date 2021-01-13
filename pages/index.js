@@ -29,6 +29,16 @@ export default function HomePage({source, frontMatter}) {
     <Layout
       title={`${config?.siteName} - ${config?.siteDescription}`}
       description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
+      openGraph={{
+        title: `${frontMatter.title} - ${config?.siteName}`,
+        description: frontMatter?.excerpt,
+        images: [
+          {
+            url: `${config.siteUrl}${frontMatter?.coverImage}`,
+            alt: frontMatter?.title
+          }
+        ]
+      }}
     >
       <SocialProfileJsonLd
         type="Person"

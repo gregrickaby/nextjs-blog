@@ -28,6 +28,16 @@ export default function ResourcesPage({source, frontMatter}) {
     <Layout
       title={`Resources - ${config?.siteName}`}
       description={frontMatter?.excerpt}
+      openGraph={{
+        title: `${frontMatter.title} - ${config?.siteName}`,
+        description: frontMatter?.excerpt,
+        images: [
+          {
+            url: `${config.siteUrl}${frontMatter?.coverImage}`,
+            alt: frontMatter?.title
+          }
+        ]
+      }}
     >
       <ArchiveHeader
         title={frontMatter?.title}
