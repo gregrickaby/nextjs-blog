@@ -4,20 +4,6 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 
 ---
 
-## Install
-
-Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running with either Yarn or NPX:
-
-```bash
-$ yarn create next-app nextjs-blog --example https://github.com/gregrickaby/nextjs-blog
-
-or
-
-$ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextjs-blog
-```
-
----
-
 ## Packages
 
 - [Day.js](https://day.js.org/en/)
@@ -31,24 +17,94 @@ $ npx create-next-app nextjs-blog --example https://github.com/gregrickaby/nextj
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - [Next.js](https://nextjs.org/)
 - [Prettier](https://github.com/prettier/prettier)
+- [Storybook](https://storybook.js.org/)
 - [Stylelint](https://stylelint.io/)
 - [Syntax Highlighting](https://github.com/sergioramos/remark-prism)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Typography.js](https://github.com/KyleAMathews/typography.js)
 - [Vercel Ready](https://vercel.com/)
+
+---
+
+## Install
+
+Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running with either Yarn or NPX:
+
+```bash
+$ yarn create next-app gregrickaby-blog --example https://github.com/gregrickaby/gregrickaby-blog
+
+or
+
+$ npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/gregrickaby-blog
+```
 
 ---
 
 ## ENV Variables
 
-1. Link project w/ Vercel:
+### Set up
+
+You will need the following ENV variables in order to develop.
+
+Create an `.env` file and add:
+
+```text
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
+```
+
+```text
+NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
+```
+
+### Optional: Pull from Vercel
+
+If you have a project on Vercel, you could also add the ENV variables there, and then pull them down:
+
+Link project w/ Vercel:
 
 ```bash
 $ vercel link
 ```
 
-2. Pull ENV variables:
+Pull ENV variables:
 
 ```bash
 $ vercel env pull
 ```
+
+This will create a `.env` file on your local.
+
+---
+
+## Development
+
+Start the development server:
+
+```bash
+yarn dev
+```
+
+Test a build prior to deployment:
+
+```bash
+yarn build && yarn serve
+```
+
+Bulk linting via CLI:
+
+```bash
+yarn lint
+```
+
+---
+
+## Storybook
+
+Stories are written in `.mdx`. Clone the `StoryTemplate.stories.mdx` file to get started.
+
+Start Storybook:
+
+```bash
+$ yarn storybook
+```
+
+---
