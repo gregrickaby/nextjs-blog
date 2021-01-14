@@ -1,0 +1,29 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks'
+import PageHeader from './PageHeader'
+
+<Meta title="Design System/Molecules/Page Header" component={PageHeader} />
+
+# Page Header
+
+Use this component to display the Page Header.
+
+export const Template = (args) => {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <PageHeader {...args} />
+    </div>
+  )
+}
+
+<Canvas>
+  <Story
+    name="Page Header"
+    args={{
+      date: '2020-01-01',
+      excerpt: 'The Page header description should be a short sentance.',
+      title: 'Page Title'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
