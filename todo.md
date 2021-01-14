@@ -1,1 +1,0 @@
-- Find and remove old shortcodes in markdown files
