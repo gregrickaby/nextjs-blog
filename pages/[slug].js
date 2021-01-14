@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Layout from '@/components/Layout'
+import Layout from '@/components/organisms/Layout'
 import ArchiveHeader from '@/components/molecules/ArchiveHeader'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'

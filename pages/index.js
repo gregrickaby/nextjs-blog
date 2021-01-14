@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Layout from '@/components/Layout'
+import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData} from '@/functions/getPosts'

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import ArchiveHeader from '@/components/molecules/ArchiveHeader'
-import Layout from '@/components/Layout'
+import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
 import {getPhotos} from '@/functions/getPhotos'
 import Image from 'next/image'

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import Article from '@/components/Article'
-import Layout from '@/components/Layout'
+import Article from '@/components/molecules/Article'
+import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
