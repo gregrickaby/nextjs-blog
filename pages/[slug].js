@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import Layout from '@/components/organisms/Layout'
-import ArchiveHeader from '@/components/molecules/ArchiveHeader'
+import PageHeader from '@/components/molecules/PageHeader'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
@@ -40,7 +40,7 @@ export default function BlogPost({source, frontMatter}) {
         ]
       }}
     >
-      <ArchiveHeader title={frontMatter?.title} />
+      <PageHeader title={frontMatter?.title} excerpt={frontMatter?.excerpt} />
       <article>{content}</article>
     </Layout>
   )

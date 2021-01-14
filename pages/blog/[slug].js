@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Article from '@/components/molecules/Article'
+import Article from '@/components/organisms/Article'
 import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/getMdx'

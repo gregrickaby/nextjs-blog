@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ArchiveHeader from '@/components/molecules/ArchiveHeader'
+import PageHeader from '@/components/molecules/PageHeader'
 import Card from '@/components/molecules/Card'
 import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
@@ -17,7 +17,7 @@ import {getAllPosts, generateRssFeed} from '@/functions/getPosts'
 export default function BlogArchive({posts}) {
   return (
     <Layout title={`Blog - ${config?.siteName}`} description="My latest posts.">
-      <ArchiveHeader title="Blog" description="My latest posts." />
+      <PageHeader title="Blog" excerpt="My latest posts." />
       <div className="grid gap-12 md:grid-cols-2">
         {!!posts?.length &&
           posts.map((post, index) => (

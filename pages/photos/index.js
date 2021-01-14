@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ArchiveHeader from '@/components/molecules/ArchiveHeader'
+import PageHeader from '@/components/molecules/PageHeader'
 import Layout from '@/components/organisms/Layout'
 import config from '@/functions/config'
 import {getPhotos} from '@/functions/getPhotos'
@@ -20,7 +20,7 @@ export default function PhotosArchive({photos}) {
       title={`Photos - ${config?.siteName}`}
       description="Some of my best photos."
     >
-      <ArchiveHeader title="Photos" description="Some of my best photos." />
+      <PageHeader title="Photos" excerpt="Some of my best photos." />
       <section className="grid">
         {photos?.length &&
           photos?.map((photo, index) => {
