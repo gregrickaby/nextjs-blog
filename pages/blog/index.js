@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ArchiveHeader from '@/components/ArchiveHeader'
+import ArchiveHeader from '@/components/molecules/ArchiveHeader'
 import Card from '@/components/Card'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
@@ -11,7 +11,7 @@ import {getAllPosts, generateRssFeed} from '@/functions/getPosts'
  *
  * @author Greg Rickaby
  * @param {object} props       The component attributes as props.
- * @param {Array}  props.posts The post data.
+ * @param {any}    props.posts The post data.
  * @return {Element}           The BlogArchive component.
  */
 export default function BlogArchive({posts}) {
@@ -29,7 +29,7 @@ export default function BlogArchive({posts}) {
 }
 
 BlogArchive.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.any.isRequired
 }
 
 /**

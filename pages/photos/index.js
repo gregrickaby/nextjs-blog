@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ArchiveHeader from '@/components/ArchiveHeader'
+import ArchiveHeader from '@/components/molecules/ArchiveHeader'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
 import {getPhotos} from '@/functions/getPhotos'
@@ -11,7 +11,7 @@ import Link from 'next/link'
  *
  * @author Greg Rickaby
  * @param {object} props        The component attributes as props.
- * @param {Array}  props.photos The photo data.
+ * @param {any}    props.photos The photo data.
  * @return {Element}            The PhotosArchive component.
  */
 export default function PhotosArchive({photos}) {
@@ -60,7 +60,7 @@ export default function PhotosArchive({photos}) {
 }
 
 PhotosArchive.propTypes = {
-  photos: PropTypes.object.isRequired
+  photos: PropTypes.any.isRequired
 }
 
 /**

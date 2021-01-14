@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import ArchiveHeader from '@/components/ArchiveHeader'
+import ArchiveHeader from '@/components/molecules/ArchiveHeader'
 import Card from '@/components/Card'
 import Layout from '@/components/Layout'
 import config from '@/functions/config'
@@ -11,7 +11,7 @@ import {getAllPosts} from '@/functions/getPosts'
  *
  * @author Greg Rickaby
  * @param {object} props       The component attributes as props.
- * @param {Array}  props.books The books data.
+ * @param {any}    props.books The books data.
  * @return {Element}           The BooksArchive component.
  */
 export default function BooksArchive({books}) {
@@ -37,7 +37,7 @@ export default function BooksArchive({books}) {
 }
 
 BooksArchive.propTypes = {
-  books: PropTypes.object.isRequired
+  books: PropTypes.any.isRequired
 }
 
 /**

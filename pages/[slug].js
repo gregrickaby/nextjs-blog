@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import Layout from '@/components/Layout'
-import ArchiveHeader from '@/components/ArchiveHeader'
+import ArchiveHeader from '@/components/molecules/ArchiveHeader'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'
