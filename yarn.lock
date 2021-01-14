@@ -1686,7 +1686,7 @@
     "@storybook/components" "6.1.14"
     core-js "^3.0.1"
 
-"@storybook/addon-viewport@6.1.14":
+"@storybook/addon-viewport@6.1.14", "@storybook/addon-viewport@^6.1.14":
   version "6.1.14"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.1.14.tgz#db92b2c1fb5bbaf8240e26f433e6c6d9829de33a"
   integrity sha512-5u9Atyfmz8fNHo0CCp1e5bHKmdHIchhzel9gIzSYnwCDDILaB8iPmQwxdb9v2nerUCHGIH9CNJbTYpECqpBK2A==
