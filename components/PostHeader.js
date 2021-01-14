@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
  * @param {string} props.date    The post date.
  * @param {string} props.excerpt The post excerpt.
  * @param {string} props.title   The post title.
- * @return {Element}              The PostHeader component.
+ * @return {Element}             The PostHeader component.
  */
 export default function PostHeader(props) {
   return (

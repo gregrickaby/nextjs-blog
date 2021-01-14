@@ -5,7 +5,7 @@ import config from '@/functions/config'
  * Render Navigation component.
  *
  * @author Greg Rickaby
- * @return {Element}  The Navigation component.
+ * @return {Element} The Navigation component.
  */
 export default function Nav() {
   return (

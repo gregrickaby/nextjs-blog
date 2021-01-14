@@ -7,7 +7,7 @@ import Link from 'next/link'
  * Render Header component.
  *
  * @author Greg Rickaby
- * @return {Element}  The Header component.
+ * @return {Element} The Header component.
  */
 export default function Header() {
   return (
