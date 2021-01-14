@@ -45,7 +45,7 @@ $ npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/
 
 You will need the following ENV variables in order to develop.
 
-Create an `.env` file and add:
+Create an `.env` file in the root of the project and add the following:
 
 ```text
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
@@ -55,9 +55,9 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
 ```
 
-### Optional: Pull from Vercel
+### Optional: ull from Vercel
 
-If you have a project on Vercel, you could also add the ENV variables there, and then pull them down:
+If you have a project on Vercel, add the ENV variables under "Project Settings" and pull them down:
 
 Link project w/ Vercel:
 
