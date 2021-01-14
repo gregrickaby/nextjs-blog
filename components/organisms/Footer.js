@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
  *
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  */
-const DisplayOptions = dynamic(() => import('./DisplayOptions'), {
+const DisplayOptions = dynamic(() => import('../molecules/DisplayOptions'), {
   ssr: false
 })
 

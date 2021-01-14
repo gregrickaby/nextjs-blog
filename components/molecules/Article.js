@@ -1,4 +1,4 @@
-import PostHeader from '@/components/PostHeader'
+import PostHeader from '@/components/molecules/PostHeader'
 import PropTypes from 'prop-types'
 
 /**

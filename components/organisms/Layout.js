@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import Meta from '@/components/Meta'
+import Footer from '@/components/organisms/Footer'
+import Header from '@/components/organisms/Header'
+import Meta from '@/components/molecules/Meta'
 import {NextSeo} from 'next-seo'
 
 /**
