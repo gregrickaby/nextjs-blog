@@ -1,5 +1,9 @@
 import {addons} from '@storybook/addons'
+import theme from './theme'
 
+/**
+ * Configure Storybook addons.
+ */
 addons.setConfig({
   isFullscreen: false,
   showNav: true,
@@ -8,7 +12,7 @@ addons.setConfig({
   sidebarAnimations: true,
   enableShortcuts: true,
   isToolshown: true,
-  theme: undefined,
+  theme: theme,
   selectedPanel: undefined,
   initialActive: 'sidebar',
   showRoots: false
