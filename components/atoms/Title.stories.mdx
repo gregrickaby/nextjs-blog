@@ -1,0 +1,27 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks'
+import Title from './Title'
+
+<Meta title="Design System/Atoms/Title" component={Title} />
+
+# Title
+
+A very large title. Used for Archive and Post headings.
+
+export const Template = (args) => {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <Title {...args} />
+    </div>
+  )
+}
+
+<Canvas>
+  <Story
+    name="Title"
+    args={{
+      text: 'Story Template'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
