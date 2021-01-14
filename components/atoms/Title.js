@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 export default function Title(props) {
   return (
     <h1
-      className="title wide"
+      className="title wide text-gradient"
       dangerouslySetInnerHTML={{__html: props?.text}}
     />
   )
