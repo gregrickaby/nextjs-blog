@@ -7,7 +7,7 @@ import {getPostData, getPostsPath} from '@/functions/getPosts'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**
- * Dynamically import components into MDX files.
+ * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */

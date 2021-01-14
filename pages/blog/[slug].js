@@ -9,7 +9,7 @@ import {BlogJsonLd} from 'next-seo'
 import dayjs from 'dayjs'
 
 /**
- * Dynamically import components into MDX files.
+ * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */

@@ -8,7 +8,7 @@ import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
 
 /**
- * Dynamically import components into MDX files.
+ * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
