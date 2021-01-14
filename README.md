@@ -17,9 +17,9 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - [Next.js](https://nextjs.org/)
 - [Prettier](https://github.com/prettier/prettier)
+- [Prism](https://github.com/sergioramos/remark-prism)
 - [Storybook](https://storybook.js.org/)
 - [Stylelint](https://stylelint.io/)
-- [Syntax Highlighting](https://github.com/sergioramos/remark-prism)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Vercel Ready](https://vercel.com/)
 
