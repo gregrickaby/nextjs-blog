@@ -55,7 +55,7 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
 ```
 
-### Optional: ull from Vercel
+### Optional: Pull from Vercel
 
 If you have a project on Vercel, add the ENV variables under "Project Settings" and pull them down:
 
