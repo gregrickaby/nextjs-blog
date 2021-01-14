@@ -1,7 +1,10 @@
 import {withNextRouter} from 'storybook-addon-next-router'
 import {addDecorator} from '@storybook/react'
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport'
-import '../styles/tailwind.css'
+import '@/styles/fonts.css'
+import '@/styles/tailwind.css'
+import '@/styles/prism.css'
+import '@/styles/global.css'
 
 /**
  * Enable Next.js <Link /> component usage.
