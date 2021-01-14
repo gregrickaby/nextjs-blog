@@ -81,18 +81,6 @@ module.exports = {
         ul: {marginBottom: '1.5rem'},
         ol: {marginBottom: '1.5rem'}
       })
-    }),
-    plugin(function ({addComponents, theme}) {
-      const title = {
-        '.title': {
-          fontSize: '3.25rem',
-          marginBottom: '2.125rem',
-          lineHeight: theme('lineHeight.tight'),
-          letterSpacing: theme('letterSpacing.tight')
-        }
-      }
-
-      addComponents(title)
     })
   ],
   future: {}
