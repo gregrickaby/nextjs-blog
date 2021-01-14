@@ -1,0 +1,28 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks'
+import Excerpt from './Excerpt'
+
+<Meta title="Design System/Atoms/Excerpt" component={Excerpt} />
+
+# Excerpt
+
+The post Excerpt used above the post title.
+
+export const Template = (args) => {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <Excerpt {...args} />
+    </div>
+  )
+}
+
+<Canvas>
+  <Story
+    name="Excerpt"
+    args={{
+      excerpt:
+        'Cup french variety lungo mazagran roast affogato plunger so rich. Luwak panna breve milk to java turkish café and caffeine siphon.'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
