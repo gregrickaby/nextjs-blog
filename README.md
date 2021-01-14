@@ -86,7 +86,7 @@ yarn dev
 Test a build prior to deployment:
 
 ```bash
-yarn build && yarn serve
+yarn build && yarn start
 ```
 
 Bulk linting via CLI:
