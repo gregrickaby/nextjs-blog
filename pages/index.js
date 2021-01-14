@@ -12,7 +12,7 @@ import Image from 'next/image'
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
-const components = {}
+const components = {Image}
 
 /**
  * Render the HomePage component.
@@ -46,16 +46,6 @@ export default function HomePage({source, frontMatter}) {
         url={config?.siteUrl}
         sameAs={config?.socialNetworks.map((network) => network?.url)}
       />
-      <div className="wide">
-        <Image
-          alt="Rickaby Family"
-          className="rounded"
-          height="729"
-          layout="responsive"
-          src={frontMatter?.coverImage}
-          width="971"
-        />
-      </div>
       <article>{content}</article>
     </Layout>
   )
