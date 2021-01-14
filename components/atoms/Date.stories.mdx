@@ -1,0 +1,27 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks'
+import Date from './Date'
+
+<Meta title="Design System/Atoms/Date" component={Date} />
+
+# Date
+
+The post date used above the post title.
+
+export const Template = (args) => {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <Date {...args} />
+    </div>
+  )
+}
+
+<Canvas>
+  <Story
+    name="Date"
+    args={{
+      date: '2021-01-01'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
