@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './Excerpt.module.css'
 
 /**
  * Render the Excerpt component.
@@ -15,7 +15,7 @@ export default function Excerpt(props) {
   }
   return (
     <p
-      className="font-roboto text-gray-500 dark:text-gray-100"
+      className={styles.excerpt}
       dangerouslySetInnerHTML={{__html: props?.excerpt}}
     />
   )

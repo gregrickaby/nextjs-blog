@@ -50,10 +50,6 @@ img {
   @apply border;
 }
 
-.title {
-  @apply text-7xl font-bold leading-tight tracking-tight m-10;
-}
-
 .wide {
   margin-left: calc(12% - 12vw);
   margin-right: calc(12% - 12vw);
@@ -62,8 +58,4 @@ img {
 .wider {
   margin-left: calc(24% - 24vw);
   margin-right: calc(24% - 24vw);
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-500;
 }

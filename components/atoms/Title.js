@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import styles from './Title.module.css'
 
 /**
  * Render the Title component.
@@ -11,7 +12,7 @@ import PropTypes from 'prop-types'
 export default function Title(props) {
   return (
     <h1
-      className="title wide text-gradient"
+      className={styles.title}
       dangerouslySetInnerHTML={{__html: props?.title}}
     />
   )
