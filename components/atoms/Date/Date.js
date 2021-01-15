@@ -12,6 +12,9 @@ import styles from './Date.module.css'
  * @return {Element}          The Date component.
  */
 export default function Date(props) {
+  if (!props?.date) {
+    return false
+  }
   return (
     <time
       className={cn(styles.date, 'dark:text-gray-100')}
@@ -23,5 +26,5 @@ export default function Date(props) {
 }
 
 Date.propTypes = {
-  date: PropTypes.string.isRequired
+  date: PropTypes.string
 }

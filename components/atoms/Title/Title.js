@@ -10,6 +10,9 @@ import styles from './Title.module.css'
  * @return {Element}           The Title component.
  */
 export default function Title(props) {
+  if (!props?.title) {
+    return false
+  }
   return (
     <h1
       className={styles.title}
@@ -19,5 +22,5 @@ export default function Title(props) {
 }
 
 Title.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 }
