@@ -122,7 +122,7 @@ export async function parseMDX(content, components, data) {
  * @return {string}  Formatted post date.
  */
 export function dateFormatter(date) {
-  return dayjs(date.toString()).format('YYYY-MM-DD')
+  return dayjs(date?.toString()).format('YYYY-MM-DD')
 }
 
 /**
