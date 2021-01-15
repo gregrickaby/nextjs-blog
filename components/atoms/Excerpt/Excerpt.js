@@ -16,7 +16,7 @@ export default function Excerpt(props) {
   }
   return (
     <p
-      className={cn(styles.excerpt, 'dark:text-gray-100')}
+      className={cn(styles.excerpt, 'font-roboto dark:text-gray-100')}
       dangerouslySetInnerHTML={{__html: props?.excerpt}}
     />
   )

@@ -17,7 +17,7 @@ export default function Date(props) {
   }
   return (
     <time
-      className={cn(styles.date, 'dark:text-gray-100')}
+      className={cn(styles.date, 'font-roboto dark:text-gray-100')}
       dateTime={dayjs(props?.date).toISOString()}
     >
       {dayjs(props?.date).format('MMM DD, YYYY')}
