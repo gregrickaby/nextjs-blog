@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types'
+import Excerpt from '@/components/atoms/Excerpt/Excerpt'
 import Date from '@/components/atoms/Date/Date'
 import Title from '@/components/atoms/Title/Title'
-import Excerpt from '../../atoms/Excerpt/Excerpt'
+import PropTypes from 'prop-types'
+import styles from './PageHeader.module.css'
 
 /**
  * Render the PageHeader component.
@@ -15,7 +16,7 @@ import Excerpt from '../../atoms/Excerpt/Excerpt'
  */
 export default function PageHeader(props) {
   return (
-    <header className="text-center space-y-4 md:space-y-12 mb-12">
+    <header className={styles.pageHeader}>
       <Date date={props?.date} />
       <Title title={props?.title} />
       <Excerpt excerpt={props?.excerpt} />
