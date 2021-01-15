@@ -7,7 +7,7 @@ import styles from './Footer.module.css'
  *
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  */
-const DisplayOptions = dynamic(() => import('../molecules/DisplayOptions'), {
+const DisplayOptions = dynamic(() => import('../../common/DisplayOptions'), {
   ssr: false
 })
 

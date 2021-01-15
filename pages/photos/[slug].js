@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Layout from '@/components/organisms/Layout'
+import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {getPhotoByFileName, getPhotosPaths} from '@/functions/getPhotos'
 import Image from 'next/image'

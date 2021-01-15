@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import Layout from '@/components/organisms/Layout'
-import PageHeader from '@/components/molecules/PageHeader'
+import Layout from '@/components/templates/Layout/Layout'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
 import {getPostData, getPostsPath} from '@/functions/getPosts'

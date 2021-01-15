@@ -1,4 +1,4 @@
-import Nav from '@/components/organisms/Nav'
+import Nav from '@/components/molecules/Nav/Nav'
 import config from '@/functions/config'
 import Image from 'next/image'
 import Link from 'next/link'

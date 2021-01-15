@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import Date from '@/components/atoms/Date'
-import Title from '@/components/atoms/Title'
-import Excerpt from '../atoms/Excerpt'
+import Date from '@/components/atoms/Date/Date'
+import Title from '@/components/atoms/Title/Title'
+import Excerpt from '../../atoms/Excerpt/Excerpt'
 
 /**
  * Render the PageHeader component.
