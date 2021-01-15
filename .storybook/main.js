@@ -11,7 +11,11 @@ module.exports = {
     strictMode: true
   },
   stories: ['../components/**/**/*.stories.@(js|mdx)'],
-  addons: ['@storybook/addon-a11y', '@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-essentials',
+    'storybook-css-modules-preset'
+  ],
   webpackFinal: async (config) => {
     /**
      * Enable @ symbol aliases located in jsconfig.json
