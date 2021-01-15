@@ -9,7 +9,7 @@ A very large title. Used for Archive and Post headings.
 
 export const Template = (args) => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="p-20 flex items-center justify-center">
       <Title {...args} />
     </div>
   )
@@ -19,7 +19,7 @@ export const Template = (args) => {
   <Story
     name="Title"
     args={{
-      text: 'Story Template'
+      title: 'Eu strong lungo breve at mocha strong brewed.'
     }}
   >
     {Template.bind({})}
