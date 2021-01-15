@@ -12,7 +12,7 @@ import dayjs from 'dayjs'
 export default function Date(props) {
   return (
     <time
-      className="font-sans text-gray-500 dark:text-gray-100"
+      className="font-roboto text-lg text-gray-500 dark:text-gray-100"
       dateTime={dayjs(props?.date).toISOString()}
     >
       {dayjs(props?.date).format('MMM DD, YYYY')}
