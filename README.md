@@ -4,7 +4,7 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 
 ---
 
-## Packages
+## Dependencies
 
 - [Day.js](https://day.js.org/en/)
 - [ESLint](https://eslint.org/)
@@ -12,7 +12,7 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 - [Husky](https://github.com/typicode/husky)
 - [Lint Staged](https://github.com/okonet/lint-staged)
 - [MDX](https://mdxjs.com/)
-- [Netlify CMS](https://www.netlifycms.org//)
+- [Netlify CMS](https://www.netlifycms.org/)
 - [Next SEO](https://github.com/garmeeh/next-seo#usage)
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - [Next.js](https://nextjs.org/)
@@ -21,7 +21,6 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 - [Storybook](https://storybook.js.org/)
 - [Stylelint](https://stylelint.io/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Vercel Ready](https://vercel.com/)
 
 ---
 
@@ -39,25 +38,23 @@ $ npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/
 
 ---
 
-## ENV Variables
+## Setup
 
-### Set up
+### ENV Variables
 
-You will need the following ENV variables in order to develop.
+You will need two ENV variables in order to develop locally. Create an `.env` file in the root of the project and add the following:
 
-Create an `.env` file in the root of the project and add the following:
-
-```text
+```
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 ```
 
-```text
+```
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
 ```
 
-### Optional: Pull from Vercel
+### Optional: Pull ENV Variables from Vercel
 
-If you have a project on Vercel, add the ENV variables under "Project Settings" and pull them down:
+If you have a project on Vercel, add the ENV variables show above to your "Project Settings" and then pull them down:
 
 Link project w/ Vercel:
 
@@ -97,14 +94,59 @@ yarn lint
 
 ---
 
+## Content Management
+
+It's very simple:
+
+1. Create an `.mdx` file
+2. Add front matter and content
+3. Place the `.mdx` file in `__posts`, `__pages`, or `__books`
+4. Build
+
+That's it!
+
+## Photo Management
+
+Just drag and drop `.jpg` files into `__photos` then build.
+
+---
+
 ## Storybook
 
-Stories are written in `.mdx`. Clone the `StoryTemplate.stories.mdx` file to get started.
+Stories are written in `.mdx` ([learn more](https://storybook.js.org/docs/react/writing-docs/mdx)) and should be placed in the same folder as the component.
 
 Start Storybook:
 
 ```bash
 $ yarn storybook
 ```
+
+---
+
+## Gotchas
+
+**Tailwind `font-*` and `dark` styles do not work in CSS Modules.**
+
+I don't know why. Instead, add the styles in the component and then use `cn()` to merge them.
+
+```js
+className={cn(styles.date, 'font-roboto dark:text-gray-100')}
+```
+
+**Storybook does support this website's dark mode.**
+
+That's because Tailwind expects the `dark` class to be set on `<html>`, while Storybook's background toggle just swaps hard-coded CSS values in `<head>`.
+
+To test dark mode, right-click to inspect the component's `<iframe>`. Add `class="dark"` to `<html>`.
+
+![screenshot](https://dl.dropbox.com/s/6jzc1jq8frss5qc/Screen%20Shot%202021-01-15%20at%2010.53.54%20AM.png?dl=0)
+
+**Storybook v6.1 does not support PostCSS 8**
+
+They're working on it for Storybook v7. Because of this, do not upgrade PostCSS, AutoPrefixer, and TailwindCSS to `@latest`.
+
+**Netlify CMS only works locally.**
+
+When I try on production? I get a "configuration error". 🤷‍♂️
 
 ---
