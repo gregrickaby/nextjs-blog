@@ -1,5 +1,6 @@
 import config from '@/functions/config'
 import dynamic from 'next/dynamic'
+import styles from './Footer.module.css'
 
 /**
  * Only render <DisplayOptions /> client side.
@@ -18,9 +19,9 @@ const DisplayOptions = dynamic(() => import('../molecules/DisplayOptions'), {
  */
 export default function Footer() {
   return (
-    <footer className="text-center text-sm grid gap-y-4">
+    <footer className={styles.footer}>
       <hr />
-      <div className="flex justify-center space-x-4">
+      <div className={styles.social}>
         {!!config.socialNetworks?.length &&
           config?.socialNetworks.map((network) => {
             return (

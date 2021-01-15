@@ -1,0 +1,7 @@
+.footer {
+  @apply text-center text-sm grid gap-y-4;
+}
+
+.social {
+  @apply flex justify-center space-x-4;
+}

@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import dayjs from 'dayjs'
 import PropTypes from 'prop-types'
 import styles from './Date.module.css'
@@ -12,7 +13,10 @@ import styles from './Date.module.css'
  */
 export default function Date(props) {
   return (
-    <time className={styles.date} dateTime={dayjs(props?.date).toISOString()}>
+    <time
+      className={cn(styles.date, 'dark:text-gray-100')}
+      dateTime={dayjs(props?.date).toISOString()}
+    >
       {dayjs(props?.date).format('MMM DD, YYYY')}
     </time>
   )

@@ -1,0 +1,27 @@
+.header {
+  @apply flex flex-col md:flex-row justify-between text-center md:text-left;
+}
+
+.headerWrap {
+  @apply md:flex;
+}
+
+.logoLink {
+  @apply shadow-none no-underline;
+}
+
+.logo {
+  @apply rounded-full;
+}
+
+.titleWrap {
+  @apply flex flex-col justify-center mt-1 md:mt-0 md:ml-3 md:mx-0;
+}
+
+.title {
+  @apply text-2xl m-0 leading-none font-bold;
+}
+
+.description {
+  @apply sr-only;
+}

@@ -2,6 +2,7 @@ import Nav from '@/components/organisms/Nav'
 import config from '@/functions/config'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './Header.module.css'
 
 /**
  * Render Header component.
@@ -11,13 +12,13 @@ import Link from 'next/link'
  */
 export default function Header() {
   return (
-    <header className="flex flex-col md:flex-row justify-between text-center md:text-left">
-      <div className="md:flex">
+    <header className={styles.header}>
+      <div className={styles.headerWrap}>
         <Link href="/">
-          <a className="shadow-none no-underline">
+          <a className={styles.logoLink}>
             <Image
               alt={config?.siteAuthor}
-              className="rounded-full"
+              className={styles.logo}
               height="80"
               layout="fixed"
               quality="75"
@@ -26,11 +27,9 @@ export default function Header() {
             />
           </a>
         </Link>
-        <div className="flex flex-col justify-center mt-1 md:mt-0 md:ml-3 md:mx-0">
-          <h1 className="text-2xl m-0 leading-none font-bold">
-            {config?.siteName}
-          </h1>
-          <p className="sr-only">{config?.siteDescription}</p>
+        <div className={styles.titleWrap}>
+          <h1 className={styles.title}>{config?.siteName}</h1>
+          <p className={styles.description}>{config?.siteDescription}</p>
         </div>
       </div>
       <Nav />

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import styles from './Card.module.css'
+import cn from 'classnames'
 
 /**
  * Render the Card component.
@@ -12,50 +14,33 @@ import Link from 'next/link'
  * @return {Element}              The Card component.
  */
 export default function Card(props) {
+  const backgroundGradient = {
+    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url(${props?.data?.coverImage})`
+  }
   return (
-    <div className="shadow rounded-b">
+    <div className={styles.card}>
       <div
-        className="bg-size bg-cover bg-center rounded-t"
-        style={{
-          /* stylelint-disable */
-          backgroundImage: `linear-gradient(
-              0deg,
-              rgba(
-                0,
-                0,
-                0,
-                0.9
-              ),
-              rgba(
-                0,
-                0,
-                0,
-                0.1
-              )
-            ),
-            url(${props?.data?.coverImage})`
-        }}
+        className={cn(styles.backgroundWrap, 'bg-size')}
+        style={backgroundGradient}
       >
-        <div className="p-4 h-48 flex items-center">
+        <div className={styles.cardInner}>
           <Link
             as={`/${props?.path}/${props?.data?.slug}`}
             href={`/${props?.path}/[slug]`}
           >
-            <a className="text-white shadow-lg no-underline hover:underline">
+            <a className={styles.cardLink}>
               <h3
-                className="m-0 p-0 leading-tight"
+                className={styles.cardTitle}
                 dangerouslySetInnerHTML={{__html: props?.data?.title}}
               />
             </a>
           </Link>
         </div>
       </div>
-      <div className="p-4">
-        <p
-          className="text-gray-600 text-sm mb-0 dark:text-gray-100"
-          dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
-        />
-      </div>
+      <p
+        className={cn(styles.cardExcerpt, 'dark:text-gray-100')}
+        dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
+      />
     </div>
   )
 }

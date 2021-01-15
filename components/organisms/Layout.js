@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
+import Meta from '@/components/molecules/Meta'
 import Footer from '@/components/organisms/Footer'
 import Header from '@/components/organisms/Header'
-import Meta from '@/components/molecules/Meta'
 import {NextSeo} from 'next-seo'
+import PropTypes from 'prop-types'
+import styles from './Layout.module.css'
 
 /**
  * Render the Layout component.
@@ -22,7 +23,7 @@ export default function Layout({children, ...props}) {
         openGraph={props?.openGraph}
       />
       <Meta />
-      <div className="container space-y-12 max-w-2xl mx-auto p-8 md:px-0 py-8">
+      <div className={styles.layout}>
         <Header />
         <main>{children}</main>
         <Footer />

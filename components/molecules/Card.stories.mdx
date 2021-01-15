@@ -1,0 +1,32 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks'
+import Card from './Card'
+
+<Meta title="Design System/Molecules/Card" component={Card} />
+
+# Card
+
+Use this component to display the Card.
+
+export const Template = (args) => {
+  return (
+    <div className="p-20 flex items-center justify-center">
+      <Card {...args} />
+    </div>
+  )
+}
+
+<Canvas>
+  <Story
+    name="Card"
+    args={{
+      data: {
+        coverImage: 'https://picsum.photos/300/300',
+        excerpt:
+          'Qui doppio french pumpkin aroma aroma cultivar brewed french barista wings go beans.',
+        title: 'Aftertaste dark grounds et est mountain spice rich'
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
