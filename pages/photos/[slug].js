@@ -9,7 +9,7 @@ import Image from 'next/image'
  *
  * @author Greg Rickaby
  * @param {object} props      The component attributes as props.
- * @param {object} props.data The photo content.
+ * @param {any}    props.data The photo content.
  * @return {Element}          The SinglePhoto component.
  */
 export default function SinglePhoto({data}) {
@@ -128,7 +128,7 @@ export default function SinglePhoto({data}) {
 }
 
 SinglePhoto.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.any.isRequired
 }
 
 /**
