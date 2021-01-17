@@ -5,6 +5,11 @@ body {
   @apply dark:bg-gray-900 dark:text-white;
 }
 
+form input,
+form textarea {
+  @apply dark:text-gray-900;
+}
+
 a {
   @apply text-black dark:text-white;
 
