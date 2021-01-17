@@ -3,48 +3,34 @@ import ContactForm from '@/components/molecules/ContactForm/ContactForm'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
-import {PAGES_PATH} from '@/functions/getMdx'
-import {getPostData} from '@/functions/getPosts'
-import hydrate from 'next-mdx-remote/hydrate'
 import PropTypes from 'prop-types'
-
-/**
- * Pass components into MDX files.
- *
- * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
- */
-const components = {}
 
 /**
  * Render the ContactPage component.
  *
  * @author Greg Rickaby
- * @param {object} props             The component attributes as props.
- * @param {object} props.form        The Formium form data.
- * @param {object} props.frontMatter The page meta data.
- * @param {object} props.source      The page content.
+ * @param {object} props      The component attributes as props.
+ * @param {object} props.form The Formium form data.
  * @return {Element}                 The ContactPage component.
  */
-export default function ContactPage({form, frontMatter, source}) {
-  const content = hydrate(source, {components})
+export default function ContactPage({form}) {
   return (
     <Layout
-      title={`${config?.siteName} - ${config?.siteDescription}`}
-      description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
+      title={`Contact - ${config?.siteName}`}
+      description="Find out how to get in touch. Give me a couple of days to respond."
       openGraph={{
-        title: `${frontMatter.title} - ${config?.siteName}`,
-        description: frontMatter?.excerpt,
-        images: [
-          {
-            url: `${config.siteUrl}${frontMatter?.coverImage}`,
-            alt: frontMatter?.title
-          }
-        ]
+        title: `Contact - ${config?.siteName}`,
+        description:
+          'Find out how to get in touch. Give me a couple of days to respond.'
       }}
     >
       <PageHeader title="Contact" excerpt="Let's Chat" />
       <article>
-        {content}
+        <p>
+          Feel free to reach out via the form below. You could also send me a DM
+          on <a href="https://twitter.com/gregrickaby">Twitter</a> or
+          <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
+        </p>
         <ContactForm form={form} />
       </article>
     </Layout>
@@ -52,9 +38,7 @@ export default function ContactPage({form, frontMatter, source}) {
 }
 
 ContactPage.propTypes = {
-  form: PropTypes.object,
-  frontMatter: PropTypes.object.isRequired,
-  source: PropTypes.object.isRequired
+  form: PropTypes.object
 }
 
 /**
@@ -65,13 +49,10 @@ ContactPage.propTypes = {
  * @return {object} All page props.
  */
 export async function getStaticProps() {
-  const post = await getPostData(PAGES_PATH, 'contact', components)
   const form = await formium.getFormBySlug('contact')
 
   return {
     props: {
-      source: post?.mdx,
-      frontMatter: post?.data,
       form
     }
   }
