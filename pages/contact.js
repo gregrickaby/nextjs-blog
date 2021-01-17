@@ -1,5 +1,6 @@
 import {formium} from '@/api/formium/connector'
 import ContactForm from '@/components/molecules/ContactForm/ContactForm'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/getMdx'
@@ -41,6 +42,7 @@ export default function ContactPage({form, frontMatter, source}) {
         ]
       }}
     >
+      <PageHeader title="Contact" excerpt="Let's Chat" />
       <article>
         {content}
         <ContactForm form={form} />
