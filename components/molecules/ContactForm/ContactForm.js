@@ -2,6 +2,7 @@ import {formium} from '@/api/formium/connector'
 import {FormiumForm} from '@formium/react'
 import PropTypes from 'prop-types'
 import {useState} from 'react'
+import styles from './ContactForm.module.css'
 
 /**
  * Render the Contact Form component.
@@ -16,9 +17,9 @@ export default function ContactForm({form}) {
 
   if (success) {
     return (
-      <p>
-        Thank you! Your message has been received. Please give me a day or two
-        to reply. Stay safe{' '}
+      <p className={styles.message}>
+        Your message has been sent. Please allow me 1-2 business days to reply.
+        Stay safe{' '}
         <span role="img" aria-label="Cheers emoji">
           🍻
         </span>
@@ -27,13 +28,15 @@ export default function ContactForm({form}) {
   }
 
   return (
-    <FormiumForm
-      data={form}
-      onSubmit={async (values) => {
-        await formium.submitForm('contact', values)
-        setSuccess(true)
-      }}
-    />
+    <div className={styles.formWrap}>
+      <FormiumForm
+        data={form}
+        onSubmit={async (values) => {
+          await formium.submitForm('contact', values)
+          setSuccess(true)
+        }}
+      />
+    </div>
   )
 }
 
