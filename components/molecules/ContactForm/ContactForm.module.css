@@ -1,0 +1,54 @@
+.formWrap {
+  & form {
+    /* Each form row */
+    & div {
+      @apply flex flex-col;
+
+      /* Validation message. */
+      & div div {
+        @apply -mt-4 italic text-red-500 mb-4;
+      }
+    }
+  }
+
+  /* Form title */
+  & h1 {
+    @apply hidden;
+  }
+
+  & label {
+    @apply mb-2;
+  }
+
+  & input[type='text'],
+  & textarea,
+  & button {
+    @apply p-4 mb-8 border;
+  }
+
+  & button {
+    @apply text-white;
+
+    animation: shimmer 5s infinite linear;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+}
+
+.successMessage {
+  @apply font-bold;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
