@@ -9,6 +9,8 @@ My blog built on Next.js and hosted at Vercel. https://gregrickaby.com
 - [Day.js](https://day.js.org/en/)
 - [ESLint](https://eslint.org/)
 - [EXIFR](https://github.com/MikeKovarik/exifr)
+- [Formik](https://formik.org/)
+- [Formium](https://formium.io)
 - [Husky](https://github.com/typicode/husky)
 - [Lint Staged](https://github.com/okonet/lint-staged)
 - [MDX](https://mdxjs.com/)
@@ -42,7 +44,7 @@ $ npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/
 
 ### ENV Variables
 
-You will need two ENV variables in order to develop locally. Create an `.env` file in the root of the project and add the following:
+You'll need a few ENV variables in order to develop locally. Create an `.env` file in the root of the project. Add the following:
 
 ```
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
@@ -50,6 +52,14 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 
 ```
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
+```
+
+```
+NEXT_PUBLIC_FORMIUM_PROJECTID="YOUR_PROJECT_ID"
+```
+
+```
+FORMIUM_TOKEN="YOUR_FORMIUM_TOKEN"
 ```
 
 ### Optional: Pull ENV Variables from Vercel
@@ -107,7 +117,7 @@ That's it!
 
 ## Photo Management
 
-Just drag and drop `.jpg` files into `__photos` then build.
+Just drag and drop `.jpg` files into `public/photos` then build.
 
 ---
 
