@@ -17,7 +17,7 @@ export default function ContactForm({form}) {
 
   if (success) {
     return (
-      <p className={styles.message}>
+      <p className={styles.successMessage}>
         Your message has been sent. Please allow me 1-2 business days to reply.
         Stay safe{' '}
         <span role="img" aria-label="Cheers emoji">
