@@ -1,5 +1,5 @@
 .title {
-  @apply text-7xl font-bold leading-tight tracking-tight m-10 bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-500;
+  @apply text-7xl font-bold leading-tight tracking-tight m-10;
 
   margin-left: calc(12% - 12vw);
   margin-right: calc(12% - 12vw);
