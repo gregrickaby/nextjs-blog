@@ -21,7 +21,7 @@ export default function PhotosArchive({photos}) {
       description="Some of my best photos."
     >
       <PageHeader title="Photos" excerpt="Some of my best photos." />
-      <section className="grid">
+      <section className="flex flex-col wide space-y-8">
         {photos?.length &&
           photos?.map((photo, index) => {
             return (
