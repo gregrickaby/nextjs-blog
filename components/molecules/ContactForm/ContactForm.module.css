@@ -23,11 +23,11 @@
   & input[type='text'],
   & textarea,
   & button {
-    @apply p-4 mb-8 border;
+    @apply p-4 mb-8 border rounded;
   }
 
   & button {
-    @apply text-white;
+    @apply text-white rounded;
 
     animation: shimmer 5s infinite linear;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
