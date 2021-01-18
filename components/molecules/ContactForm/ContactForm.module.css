@@ -29,9 +29,13 @@
   & button {
     @apply text-white rounded;
 
-    animation: shimmer 5s infinite linear;
+    animation: shimmer 15s infinite linear;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
+
+    @media (prefers-reduced-motion) {
+      animation: shimmer 30s infinite linear;
+    }
   }
 }
 
