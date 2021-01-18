@@ -1,4 +1,4 @@
-import Nav from '@/components/molecules/Nav/Nav'
+import HeaderNavigation from '@/components/molecules/HeaderNavigation/HeaderNavigation'
 import config from '@/functions/config'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -32,7 +32,7 @@ export default function Header() {
           <p className={styles.description}>{config?.siteDescription}</p>
         </div>
       </div>
-      <Nav />
+      <HeaderNavigation />
     </header>
   )
 }
