@@ -1,6 +1,6 @@
 import config from '@/functions/config'
 import Link from 'next/link'
-import styles from './headerNavigation.module.css'
+import styles from './HeaderNavigation.module.css'
 
 /**
  * Render Navigation component.
