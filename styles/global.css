@@ -52,7 +52,16 @@ dt {
 }
 
 img {
-  @apply border;
+  @apply border-4 dark:border-gray-500;
+}
+
+p > img {
+  margin-left: calc(12% - 12vw);
+  margin-right: calc(12% - 12vw);
+
+  @media (min-width: 1024px) {
+    max-width: 124%;
+  }
 }
 
 .wide {
@@ -66,7 +75,7 @@ img {
 }
 
 .shimmer {
-  @apply bg-clip-text text-transparent;
+  @apply bg-clip-text text-transparent dark:text-transparent;
 
   animation: shimmer 15s infinite linear;
   background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
