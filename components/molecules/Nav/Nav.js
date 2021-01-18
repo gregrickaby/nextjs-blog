@@ -11,11 +11,11 @@ import styles from './Nav.module.css'
 export default function Nav() {
   return (
     <nav className={styles.nav}>
-      {!!config.navigation?.length &&
-        config?.navigation.map((nav, index) => {
+      {!!config.headerNavigation?.length &&
+        config?.headerNavigation.map((item, index) => {
           return (
-            <Link key={index} href={nav?.url}>
-              <a>{nav?.label}</a>
+            <Link key={index} href={item?.url}>
+              <a>{item?.label}</a>
             </Link>
           )
         })}

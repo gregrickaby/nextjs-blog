@@ -22,11 +22,11 @@ export default function Footer() {
     <footer className={styles.footer}>
       <hr />
       <div className={styles.social}>
-        {!!config.socialNetworks?.length &&
-          config?.socialNetworks.map((network) => {
+        {!!config.footerNavigation?.length &&
+          config?.footerNavigation.map((item, index) => {
             return (
-              <a key={network?.label} href={network?.url}>
-                {network?.label}
+              <a key={index} href={item?.url}>
+                {item?.label}
               </a>
             )
           })}

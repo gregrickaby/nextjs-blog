@@ -28,7 +28,7 @@ export default function HomePage({source, frontMatter}) {
   return (
     <Layout
       title={`${config?.siteName} - ${config?.siteDescription}`}
-      description="Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's."
+      description={config?.ogDescription}
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
         description: frontMatter?.excerpt,
@@ -44,7 +44,7 @@ export default function HomePage({source, frontMatter}) {
         type="Person"
         name={frontMatter?.author?.name}
         url={config?.siteUrl}
-        sameAs={config?.socialNetworks.map((network) => network?.url)}
+        sameAs={config?.footerNavigation.map((item) => item?.url)}
       />
       <article>{content}</article>
     </Layout>
