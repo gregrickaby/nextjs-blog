@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import Article from '@/components/molecules/Article/Article'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
-import {BOOKS_PATH} from '@/functions/getMdx'
-import {getPostData, getPostsPath} from '@/functions/getPosts'
+import {BOOKS_PATH} from '@/functions/helpers'
+import {getPostData, getPostsPath} from '@/functions/posts'
 import hydrate from 'next-mdx-remote/hydrate'
 
 /**

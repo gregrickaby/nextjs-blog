@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
-import {getPhotos} from '@/functions/getPhotos'
+import {getPhotos} from '@/functions/photos'
 import Image from 'next/image'
 import Link from 'next/link'
 

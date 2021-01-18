@@ -3,8 +3,8 @@ import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Card from '@/components/molecules/Card/Card'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
-import {BOOKS_PATH} from '@/functions/getMdx'
-import {getAllPosts} from '@/functions/getPosts'
+import {BOOKS_PATH} from '@/functions/helpers'
+import {getAllPosts} from '@/functions/posts'
 
 /**
  * Render the BooksArchive component.
