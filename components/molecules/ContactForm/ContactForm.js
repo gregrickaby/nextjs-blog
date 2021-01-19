@@ -19,7 +19,7 @@ export default function ContactForm({form}) {
   const [notHuman, setHuman] = useState(true)
 
   /**
-   * Handle recaptcha verification state.
+   * Handle verification state.
    */
   function toggleRecaptcha() {
     setHuman((prev) => !prev)
