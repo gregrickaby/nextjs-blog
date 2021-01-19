@@ -43,6 +43,10 @@
   @apply font-bold;
 }
 
+.errorMessage {
+  @apply text-red-500 italic text-sm mt-2;
+}
+
 @keyframes shimmer {
   0% {
     background-position: 0% 50%;
