@@ -62,6 +62,10 @@ NEXT_PUBLIC_FORMIUM_PROJECTID="YOUR_PROJECT_ID"
 FORMIUM_TOKEN="YOUR_FORMIUM_TOKEN"
 ```
 
+```
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
+```
+
 ### Optional: Pull ENV Variables from Vercel
 
 If you have a project on Vercel, add the ENV variables show above to your "Project Settings" and then pull them down:
