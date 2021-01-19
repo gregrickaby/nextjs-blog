@@ -1,5 +1,10 @@
 module.exports = [
   {
+    source: '/homepage/',
+    destination: '/',
+    permanent: true
+  },
+  {
     source: '/2020/06/reddit-image-viewer/',
     destination: '/blog/reddit-image-viewer',
     permanent: true
