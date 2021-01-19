@@ -1,5 +1,5 @@
 .title {
-  @apply text-7xl font-bold leading-tight tracking-tight m-10;
+  @apply text-7xl font-bold leading-tight tracking-tight m-8;
 
   margin-left: calc(12% - 12vw);
   margin-right: calc(12% - 12vw);
