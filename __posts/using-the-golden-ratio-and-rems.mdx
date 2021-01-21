@@ -37,17 +37,17 @@ html {
 
 _Why 62.5% instead of 100%?_ Simplicity.
 
-Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This becomes our **$rembase**.
+Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This becomes our `$rembase`.
 
-Calculate other font sizes by dividing your desired size by the `$rembase` (in pixels). Let's say, you want your `<h1>` tags to be 26px?
+Calculate other font sizes by dividing your desired size by the `$rembase` (in pixels). Let's say, you want your `h1` tags to be 26px?
 
-```scss
+```text
 26 ÷ 10 = 2.6rem
 ```
 
 or
 
-```scss
+```text
 32 ÷ 10 = 3.2rem
 48 ÷ 10 = 4.8rem
 ```
@@ -62,7 +62,7 @@ html {
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 1rem; /* 10 ÷ $rembase */
 }
 
@@ -91,30 +91,30 @@ Line heights have always given me headaches, that was until Chris Pearson releas
 
 [![pearsons-golden-ratio-tool](/blog/images/pearsons-golden-ratio-tool.jpg)](http://www.pearsonified.com/typography/)
 
-The calculator tells us our default line height should be 26px. This variable is the **$line-height-base.**
+The calculator tells us our default line height should be 26px. This variable is the `$line-height-base`.
 
-We're going to be using "[Unitless line heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)" as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the `<body> `tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
+We're going to be using "[Unitless line heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)" as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the `body` tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
 
-To calculate, you divide the **$line-height-base** by the font-size for that particular element (in pixels).
+To calculate, you divide the `$line-height-base` by the font-size for that particular element (in pixels).
 
-```scss
+```text
 26 ÷ 16 = 1.625
 ```
 
-How would that look in our sample style-sheet?
+How would that look in our sample stylesheet?
 
 ```scss
-/*
-$fontbase = 16
-$line-height-base = 26
-*/
+/**
+ * $fontbase = 16
+ * $line-height-base = 26
+**/
 
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 1.6rem;
   line-height: 1.625; /* $line-height-base ÷ $fontbase */
 }
@@ -136,19 +136,19 @@ _Note: We'll only use three decimal places to right since most browsers only cal
 
 ## What about margins?
 
-Yes, you can even use REM to set your margins. Margins, or "vertical spacing" is calculated using either 24px or 48px to maintain vertical rhythm. Let's divide 24px by our `$rembase:`
+Yes, you can even use REM to set your margins. Margins, or "vertical rhythm" is calculated using either 24px or 48px. Let's divide 24px by our `$rembase`
 
-```scss
+```text
 24 ÷ 10 = 2.4rem
 ```
 
 Here's our sample stylesheet:
 
 ```scss
-/*
-$rembase = 10
-$line-height-base = 26
-*/
+/**
+ * $rembase = 10
+ * $line-height-base = 26
+**/
 
 .some-div {
   margin: 2.4rem 0; /* 24 ÷ $rembase */
@@ -162,48 +162,13 @@ $line-height-base = 26
 
 ## I'm convinced, now tell me about browser support.
 
-At the time of writing: REM's are supported in Firefox, Chrome, Safari, Opera and yes, even IE 9 & 10. It's also supported in all mobile browsers except for Opera Mini.
+REM's are supported in all browsers all the way down to IE9. Check out the list: [http://caniuse.com/rem](http://caniuse.com/rem)
 
-Check out this list: [http://caniuse.com/rem](http://caniuse.com/rem)
+## Wrap up
 
-## What about fallbacks?
+The purpose of this post was not to stand on a soapbox and preach, but educate you on the advantages of using REM's to enhance the typography on your site.
 
-As is the case with most CSS3 wizardry, REM support in IE 6, 7, and 8 is lacking and will require a PX fallback. By declaring REM's after PX's in the CSS this example  will degrade gracefully to the PX:
-
-```scss
-html {
-  font-size: 62.5;
-}
-
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-}
-
-h1,
-h2 {
-  font-size: 26px;
-  font-size: 2.6rem;
-}
-
-h3,
-h4 {
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.444;
-}
-
-.some-div {
-  margin: 24px 0;
-  margin: 2.4rem 0;
-}
-```
-
-The purpose of this post was not to stand on a soapbox and preach, but educate you on the advantages of using REM's to enhance the typography on your site. Your comments are welcome below.
-
-### PX to REM Sass Mixin
+### Bonus: PX to REM Sass Mixin
 
 ```scss
 // Create REM values with PX fall back
