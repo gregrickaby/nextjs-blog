@@ -27,8 +27,8 @@ export default function BooksArchive({books}) {
           editorial services for."
       />
       <div className="grid gap-12 md:grid-cols-2">
-        {books?.length &&
-          books?.map((book, index) => (
+        {!!books?.length &&
+          books.map((book, index) => (
             <Card key={index} {...book} path="books" />
           ))}
       </div>

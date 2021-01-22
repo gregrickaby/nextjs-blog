@@ -22,8 +22,8 @@ export default function PhotosArchive({photos}) {
     >
       <PageHeader title="Photos" excerpt="Some of my best photos." />
       <section className="flex flex-col wide space-y-8">
-        {photos?.length &&
-          photos?.map((photo, index) => {
+        {!!photos?.length &&
+          photos.map((photo, index) => {
             return (
               <Link key={index} href={`/photos/${photo?.slug}`}>
                 <a>
