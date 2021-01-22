@@ -1,5 +1,4 @@
 import {create} from '@storybook/theming/create'
-import logo from './logo.png'
 
 /**
  * Configure Storybook theme.
@@ -9,6 +8,5 @@ import logo from './logo.png'
 export default create({
   base: 'light',
   brandTitle: 'Greg Rickaby',
-  brandUrl: 'https://gregrickaby.com',
-  brandImage: logo
+  brandUrl: 'https://gregrickaby.com'
 })
