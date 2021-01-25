@@ -8802,10 +8802,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-mdx-remote@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/next-mdx-remote/-/next-mdx-remote-2.1.2.tgz#f17ee316c57610c0d83fbd6c6187aae415e528ed"
-  integrity sha512-EHDjut1xWz/yQzF9MHMpfU4ZXt2OEpu11AFaNsItM0u+7T1LAmlkaoVCnNrKbVhhm0PBGGN7+cb4g6WNXYC7QQ==
+next-mdx-remote@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/next-mdx-remote/-/next-mdx-remote-2.1.3.tgz#a427d690691af081384770b464d3803350ada41f"
+  integrity sha512-wDI1KepnqG3FDu1wQJAJGGXAoyasjzbehcIhC+felDxGEbEEG8tYOkvMttXvMs4zaXPG4NeWnx0Ev0KdF0ZX1w==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
