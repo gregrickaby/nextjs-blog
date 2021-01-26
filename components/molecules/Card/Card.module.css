@@ -1,13 +1,13 @@
 .card {
-  @apply flex md:h-48;
+  @apply flex sm:h-48;
 }
 
 .backgroundWrap {
-  @apply hidden md:flex md:w-1/3 md:relative;
+  @apply hidden sm:flex sm:w-1/3 sm:relative;
 }
 
 .cardInner {
-  @apply flex flex-col space-y-2 w-full md:w-2/3 justify-start md:px-8;
+  @apply flex flex-col space-y-2 w-full sm:w-2/3 justify-start sm:px-8;
 }
 
 .cardMeta {
