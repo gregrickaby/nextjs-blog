@@ -1,13 +1,13 @@
 .card {
-  @apply flex h-48;
+  @apply flex md:h-48;
 }
 
 .backgroundWrap {
-  @apply w-1/3 relative;
+  @apply hidden md:flex md:w-1/3 md:relative;
 }
 
 .cardInner {
-  @apply flex flex-col space-y-2 w-2/3 justify-start px-8;
+  @apply flex flex-col space-y-2 w-full md:w-2/3 justify-start md:px-8;
 }
 
 .cardMeta {
@@ -19,7 +19,7 @@
 }
 
 .cardExcerpt {
-  @apply text-gray-600 text-sm;
+  @apply text-gray-600 text-lg;
 }
 
 .cardLink {
