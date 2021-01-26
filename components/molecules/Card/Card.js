@@ -26,10 +26,8 @@ export default function Card(props) {
             <Image
               alt={props?.data?.title}
               className={styles.image}
-              fill="fill"
-              height="179"
+              layout="fill"
               src={props?.data?.coverImage}
-              width="224"
             />
           </a>
         </Link>
