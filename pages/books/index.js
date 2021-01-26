@@ -18,12 +18,12 @@ export default function BooksArchive({books}) {
   return (
     <Layout
       title={`Books - ${config?.siteName}`}
-      description="A list of books that I&lsquo;ve either written or provided technical
+      description="Books that I&lsquo;ve either authored or provided technical
           editorial services for."
     >
       <PageHeader
         title="Books"
-        excerpt="A list of books that I&lsquo;ve either written or provided technical
+        excerpt="Books that I&lsquo;ve either authored or provided technical
           editorial services for."
       />
       <div className="grid gap-8">

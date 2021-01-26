@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
  * @author Greg Rickaby
  * @param {object} props      The component attributes as props.
  * @param {object} props.form The Formium form data.
- * @return {Element}                 The ContactPage component.
+ * @return {Element} The ContactPage component.
  */
 export default function ContactPage({form}) {
   return (
@@ -24,7 +24,7 @@ export default function ContactPage({form}) {
           'Find out how to get in touch. Give me a couple of days to respond.'
       }}
     >
-      <PageHeader title="Contact" excerpt="Let's Chat" />
+      <PageHeader title="Contact" excerpt="Let's chat." />
       <article>
         <p>
           Feel free to reach out via the form below. You could also send me a DM

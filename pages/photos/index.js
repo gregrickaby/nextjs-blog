@@ -12,15 +12,15 @@ import Link from 'next/link'
  * @author Greg Rickaby
  * @param {object} props        The component attributes as props.
  * @param {any}    props.photos The photo data.
- * @return {Element}            The PhotosArchive component.
+ * @return {Element} The PhotosArchive component.
  */
 export default function PhotosArchive({photos}) {
   return (
     <Layout
       title={`Photos - ${config?.siteName}`}
-      description="Some of my best photos."
+      description="Some of my favorite photos."
     >
-      <PageHeader title="Photos" excerpt="Some of my best photos." />
+      <PageHeader title="Photos" excerpt="Some of my favorite photos." />
       <section className="flex flex-col wide space-y-8">
         {!!photos?.length &&
           photos.map((photo, index) => {
@@ -29,7 +29,6 @@ export default function PhotosArchive({photos}) {
                 <a>
                   <Image
                     alt={photo?.description}
-                    className="rounded"
                     src={photo?.pathRelative}
                     height={photo?.height}
                     width={photo?.width}
