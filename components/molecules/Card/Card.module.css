@@ -1,13 +1,9 @@
 .card {
-  @apply flex;
+  @apply flex h-48;
 }
 
 .backgroundWrap {
-  @apply w-1/3 bg-cover bg-center;
-}
-
-.image {
-  @apply object-fill h-full w-full border-none;
+  @apply w-1/3 relative;
 }
 
 .cardInner {
