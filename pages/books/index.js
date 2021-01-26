@@ -12,7 +12,7 @@ import {getAllPosts} from '@/functions/posts'
  * @author Greg Rickaby
  * @param {object} props       The component attributes as props.
  * @param {any}    props.books The books data.
- * @return {Element}           The BooksArchive component.
+ * @return {Element} The BooksArchive component.
  */
 export default function BooksArchive({books}) {
   return (
@@ -26,7 +26,7 @@ export default function BooksArchive({books}) {
         excerpt="A list of books that I&lsquo;ve either written or provided technical
           editorial services for."
       />
-      <div className="grid gap-12 md:grid-cols-2">
+      <div className="grid gap-8">
         {!!books?.length &&
           books.map((book, index) => (
             <Card key={index} {...book} path="books" />

@@ -12,13 +12,13 @@ import {getAllPosts, generateRssFeed} from '@/functions/posts'
  * @author Greg Rickaby
  * @param {object} props       The component attributes as props.
  * @param {any}    props.posts The post data.
- * @return {Element}           The BlogArchive component.
+ * @return {Element} The BlogArchive component.
  */
 export default function BlogArchive({posts}) {
   return (
     <Layout title={`Blog - ${config?.siteName}`} description="My latest posts.">
       <PageHeader title="Blog" excerpt="My latest posts." />
-      <div className="grid gap-12 md:grid-cols-2">
+      <div className="grid gap-12">
         {!!posts?.length &&
           posts.map((post, index) => (
             <Card key={index} {...post} path="blog" />
