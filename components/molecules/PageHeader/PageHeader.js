@@ -17,9 +17,7 @@ export default function PageHeader(props) {
       <Date date={props?.date} />
       <Title title={props?.title} />
       <Excerpt excerpt={props?.excerpt} />
-      {props?.coverImage && (
-        <img src={props?.coverImage} alt={props?.title} className="wide" />
-      )}
+      {props?.coverImage && <img src={props?.coverImage} alt={props?.title} />}
       <hr />
     </header>
   )
