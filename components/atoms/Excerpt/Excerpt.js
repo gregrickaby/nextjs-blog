@@ -6,9 +6,8 @@ import styles from './Excerpt.module.css'
  * Render the Excerpt component.
  *
  * @author Greg Rickaby
- * @param {object} props         The component attributes as props.
- * @param {string} props.excerpt The component description.
- * @return {Element}             The Excerpt component.
+ * @param {object} props The component attributes as props.
+ * @return {Element}     The Excerpt component.
  */
 export default function Excerpt(props) {
   if (!props?.excerpt) {

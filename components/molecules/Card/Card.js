@@ -8,11 +8,8 @@ import styles from './Card.module.css'
  * Render the Card component.
  *
  * @author Greg Rickaby
- * @param {object} props          The component attributes as props.
- * @param {object} props.data     The post data.
- * @param {string} props.filePath The MDX file path
- * @param {string} props.path     The post baseline route, e.g. /blog
- * @return {Element}              The Card component.
+ * @param {object} props The component attributes as props.
+ * @return {Element}     The Card component.
  */
 export default function Card(props) {
   return (

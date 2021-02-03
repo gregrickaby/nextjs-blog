@@ -7,9 +7,8 @@ import styles from './Date.module.css'
  * Render the Date component.
  *
  * @author Greg Rickaby
- * @param {object} props      The component attributes as props.
- * @param {string} props.date The post date.
- * @return {Element}          The Date component.
+ * @param {object} props The component attributes as props.
+ * @return {Element}     The Date component.
  */
 export default function Date(props) {
   if (!props?.date) {
