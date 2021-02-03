@@ -12,7 +12,7 @@ import Link from 'next/link'
  * @author Greg Rickaby
  * @param {object} props        The component attributes as props.
  * @param {any}    props.photos The photo data.
- * @return {Element} The PhotosArchive component.
+ * @return {Element}            The PhotosArchive component.
  */
 export default function PhotosArchive({photos}) {
   return (
@@ -21,7 +21,7 @@ export default function PhotosArchive({photos}) {
       description="Some of my favorite photos."
     >
       <PageHeader title="Photos" excerpt="Some of my favorite photos." />
-      <section className="flex flex-col wide space-y-8">
+      <section className="flex flex-col space-y-8">
         {!!photos?.length &&
           photos.map((photo, index) => {
             return (
@@ -38,21 +38,6 @@ export default function PhotosArchive({photos}) {
               </Link>
             )
           })}
-        <style jsx>{`
-          .grid {
-            display: grid;
-            gap: 12px;
-            margin-left: calc(12% - 12vw);
-            margin-right: calc(12% - 12vw);
-          }
-
-          @media (min-width: 768px) {
-            .grid {
-              grid-template-columns: repeat(2, 1fr);
-              grid-template-rows: masonry;
-            }
-          }
-        `}</style>
       </section>
     </Layout>
   )
