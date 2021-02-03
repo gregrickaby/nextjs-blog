@@ -50,7 +50,7 @@ module.exports = {
     'jsdoc/check-values': [
       'warn',
       {
-        allowedAuthors: ['WebDevStudios']
+        allowedAuthors: ['Greg Rickaby']
       }
     ],
     'jsx-a11y/anchor-is-valid': 'off',
