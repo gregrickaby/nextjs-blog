@@ -65,13 +65,8 @@ p > img {
 }
 
 .wide {
-  margin-left: calc(12% - 12vw);
-  margin-right: calc(12% - 12vw);
-}
-
-.wider {
-  margin-left: calc(24% - 24vw);
-  margin-right: calc(24% - 24vw);
+  margin-left: -25%;
+  margin-right: -25%;
 }
 
 .shimmer {
