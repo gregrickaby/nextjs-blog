@@ -8,11 +8,8 @@ import styles from './PageHeader.module.css'
  * Render the PageHeader component.
  *
  * @author Greg Rickaby
- * @param {object} props         The component attributes as props.
- * @param {string} props.date    The post or page date.
- * @param {string} props.excerpt The post or page excerpt.
- * @param {string} props.title   The post or page title.
- * @return {Element}             The PageHeader component.
+ * @param {object} props The component attributes as props.
+ * @return {Element}     The PageHeader component.
  */
 export default function PageHeader(props) {
   return (
@@ -20,12 +17,16 @@ export default function PageHeader(props) {
       <Date date={props?.date} />
       <Title title={props?.title} />
       <Excerpt excerpt={props?.excerpt} />
+      {props?.coverImage && (
+        <img src={props?.coverImage} alt={props?.title} className="wide" />
+      )}
       <hr />
     </header>
   )
 }
 
 PageHeader.propTypes = {
+  coverImage: PropTypes.string,
   date: PropTypes.string,
   excerpt: PropTypes.string,
   title: PropTypes.string.isRequired
