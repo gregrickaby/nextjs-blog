@@ -1,4 +1,4 @@
-import PostHeader from '@/components/molecules/PageHeader/PageHeader'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import PropTypes from 'prop-types'
 
 /**
@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 export default function Article(props) {
   return (
     <article>
-      <PostHeader {...props} />
+      <PageHeader {...props} />
       {props?.children}
     </article>
   )
