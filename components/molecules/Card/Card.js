@@ -12,7 +12,7 @@ import styles from './Card.module.css'
  * @param {object} props.data     The post data.
  * @param {string} props.filePath The MDX file path
  * @param {string} props.path     The post baseline route, e.g. /blog
- * @return {Element} The Card component.
+ * @return {Element}              The Card component.
  */
 export default function Card(props) {
   return (
