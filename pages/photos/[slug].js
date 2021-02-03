@@ -32,7 +32,7 @@ export default function SinglePhoto({data}) {
       }}
     >
       <main className="max-w-3xl">
-        <div className="extra-wide">
+        <div className="wide">
           {photo?.description && (
             <h1 className="post-title text-center my-8">
               {photo?.description}
@@ -48,14 +48,6 @@ export default function SinglePhoto({data}) {
               quality="100"
             />
           </a>
-          <style jsx>
-            {`
-              .extra-wide {
-                margin-left: calc(33% - 33vw);
-                margin-right: calc(33% - 33vw);
-              }
-            `}
-          </style>
         </div>
 
         <dl className="grid gap-8 md:grid-cols-3 mt-8 text-center">
