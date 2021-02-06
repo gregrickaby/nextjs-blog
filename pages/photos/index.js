@@ -29,10 +29,9 @@ export default function PhotosArchive({photos}) {
                 <a>
                   <Image
                     alt={photo?.description}
-                    src={photo?.pathRelative}
                     height={photo?.height}
+                    src={photo?.pathRelative}
                     width={photo?.width}
-                    layout="responsive"
                   />
                 </a>
               </Link>

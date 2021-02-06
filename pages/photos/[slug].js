@@ -32,20 +32,16 @@ export default function SinglePhoto({data}) {
       }}
     >
       <main className="max-w-3xl">
-        <div className="full-width">
-          {photo?.description && (
-            <h1 className="post-title text-center my-8">
-              {photo?.description}
-            </h1>
-          )}
+        {photo?.description && (
+          <h1 className="post-title text-center my-8">{photo?.description}</h1>
+        )}
+        <div className="overflow-x-hidden full-width">
           <a href={photo?.src} target="_blank" rel="noreferrer noopener">
             <Image
               alt={photo?.description}
-              src={photo?.pathRelative}
               height={photo?.height}
+              src={photo?.pathRelative}
               width={photo?.width}
-              layout="responsive"
-              quality="100"
             />
           </a>
         </div>

@@ -56,8 +56,17 @@ img {
 }
 
 .full-width {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  @apply relative mb-12;
+
+  @media (min-width: 1024px) {
+    left: -64px;
+    width: calc(100% + 128px);
+  }
+
+  @media (min-width: 1280px) {
+    left: -256px;
+    width: calc(100% + 512px);
+  }
 }
 
 .wide {
