@@ -32,7 +32,7 @@ export default function SinglePhoto({data}) {
       }}
     >
       <main className="max-w-3xl">
-        <div className="wide">
+        <div className="full-width">
           {photo?.description && (
             <h1 className="post-title text-center my-8">
               {photo?.description}
