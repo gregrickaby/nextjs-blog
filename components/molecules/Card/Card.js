@@ -58,7 +58,7 @@ export default function Card(props) {
 
 Card.propTypes = {
   data: PropTypes.shape({
-    category: PropTypes.array,
+    category: PropTypes.any,
     coverImage: PropTypes.string,
     excerpt: PropTypes.string,
     slug: PropTypes.string,
