@@ -1,19 +1,22 @@
-import PropTypes from 'prop-types'
 import Article from '@/components/molecules/Article/Article'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/helpers'
 import {getPostData, getPostsPath} from '@/functions/posts'
+import dayjs from 'dayjs'
 import hydrate from 'next-mdx-remote/hydrate'
 import {BlogJsonLd} from 'next-seo'
-import dayjs from 'dayjs'
+import Image from 'next/image'
+import PropTypes from 'prop-types'
 
 /**
  * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
-const components = {}
+const components = {
+  Image
+}
 
 /**
  * Render the BlogPost component.
