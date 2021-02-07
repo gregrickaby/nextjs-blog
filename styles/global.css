@@ -20,8 +20,6 @@ a {
 
 ul,
 ol {
-  @apply list-inside;
-
   & li {
     @apply text-xl;
   }
@@ -88,6 +86,10 @@ img {
 
 .align-center {
   @apply m-auto text-center mb-4;
+}
+
+.remark-oembed-inline {
+  @apply mb-12;
 }
 
 .shimmer {
