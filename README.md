@@ -94,7 +94,7 @@ npm run dev
 Test a build prior to deployment:
 
 ```bash
-npm run build && npm run start
+npm run build && npm start
 ```
 
 Bulk linting via CLI:
