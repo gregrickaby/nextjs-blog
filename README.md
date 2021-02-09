@@ -11,8 +11,7 @@ Built on Next.js and hosted at Vercel. https://gregrickaby.com
 - [EXIFR](https://github.com/MikeKovarik/exifr)
 - [Formik](https://formik.org/)
 - [Formium](https://formium.io)
-- [Husky](https://github.com/typicode/husky)
-- [Lint Staged](https://github.com/okonet/lint-staged)
+- [Lefthook](https://github.com/Arkweid/lefthook/)
 - [MDX](https://mdxjs.com/)
 - [Next SEO](https://github.com/garmeeh/next-seo#usage)
 - [Next Sitemap](https://github.com/iamvishnusankar/next-sitemap)
@@ -89,19 +88,19 @@ This will create a `.env` file on your local.
 Start the development server:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Test a build prior to deployment:
 
 ```bash
-yarn build && yarn start
+npm run build && npm run start
 ```
 
 Bulk linting via CLI:
 
 ```bash
-yarn lint
+npm run lint
 ```
 
 ---
