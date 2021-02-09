@@ -16,43 +16,16 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier',
-    'plugin:jsdoc/recommended'
+    'prettier'
   ],
   settings: {
     react: {
       version: 'detect'
-    },
-    jsdoc: {
-      tagNamePreference: {
-        returns: 'return'
-      }
     }
   },
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier', 'jsdoc'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
   rules: {
     'func-style': ['error', 'declaration'],
-    'jsdoc/check-indentation': 'warn',
-    'jsdoc/check-line-alignment': [
-      'warn',
-      'always',
-      {
-        tags: ['author', 'param', 'see']
-      }
-    ],
-    'jsdoc/require-param': [
-      'warn',
-      {
-        checkRestProperty: true,
-        unnamedRootBase: ['props']
-      }
-    ],
-    'jsdoc/check-values': [
-      'warn',
-      {
-        allowedAuthors: ['Greg Rickaby']
-      }
-    ],
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/no-onchange': 'off',
     'no-console': ['error', {allow: ['warn', 'error']}],
