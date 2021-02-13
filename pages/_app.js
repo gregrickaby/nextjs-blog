@@ -1,10 +1,17 @@
 import config from '@/functions/config'
 import '@/styles/fonts.css'
-import '@/styles/tailwind.css'
-import '@/styles/prism.css'
 import '@/styles/global.css'
+import '@/styles/prism.css'
+import '@/styles/tailwind.css'
 import {DefaultSeo} from 'next-seo'
+import Router from 'next/router'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 import PropTypes from 'prop-types'
+
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 /**
  * Render the App component.
