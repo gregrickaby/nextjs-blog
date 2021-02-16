@@ -1,9 +1,0 @@
-/**
- * Setup Tailwind.
- *
- * Note: Do not put styles here!
- * @See https://github.com/tailwindlabs/tailwindcss/issues/3149
- */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
