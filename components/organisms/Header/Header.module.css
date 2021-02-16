@@ -1,9 +1,9 @@
 .header {
-  @apply flex flex-col md:flex-row justify-between text-center md:text-left;
+  @apply flex flex-col md:flex-row justify-between items-center px-8 pt-8 m-auto max-w-5xl;
 }
 
-.headerWrap {
-  @apply md:flex;
+.logoWrap {
+  @apply text-center md:flex;
 }
 
 .logoLink {
@@ -15,13 +15,13 @@
 }
 
 .titleWrap {
-  @apply flex flex-col justify-center mt-1 md:mt-0 md:ml-3 md:mx-0;
+  @apply flex flex-col justify-center md:text-left md:ml-3;
 }
 
 .title {
-  @apply text-2xl m-0 leading-none font-bold;
+  @apply text-2xl m-0 leading-tight font-bold;
 }
 
 .description {
-  @apply sr-only;
+  @apply text-lg text-gray-500 mb-0;
 }

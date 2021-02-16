@@ -13,7 +13,7 @@ import styles from './Header.module.css'
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.headerWrap}>
+      <div className={styles.logoWrap}>
         <Link href="/">
           <a className={styles.logoLink}>
             <Image
@@ -21,7 +21,6 @@ export default function Header() {
               className={styles.logo}
               height="80"
               layout="fixed"
-              quality="75"
               src={config?.authorAvatar}
               width="80"
             />
