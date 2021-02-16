@@ -71,8 +71,8 @@ img {
   @apply relative mb-12;
 
   @media (min-width: 1024px) {
-    left: -128px;
-    width: calc(100% + 256px);
+    left: -145px;
+    width: calc(100% + 290px);
   }
 }
 
