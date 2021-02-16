@@ -23,8 +23,8 @@ export default function Layout({children, ...props}) {
         openGraph={props?.openGraph}
       />
       <Meta />
+      <Header />
       <div className={styles.layout}>
-        <Header />
         <main>{children}</main>
         <Footer />
       </div>
