@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {getPhotos} from '@/functions/photos'
-import Image from 'next/image'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 /**
  * Render the PhotosArchive component.
@@ -27,11 +26,11 @@ export default function PhotosArchive({photos}) {
             return (
               <Link key={index} href={`/photos/${photo?.slug}`}>
                 <a>
-                  <Image
+                  <img
                     alt={photo?.description}
-                    height={photo?.height}
-                    src={photo?.pathRelative}
-                    width={photo?.width}
+                    loading="lazy"
+                    src={`${photo?.thumbnail}`}
+                    width={config.thumbsWidth}
                   />
                 </a>
               </Link>
