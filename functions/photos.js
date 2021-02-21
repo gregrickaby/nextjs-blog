@@ -10,6 +10,7 @@ import Fraction from 'fraction.js'
 import fs from 'fs'
 import sizeOf from 'image-size'
 import path from 'path'
+import sharp from 'sharp'
 
 /**
  * Get all photo paths.
@@ -21,6 +22,56 @@ export function getPhotosPaths() {
   return getJpgList?.map((photo) => ({
     params: {slug: removeFileExtension(photo)}
   }))
+}
+
+/**
+ * Create photo thumbnails.
+ *
+ * @see https://sharp.pixelplumbing.com/api-resize
+ * @author Greg Rickaby
+ */
+export async function createThumbnails() {
+  // Delete thumbnails directory.
+  await fs.rmdirSync(config.thumbsDirectory, {recursive: true})
+
+  // Create thumbnails directory.
+  await fs.mkdirSync(config.thumbsDirectory)
+
+  // Get a list of all the photos.
+  const photos = getJpgList
+
+  // Map over photos.
+  photos.map(async (photo) => {
+    // Set full path.
+    const fullPath = `public/photos/${photo}`
+
+    // Just the file name, no extension.
+    const fileName = removeFileExtension(photo)
+
+    // Resize photo sand save to thumbnails directory.
+    await sharp(fullPath)
+      .metadata()
+      // Create 640px thumbnail.
+      .then(
+        sharp(fullPath)
+          .resize({width: config.thumbsWidth})
+          .toFormat(config.thumbsFormat)
+          .toFile(
+            `${config.thumbsDirectory}/${fileName}-${config.thumbsWidth}.${config.thumbsFormat}`
+          )
+      )
+      // Scale photo by 50%.
+      // .then(({width}) =>
+      //   sharp(fullPath)
+      //     .resize(Math.round(width * 0.5))
+      //     .toFormat(config.thumbsFormat)
+      //     .toFile(
+      //       `${config.thumbsDirectory}/${fileName}.${config.thumbsFormat}`
+      //     )
+      // )
+      // If there's an error, log it.
+      .catch((err) => console.error(err))
+  })
 }
 
 /**
@@ -37,6 +88,9 @@ export async function getPhotos() {
   if (!jpgs?.length) {
     return null
   }
+
+  // Create thumbnails.
+  await createThumbnails()
 
   // Process all photos.
   const data = await processPhoto(jpgs)
@@ -172,6 +226,9 @@ export async function processPhoto(photos) {
         slug: removeFileExtension(photo),
         software: exif.Software,
         src: `${config?.siteUrl}/photos/${photo}`,
+        thumbnail: `/photos/thumbnails/${removeFileExtension(photo)}-${
+          config.thumbsWidth
+        }.${config.thumbsFormat}`,
         type: dimensions.type,
         width: dimensions.width
       }
