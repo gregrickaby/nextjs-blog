@@ -51,7 +51,7 @@ export async function createThumbnails() {
     // Resize photo sand save to thumbnails directory.
     await sharp(fullPath)
       .metadata()
-      // Create 640px thumbnail.
+      // Create thumbnail.
       .then(
         sharp(fullPath)
           .resize({width: config.thumbsWidth})
@@ -60,15 +60,6 @@ export async function createThumbnails() {
             `${config.thumbsDirectory}/${fileName}-${config.thumbsWidth}.${config.thumbsFormat}`
           )
       )
-      // Scale photo by 50%.
-      // .then(({width}) =>
-      //   sharp(fullPath)
-      //     .resize(Math.round(width * 0.5))
-      //     .toFormat(config.thumbsFormat)
-      //     .toFile(
-      //       `${config.thumbsDirectory}/${fileName}.${config.thumbsFormat}`
-      //     )
-      // )
       // If there's an error, log it.
       .catch((err) => console.error(err))
   })
