@@ -10,7 +10,6 @@ import Fraction from 'fraction.js'
 import fs from 'fs'
 import sizeOf from 'image-size'
 import path from 'path'
-import sharp from 'sharp'
 
 /**
  * Get all photo paths.
@@ -22,47 +21,6 @@ export function getPhotosPaths() {
   return getJpgList?.map((photo) => ({
     params: {slug: removeFileExtension(photo)}
   }))
-}
-
-/**
- * Create photo thumbnails.
- *
- * @see https://sharp.pixelplumbing.com/api-resize
- * @author Greg Rickaby
- */
-export async function createThumbnails() {
-  // Delete thumbnails directory.
-  await fs.rmdirSync(config.thumbsDirectory, {recursive: true})
-
-  // Create thumbnails directory.
-  await fs.mkdirSync(config.thumbsDirectory)
-
-  // Get a list of all the photos.
-  const photos = getJpgList
-
-  // Map over photos.
-  photos.map(async (photo) => {
-    // Set full path.
-    const fullPath = `public/photos/${photo}`
-
-    // Just the file name, no extension.
-    const fileName = removeFileExtension(photo)
-
-    // Resize photo sand save to thumbnails directory.
-    await sharp(fullPath)
-      .metadata()
-      // Create thumbnail.
-      .then(
-        sharp(fullPath)
-          .resize({width: config.thumbsWidth})
-          .toFormat(config.thumbsFormat)
-          .toFile(
-            `${config.thumbsDirectory}/${fileName}-${config.thumbsWidth}.${config.thumbsFormat}`
-          )
-      )
-      // If there's an error, log it.
-      .catch((err) => console.error(err))
-  })
 }
 
 /**
@@ -79,9 +37,6 @@ export async function getPhotos() {
   if (!jpgs?.length) {
     return null
   }
-
-  // Create thumbnails.
-  await createThumbnails()
 
   // Process all photos.
   const data = await processPhoto(jpgs)
@@ -144,8 +99,14 @@ export async function processPhoto(photos) {
   return await Promise.all(
     // Map over each photo...
     photos.map(async (photo) => {
-      // Get full path to photo.
+      // Get full size photo path.
       const photoPath = path.join(config.photosDirectory, photo)
+
+      // Get thumbnail size path.
+      const thumbnailPath = await path.join(
+        config.thumbsDirectory,
+        `${removeFileExtension(photo)}.${config.thumbsFormat}`
+      )
 
       // Parse the photo with exifr.
       const exif = await exifr.parse(photoPath)
@@ -155,6 +116,8 @@ export async function processPhoto(photos) {
 
       // Get the image dimensions.
       const dimensions = await sizeOf(photoPath)
+
+      const thumbDimensions = await sizeOf(thumbnailPath)
 
       // Convert exposure time to industry standard fraction.
       const exposureTime = new Fraction(exif.ExposureTime)
@@ -217,9 +180,13 @@ export async function processPhoto(photos) {
         slug: removeFileExtension(photo),
         software: exif.Software,
         src: `${config?.siteUrl}/photos/${photo}`,
-        thumbnail: `/photos/thumbnails/${removeFileExtension(photo)}-${
-          config.thumbsWidth
-        }.${config.thumbsFormat}`,
+        thumbnail: {
+          src: `/photos/thumbnails/${removeFileExtension(photo)}.${
+            config.thumbsFormat
+          }`,
+          height: thumbDimensions.height,
+          width: thumbDimensions.width
+        },
         type: dimensions.type,
         width: dimensions.width
       }
