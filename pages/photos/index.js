@@ -28,9 +28,10 @@ export default function PhotosArchive({photos}) {
                 <a>
                   <img
                     alt={photo?.description}
+                    height={photo?.thumbnail?.height}
                     loading="lazy"
-                    src={`${photo?.thumbnail}`}
-                    width={config.thumbsWidth}
+                    src={photo?.thumbnail?.src}
+                    width={photo?.thumbnail?.width}
                   />
                 </a>
               </Link>
