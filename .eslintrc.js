@@ -28,6 +28,7 @@ module.exports = {
     'func-style': ['error', 'declaration'],
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/no-onchange': 'off',
+    'jsx-a11y/img-redundant-alt': 'off',
     'no-console': ['error', {allow: ['warn', 'error']}],
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
