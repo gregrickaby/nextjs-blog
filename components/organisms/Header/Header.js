@@ -21,6 +21,7 @@ export default function Header() {
               className={styles.logo}
               decode="async"
               height="80"
+              loading="lazy"
               src={config?.authorAvatar}
               width="80"
             />
