@@ -3,7 +3,7 @@
 }
 
 .logoWrap {
-  @apply text-center md:flex;
+  @apply flex;
 }
 
 .logoLink {
@@ -11,7 +11,7 @@
 }
 
 .logo {
-  @apply rounded-full;
+  @apply rounded-full mr-4;
 }
 
 .titleWrap {
