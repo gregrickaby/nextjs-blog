@@ -49,10 +49,6 @@ dt {
   @apply font-bold;
 }
 
-img {
-  @apply border-4 dark:border-gray-500;
-}
-
 .full-width {
   @apply relative mb-12;
 
