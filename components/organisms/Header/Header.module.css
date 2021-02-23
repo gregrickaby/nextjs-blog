@@ -23,5 +23,5 @@
 }
 
 .description {
-  @apply text-lg text-gray-500 mb-0;
+  @apply text-lg text-gray-600 mb-0;
 }

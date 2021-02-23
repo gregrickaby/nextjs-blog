@@ -1,5 +1,6 @@
 import HeaderNavigation from '@/components/molecules/HeaderNavigation/HeaderNavigation'
 import config from '@/functions/config'
+import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Header.module.css'
@@ -28,7 +29,9 @@ export default function Header() {
         </Link>
         <div className={styles.titleWrap}>
           <h1 className={styles.title}>{config?.siteName}</h1>
-          <p className={styles.description}>{config?.siteDescription}</p>
+          <p className={cn(styles.description, 'dark:text-gray-400')}>
+            {config?.siteDescription}
+          </p>
         </div>
       </div>
       <HeaderNavigation />
