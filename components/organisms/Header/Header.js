@@ -1,7 +1,6 @@
 import HeaderNavigation from '@/components/molecules/HeaderNavigation/HeaderNavigation'
 import config from '@/functions/config'
 import cn from 'classnames'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Header.module.css'
 
@@ -17,11 +16,11 @@ export default function Header() {
       <div className={styles.logoWrap}>
         <Link href="/">
           <a className={styles.logoLink}>
-            <Image
+            <img
               alt={config?.siteAuthor}
               className={styles.logo}
+              decode="async"
               height="80"
-              layout="fixed"
               src={config?.authorAvatar}
               width="80"
             />
