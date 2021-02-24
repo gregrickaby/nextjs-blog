@@ -4,22 +4,22 @@ module.exports = {
   pagesDirectory: '__pages',
   photosDirectory: 'public/photos',
   siteName: 'Greg Rickaby',
-  siteDescription: 'Personal Blog',
+  siteDescription: 'Full-Stack Developer',
   siteUrl: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
   authorAvatar: '/blog/authors/greg-80x80.jpg',
   authorEmail: 'gregrickaby@gmail.com',
   ogImage: '/favicon/icon.png',
   ogDescription:
-    "Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's.",
+    "Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 1990's.",
   headerNavigation: [
+    {
+      label: 'Articles',
+      url: '/blog'
+    },
     {
       label: 'Books',
       url: '/books'
-    },
-    {
-      label: 'Blog',
-      url: '/blog'
     },
     {
       label: 'Contact',
