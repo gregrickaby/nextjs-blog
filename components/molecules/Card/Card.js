@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import dayjs from 'dayjs'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import styles from './Card.module.css'
@@ -14,27 +14,14 @@ import styles from './Card.module.css'
 export default function Card(props) {
   return (
     <article className={styles.card}>
-      <div className={styles.backgroundWrap}>
-        <Link
-          as={`/${props?.path}/${props?.data?.slug}`}
-          href={`/${props?.path}/[slug]`}
-        >
-          <a className={styles.cardLink}>
-            <Image
-              alt={props?.data?.title}
-              className={styles.image}
-              layout="fill"
-              src={props?.data?.coverImage}
-            />
-          </a>
-        </Link>
-      </div>
-
-      <div className={styles.cardInner}>
-        {!!props?.data?.category && (
-          <p className={cn(styles.cardMeta, 'text-sm')}>
-            {props?.data?.category}
-          </p>
+      <header>
+        {!!props?.data?.date && (
+          <time
+            className={styles.cardDate}
+            dateTime={dayjs(props?.data?.date).format()}
+          >
+            {dayjs(props?.data?.date).format('MMMM D, YYYY')}
+          </time>
         )}
         <Link
           as={`/${props?.path}/${props?.data?.slug}`}
@@ -47,11 +34,11 @@ export default function Card(props) {
             />
           </a>
         </Link>
-        <p
-          className={cn(styles.cardExcerpt, 'dark:text-gray-100')}
-          dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
-        />
-      </div>
+      </header>
+      <p
+        className={cn(styles.cardExcerpt, 'dark:text-gray-100')}
+        dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
+      />
     </article>
   )
 }
@@ -60,6 +47,7 @@ Card.propTypes = {
   data: PropTypes.shape({
     category: PropTypes.any,
     coverImage: PropTypes.string,
+    date: PropTypes.string,
     excerpt: PropTypes.string,
     slug: PropTypes.string,
     title: PropTypes.string
