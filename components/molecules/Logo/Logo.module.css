@@ -1,0 +1,23 @@
+.logoWrap {
+  @apply flex;
+}
+
+.logoLink {
+  @apply shadow-none no-underline;
+}
+
+.logo {
+  @apply rounded-full mr-4;
+}
+
+.titleWrap {
+  @apply flex flex-col justify-center md:text-left md:ml-3;
+}
+
+.title {
+  @apply text-2xl m-0 leading-tight font-bold;
+}
+
+.description {
+  @apply text-lg text-gray-600 mb-0;
+}
