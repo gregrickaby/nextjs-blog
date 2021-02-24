@@ -1,4 +1,4 @@
 .date,
 .category {
-  @apply text-lg text-gray-500;
+  @apply text-lg text-gray-600 capitalize;
 }
