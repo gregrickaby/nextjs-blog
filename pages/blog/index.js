@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
-import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Card from '@/components/molecules/Card/Card'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/helpers'
-import {getAllPosts, generateRssFeed} from '@/functions/posts'
+import {generateRssFeed, getAllPosts} from '@/functions/posts'
+import PropTypes from 'prop-types'
 
 /**
  * Render the BlogArchive component.
@@ -16,8 +16,14 @@ import {getAllPosts, generateRssFeed} from '@/functions/posts'
  */
 export default function BlogArchive({posts}) {
   return (
-    <Layout title={`Blog - ${config?.siteName}`} description="My latest posts.">
-      <PageHeader title="Blog" excerpt="My latest posts." />
+    <Layout
+      title={`Articles - ${config?.siteName}`}
+      description="The latest posts on code, projects, and personal stuff."
+    >
+      <PageHeader
+        title="Articles"
+        excerpt="The latest posts on code, projects, and personal stuff."
+      />
       <div className="grid gap-12">
         {!!posts?.length &&
           posts.map((post, index) => (
