@@ -102,12 +102,6 @@ export async function processPhoto(photos) {
       // Get full size photo path.
       const photoPath = path.join(config.photosDirectory, photo)
 
-      // Get thumbnail size path.
-      const thumbnailPath = await path.join(
-        config.thumbsDirectory,
-        `${removeFileExtension(photo)}.${config.thumbsFormat}`
-      )
-
       // Parse the photo with exifr.
       const exif = await exifr.parse(photoPath)
 
@@ -116,8 +110,6 @@ export async function processPhoto(photos) {
 
       // Get the image dimensions.
       const dimensions = await sizeOf(photoPath)
-
-      const thumbDimensions = await sizeOf(thumbnailPath)
 
       // Convert exposure time to industry standard fraction.
       const exposureTime = new Fraction(exif.ExposureTime)
@@ -180,13 +172,6 @@ export async function processPhoto(photos) {
         slug: removeFileExtension(photo),
         software: exif.Software,
         src: `${config?.siteUrl}/photos/${photo}`,
-        thumbnail: {
-          src: `/photos/thumbnails/${removeFileExtension(photo)}.${
-            config.thumbsFormat
-          }`,
-          height: thumbDimensions.height,
-          width: thumbDimensions.width
-        },
         type: dimensions.type,
         width: dimensions.width
       }

@@ -2,6 +2,7 @@ import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {getPhotos} from '@/functions/photos'
+import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
@@ -26,12 +27,11 @@ export default function PhotosArchive({photos}) {
             return (
               <Link key={index} href={`/photos/${photo?.slug}`}>
                 <a>
-                  <img
+                  <Image
                     alt={photo?.description}
-                    height={photo?.thumbnail?.height}
-                    loading="lazy"
-                    src={photo?.thumbnail?.src}
-                    width={photo?.thumbnail?.width}
+                    height={photo?.height}
+                    src={photo?.src}
+                    width={photo?.width}
                   />
                 </a>
               </Link>
