@@ -1,9 +1,15 @@
 import {formium} from '@/api/formium/connector'
-import {FormiumForm} from '@formium/react'
+import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
 import {useState} from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
 import styles from './ContactForm.module.css'
+
+// Set up dynamic imports.
+// @see https://nextjs.org/docs/advanced-features/dynamic-import
+const DynamicFormiumForm = dynamic(() =>
+  import('@formium/react').then((mod) => mod.FormiumForm)
+)
+const DynamicReCAPTCHA = dynamic(() => import('react-google-recaptcha'))
 
 /**
  * Render the Contact Form component.
@@ -64,8 +70,8 @@ export default function ContactForm({form}) {
 
   return (
     <div className={styles.formWrap}>
-      <FormiumForm data={form} onSubmit={handleSumbit} />
-      <ReCAPTCHA
+      <DynamicFormiumForm data={form} onSubmit={handleSumbit} />
+      <DynamicReCAPTCHA
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={toggleRecaptcha}
       />
