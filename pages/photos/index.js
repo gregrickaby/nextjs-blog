@@ -30,7 +30,7 @@ export default function PhotosArchive({photos}) {
                   <Image
                     alt={photo?.description}
                     height={photo?.height}
-                    src={photo?.src}
+                    src={photo?.pathRelative}
                     width={photo?.width}
                   />
                 </a>
