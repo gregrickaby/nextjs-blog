@@ -25,7 +25,7 @@ export default function PageHeader(props) {
 PageHeader.propTypes = {
   coverImage: PropTypes.string,
   date: PropTypes.string,
-  category: PropTypes.string,
+  category: PropTypes.any,
   excerpt: PropTypes.string,
   title: PropTypes.string.isRequired
 }

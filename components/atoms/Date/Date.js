@@ -33,6 +33,6 @@ export default function Date(props) {
 }
 
 Date.propTypes = {
-  category: PropTypes.string,
+  category: PropTypes.any,
   date: PropTypes.string
 }
