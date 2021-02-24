@@ -1,5 +1,5 @@
 .logoWrap {
-  @apply flex;
+  @apply flex justify-between space-x-4;
 }
 
 .logoLink {
@@ -7,11 +7,11 @@
 }
 
 .logo {
-  @apply rounded-full mr-4;
+  @apply rounded-full;
 }
 
 .titleWrap {
-  @apply flex flex-col justify-center md:text-left md:ml-3;
+  @apply flex flex-col justify-center md:text-left;
 }
 
 .title {
