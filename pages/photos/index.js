@@ -5,6 +5,7 @@ import {getPhotos} from '@/functions/photos'
 import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import Masonry from '../../components/atoms/Masonry/Masonry'
 
 /**
  * Render the PhotosArchive component.
@@ -19,9 +20,10 @@ export default function PhotosArchive({photos}) {
     <Layout
       title={`Photos - ${config?.siteName}`}
       description="Some of my favorite photos."
+      layout="wide"
     >
       <PageHeader title="Photos" excerpt="Some of my favorite photos." />
-      <section className="flex flex-col space-y-8">
+      <Masonry>
         {!!photos?.length &&
           photos.map((photo, index) => {
             return (
@@ -37,7 +39,7 @@ export default function PhotosArchive({photos}) {
               </Link>
             )
           })}
-      </section>
+      </Masonry>
     </Layout>
   )
 }
