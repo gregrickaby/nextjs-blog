@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import styles from './masonry.module.css'
 
 /**
  * Masonry layout component.
@@ -15,26 +16,29 @@ export default function Masonry(props) {
   const result = []
 
   // Create columns.
-  for (let i = 0; i < props.columns; i++) {
+  for (let i = 0; i < props?.columns; i++) {
     columnWrapper[`column${i}`] = []
   }
 
   // Divide children into columns.
-  for (let i = 0; i < props.children.length; i++) {
-    const columnIndex = i % props.columns
+  for (let i = 0; i < props?.children.length; i++) {
+    const columnIndex = i % props?.columns
+
     columnWrapper[`column${columnIndex}`].push(
-      <div style={{marginBottom: `${props.gap}px`}}>{props.children[i]}</div>
+      <div key={i} style={{marginBottom: `${props?.gap}px`}}>
+        {props?.children[i]}
+      </div>
     )
   }
 
   // Wrap children in each column with a div.
-  for (let i = 0; i < props.columns; i++) {
+  for (let i = 0; i < props?.columns; i++) {
     result.push(
       <div
         key={i}
+        className={styles.itemWrap}
         style={{
-          marginLeft: `${i > 0 ? props.gap : 0}px`,
-          flex: 1
+          marginLeft: `${i > 0 ? props?.gap : 0}px`
         }}
       >
         {columnWrapper[`column${i}`]}
@@ -42,7 +46,7 @@ export default function Masonry(props) {
     )
   }
 
-  return <div style={{display: 'flex'}}>{result}</div>
+  return <section className={styles.masonryContainer}>{result}</section>
 }
 
 Masonry.defaultProps = {
