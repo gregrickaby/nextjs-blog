@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './masonry.module.css'
+import styles from './Masonry.module.css'
 
 /**
  * Masonry layout component.
