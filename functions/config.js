@@ -11,7 +11,7 @@ module.exports = {
   authorEmail: 'gregrickaby@gmail.com',
   ogImage: '/favicon/icon.png',
   ogDescription:
-    "Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 1990's.",
+    "Greg is a husband, father, published author, technical editor, and open-source contributor who's been developing websites since the late 90's.",
   headerNavigation: [
     {
       label: 'Articles',
