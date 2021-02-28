@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
-import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Card from '@/components/molecules/Card/Card'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {BOOKS_PATH} from '@/functions/helpers'
 import {getAllPosts} from '@/functions/posts'
+import PropTypes from 'prop-types'
 
 /**
  * Render the BooksArchive component.
@@ -18,12 +18,12 @@ export default function BooksArchive({books}) {
   return (
     <Layout
       title={`Books - ${config?.siteName}`}
-      description="Books that I&lsquo;ve either authored or provided technical
+      description="Books that I&lsquo;ve either written or provided technical
           editorial services for."
     >
       <PageHeader
         title="Books"
-        excerpt="Books that I&lsquo;ve either authored or provided technical
+        excerpt="Books that I&lsquo;ve either written or provided technical
           editorial services for."
       />
       <div className="grid gap-8">
