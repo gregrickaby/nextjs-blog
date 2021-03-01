@@ -92,7 +92,7 @@ dt {
   @apply bg-clip-text text-transparent dark:text-transparent;
 
   animation: shimmer 15s infinite linear;
-  background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-image: linear-gradient(-45deg, #7e00ff, #81ff00);
   background-size: 400% 400%;
 }
 
