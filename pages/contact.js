@@ -1,8 +1,8 @@
-import {formium} from '@/api/formium/connector'
 import ContactForm from '@/components/molecules/ContactForm/ContactForm'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
+import {formium} from '@/lib/formium/connector'
 import PropTypes from 'prop-types'
 
 /**

@@ -1,4 +1,4 @@
-import {formium} from '@/api/formium/connector'
+import {formium} from '@/lib/formium/connector'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
 import {useState} from 'react'
