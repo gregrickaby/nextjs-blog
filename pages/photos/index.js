@@ -19,10 +19,13 @@ export default function PhotosArchive({photos}) {
   return (
     <Layout
       title={`Photos - ${config?.siteName}`}
-      description="Some of my favorite photos."
+      description="Sharing my favorite photos from my camera roll."
       layout="wide"
     >
-      <PageHeader title="Photos" excerpt="Some of my favorite photos." />
+      <PageHeader
+        title="Photos"
+        excerpt="Sharing my favorite photos from my camera roll."
+      />
       <Masonry>
         {!!photos?.length &&
           photos.map((photo, index) => {
