@@ -20,6 +20,8 @@ a {
 
 ul,
 ol {
+  @apply list-inside;
+
   & li {
     @apply text-xl;
   }
