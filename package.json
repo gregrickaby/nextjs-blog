@@ -64,7 +64,7 @@
     "image-size": "^1.0.0",
     "next-mdx-remote": "^2.1.4",
     "next-seo": "^4.24.0",
-    "next-sitemap": "^1.6.25",
+    "next-sitemap": "^1.6.29",
     "nprogress": "^0.2.0",
     "postcss": "^8.2.13",
     "postcss-preset-env": "^6.7.0",
