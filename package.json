@@ -58,7 +58,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "exifr": "^6.2.0",
+    "exifr": "^7.0.0",
     "fraction.js": "^4.0.13",
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.0",
