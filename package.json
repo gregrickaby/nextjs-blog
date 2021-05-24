@@ -51,7 +51,7 @@
     "babel-loader": "^8.2.2",
     "classnames": "2.3.1",
     "dayjs": "^1.10.4",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
