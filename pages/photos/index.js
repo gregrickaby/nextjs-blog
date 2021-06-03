@@ -1,3 +1,4 @@
+import Masonry from '@/components/atoms/Masonry/Masonry'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
@@ -5,7 +6,6 @@ import {getPhotos} from '@/functions/photos'
 import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Masonry from '../../components/atoms/Masonry/Masonry'
 
 /**
  * Render the PhotosArchive component.
@@ -19,12 +19,12 @@ export default function PhotosArchive({photos}) {
   return (
     <Layout
       title={`Photos - ${config?.siteName}`}
-      description="Sharing my favorite photos from my camera roll."
+      description="Sharing my favorite photos from the camera roll."
       layout="wide"
     >
       <PageHeader
         title="Photos"
-        excerpt="Sharing my favorite photos from my camera roll."
+        excerpt="Sharing my favorite photos from the camera roll."
       />
       <Masonry>
         {!!photos?.length &&
@@ -35,6 +35,7 @@ export default function PhotosArchive({photos}) {
                   <Image
                     alt={photo?.description}
                     height={photo?.height}
+                    quality={1}
                     src={photo?.pathRelative}
                     width={photo?.width}
                   />
