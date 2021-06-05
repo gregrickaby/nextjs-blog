@@ -33,6 +33,7 @@
     "lint": "npm run format && npm run lint:js && npm run lint:css",
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
     "lint:js": "npx eslint './' --config=.eslintrc.js --fix || true",
+    "lint:md": "npx markdownlint '**/*.{md,mdx}' --config=.markdownlint.json --fix",
     "postbuild": "next-sitemap",
     "start": "next start"
   },
@@ -62,6 +63,8 @@
     "fraction.js": "^4.1.1",
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.0",
+    "markdownlint": "^0.23.1",
+    "markdownlint-cli": "^0.27.1",
     "next-mdx-remote": "3.0.2",
     "next-seo": "^4.24.0",
     "next-sitemap": "^1.6.102",
