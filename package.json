@@ -30,9 +30,9 @@
     "develop": "npm run dev",
     "export": "next export",
     "format": "npx prettier '**/*.{js,jsx,ts,tsx,md,mdx,html,css,scss,json,yml}' --config=.prettierrc.js --write || true",
-    "lint": "npm run format && npm run lint:js && npm run lint:css",
+    "lint": "npm run format && npm run lint:js && npm run lint:css && npm run lint:md",
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
-    "lint:js": "npx eslint './' --config=.eslintrc.js --fix || true",
+    "lint:js": "npx eslint '**/*.{js,ts,jsx,tsx}' --config=.eslintrc.js --fix || true",
     "lint:md": "npx markdownlint '**/*.{md,mdx}' --config=.markdownlint.json --fix",
     "postbuild": "next-sitemap",
     "start": "next start"
