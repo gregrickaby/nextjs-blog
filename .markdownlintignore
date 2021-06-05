@@ -1,4 +1,5 @@
 *.min.*
+__posts/123-test.mdx
 .next/
 dist/
 node_modules/
