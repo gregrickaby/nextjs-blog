@@ -20,32 +20,23 @@ If it's not here, please check out Bill Erickson's [Genesis Quick Tips](http://w
 
 NOTE: While all of these functions still work, some may not with Genesis 2.0's new hook structure. Check out [this visual guide](http://genesistutorials.com/visual-hook-guide/) to make adjustments.
 
-Quickly navigate to a section:
+## Header
 
-- [Header](#header)
-- [Template](#template)
-- [Body](#body)
-- [Sidebars](#sidebars)
-- [Footer](#footer)
-- [Development](#development)
-
-### Header
-
-**Custom Header Support**
+### Custom Header Support
 
 ```php
 /** Add custom header support */
 add_theme_support( 'genesis-custom-header', array( 'width' => 960, 'height' => 100, 'textcolor' => '444', 'admin_header_callback' => 'minimum_admin_style' ) );
 ```
 
-**Remove Header**
+### Remove Header
 
 ```php
 /** Remove Header */
 remove_action( 'genesis_header', 'genesis_do_header' );
 ```
 
-**Remove Title & Description**
+### Remove Title & Description
 
 ```php
 /** Remove Title & Description */
@@ -53,7 +44,7 @@ remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 ```
 
-**Build a Custom Title**
+### Build a Custom Title
 
 ```php
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
@@ -73,7 +64,7 @@ function child_seo_site_title() {
 }
 ```
 
-**Move Navigation Menu**
+### Move Navigation Menu
 
 ```php
 /** Move primary nav menu */
@@ -81,7 +72,7 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_before_header', 'genesis_do_nav' );
 ```
 
-**Move Secondary Navigation Menu**
+### Move Secondary Navigation Menu
 
 ```php
 /** Move secondary nav menu */
@@ -89,7 +80,7 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav' );
 ```
 
-**Favicon To CDN**
+### Favicon To CDN
 
 ```php
 add_filter( 'genesis_pre_load_favicon', 'child_favicon_filter' );
@@ -106,7 +97,7 @@ function child_favicon_filter( $favicon_url ) {
 }
 ```
 
-**Stylesheet To CDN**
+### Stylesheet To CDN
 
 ```php
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
@@ -124,7 +115,7 @@ function child_stylesheet_cdn() {
 }
 ```
 
-**Move jQuery To Google CDN**
+### Move jQuery To Google CDN
 
 ```php
 add_action( 'wp_enqueue_scripts', 'script_managment', 99);
@@ -144,7 +135,7 @@ function script_managment() {
 }
 ```
 
-**Add viewport for responsive (mobile) design**
+### Add viewport for responsive design
 
 ```php
 /** Add Viewport meta tag for mobile browsers */
@@ -154,16 +145,16 @@ function child_viewport_meta_tag() {
 }
 ```
 
-### Template
+## Template
 
-**Place WP-Cycle (must have [WP-Cycle](http://wordpress.org/extend/plugins/wp-cycle/) plug-in installed first)**
+### Place WP-Cycle (must have [WP-Cycle](http://wordpress.org/extend/plugins/wp-cycle/) plug-in installed first)
 
 ```php
 /** Place WP-Cycle */
 add_action( 'genesis_before_loop', 'wp_cycle' );
 ```
 
-**Image Sizes**
+### Image Sizes
 
 ```php
 /** Custom image sizes */
@@ -171,14 +162,14 @@ add_image_size( 'Slideshow', 520, 280, TRUE );
 add_image_size( 'Small Thumbnail', 70, 70, TRUE );
 ```
 
-**Post Thumbnails**
+### Post Thumbnails
 
 ```php
 /** Add support for post thumbnails */
 set_post_thumbnail_size( 300, 165, TRUE );
 ```
 
-**Post Formats**
+### Post Formats
 
 ```php
 /** Add support for post formats */
@@ -188,7 +179,7 @@ add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', '
 add_theme_support( 'genesis-post-format-images' );
 ```
 
-**Unregister Site Layouts**
+### Unregister Site Layouts
 
 ```php
 /** Unregister site layouts */
@@ -199,7 +190,7 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 ```
 
-**Force Layout**
+### Force Layout
 
 ```php
 add_filter( 'genesis_pre_get_option_site_layout', 'child_do_layout' );
@@ -215,7 +206,7 @@ function child_do_layout( $opt ) {
 }
 ```
 
-**Use the Genesis Custom Loop**
+### Use the Genesis Custom Loop
 
 ```php
 remove_action( 'genesis_loop', 'genesis_do_loop' );
@@ -244,7 +235,7 @@ genesis_custom_loop( $args );
 genesis();
 ```
 
-**Custom Page Template**
+### Custom Page Template
 
 ```php
 <?php
@@ -277,7 +268,7 @@ function child_custom_loop() { ?>
 genesis();
 ```
 
-**Use the Genesis Grid Loop in `front-page.php`**
+### Use the Genesis Grid Loop in `front-page.php`
 
 ```php
 remove_action( 'genesis_loop', 'genesis_do_loop' );
@@ -307,7 +298,7 @@ function child_grid_loop_helper() {
 genesis();
 ```
 
-**Filter out duplicate posts in the WordPress Loop**
+### Filter out duplicate posts in the WordPress Loop
 
 ```php
 $do_not_duplicate = array();
@@ -317,7 +308,7 @@ $do_not_duplicate = array();
 endwhile; wp_reset_query();
 ```
 
-**Add Widgets And WP-Cycle To `front-page.php`**
+### Add Widgets And WP-Cycle To `front-page.php`
 
 ```php
 remove_action( 'genesis_after_post_content', 'genesis_post_meta', 10 );
@@ -350,16 +341,16 @@ function child_home_loop_helper() { ?>
 genesis();
 ```
 
-### Body
+## Body
 
-**Remove Post Titles**
+### Remove Post Titles
 
 ```php
 /** Custom post titles */
 remove_action( 'genesis_post_title','genesis_do_post_title' );
 ```
 
-**Remove Post Titles Using Conditional Tags**
+### Remove Post Titles Using Conditional Tags
 
 ```php
 remove_action( 'genesis_post_title','genesis_do_post_title' );
@@ -378,21 +369,21 @@ if ( is_front_page() ) {
 
 See the [WordPress Codex](http://codex.wordpress.org/Conditional_Tags) for more conditional tags.
 
-**Remove Edit Link**
+### Remove Edit Link
 
 ```php
 /** Remove Edit Link */
 add_filter( 'edit_post_link', '__return_false' );
 ```
 
-**Remove default Post Image**
+### Remove default Post Image
 
 ```php
 /** Remove default post image */
 remove_action( 'genesis_post_content', 'genesis_do_post_image' );
 ```
 
-**Add Post Image above Title**
+### Add Post Image above Title
 
 ```php
 /** Add custom post image above post title */
@@ -409,7 +400,7 @@ function generate_post_image() {
 }
 ```
 
-**Custom Post Info (with Shortcodes)**
+### Custom Post Info (with shortcodes)
 
 ```php
 add_filter( 'genesis_post_info', 'child_post_info_filter' );
@@ -424,21 +415,21 @@ function child_post_info_filter( $post_info ) {
 }
 ```
 
-**Remove Post Info (Author and Date information)**
+### Remove Post Info (Author and Date information)
 
 ```php
 /** Remove post info */
 remove_action( 'genesis_before_post_content', 'genesis_post_info' );
 ```
 
-**Remove Post Meta**
+### Remove Post Meta
 
 ```php
 /** Remove the post meta function */
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
 ```
 
-**Custom Post Meta (With Shortcodes)**
+### Custom Post Meta (With Shortcodes)
 
 ```php
 add_filter( 'genesis_post_meta', 'child_post_meta_filter' );
@@ -453,7 +444,7 @@ function child_post_meta_filter( $post_meta ) {
 }
 ```
 
-**Read More Link**
+### Read More Link
 
 ```php
 add_filter( 'excerpt_more', 'child_read_more_link' );
@@ -470,7 +461,7 @@ function child_read_more_link() {
 }
 ```
 
-**Change Avatar Size**
+### Change Avatar Size
 
 ```php
 add_filter( 'genesis_comment_list_args', 'child_comment_list_args' );
@@ -485,16 +476,16 @@ function child_comment_list_args( $args ) {
 }
 ```
 
-### Sidebars
+## Sidebars
 
-**Remove Default Sidebar**
+### Remove Default Sidebar
 
 ```php
 /** Remove default sidebar */
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 ```
 
-**Remove Secondary Sidebars**
+### Remove Secondary Sidebars
 
 ```php
 /** Remove secondary sidebar */
@@ -503,7 +494,7 @@ unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 ```
 
-**Add Custom Sidebar**
+### Add Custom Sidebar
 
 ```php
 /** Add custom sidebar */
@@ -518,7 +509,7 @@ genesis_register_sidebar(array(
 ));
 ```
 
-**Add Widgets**
+### Add Widgets
 
 ```php
 add_action( 'genesis_sidebar', 'child_do_sidebar' );
@@ -533,9 +524,9 @@ function child_do_sidebar() {
 }}
 ```
 
-### Footer
+## Footer
 
-**Custom Footer and Footer Nav (with Shortcodes)**
+### Custom Footer and Footer Nav (with Shortcodes)
 
 ```php
 add_filter( 'genesis_footer_output', 'child_output_filter', 10, 3 );
@@ -554,21 +545,21 @@ function child_output_filter( $backtotop_text, $creds_text ) {
 }
 ```
 
-**Remove Footer Widgets (Genesis 1.6+)**
+### Remove Footer Widgets (Genesis 1.6+)
 
 ```php
 /** Remove footer widgets */
 remove_theme_support( 'genesis-footer-widgets', 3 );
 ```
 
-**Remove Footer**
+### Remove Footer
 
 ```php
 /** Remove Footer */
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 ```
 
-**Create a Custom Footer with HTML**
+### Create a Custom Footer with HTML
 
 ```php
 remove_action( 'genesis_footer', 'genesis_do_footer' );
@@ -591,21 +582,21 @@ function child_footer_html() { ?>
 <?php }
 ```
 
-### Development
+## Development
 
-**Get settings from database**
+### Get settings from database
 
 ```php
 genesis_get_option( 'option_name', $this->settings_field )
 ```
 
-**Get settings from database for custom metaboxes**
+### Get settings from database for custom metaboxes
 
 ```php
 genesis_get_custom_field( 'meta_box_option_name' )
 ```
 
-**Cache Bust your CSS**
+### Cache Bust your CSS
 
 ```php
 add_filter( 'stylesheet_uri', 'child_stylesheet_uri' );

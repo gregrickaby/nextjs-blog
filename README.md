@@ -43,23 +43,23 @@ $ npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/
 
 You'll need a few ENV variables in order to develop locally. Create an `.env` file in the root of the project. Add the following:
 
-```
+```text
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 ```
 
-```
+```text
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
 ```
 
-```
+```text
 NEXT_PUBLIC_FORMIUM_PROJECTID="YOUR_PROJECT_ID"
 ```
 
-```
+```text
 FORMIUM_TOKEN="YOUR_FORMIUM_TOKEN"
 ```
 
-```
+```text
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
 ```
 

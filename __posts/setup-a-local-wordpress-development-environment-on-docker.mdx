@@ -27,31 +27,31 @@ I assume assume you already have the following technologies on your computer or 
 
 Clone WordPress:
 
-```
+```bash
 git clone git@github.com:WordPress/wordpress-develop.git
 ```
 
 Install dependencies:
 
-```
+```bash
 cd wordpress-develop && npm i
 ```
 
 Start Docker containers:
 
-```
+```bash
 npm run env:start
 ```
 
 Install WordPress:
 
-```
+```bash
 npm run env:install
 ```
 
 Build WordPress assets:
 
-```
+```bash
 npm run build:dev
 ```
 
@@ -66,7 +66,7 @@ pass: password
 
 You can also open VS Code and inspect the file and directory structure. You should see something similar:
 
-```
+```bash
  ├── src
  │   ├── js
  │   ├── wp-admin
@@ -95,25 +95,25 @@ Finally the `/tools` and root directory are where the scripts for setting up Doc
 
 Watch for changes:
 
-```
+```bash
 npm run watch
 ```
 
 Run PHP unit tests:
 
-```
+```bash
 npm run test:php
 ```
 
 Run JavaScript unit tests:
 
-```
+```bash
 npm run test:e2e
 ```
 
 Use WP-CLI:
 
-```
+```bash
 npm run env:cli
 ```
 
@@ -125,25 +125,25 @@ Check out all the [useful WP-CLI commands](https://developer.wordpress.org/cli/c
 
 View Docker log files:
 
-```
+```bash
 npm run env:logs
 ```
 
 Pull the latest versions of containers:
 
-```
+```bash
 npm run env:pull
 ```
 
 Stop the containers:
 
-```
+```bash
 npm run env:stop
 ```
 
 Reset the containers:
 
-```
+```bash
 npm run env:reset && npm run env:start
 ```
 
@@ -151,7 +151,7 @@ _Note: this will destroy the Docker containers and create new ones. Make sure yo
 
 Pruning dangling Docker stuffs:
 
-```
+```bash
 docker system prune
 ```
 
@@ -163,31 +163,31 @@ If you want to contribute to the development of Gutenberg, connecting it to your
 
 Clone Gutenberg in a new directory outside of `/wordpress-develop`
 
-```
+```bash
 git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
 ```
 
 Install dependencies:
 
-```
+```bash
 npm i && npm run build
 ```
 
 Set the path to WordPress:
 
-```
+```bash
 export WP_DEVELOP_DIR=../wordpress-develop
 ```
 
 Connect Gutenberg and WordPress:
 
-```
+```bash
 npm run env connect
 ```
 
 If you open up the [WordPress dashboard](http://localhost:8889/wp-admin/plugins.php), you should now see the Gutenberg plugin, tests, and example blocks.
 
-![](/blog/images/Screenshot-2019-12-17-15.20.55.png)
+![image](/blog/images/Screenshot-2019-12-17-15.20.55.png)
 
 Simply activate Gutenberg and any other plugins that you need. Learn more about [getting started](https://developer.wordpress.org/block-editor/contributors/develop/getting-started/), and read about the [Git Workflow](https://developer.wordpress.org/block-editor/contributors/develop/git-workflow/).
 
@@ -195,13 +195,13 @@ Simply activate Gutenberg and any other plugins that you need. Learn more about 
 
 Because both WordPress and Gutenberg are version controlled, you can simply use `git pull` to bring in the latest changes:
 
-```
+```bash
 cd wordpress-develop && git pull && cd ../gutenberg && git pull
 ```
 
 If you want pull in the latest Docker containers:
 
-```
+```bash
 npm run env:pull
 ```
 
