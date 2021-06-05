@@ -28,31 +28,31 @@ I assume assume you already have the following technologies on your computer or 
 Clone WordPress:
 
 ```
-$ git clone git@github.com:WordPress/wordpress-develop.git
+git clone git@github.com:WordPress/wordpress-develop.git
 ```
 
 Install dependencies:
 
 ```
-$ cd wordpress-develop && npm i
+cd wordpress-develop && npm i
 ```
 
 Start Docker containers:
 
 ```
-$ npm run env:start
+npm run env:start
 ```
 
 Install WordPress:
 
 ```
-$ npm run env:install
+npm run env:install
 ```
 
 Build WordPress assets:
 
 ```
-$ npm run build:dev
+npm run build:dev
 ```
 
 ## Where is everything?
@@ -96,25 +96,25 @@ Finally the `/tools` and root directory are where the scripts for setting up Doc
 Watch for changes:
 
 ```
-$ npm run watch
+npm run watch
 ```
 
 Run PHP unit tests:
 
 ```
-$ npm run test:php
+npm run test:php
 ```
 
 Run JavaScript unit tests:
 
 ```
-$ npm run test:e2e
+npm run test:e2e
 ```
 
 Use WP-CLI:
 
 ```
-$ npm run env:cli
+npm run env:cli
 ```
 
 _Note:_ Where the documentation mentions running `wp`, run `npm run env:cli` instead. For example, `npm run env:cli scaffold plugin my-plugin --activate`
@@ -126,25 +126,25 @@ Check out all the [useful WP-CLI commands](https://developer.wordpress.org/cli/c
 View Docker log files:
 
 ```
-$ npm run env:logs
+npm run env:logs
 ```
 
 Pull the latest versions of containers:
 
 ```
-$ npm run env:pull
+npm run env:pull
 ```
 
 Stop the containers:
 
 ```
-$ npm run env:stop
+npm run env:stop
 ```
 
 Reset the containers:
 
 ```
-$ npm run env:reset && npm run env:start
+npm run env:reset && npm run env:start
 ```
 
 _Note: this will destroy the Docker containers and create new ones. Make sure you back up your data first!_
@@ -152,7 +152,7 @@ _Note: this will destroy the Docker containers and create new ones. Make sure yo
 Pruning dangling Docker stuffs:
 
 ```
-$ docker system prune
+docker system prune
 ```
 
 [Learn more about cleaning up](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes) dangling Docker containers, images, volumes, and networks.
@@ -164,25 +164,25 @@ If you want to contribute to the development of Gutenberg, connecting it to your
 Clone Gutenberg in a new directory outside of `/wordpress-develop`
 
 ```
-$ git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
+git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
 ```
 
 Install dependencies:
 
 ```
-$ npm i && npm run build
+npm i && npm run build
 ```
 
 Set the path to WordPress:
 
 ```
-$ export WP_DEVELOP_DIR=../wordpress-develop
+export WP_DEVELOP_DIR=../wordpress-develop
 ```
 
 Connect Gutenberg and WordPress:
 
 ```
-$ npm run env connect
+npm run env connect
 ```
 
 If you open up the [WordPress dashboard](http://localhost:8889/wp-admin/plugins.php), you should now see the Gutenberg plugin, tests, and example blocks.
@@ -196,13 +196,13 @@ Simply activate Gutenberg and any other plugins that you need. Learn more about 
 Because both WordPress and Gutenberg are version controlled, you can simply use `git pull` to bring in the latest changes:
 
 ```
-$ cd wordpress-develop && git pull && cd ../gutenberg && git pull
+cd wordpress-develop && git pull && cd ../gutenberg && git pull
 ```
 
 If you want pull in the latest Docker containers:
 
 ```
-$ npm run env:pull
+npm run env:pull
 ```
 
 ## Further Reading

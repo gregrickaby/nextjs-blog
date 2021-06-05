@@ -1,6 +1,6 @@
 # My Blog
 
-Built on Next.js and hosted at Vercel. https://gregrickaby.com
+Built on Next.js and hosted at Vercel. <https://gregrickaby.com>
 
 ---
 
@@ -70,13 +70,13 @@ If you have a project on Vercel, add the ENV variables show above to your "Proje
 Link project w/ Vercel:
 
 ```bash
-$ vercel link
+vercel link
 ```
 
 Pull ENV variables:
 
 ```bash
-$ vercel env pull
+vercel env pull
 ```
 
 This will create a `.env` file on your local.
