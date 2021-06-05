@@ -3,7 +3,7 @@ import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {BOOKS_PATH} from '@/functions/helpers'
 import {getPostData, getPostsPath} from '@/functions/posts'
-import hydrate from 'next-mdx-remote/hydrate'
+import {MDXRemote} from 'next-mdx-remote'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
@@ -26,7 +26,6 @@ const components = {
  * @return {Element}                 The BookPost component.
  */
 export default function BookPost({source, frontMatter}) {
-  const content = hydrate(source, {components})
   return (
     <Layout
       title={`${frontMatter.title} - ${config?.siteName}`}
@@ -42,7 +41,9 @@ export default function BookPost({source, frontMatter}) {
         ]
       }}
     >
-      <Article {...frontMatter}>{content}</Article>
+      <Article {...frontMatter}>
+        <MDXRemote {...source} components={components} />
+      </Article>
     </Layout>
   )
 }

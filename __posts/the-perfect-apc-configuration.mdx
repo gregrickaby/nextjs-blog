@@ -15,9 +15,9 @@ author:
 
 Here was my setup on an Amazon Medium Instance using APC:
 
-**php.ini configuration**
+`php.ini` configuration:
 
-```
+```text
 [APC]
 extension=apc.so
 apc.enabled=1
@@ -82,6 +82,6 @@ While this configuration works great for me, it may not for you. Finding "The Pe
 
 My advice: Are working in the WordPress dashboard daily, and running W3TC? Then set: `apc.stat = 1`. Your fragmentation will be higher. Your sites will load _slightly_ slower, but when you click _Update Post_, APC will flush that piece of cache.
 
-**UPDATE 2013.08.01**
+## UPDATE 2013.08.01
 
 [PHP 5.5](http://php.net/archive/2013.php#id2013-07-18-1)\+ is out (and APC is deprecated) and with it comes the new [OPcache](http://www.php.net/manual/en/opcache.installation.php).

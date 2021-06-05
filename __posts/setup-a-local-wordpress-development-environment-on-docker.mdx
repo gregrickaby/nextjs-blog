@@ -27,32 +27,32 @@ I assume assume you already have the following technologies on your computer or 
 
 Clone WordPress:
 
-```
-$ git clone git@github.com:WordPress/wordpress-develop.git
+```bash
+git clone git@github.com:WordPress/wordpress-develop.git
 ```
 
 Install dependencies:
 
-```
-$ cd wordpress-develop && npm i
+```bash
+cd wordpress-develop && npm i
 ```
 
 Start Docker containers:
 
-```
-$ npm run env:start
+```bash
+npm run env:start
 ```
 
 Install WordPress:
 
-```
-$ npm run env:install
+```bash
+npm run env:install
 ```
 
 Build WordPress assets:
 
-```
-$ npm run build:dev
+```bash
+npm run build:dev
 ```
 
 ## Where is everything?
@@ -66,7 +66,7 @@ pass: password
 
 You can also open VS Code and inspect the file and directory structure. You should see something similar:
 
-```
+```bash
  ├── src
  │   ├── js
  │   ├── wp-admin
@@ -95,26 +95,26 @@ Finally the `/tools` and root directory are where the scripts for setting up Doc
 
 Watch for changes:
 
-```
-$ npm run watch
+```bash
+npm run watch
 ```
 
 Run PHP unit tests:
 
-```
-$ npm run test:php
+```bash
+npm run test:php
 ```
 
 Run JavaScript unit tests:
 
-```
-$ npm run test:e2e
+```bash
+npm run test:e2e
 ```
 
 Use WP-CLI:
 
-```
-$ npm run env:cli
+```bash
+npm run env:cli
 ```
 
 _Note:_ Where the documentation mentions running `wp`, run `npm run env:cli` instead. For example, `npm run env:cli scaffold plugin my-plugin --activate`
@@ -125,34 +125,34 @@ Check out all the [useful WP-CLI commands](https://developer.wordpress.org/cli/c
 
 View Docker log files:
 
-```
-$ npm run env:logs
+```bash
+npm run env:logs
 ```
 
 Pull the latest versions of containers:
 
-```
-$ npm run env:pull
+```bash
+npm run env:pull
 ```
 
 Stop the containers:
 
-```
-$ npm run env:stop
+```bash
+npm run env:stop
 ```
 
 Reset the containers:
 
-```
-$ npm run env:reset && npm run env:start
+```bash
+npm run env:reset && npm run env:start
 ```
 
 _Note: this will destroy the Docker containers and create new ones. Make sure you back up your data first!_
 
 Pruning dangling Docker stuffs:
 
-```
-$ docker system prune
+```bash
+docker system prune
 ```
 
 [Learn more about cleaning up](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes) dangling Docker containers, images, volumes, and networks.
@@ -163,31 +163,31 @@ If you want to contribute to the development of Gutenberg, connecting it to your
 
 Clone Gutenberg in a new directory outside of `/wordpress-develop`
 
-```
-$ git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
+```bash
+git clone git@github.com:WordPress/gutenberg.git && cd gutenberg
 ```
 
 Install dependencies:
 
-```
-$ npm i && npm run build
+```bash
+npm i && npm run build
 ```
 
 Set the path to WordPress:
 
-```
-$ export WP_DEVELOP_DIR=../wordpress-develop
+```bash
+export WP_DEVELOP_DIR=../wordpress-develop
 ```
 
 Connect Gutenberg and WordPress:
 
-```
-$ npm run env connect
+```bash
+npm run env connect
 ```
 
 If you open up the [WordPress dashboard](http://localhost:8889/wp-admin/plugins.php), you should now see the Gutenberg plugin, tests, and example blocks.
 
-![](/blog/images/Screenshot-2019-12-17-15.20.55.png)
+![image](/blog/images/Screenshot-2019-12-17-15.20.55.png)
 
 Simply activate Gutenberg and any other plugins that you need. Learn more about [getting started](https://developer.wordpress.org/block-editor/contributors/develop/getting-started/), and read about the [Git Workflow](https://developer.wordpress.org/block-editor/contributors/develop/git-workflow/).
 
@@ -195,14 +195,14 @@ Simply activate Gutenberg and any other plugins that you need. Learn more about 
 
 Because both WordPress and Gutenberg are version controlled, you can simply use `git pull` to bring in the latest changes:
 
-```
-$ cd wordpress-develop && git pull && cd ../gutenberg && git pull
+```bash
+cd wordpress-develop && git pull && cd ../gutenberg && git pull
 ```
 
 If you want pull in the latest Docker containers:
 
-```
-$ npm run env:pull
+```bash
+npm run env:pull
 ```
 
 ## Further Reading

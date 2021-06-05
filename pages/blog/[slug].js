@@ -4,7 +4,7 @@ import config from '@/functions/config'
 import {POSTS_PATH} from '@/functions/helpers'
 import {getPostData, getPostsPath} from '@/functions/posts'
 import dayjs from 'dayjs'
-import hydrate from 'next-mdx-remote/hydrate'
+import {MDXRemote} from 'next-mdx-remote'
 import {BlogJsonLd} from 'next-seo'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
@@ -28,7 +28,6 @@ const components = {
  * @return {Element}                 The BlogPost component.
  */
 export default function BlogPost({source, frontMatter}) {
-  const content = hydrate(source, {components})
   return (
     <Layout
       title={`${frontMatter.title} - ${config?.siteName}`}
@@ -52,7 +51,9 @@ export default function BlogPost({source, frontMatter}) {
         authorName={frontMatter?.author?.name}
         description={frontMatter?.excerpt}
       />
-      <Article {...frontMatter}>{content}</Article>
+      <Article {...frontMatter}>
+        <MDXRemote {...source} components={components} />
+      </Article>
     </Layout>
   )
 }

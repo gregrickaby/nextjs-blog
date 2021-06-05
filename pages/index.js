@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/helpers'
 import {getPostData} from '@/functions/posts'
-import hydrate from 'next-mdx-remote/hydrate'
+import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
+import PropTypes from 'prop-types'
 
 /**
  * Pass components into MDX files.
@@ -24,7 +24,6 @@ const components = {Image}
  * @return {Element}                 The HomePage component.
  */
 export default function HomePage({source, frontMatter}) {
-  const content = hydrate(source, {components})
   return (
     <Layout
       title={`${config?.siteName} - ${config?.siteDescription}`}
@@ -46,7 +45,9 @@ export default function HomePage({source, frontMatter}) {
         url={config?.siteUrl}
         sameAs={config?.footerNavigation.map((item) => item?.url)}
       />
-      <article>{content}</article>
+      <article>
+        <MDXRemote {...source} components={components} />
+      </article>
     </Layout>
   )
 }
@@ -64,7 +65,7 @@ HomePage.propTypes = {
  * @return {object} All page props.
  */
 export async function getStaticProps() {
-  const post = await getPostData(PAGES_PATH, 'homepage', components)
+  const post = await getPostData(PAGES_PATH, 'homepage')
 
   return {
     props: {

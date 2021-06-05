@@ -24,15 +24,15 @@ In an effort to achieve perfect scores on [Google PageSpeed](https://developers.
 
 **TL;DR: If you want to share and display EXIF data, you may need to tell your photo editor and any image smushing services to preserve it.**
 
-![](/blog/images/Screenshot-2020-06-23-21.19.41-1920x891.png)
+![screenshot of resmush preserving exif](/blog/images/Screenshot-2020-06-23-21.19.41-1920x891.png)
 
 Make sure your images have EXIF data to begin with.
 
-## WordPress plays nice with EXIF, mostly.
+## WordPress plays nice with EXIF, mostly
 
 When you upload a JPG to WordPress, it will scan and save most available EXIF data as [post meta](https://designmodo.com/wordpress-post-meta/). No plugin or configuration needed!
 
-![](/blog/images/Screenshot-2020-06-23-21.14.28.png)
+![screenshot of exif data in wordpress database](/blog/images/Screenshot-2020-06-23-21.14.28.png)
 
 EXIF data stored as post meta in the WordPress database.
 
@@ -42,7 +42,7 @@ WordPress doesn't save all the data though, it ignores both _Location_ and _Lens
 
 Because WordPress saves this as post meta, you can use the `get_post_meta()` function to grab it, _if_ you know the image ID. One simple way to find the ID is by opening any image in the Media Library, and looking at your web browser's address bar:
 
-![](/blog/images/Screenshot-2020-06-23-20.44.22.png)
+![screenshot of media id](/blog/images/Screenshot-2020-06-23-20.44.22.png)
 
 The image ID is can be located in the address bar.
 
@@ -98,13 +98,13 @@ I built a very simple shortcode to display EXIF data. The [code is available on 
 
 The shortcode is super simple, and displays _Timestamp_, _Camera_, _Aperture_, _ISO_, _Shutter Speed_, and _Focal Length_. Because WordPress doesn't save _Location_ or _Lens information_, you would have to pass that in yourself using arguments. Here's the basic usage:
 
-```
+```php
 [exif id="12345" location="Enterprise, AL" lens="Panasonic Lumix G Vario 45-150mm"]
 ```
 
 Which would display this:
 
-![](/blog/images/Screenshot-2020-06-23-20.41.48.png)
+![screenshot of exif data on frontend](/blog/images/Screenshot-2020-06-23-20.41.48.png)
 
 EXIF data from one of the images on this website.
 

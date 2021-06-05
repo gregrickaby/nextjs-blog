@@ -34,17 +34,17 @@ Hooking into that filter, allowed me to pass additional options to an existing C
  * @return array
  */
 function grd_client_filter_products_cpt( $args, $post_type ) {
-	// If not Products CPT, bail.
-	if ( 'products' !== $post_type ) {
-		return $args;
-	}
-	// Add additional Products CPT options.
-	$products_args = array(
-		'has_archive' => true,
-		'supports'    => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ),
-	);
-	// Merge args together.
-	return array_merge( $args, $product_args );
+ // If not Products CPT, bail.
+ if ( 'products' !== $post_type ) {
+  return $args;
+ }
+ // Add additional Products CPT options.
+ $products_args = array(
+  'has_archive' => true,
+  'supports'    => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ),
+ );
+ // Merge args together.
+ return array_merge( $args, $product_args );
 }
 add_filter( 'register_post_type_args', 'grd_client_filter_products_cpt', 10, 2 );
 ```

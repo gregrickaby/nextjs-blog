@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
-import Layout from '@/components/templates/Layout/Layout'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
+import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {PAGES_PATH} from '@/functions/helpers'
 import {getPostData, getPostsPath} from '@/functions/posts'
-import hydrate from 'next-mdx-remote/hydrate'
+import {MDXRemote} from 'next-mdx-remote'
 import Image from 'next/image'
+import PropTypes from 'prop-types'
 
 /**
  * Pass components into MDX files.
@@ -24,7 +24,6 @@ const components = {Image}
  * @return {Element}                 The BlogPost component.
  */
 export default function BlogPost({source, frontMatter}) {
-  const content = hydrate(source, {components})
   return (
     <Layout
       title={`${frontMatter.title} - ${config?.siteName}`}
@@ -41,7 +40,9 @@ export default function BlogPost({source, frontMatter}) {
       }}
     >
       <PageHeader title={frontMatter?.title} excerpt={frontMatter?.excerpt} />
-      <article>{content}</article>
+      <article>
+        <MDXRemote {...source} components={components} />
+      </article>
     </Layout>
   )
 }
