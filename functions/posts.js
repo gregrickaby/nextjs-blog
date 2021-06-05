@@ -4,7 +4,7 @@ import a11yEmoji from '@fec/remark-a11y-emoji'
 import dayjs from 'dayjs'
 import fs from 'fs'
 import matter from 'gray-matter'
-import renderToString from 'next-mdx-remote/render-to-string'
+import {serialize} from 'next-mdx-remote/serialize'
 import path from 'path'
 import oembed from 'remark-oembed'
 import prism from 'remark-prism'
@@ -19,11 +19,36 @@ import prism from 'remark-prism'
  * @param {object} components Optional React components.
  * @return {object}           MDX and front matter.
  */
-export async function getPostData(directory, slug, components) {
+export async function getPostData(directory, slug) {
   const postFilePath = path.join(directory, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
   const {content, data} = matter(source)
-  const mdx = await parseMDX(content, components, data)
+  const mdx = await serialize(content, {
+    scope: {data},
+    mdxOptions: {
+      remarkPlugins: [
+        a11yEmoji,
+        [oembed, {syncWidget: true}],
+        [
+          prism,
+          {
+            transformInlineCode: true,
+            plugins: [
+              'autolinker',
+              'command-line',
+              'clipboard',
+              'data-uri-highlight',
+              'diff-highlight',
+              'inline-color',
+              'keep-markup',
+              'line-numbers',
+              'treeview'
+            ]
+          }
+        ]
+      ]
+    }
+  })
   data.date = dateFormatter(data.date)
 
   return {
@@ -71,47 +96,6 @@ export function getPostsPath(directory) {
   return mdxFileList(directory)
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({params: {slug}}))
-}
-
-/**
- * Parse MDX and front matter data.
- *
- * @author Greg Rickaby
- * @see https://github.com/vercel/next.js/tree/master/examples/with-mdx-remote
- * @see https://github.com/remarkjs/remark/blob/main/doc/plugins.md
- * @param {string} content    Markdown content.
- * @param {object} components Any optional React components.
- * @param {object} data       Front matter meta data.
- * @return {object}           Processed post data.
- */
-export async function parseMDX(content, components, data) {
-  return await renderToString(content, {
-    components,
-    mdxOptions: {
-      remarkPlugins: [
-        a11yEmoji,
-        [oembed, {syncWidget: true}],
-        [
-          prism,
-          {
-            transformInlineCode: true,
-            plugins: [
-              'autolinker',
-              'command-line',
-              'clipboard',
-              'data-uri-highlight',
-              'diff-highlight',
-              'inline-color',
-              'keep-markup',
-              'line-numbers',
-              'treeview'
-            ]
-          }
-        ]
-      ]
-    },
-    scope: data
-  })
 }
 
 /**
