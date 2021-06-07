@@ -67,7 +67,7 @@
     "markdownlint-cli": "^0.27.1",
     "next-mdx-remote": "3.0.2",
     "next-seo": "^4.24.0",
-    "next-sitemap": "^1.6.102",
+    "next-sitemap": "^1.6.105",
     "nprogress": "^0.2.0",
     "postcss": "^8.3.0",
     "postcss-preset-env": "^6.7.0",
