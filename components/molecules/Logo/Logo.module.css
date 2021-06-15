@@ -8,6 +8,9 @@
 
 .logo {
   @apply rounded-full;
+
+  height: 80px;
+  width: 80px;
 }
 
 .titleWrap {
