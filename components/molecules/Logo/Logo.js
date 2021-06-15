@@ -11,8 +11,10 @@ export default function Logo() {
         <a className={styles.logoLink}>
           <Image
             alt={config?.siteAuthor}
+            blurDataURL={config.base64Image}
             className={styles.logo}
             height="80"
+            placeholder="blur"
             src={config?.authorAvatar}
             width="80"
           />

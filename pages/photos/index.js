@@ -34,7 +34,9 @@ export default function PhotosArchive({photos}) {
                 <a>
                   <Image
                     alt={photo?.description}
+                    blurDataURL={config.base64Image}
                     height={photo?.height}
+                    placeholder="blur"
                     quality={1}
                     src={photo?.pathRelative}
                     width={photo?.width}
