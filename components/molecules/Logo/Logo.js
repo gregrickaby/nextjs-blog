@@ -15,6 +15,7 @@ export default function Logo() {
             className={styles.logo}
             height="80"
             placeholder="blur"
+            priority="true"
             src={config?.authorAvatar}
             width="80"
           />
