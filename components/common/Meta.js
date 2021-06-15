@@ -32,6 +32,10 @@ export default function Meta() {
       <link rel="apple-touch-icon" href="/favicon/icon.png" />
       <link rel="icon" href="/favicon/icon.png" sizes="192x192" />
       <meta name="msapplication-TileImage" content="/favicon/icon.png" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&family=Suez+One&family=Material+Icons&display=swap"
+        rel="stylesheet"
+      />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
