@@ -16,6 +16,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+    'next',
     'prettier'
   ],
   settings: {
@@ -32,6 +33,7 @@ module.exports = {
     'no-console': ['error', {allow: ['warn', 'error']}],
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
+    '@next/next/no-img-element': 'off',
     'react/jsx-filename-extension': [
       'warn',
       {
