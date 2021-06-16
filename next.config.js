@@ -9,8 +9,5 @@ module.exports = {
       {source: '/slides', destination: '/slides/index.html'},
       {source: '/meals', destination: '/meals/index.html'}
     ]
-  },
-  eslint: {
-    ignoreDuringBuilds: true
   }
 }
