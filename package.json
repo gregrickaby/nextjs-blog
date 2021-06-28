@@ -56,7 +56,7 @@
     "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "exifr": "^7.0.0",
+    "exifr": "^7.1.0",
     "fraction.js": "^4.1.1",
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.0",
