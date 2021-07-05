@@ -1,6 +1,7 @@
 .title {
-  @apply text-4xl lg:text-7xl font-bold leading-tight tracking-tight m-8;
+  @apply text-4xl lg:text-7xl m-8;
 
+  line-height: 1;
   margin-left: calc(12% - 12vw);
   margin-right: calc(12% - 12vw);
 }

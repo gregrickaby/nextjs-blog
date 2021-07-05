@@ -1,4 +1,3 @@
-import Meta from '@/components/common/Meta'
 import Footer from '@/components/organisms/Footer/Footer'
 import Header from '@/components/organisms/Header/Header'
 import cn from 'classnames'
@@ -24,7 +23,6 @@ export default function Layout({children, ...props}) {
         description={props?.description}
         openGraph={props?.openGraph}
       />
-      <Meta />
       <Header />
       <div className={cn(layout)}>
         <main>{children}</main>

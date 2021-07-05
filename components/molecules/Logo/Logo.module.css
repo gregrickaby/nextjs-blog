@@ -8,6 +8,9 @@
 
 .logo {
   @apply rounded-full;
+
+  height: 80px;
+  width: 80px;
 }
 
 .titleWrap {
@@ -15,7 +18,7 @@
 }
 
 .title {
-  @apply text-2xl m-0 leading-tight font-bold;
+  @apply text-2xl m-0 leading-tight tracking-normal font-bold;
 }
 
 .description {

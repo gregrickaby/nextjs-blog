@@ -39,7 +39,9 @@ export default function SinglePhoto({data}) {
           <a href={photo?.src} target="_blank" rel="noreferrer noopener">
             <Image
               alt={photo?.description}
+              blurDataURL={config.base64Image}
               height={photo?.height}
+              placeholder="blur"
               src={photo?.pathRelative}
               width={photo?.width}
             />

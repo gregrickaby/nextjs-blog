@@ -16,6 +16,7 @@ export default function Date(props) {
   }
   return (
     <>
+      <span className="material-icons align-text-bottom mr-1">date_range</span>
       <time
         className={cn(styles.date, 'font-roboto dark:text-gray-100')}
         dateTime={dayjs(props?.date).toISOString()}
@@ -25,7 +26,11 @@ export default function Date(props) {
       {props?.category && (
         <span className={cn(styles.category, 'font-roboto dark:text-gray-100')}>
           {' '}
-          | {props?.category}
+          |{' '}
+          <span className="material-icons align-text-bottom mr-1">
+            bookmark
+          </span>
+          {props?.category}
         </span>
       )}
     </>
