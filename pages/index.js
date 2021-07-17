@@ -4,6 +4,7 @@ import {PAGES_PATH} from '@/functions/helpers'
 import {getPostData} from '@/functions/posts'
 import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
+import Head from 'next/head'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
@@ -45,6 +46,13 @@ export default function HomePage({source, frontMatter}) {
         url={config?.siteUrl}
         sameAs={config?.footerNavigation.map((item) => item?.url)}
       />
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          href="/blog/images/rickaby-family-2019.webp"
+        />
+      </Head>
       <article>
         <MDXRemote {...source} components={components} />
       </article>
