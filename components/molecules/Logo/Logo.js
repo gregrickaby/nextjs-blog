@@ -8,27 +8,15 @@ export default function Logo() {
     <div className={styles.logoWrap}>
       <Link href="/">
         <a className={styles.logoLink}>
-          <picture>
-            <source
-              type="image/avif"
-              srcSet="/blog/authors/greg.avif"
-              className={styles.logo}
-            />
-            <source
-              type="image/webp"
-              srcSet="/blog/authors/greg.webp"
-              className={styles.logo}
-            />
-            <img
-              alt={config?.siteAuthor}
-              className={styles.logo}
-              decoding="async"
-              height="80"
-              loading="eager"
-              src={config.authorAvatar}
-              width="80"
-            />
-          </picture>
+          <img
+            alt={config?.siteAuthor}
+            className={styles.logo}
+            decoding="async"
+            height="80"
+            loading="eager"
+            src={config.authorAvatar}
+            width="80"
+          />
         </a>
       </Link>
       <div className={styles.titleWrap}>
