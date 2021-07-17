@@ -7,7 +7,7 @@ module.exports = {
   siteDescription: 'Full-Stack Developer',
   siteUrl: 'https://gregrickaby.com',
   siteAuthor: 'Greg Rickaby',
-  authorAvatar: '/blog/authors/greg.jpg',
+  authorAvatar: '/blog/authors/greg.webp',
   authorEmail: 'gregrickaby@gmail.com',
   base64Image:
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
