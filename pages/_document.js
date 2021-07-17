@@ -4,13 +4,8 @@ import config from '../functions/config'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en-US">
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0 user-scalable=no"
-          />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <link
             rel="alternate"
             type="application/rss+xml"
@@ -21,6 +16,7 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
           />
+          <link rel="preload" as="image" href="/blog/authors/greg.webp" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -33,13 +29,18 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <script
-            async
+            defer
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
-          <script
-            async
-            dangerouslySetInnerHTML={{
-              __html: `
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+        <script
+          defer
+          dangerouslySetInnerHTML={{
+            __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -47,13 +48,8 @@ export default class MyDocument extends Document {
             page_path: window.location.pathname,
           });
         `
-            }}
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
+          }}
+        />
       </Html>
     )
   }
