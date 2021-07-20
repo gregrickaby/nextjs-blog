@@ -18,7 +18,8 @@ const components = {Image, HeroImage}
 /**
  * Render the HeroImage component.
  *
- * @returns {Element} The hero image.
+ * @author Greg Rickaby.
+ * @returns {Element} The HeroImage component.
  */
 function HeroImage() {
   return (
