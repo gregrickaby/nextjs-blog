@@ -33,9 +33,7 @@ export default function Footer() {
       </div>
       <small>
         &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
-        <a className="shimmer" href="https://nextjs.org">
-          Next.js
-        </a>
+        <a href="https://nextjs.org">Next.js</a>
       </small>
       <DisplayOptions />
     </footer>
