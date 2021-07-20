@@ -4,16 +4,31 @@ import {PAGES_PATH} from '@/functions/helpers'
 import {getPostData} from '@/functions/posts'
 import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
-import Head from 'next/head'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
+import RickabyFamily from '../public/blog/images/rickaby-family-2019.webp'
 
 /**
  * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
-const components = {Image}
+const components = {Image, HeroImage}
+
+/**
+ * Render the HeroImage component.
+ *
+ * @returns {Element} The hero image.
+ */
+function HeroImage() {
+  return (
+    <Image
+      src={RickabyFamily}
+      alt="rickaby family in 2019"
+      placeholder="blur"
+    />
+  )
+}
 
 /**
  * Render the HomePage component.
@@ -46,13 +61,6 @@ export default function HomePage({source, frontMatter}) {
         url={config?.siteUrl}
         sameAs={config?.footerNavigation.map((item) => item?.url)}
       />
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href="/blog/images/rickaby-family-2019.webp"
-        />
-      </Head>
       <article>
         <MDXRemote {...source} components={components} />
       </article>
