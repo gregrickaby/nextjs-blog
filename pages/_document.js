@@ -4,7 +4,7 @@ import config from '../functions/config'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en-US">
+      <Html>
         <Head>
           <link
             rel="alternate"
