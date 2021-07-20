@@ -6,7 +6,7 @@ import styles from './Logo.module.css'
 export default function Logo() {
   return (
     <div className={styles.logoWrap}>
-      <Link href="/">
+      <Link href="/" prefetch={false}>
         <a className={styles.logoLink}>
           <img
             alt={config?.siteAuthor}
