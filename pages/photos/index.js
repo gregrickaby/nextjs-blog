@@ -1,4 +1,5 @@
 import Masonry from '@/components/atoms/Masonry/Masonry'
+import PlaceholderImage from '@/components/atoms/PlaceholderImage/PlaceholderImage'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
@@ -38,7 +39,10 @@ export default function PhotosArchive({photos}) {
                 <a>
                   <Image
                     alt={photo?.description}
-                    blurDataURL={config.base64Image}
+                    blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
+                      photo?.width,
+                      photo?.height
+                    )}`}
                     height={photo?.height}
                     placeholder="blur"
                     quality={1}
