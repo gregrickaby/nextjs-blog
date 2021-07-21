@@ -30,7 +30,11 @@ export default function PhotosArchive({photos}) {
         {!!photos?.length &&
           photos.map((photo, index) => {
             return (
-              <Link key={index} href={`/photos/${photo?.slug}`}>
+              <Link
+                key={index}
+                href={`/photos/${photo?.slug}`}
+                prefetch={false}
+              >
                 <a>
                   <Image
                     alt={photo?.description}

@@ -26,6 +26,7 @@ export default function Card(props) {
         <Link
           as={`/${props?.path}/${props?.data?.slug}`}
           href={`/${props?.path}/[slug]`}
+          prefetch={false}
         >
           <a className={styles.cardLink}>
             <h3
