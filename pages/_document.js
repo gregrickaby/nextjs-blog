@@ -18,13 +18,6 @@ export default class MyDocument extends Document {
           />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Roboto&family=Suez+One&family=Material+Icons&display=swap"
-            crossOrigin="true"
-          />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto&family=Suez+One&family=Material+Icons&display=swap"
             rel="stylesheet"
