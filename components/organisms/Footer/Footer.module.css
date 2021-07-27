@@ -1,5 +1,5 @@
 .footer {
-  @apply text-center text-sm grid gap-y-4;
+  @apply text-center grid gap-y-4;
 }
 
 .social {

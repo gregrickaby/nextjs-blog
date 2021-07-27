@@ -41,7 +41,7 @@
   }
 
   p {
-    @apply text-gray-800 dark:text-gray-200 font-serif font-normal text-xl mb-6;
+    @apply text-gray-800 dark:text-gray-200 font-serif font-normal text-xl leading-relaxed mb-8;
   }
 
   a {
@@ -126,7 +126,7 @@
   @apply bg-clip-text text-transparent dark:text-transparent;
 
   animation: shimmer 15s infinite linear;
-  background-image: linear-gradient(-45deg, #7e00ff, #81ff00);
+  background-image: linear-gradient(-45deg, #d3d3d3, #1c1b1b);
   background-size: 400% 400%;
 }
 

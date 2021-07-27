@@ -15,25 +15,19 @@ export default function Date(props) {
     return false
   }
   return (
-    <>
-      <span className="material-icons align-text-bottom mr-1">date_range</span>
-      <time
-        className={cn(styles.date, 'font-roboto dark:text-gray-100')}
-        dateTime={dayjs(props?.date).toISOString()}
-      >
+    <div>
+      <span className={cn(styles.icon, 'material-icons ')}>date_range</span>
+      <time className={styles.date} dateTime={dayjs(props?.date).toISOString()}>
         {dayjs(props?.date).format('MMM DD, YYYY')}
       </time>
       {props?.category && (
-        <span className={cn(styles.category, 'font-roboto dark:text-gray-100')}>
+        <span className={styles.category}>
           {' '}
-          |{' '}
-          <span className="material-icons align-text-bottom mr-1">
-            bookmark
-          </span>
+          | <span className={cn(styles.icon, 'material-icons ')}>bookmark</span>
           {props?.category}
         </span>
       )}
-    </>
+    </div>
   )
 }
 
