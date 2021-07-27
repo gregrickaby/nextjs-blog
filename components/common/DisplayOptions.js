@@ -28,7 +28,10 @@ export default function DisplayOptions() {
 
   return (
     <aside
-      className={cn('flex fixed top-0 right-0 p-2', 'dark:bg-black bg-white')}
+      className={cn(
+        'flex fixed top-0 right-0 p-2',
+        'dark:bg-gray-900 bg-white'
+      )}
     >
       <div>
         <label htmlFor="checkbox">
