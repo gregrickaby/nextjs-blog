@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './excerpt.module.css'
+import styles from './Excerpt.module.css'
 
 /**
  * Render the Excerpt component.
