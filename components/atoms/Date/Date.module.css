@@ -1,6 +1,6 @@
 .date,
 .category {
-  @apply capitalize;
+  @apply capitalize text-gray-700;
 }
 
 .icon {

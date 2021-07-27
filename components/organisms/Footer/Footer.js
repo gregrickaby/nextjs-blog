@@ -1,4 +1,5 @@
 import config from '@/functions/config'
+import cn from 'classnames'
 import dynamic from 'next/dynamic'
 import styles from './Footer.module.css'
 
@@ -19,8 +20,7 @@ const DisplayOptions = dynamic(() => import('../../common/DisplayOptions'), {
  */
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <hr />
+    <footer className={cn(styles.footer)}>
       <div className={styles.social}>
         {!!config.footerNavigation?.length &&
           config?.footerNavigation.map((item, index) => {
@@ -31,10 +31,10 @@ export default function Footer() {
             )
           })}
       </div>
-      <small>
+      <div>
         &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
         <a href="https://nextjs.org">Next.js</a>
-      </small>
+      </div>
       <DisplayOptions />
     </footer>
   )

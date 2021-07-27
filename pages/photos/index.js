@@ -23,10 +23,7 @@ export default function PhotosArchive({photos}) {
       description="Sharing my favorite photos from the camera roll."
       layout="wide"
     >
-      <PageHeader
-        title="Photos"
-        excerpt="Sharing my favorite photos from the camera roll."
-      />
+      <PageHeader title="Photos" />
       <Masonry>
         {!!photos?.length &&
           photos.map((photo, index) => {

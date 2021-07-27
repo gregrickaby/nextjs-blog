@@ -1,5 +1,7 @@
 import config from '@/functions/config'
+import Image from 'next/image'
 import Link from 'next/link'
+import siteLogo from '../../../public/blog/authors/greg-original.jpg'
 import styles from './Logo.module.css'
 
 export default function Logo() {
@@ -7,14 +9,14 @@ export default function Logo() {
     <div className={styles.logoWrap}>
       <Link href="/" prefetch={false}>
         <a className={styles.logoLink}>
-          <img
+          <Image
             alt={config?.siteAuthor}
             className={styles.logo}
-            decoding="async"
-            height="80"
+            height="70"
             loading="eager"
-            src={config.authorAvatar}
-            width="80"
+            placeholder="blur"
+            src={siteLogo}
+            width="70"
           />
         </a>
       </Link>

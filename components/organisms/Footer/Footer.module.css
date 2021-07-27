@@ -1,7 +1,7 @@
 .footer {
-  @apply text-center grid gap-y-4;
+  @apply font-sans flex py-12 justify-around;
 }
 
 .social {
-  @apply flex justify-center space-x-4;
+  @apply flex justify-between space-x-4;
 }

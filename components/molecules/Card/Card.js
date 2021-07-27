@@ -28,7 +28,7 @@ export default function Card(props) {
           href={`/${props?.path}/[slug]`}
           prefetch={false}
         >
-          <a className={styles.cardLink}>
+          <a className={cn(styles.cardLink, 'no-underline hover:underline')}>
             <h3
               className={styles.cardTitle}
               dangerouslySetInnerHTML={{__html: props?.data?.title}}
@@ -37,7 +37,7 @@ export default function Card(props) {
         </Link>
       </header>
       <p
-        className={cn(styles.cardExcerpt, 'dark:text-gray-100')}
+        className={styles.cardExcerpt}
         dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
       />
     </article>

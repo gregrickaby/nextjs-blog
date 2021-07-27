@@ -6,6 +6,20 @@
   @apply rounded-full;
 }
 
+.logoLink {
+  @apply overflow-visible;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &::after {
+    height: 0;
+  }
+}
+
 .titleWrap {
   @apply flex flex-col justify-center md:text-left;
 }

@@ -3,17 +3,13 @@
 }
 
 .cardDate {
-  @apply text-gray-600;
+  @apply text-gray-700;
 }
 
 .cardTitle {
-  @apply text-4xl my-0;
+  @apply text-4xl mt-2 mb-1;
 }
 
 .cardExcerpt {
-  @apply text-gray-600;
-}
-
-.cardLink {
-  @apply no-underline hover:underline;
+  @apply text-gray-700;
 }
