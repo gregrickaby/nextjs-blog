@@ -1,5 +1,5 @@
 .footer {
-  @apply font-sans flex py-12 justify-around;
+  @apply flex flex-col lg:flex-row justify-between items-center px-8 pb-8 space-y-12 lg:space-y-0 m-auto;
 }
 
 .social {
