@@ -1,8 +1,3 @@
-.date,
-.category {
-  @apply capitalize text-gray-700;
-}
-
 .icon {
   @apply align-text-top mr-1;
 }

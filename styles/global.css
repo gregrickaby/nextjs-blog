@@ -121,11 +121,11 @@ a {
 }
 
 .align-left {
-  @apply lg:float-left lg:mt-2 lg:mr-8 lg:mb-4 lg:-ml-16;
+  @apply lg:float-left lg:mt-2 lg:mr-8 lg:mb-4 lg:-ml-48;
 }
 
 .align-right {
-  @apply lg:float-right lg:mt-2 lg:-mr-16 lg:mb-4 lg:ml-8;
+  @apply lg:float-right lg:mt-2 lg:-mr-48 lg:mb-4 lg:ml-8;
 }
 
 .align-center {

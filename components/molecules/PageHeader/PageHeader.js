@@ -15,8 +15,8 @@ export default function PageHeader(props) {
   return (
     <header className={styles.pageHeader}>
       <Title title={props?.title} />
-      <Date date={props?.date} category={props?.category} />
       <Excerpt excerpt={props?.excerpt} />
+      <Date date={props?.date} category={props?.category} />
     </header>
   )
 }
