@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import PropTypes from 'prop-types'
 import styles from './Excerpt.module.css'
 
@@ -15,7 +14,7 @@ export default function Excerpt(props) {
   }
   return (
     <p
-      className={cn(styles.excerpt, 'font-roboto dark:text-gray-100')}
+      className={styles.excerpt}
       dangerouslySetInnerHTML={{__html: props?.excerpt}}
     />
   )

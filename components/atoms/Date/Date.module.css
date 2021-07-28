@@ -1,4 +1,8 @@
 .date,
 .category {
-  @apply text-lg text-gray-600 capitalize;
+  @apply capitalize text-gray-700;
+}
+
+.icon {
+  @apply align-text-top mr-1;
 }

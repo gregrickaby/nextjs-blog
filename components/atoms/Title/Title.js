@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import PropTypes from 'prop-types'
 import styles from './Title.module.css'
 
@@ -15,7 +14,7 @@ export default function Title(props) {
   }
   return (
     <h1
-      className={cn(styles.title, 'shimmer')}
+      className={styles.title}
       dangerouslySetInnerHTML={{__html: props?.title}}
     />
   )

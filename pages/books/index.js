@@ -21,11 +21,7 @@ export default function BooksArchive({books}) {
       description="Books that I&lsquo;ve either written or provided technical
           editorial services for."
     >
-      <PageHeader
-        title="Books"
-        excerpt="Books that I&lsquo;ve either written or provided technical
-          editorial services for."
-      />
+      <PageHeader title="Books" />
       <div className="grid gap-8">
         {!!books?.length &&
           books.map((book, index) => (

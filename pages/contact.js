@@ -24,7 +24,7 @@ export default function ContactPage({form}) {
           'Find out how to get in touch. Give me a couple of days to respond.'
       }}
     >
-      <PageHeader title="Contact" excerpt="Let's chat." />
+      <PageHeader title="Contact" />
       <article>
         <p>
           Feel free to reach out via the form below. You could also send me a DM

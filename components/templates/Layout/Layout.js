@@ -26,8 +26,8 @@ export default function Layout({children, ...props}) {
       <Header />
       <div className={cn(layout)}>
         <main>{children}</main>
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }

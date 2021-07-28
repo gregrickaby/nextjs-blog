@@ -32,8 +32,11 @@ jobs:
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
 
+      - name: Install NPM 7
+        run: npm i -g npm@latest
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Lint scripts
         run: npx eslint '**/*.{js,ts,jsx,tsx}' --config=.eslintrc.js
@@ -42,4 +45,4 @@ jobs:
         run: npx stylelint '**/*.{css,scss}' --config=.stylelintrc.js
 
       - name: Lint markdown
-        run: npx markdownlint '**/*.{md,mdx}' --config=.markdownlint.json
+        run: npx markdownlint '**/*.md' --config=.markdownlint.json

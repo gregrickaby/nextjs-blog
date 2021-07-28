@@ -14,10 +14,8 @@ export default function HeaderNavigation() {
       {!!config.headerNavigation?.length &&
         config?.headerNavigation.map((item, index) => {
           return (
-            <Link key={index} href={item?.url}>
-              <a className="no-underline hover:text-gray-900 dark:hover:text-gray-500">
-                {item?.label}
-              </a>
+            <Link key={index} href={item?.url} prefetch={false}>
+              <a className={styles.link}>{item?.label}</a>
             </Link>
           )
         })}

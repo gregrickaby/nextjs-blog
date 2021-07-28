@@ -1,4 +1,5 @@
 import Masonry from '@/components/atoms/Masonry/Masonry'
+import PlaceholderImage from '@/components/atoms/PlaceholderImage/PlaceholderImage'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
@@ -22,19 +23,23 @@ export default function PhotosArchive({photos}) {
       description="Sharing my favorite photos from the camera roll."
       layout="wide"
     >
-      <PageHeader
-        title="Photos"
-        excerpt="Sharing my favorite photos from the camera roll."
-      />
+      <PageHeader title="Photos" />
       <Masonry>
         {!!photos?.length &&
           photos.map((photo, index) => {
             return (
-              <Link key={index} href={`/photos/${photo?.slug}`}>
+              <Link
+                key={index}
+                href={`/photos/${photo?.slug}`}
+                prefetch={false}
+              >
                 <a>
                   <Image
                     alt={photo?.description}
-                    blurDataURL={config.base64Image}
+                    blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
+                      photo?.width,
+                      photo?.height
+                    )}`}
                     height={photo?.height}
                     placeholder="blur"
                     quality={1}

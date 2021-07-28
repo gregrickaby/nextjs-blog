@@ -6,13 +6,30 @@ import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
+import RickabyFamily from '../public/blog/images/rickaby-family-2019.webp'
 
 /**
  * Pass components into MDX files.
  *
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
-const components = {Image}
+const components = {Image, HeroImage}
+
+/**
+ * Render the HeroImage component.
+ *
+ * @author Greg Rickaby.
+ * @returns {Element} The HeroImage component.
+ */
+function HeroImage() {
+  return (
+    <Image
+      src={RickabyFamily}
+      alt="rickaby family in 2019"
+      placeholder="blur"
+    />
+  )
+}
 
 /**
  * Render the HomePage component.

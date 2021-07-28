@@ -1,5 +1,4 @@
 import config from '@/functions/config'
-import 'tailwindcss/tailwind.css'
 import '@/styles/global.css'
 import '@/styles/prism.css'
 import {DefaultSeo} from 'next-seo'

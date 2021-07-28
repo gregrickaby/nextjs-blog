@@ -13,5 +13,5 @@ pre-commit:
       glob: '*.{md,html,json,yml}'
       run: npx prettier {staged_files} --config=.prettierrc.js --write
     markdown:
-      glob: '*.{md,mdx}'
+      glob: '*.md'
       run: npx markdownlint {staged_files} --config=.markdownlint.json --fix

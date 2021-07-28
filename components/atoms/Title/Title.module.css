@@ -1,7 +1,3 @@
 .title {
-  @apply text-4xl lg:text-7xl m-8;
-
-  line-height: 1;
-  margin-left: calc(12% - 12vw);
-  margin-right: calc(12% - 12vw);
+  @apply text-5xl lg:text-7xl my-8;
 }

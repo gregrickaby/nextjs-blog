@@ -1,3 +1,4 @@
+import PlaceholderImage from '@/components/atoms/PlaceholderImage/PlaceholderImage'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
 import {getPhotoByFileName, getPhotosPaths} from '@/functions/photos'
@@ -39,7 +40,10 @@ export default function SinglePhoto({data}) {
           <a href={photo?.src} target="_blank" rel="noreferrer noopener">
             <Image
               alt={photo?.description}
-              blurDataURL={config.base64Image}
+              blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
+                photo?.width,
+                photo?.height
+              )}`}
               height={photo?.height}
               placeholder="blur"
               src={photo?.pathRelative}

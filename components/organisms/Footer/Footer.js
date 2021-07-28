@@ -1,4 +1,5 @@
 import config from '@/functions/config'
+import cn from 'classnames'
 import dynamic from 'next/dynamic'
 import styles from './Footer.module.css'
 
@@ -7,9 +8,12 @@ import styles from './Footer.module.css'
  *
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  */
-const DisplayOptions = dynamic(() => import('../../common/DisplayOptions'), {
-  ssr: false
-})
+const DisplayOptions = dynamic(
+  () => import('@/components/atoms/DisplayOptions/DisplayOptions'),
+  {
+    ssr: false
+  }
+)
 
 /**
  * Render the Footer component.
@@ -19,25 +23,24 @@ const DisplayOptions = dynamic(() => import('../../common/DisplayOptions'), {
  */
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <hr />
-      <div className={styles.social}>
-        {!!config.footerNavigation?.length &&
-          config?.footerNavigation.map((item, index) => {
-            return (
-              <a key={index} href={item?.url}>
-                {item?.label}
-              </a>
-            )
-          })}
-      </div>
-      <small>
-        &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
-        <a className="shimmer" href="https://nextjs.org">
-          Next.js
-        </a>
-      </small>
+    <>
+      <footer className={cn(styles.footer)}>
+        <div className={styles.social}>
+          {!!config.footerNavigation?.length &&
+            config?.footerNavigation.map((item, index) => {
+              return (
+                <a key={index} href={item?.url}>
+                  {item?.label}
+                </a>
+              )
+            })}
+        </div>
+        <div>
+          &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
+          <a href="https://nextjs.org">Next.js</a>
+        </div>
+      </footer>
       <DisplayOptions />
-    </footer>
+    </>
   )
 }

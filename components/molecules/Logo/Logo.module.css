@@ -2,15 +2,22 @@
   @apply flex justify-between space-x-4;
 }
 
-.logoLink {
-  @apply shadow-none no-underline;
-}
-
 .logo {
   @apply rounded-full;
+}
 
-  height: 80px;
-  width: 80px;
+.logoLink {
+  @apply overflow-visible;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &::after {
+    height: 0;
+  }
 }
 
 .titleWrap {
@@ -18,9 +25,9 @@
 }
 
 .title {
-  @apply text-2xl m-0 leading-tight tracking-normal font-bold;
+  @apply text-2xl m-0;
 }
 
 .description {
-  @apply text-lg text-gray-600 mb-0;
+  @apply font-sans mb-0;
 }

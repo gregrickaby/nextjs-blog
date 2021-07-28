@@ -20,10 +20,7 @@ export default function BlogArchive({posts}) {
       title={`Articles - ${config?.siteName}`}
       description="The latest posts on code, projects, and personal stuff."
     >
-      <PageHeader
-        title="Articles"
-        excerpt="The latest posts on code, projects, and personal stuff."
-      />
+      <PageHeader title="Articles" />
       <div className="grid gap-12">
         {!!posts?.length &&
           posts.map((post, index) => (
