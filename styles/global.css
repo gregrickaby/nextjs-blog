@@ -92,8 +92,10 @@ a {
     transition: background 0.3s;
   }
 
-  &:hover::after {
-    @apply bg-gray-900;
+  &:hover {
+    &::after {
+      @apply bg-gray-900;
+    }
   }
 }
 
