@@ -45,7 +45,7 @@
   }
 
   a {
-    @apply relative text-gray-800 dark:text-gray-200;
+    @apply relative text-gray-800 dark:text-gray-200 underline hover:no-underline;
   }
 
   ul,
@@ -79,22 +79,6 @@
 
     & p {
       @apply m-0 leading-snug tracking-wide;
-    }
-  }
-}
-
-a {
-  &::after {
-    @apply absolute w-full top-full right-0 bottom-0 left-0 bg-gray-400;
-
-    content: '';
-    height: 3px;
-    transition: background 0.3s;
-  }
-
-  &:hover {
-    &::after {
-      @apply bg-gray-900;
     }
   }
 }
