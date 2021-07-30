@@ -7,7 +7,7 @@ category:
   - 'code'
 tags:
   - 'gatsby'
-coverImage: '/blog/images/generic.jpg'
+coverImage: '/optimized/generic.jpg'
 author:
   name: 'Greg Rickaby'
   avatar: '/blog/authors/greg.jpg'
@@ -27,7 +27,7 @@ In around 15 you could migrate your WordPress blog to the JAMStack Before you ju
 
 WordPress makes it easy to export your data to an `*.xml` file. In the WordPress dashboard go to `Tools --> Export`. Select **All content**, then smash the download button.
 
-![export](/blog/images/export-from-wordpress.png)
+![export](/optimized/export-from-wordpress.png)
 
 Place the `*.xml` file somewhere easy to find, like `/Downloads`. Rename the file something easy to spell like, `export.xml`.
 
@@ -43,7 +43,7 @@ npx wordpress-export-to-markdown
 
 Now answer the wizard's questions:
 
-![wordpress-export-to-markdown-wizard](/blog/images/wordpress-export-to-markdown.png)
+![wordpress-export-to-markdown-wizard](/optimized/wordpress-export-to-markdown.png)
 
 Optional folder structure:
 
@@ -77,7 +77,7 @@ gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 
 The Gatsby starter creates a couple of dummy posts, delete them! They're in the `content/posts` folder. Then drag and drop the `/Downloads/posts` folder you generated with the wizard into `/content`:
 
-![image](/blog/images/move-posts-to-gatsby.gif)
+![image](/optimized/move-posts-to-gatsby.gif)
 
 ## Step 5: Configure Gatsby (Optional)
 
@@ -165,7 +165,7 @@ git add . && git commit --message "initial commit" && git push
 
 Your repo should look like this:
 
-![github-repo-with-initial-commit](/blog/images/github-repo-with-initial-commit.png)
+![github-repo-with-initial-commit](/optimized/github-repo-with-initial-commit.png)
 
 ## Step 8: Setup hosting
 
@@ -173,19 +173,19 @@ For this example, I'm going to use [Vercel](https://vercel.com) because I alread
 
 Once you've signed up (or signed in), you can import a project:
 
-![import-project-into-vercel](/blog/images/import-project-into-vercel.png)
+![import-project-into-vercel](/optimized/import-project-into-vercel.png)
 
 Under "From Git Repository" click "Continue":
 
-![select-from-git-repo](/blog/images/select-from-git-repo.png)
+![select-from-git-repo](/optimized/select-from-git-repo.png)
 
 Click "Import Project from Github" and select the Github repo you just pushed to. Click "Import":
 
-![select-your-git-repo](/blog/images/select-your-repo.png)
+![select-your-git-repo](/optimized/select-your-repo.png)
 
 Vercel will automatically figure out this is a Gatsby site. Just click "Ok" and wait for the build to complete.
 
-![successful-build](/blog/images/successful-build.png)
+![successful-build](/optimized/successful-build.png)
 
 Once it's done, you can point your DNS at your new JAMStack blog. 💪
 

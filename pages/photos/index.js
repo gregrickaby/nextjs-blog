@@ -43,7 +43,7 @@ export default function PhotosArchive({photos}) {
                     height={photo?.height}
                     placeholder="blur"
                     quality={1}
-                    src={photo?.pathRelative}
+                    src={photo?.optimizedPath}
                     width={photo?.width}
                   />
                 </a>

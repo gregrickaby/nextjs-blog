@@ -6,7 +6,7 @@ import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
-import RickabyFamily from '../public/blog/images/rickaby-family-2019.webp'
+import RickabyFamily from '../public/optimized/rickaby-family-2019.webp'
 
 /**
  * Pass components into MDX files.

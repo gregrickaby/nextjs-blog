@@ -46,7 +46,7 @@ export default function SinglePhoto({data}) {
               )}`}
               height={photo?.height}
               placeholder="blur"
-              src={photo?.pathRelative}
+              src={photo?.optimizedPath}
               width={photo?.width}
             />
           </a>
