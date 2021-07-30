@@ -167,7 +167,7 @@ export async function processPhoto(photos) {
         mode: exif.ExposureProgram,
         model: exif.Model,
         pathFull: `${config?.photosDirectory}/${photo}`,
-        pathRelative: `/photos/${photo}`,
+        pathRelative: `/photos/optimized/${photo}`,
         size: formatFileSize(stats.size),
         slug: removeFileExtension(photo),
         software: exif.Software,
