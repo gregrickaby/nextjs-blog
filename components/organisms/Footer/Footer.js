@@ -1,3 +1,4 @@
+import Separator from '@/components/atoms/Separator/Separator'
 import config from '@/functions/config'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
@@ -24,6 +25,7 @@ const DisplayOptions = dynamic(
 export default function Footer() {
   return (
     <>
+      <Separator />
       <footer className={cn(styles.footer)}>
         <div className={styles.social}>
           {!!config.footerNavigation?.length &&

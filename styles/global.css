@@ -62,7 +62,7 @@
   }
 
   hr {
-    @apply my-8 w-8 m-auto;
+    @apply my-8 m-auto;
   }
 
   dt {
