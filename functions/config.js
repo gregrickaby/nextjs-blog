@@ -2,7 +2,7 @@ module.exports = {
   booksDirectory: '__books',
   postsDirectory: '__posts',
   pagesDirectory: '__pages',
-  photosDirectory: '__photos',
+  photosDirectory: 'public/photos',
   siteName: 'Greg Rickaby',
   siteDescription: 'Full-Stack Developer',
   siteUrl: 'https://gregrickaby.com',
