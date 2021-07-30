@@ -41,5 +41,5 @@ sitemap.xml
 # files
 123-test.mdx
 rss.xml
-public/photos/optimized/*.jpg
+public/optimized/*.jpg
 
