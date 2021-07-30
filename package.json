@@ -23,6 +23,8 @@
   },
   "scripts": {
     "build": "npm run optimize && next build",
+    "build:images": "sharp --input './public/blog/images/*.{jpg,jpeg,png,gif,webp}' --output './public/optimized' resize '1120'",
+    "build:photos": "sharp --input './__photos/*.jpg' --output './public/optimized' --withMetadata resize '1120'",
     "clean": "rm -rf .next",
     "deploy prod": "vercel --prod",
     "deploy staging": "vercel",
@@ -34,7 +36,7 @@
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
     "lint:js": "next lint",
     "lint:md": "npx markdownlint '**/*.md' --config=.markdownlint.json --fix",
-    "optimize": "sharp --input '.__photos/*.{jpg,webp,raw}' --input './public/blog/images/*.{jpg,jpeg,png,gif,webp}' --output './public/optimized' --withMetadata resize '1120'",
+    "optimize": "npm run build:photos && npm run build:images",
     "postbuild": "next-sitemap",
     "start": "next start"
   },
