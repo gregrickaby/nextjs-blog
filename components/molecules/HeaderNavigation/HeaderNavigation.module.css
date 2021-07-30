@@ -3,5 +3,5 @@
 }
 
 .link {
-  @apply no-underline;
+  @apply no-underline hover:underline;
 }

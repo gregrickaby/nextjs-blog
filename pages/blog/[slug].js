@@ -1,3 +1,4 @@
+import Separator from '@/components/atoms/Separator/Separator'
 import Article from '@/components/molecules/Article/Article'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/functions/config'
@@ -15,7 +16,8 @@ import PropTypes from 'prop-types'
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
 const components = {
-  Image
+  Image,
+  Separator
 }
 
 /**

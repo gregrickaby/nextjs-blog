@@ -1,0 +1,3 @@
+.dots {
+  @apply space-x-6 text-3xl pt-6 pb-12 m-auto text-center;
+}
