@@ -1,5 +1,5 @@
 .layout {
-  @apply container space-y-8 max-w-2xl mx-auto p-6;
+  @apply container space-y-8 max-w-2xl mx-auto p-8;
 }
 
 .layoutWide {
