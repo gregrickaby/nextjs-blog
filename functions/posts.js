@@ -36,7 +36,6 @@ export async function getPostData(directory, slug) {
             plugins: [
               'autolinker',
               'command-line',
-              'clipboard',
               'data-uri-highlight',
               'diff-highlight',
               'inline-color',
