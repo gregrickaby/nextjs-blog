@@ -34,7 +34,7 @@
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
     "lint:js": "next lint",
     "lint:md": "npx markdownlint '**/*.md' --config=.markdownlint.json --fix",
-    "optimize": "npx sharp-cli --input './public/photos/*.jpg' --output './public/photos/optimized' --withMetadata --format 'jpg' resize '1120'",
+    "optimize": "sharp --input './public/photos/*.jpg' --output './public/photos/optimized' --withMetadata --format 'jpg' resize '1120'",
     "postbuild": "next-sitemap",
     "start": "next start"
   },
