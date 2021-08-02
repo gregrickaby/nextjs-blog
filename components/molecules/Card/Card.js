@@ -1,5 +1,6 @@
+import Excerpt from '@/components/atoms/Excerpt/Excerpt'
+import Meta from '@/components/atoms/Meta/Meta'
 import cn from 'classnames'
-import dayjs from 'dayjs'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import styles from './Card.module.css'
@@ -15,14 +16,7 @@ export default function Card(props) {
   return (
     <article className={styles.card}>
       <header>
-        {!!props?.data?.date && (
-          <time
-            className={styles.cardDate}
-            dateTime={dayjs(props?.data?.date).format()}
-          >
-            {dayjs(props?.data?.date).format('MMMM D, YYYY')}
-          </time>
-        )}
+        {!!props?.data?.date && <Meta {...props?.data} />}
         <Link
           as={`/${props?.path}/${props?.data?.slug}`}
           href={`/${props?.path}/[slug]`}
@@ -36,10 +30,7 @@ export default function Card(props) {
           </a>
         </Link>
       </header>
-      <p
-        className={styles.cardExcerpt}
-        dangerouslySetInnerHTML={{__html: props?.data?.excerpt}}
-      />
+      <Excerpt {...props?.data} />
     </article>
   )
 }
