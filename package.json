@@ -22,22 +22,23 @@
     "npm": "7"
   },
   "scripts": {
-    "build": "npm run optimize && next build",
+    "build": "next build",
     "build:images": "sharp --input './public/blog/images/*.{jpg,jpeg,png,gif,webp}' --output './public/optimized' resize '1120'",
     "build:photos": "sharp --input './public/photos/*.jpg' --output './public/optimized' --withMetadata resize '1120'",
     "clean": "rm -rf .next",
     "deploy prod": "vercel --prod",
     "deploy staging": "vercel",
-    "dev": "npm run clean && npm run optimize && next dev",
+    "dev": "npm run clean && next dev",
     "develop": "npm run dev",
     "export": "next export",
     "format": "npx prettier '**/*.{js,jsx,ts,tsx,md,mdx,html,css,scss,json,yml}' --config=.prettierrc.js --write || true",
+    "images": "npm run build:photos && npm run build:images",
     "lint": "npm run format && npm run lint:js && npm run lint:css && npm run lint:md",
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
     "lint:js": "next lint",
     "lint:md": "npx markdownlint '**/*.md' --config=.markdownlint.json --fix",
-    "optimize": "npm run build:photos && npm run build:images",
     "postbuild": "next-sitemap",
+    "postinstall": "npm run images",
     "start": "next start"
   },
   "dependencies": {
