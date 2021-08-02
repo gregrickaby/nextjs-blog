@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;800&family=Lora:wght@400;700&family=Material+Icons&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;800&family=Lora:wght@400;700&display=swap"
             rel="stylesheet"
             crossOrigin="true"
           />
