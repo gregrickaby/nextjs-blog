@@ -50,7 +50,7 @@ export default function Masonry(props) {
 }
 
 Masonry.defaultProps = {
-  columns: 2,
+  columns: 3,
   gap: 20
 }
 
