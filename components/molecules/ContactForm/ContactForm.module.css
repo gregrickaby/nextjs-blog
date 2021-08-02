@@ -26,37 +26,11 @@
     @apply p-4 mb-8 border rounded;
   }
 
-  & button {
-    @apply text-white rounded;
-
-    animation: shimmer 15s infinite linear;
-    background-image: linear-gradient(-45deg, #7e00ff, #81ff00);
-    background-size: 400% 400%;
-
-    @media (prefers-reduced-motion) {
-      animation: shimmer 30s infinite linear;
-    }
-  }
-}
-
-.successMessage {
-  @apply font-bold;
-}
-
-.errorMessage {
-  @apply text-red-500 italic text-sm mt-2;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
+  .successMessage {
+    @apply font-bold;
   }
 
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
+  .errorMessage {
+    @apply text-red-500 italic text-sm mt-2;
   }
 }

@@ -27,8 +27,8 @@ export default function ContactPage({form}) {
       <PageHeader title="Contact" />
       <article>
         <p>
-          Feel free to reach out via the form below. You could also send me a DM
-          on <a href="https://twitter.com/gregrickaby">Twitter</a> or{' '}
+          Feel free to reach out via the form below. You could also send me a
+          message on <a href="https://twitter.com/gregrickaby">Twitter</a> or{' '}
           <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
         </p>
         <ContactForm form={form} />
