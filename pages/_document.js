@@ -23,12 +23,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             crossOrigin="true"
           />
-          <link rel="preload" as="image" href="/blog/authors/greg.webp" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon/icon.png" />
           <link rel="icon" href="/favicon/icon.png" sizes="192x192" />
           <meta name="msapplication-TileImage" content="/favicon/icon.png" />
-
           <script
             defer
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
