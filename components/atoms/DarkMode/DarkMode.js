@@ -1,12 +1,14 @@
 import useDarkMode from 'use-dark-mode'
-import styles from './DarkMode.module.css'
 
 /**
  * Render the DarkMode component.
  *
- * Note: this must be used a dynamic component.
+ * Note: Must be client side rendered.
+ * Note: This component must be used a dynamic component.
+ * Note: Don't use a CSS module. It will create an external CSS file.
  *
  * @author Greg Rickaby
+ * @see https://github.com/donavon/use-dark-mode
  * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
  * @return {Element} The DarkMode component.
  */
@@ -18,7 +20,7 @@ export default function DarkMode() {
   })
 
   return (
-    <div className={styles.darkMode}>
+    <div className="flex fixed top-0 right-0 p-4">
       <label htmlFor="checkbox">
         <input
           aria-label="Toggle theme color"
@@ -31,7 +33,7 @@ export default function DarkMode() {
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={styles.icon}
+          className="cursor-pointer"
           enableBackground="new 0 0 24 24"
           fill={true === darkMode.value ? '#d3d3d3' : '#1c1b1b'}
           height="24px"
