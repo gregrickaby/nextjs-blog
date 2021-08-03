@@ -6,6 +6,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import {serialize} from 'next-mdx-remote/serialize'
 import path from 'path'
+import readingTime from 'reading-time'
 import oembed from 'remark-oembed'
 import prism from 'remark-prism'
 
@@ -49,6 +50,7 @@ export async function getPostData(directory, slug) {
     }
   })
   data.date = dateFormatter(data.date)
+  data.readingtime = readingTime(mdx.compiledSource)
 
   return {
     mdx,
