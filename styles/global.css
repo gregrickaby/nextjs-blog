@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply dark:bg-gray-900 dark:text-gray-200;
+    @apply dark:bg-gray-900 dark:text-gray-200 antialiased;
   }
 
   h1,
