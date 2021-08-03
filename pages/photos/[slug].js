@@ -19,6 +19,7 @@ export default function SinglePhoto({data}) {
     <Layout
       title={`Photo: ${photo?.description} - ${config?.siteName}`}
       description={photo?.description}
+      layout="wide"
       openGraph={{
         title: `Photo: ${photo?.description} - ${config?.siteName}`,
         description: photo?.description,
@@ -32,7 +33,7 @@ export default function SinglePhoto({data}) {
         ]
       }}
     >
-      <main className="max-w-3xl">
+      <main>
         {photo?.description && (
           <h1 className="post-title text-center my-8">{photo?.description}</h1>
         )}
