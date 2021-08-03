@@ -17,8 +17,9 @@ export default function Meta(props) {
     <div className={styles.meta}>
       <time dateTime={dayjs(props?.date).toISOString()}>
         {dayjs(props?.date).format('MMM DD, YYYY')}
-      </time>
-      {props?.category && <> | {props?.category}</>}
+      </time>{' '}
+      {props?.readingTime && <>&middot; {props?.readingTime} </>}{' '}
+      {props?.category && <> &middot; #{props?.category}</>}
     </div>
   )
 }
