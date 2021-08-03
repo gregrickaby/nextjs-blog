@@ -1,6 +1,6 @@
 # Greg Rickaby - Blog
 
-[My blog](https://gregrickaby.com) built on Next.js and hosted at Vercel.
+✨ [My blog](https://gregrickaby.com) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
 
 ---
 
