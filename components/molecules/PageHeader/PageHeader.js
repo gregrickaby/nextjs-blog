@@ -14,7 +14,11 @@ import styles from './PageHeader.module.css'
 export default function PageHeader(props) {
   return (
     <header className={styles.pageHeader}>
-      <Meta date={props?.date} category={props?.category} />
+      <Meta
+        date={props?.date}
+        category={props?.category}
+        readingTime={props?.readingtime?.text}
+      />
       <Title title={props?.title} />
       <Excerpt excerpt={props?.excerpt} />
     </header>
