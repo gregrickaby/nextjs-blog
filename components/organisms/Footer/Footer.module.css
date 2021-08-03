@@ -3,5 +3,5 @@
 }
 
 .social {
-  @apply flex justify-between space-x-4;
+  @apply flex justify-between space-x-4 text-xl;
 }
