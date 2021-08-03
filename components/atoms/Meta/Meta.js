@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import dayjs from 'dayjs'
 import PropTypes from 'prop-types'
 import styles from './Meta.module.css'
@@ -15,7 +14,7 @@ export default function Meta(props) {
     return false
   }
   return (
-    <div className={cn(styles.meta, 'dark:text-gray-700')}>
+    <div className={styles.meta}>
       <time dateTime={dayjs(props?.date).toISOString()}>
         {dayjs(props?.date).format('MMM DD, YYYY')}
       </time>
