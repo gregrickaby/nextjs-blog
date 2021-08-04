@@ -1,9 +1,9 @@
 import Card from '@/components/molecules/Card/Card'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
-import {POSTS_PATH} from '@/functions/helpers'
-import {generateRssFeed, getAllPosts} from '@/functions/posts'
+import config from '@/lib/config'
+import {POSTS_PATH} from '@/lib/helpers'
+import {generateRssFeed, getAllPosts} from '@/lib/posts'
 import PropTypes from 'prop-types'
 
 /**

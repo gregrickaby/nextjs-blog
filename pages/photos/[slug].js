@@ -1,7 +1,7 @@
 import PlaceholderImage from '@/components/atoms/PlaceholderImage/PlaceholderImage'
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
-import {getPhotoByFileName, getPhotosPaths} from '@/functions/photos'
+import config from '@/lib/config'
+import {getPhotoByFileName, getPhotosPaths} from '@/lib/photos'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 

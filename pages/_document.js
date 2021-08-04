@@ -1,5 +1,5 @@
 import Document, {Head, Html, Main, NextScript} from 'next/document'
-import config from '../functions/config'
+import config from '../lib/config'
 
 export default class MyDocument extends Document {
   render() {

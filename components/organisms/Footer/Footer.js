@@ -1,5 +1,5 @@
 import Separator from '@/components/atoms/Separator/Separator'
-import config from '@/functions/config'
+import config from '@/lib/config'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
 import styles from './Footer.module.css'

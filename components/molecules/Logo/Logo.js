@@ -1,4 +1,4 @@
-import config from '@/functions/config'
+import config from '@/lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
 import siteLogo from '../../../public/blog/authors/greg-original.jpg'
