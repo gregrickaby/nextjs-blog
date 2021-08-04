@@ -4,9 +4,7 @@ module.exports = {
     content: [
       './components/**/*.{js,ts,jsx,tsx,md,mdx}',
       './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
-      './__pages/**/*.{js,ts,jsx,tsx,md,mdx}',
-      './__posts/**/*.{js,ts,jsx,tsx,md,mdx}',
-      './__books/**/*.{js,ts,jsx,tsx,md,mdx}'
+      './data/**/**/*.{js,ts,jsx,tsx,md,mdx}'
     ],
     options: {
       safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
