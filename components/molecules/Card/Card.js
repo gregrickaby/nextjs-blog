@@ -23,7 +23,7 @@ export default function Card(props) {
           prefetch={false}
         >
           <a className={cn(styles.cardLink, 'no-underline hover:underline')}>
-            <h3
+            <h2
               className={styles.cardTitle}
               dangerouslySetInnerHTML={{__html: props?.data?.title}}
             />
