@@ -40,20 +40,13 @@ export default function BlogArchive({posts}) {
         />
 
         {
-          /* On page load, render all blog posts. */
+          /* On initial page load, render all blog posts. */
           !query && !!posts?.length && (
             <>
               {posts.map((post, index) => (
                 <Card key={index} {...post} path="blog" />
               ))}
             </>
-          )
-        }
-
-        {
-          /* No search results? Render a message. */
-          !searchResults.length && (
-            <p className="font-bold">Bummer. No articles found.</p>
           )
         }
 
@@ -66,6 +59,13 @@ export default function BlogArchive({posts}) {
                 <Card key={index} {...post} path="blog" />
               ))}
             </>
+          )
+        }
+
+        {
+          /* No search results? Render a message. */
+          !searchResults.length && (
+            <p className="font-bold">Bummer. No articles found.</p>
           )
         }
       </div>
