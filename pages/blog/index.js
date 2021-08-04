@@ -6,6 +6,7 @@ import {POSTS_PATH} from '@/lib/helpers'
 import {getAllPosts} from '@/lib/posts'
 import {generateRssFeed} from '@/scripts/generate-rss'
 import PropTypes from 'prop-types'
+import {useState} from 'react'
 
 /**
  * Render the BlogArchive component.
@@ -16,6 +17,13 @@ import PropTypes from 'prop-types'
  * @return {Element} The BlogArchive component.
  */
 export default function BlogArchive({posts}) {
+  const [query, setQuery] = useState('')
+
+  // Filter the posts by the query value.
+  const searchResults = posts.filter((post) =>
+    post?.data?.title?.toLowerCase().includes(query.toLowerCase())
+  )
+
   return (
     <Layout
       title={`Articles - ${config?.siteName}`}
@@ -23,10 +31,43 @@ export default function BlogArchive({posts}) {
     >
       <PageHeader title="Articles" />
       <div className="grid gap-12">
-        {!!posts?.length &&
-          posts.map((post, index) => (
-            <Card key={index} {...post} path="blog" />
-          ))}
+        <input
+          aria-label="Search all articles"
+          type="text"
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search all articles"
+          className="py-3 px-4 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-sm"
+        />
+
+        {
+          /* On page load, render all blog posts. */
+          !query && !!posts?.length && (
+            <>
+              {posts.map((post, index) => (
+                <Card key={index} {...post} path="blog" />
+              ))}
+            </>
+          )
+        }
+
+        {
+          /* No search results? Render a message. */
+          !searchResults.length && (
+            <p className="font-bold">Bummer. No articles found.</p>
+          )
+        }
+
+        {
+          /* Render the search results. */
+          !!searchResults?.length && (
+            <>
+              <h3>Search Results:</h3>
+              {searchResults.map((post, index) => (
+                <Card key={index} {...post} path="blog" />
+              ))}
+            </>
+          )
+        }
       </div>
     </Layout>
   )
