@@ -38,19 +38,17 @@ export default function SinglePhoto({data}) {
           <h1 className="post-title text-center my-8">{photo?.description}</h1>
         )}
         <div className="overflow-x-hidden full-width">
-          <a href={photo?.src} target="_blank" rel="noreferrer noopener">
-            <Image
-              alt={photo?.description}
-              blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
-                photo?.width,
-                photo?.height
-              )}`}
-              height={photo?.height}
-              placeholder="blur"
-              src={photo?.optimizedPath}
-              width={photo?.width}
-            />
-          </a>
+          <Image
+            alt={photo?.description}
+            blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
+              photo?.width,
+              photo?.height
+            )}`}
+            height={photo?.height}
+            placeholder="blur"
+            src={photo?.optimizedPath}
+            width={photo?.width}
+          />
         </div>
 
         <dl className="grid gap-8 md:grid-cols-3 mt-8 text-center">

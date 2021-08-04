@@ -24,7 +24,7 @@
   "scripts": {
     "build": "next build",
     "build:images": "sharp --input './public/blog/images/*.{jpg,jpeg,png,gif,webp}' --output './public/optimized' resize '1120'",
-    "build:photos": "sharp --input './public/photos/*.jpg' --output './public/optimized' --withMetadata resize '1120'",
+    "build:photos": "sharp --input './data/photos/*.jpg' --output './public/optimized' --withMetadata resize '1120'",
     "clean": "rm -rf .next",
     "deploy prod": "vercel --prod",
     "deploy staging": "vercel",
