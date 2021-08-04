@@ -3,7 +3,8 @@ import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
 import {POSTS_PATH} from '@/lib/helpers'
-import {generateRssFeed, getAllPosts} from '@/lib/posts'
+import {getAllPosts} from '@/lib/posts'
+import {generateRssFeed} from '@/scripts/generate-rss'
 import PropTypes from 'prop-types'
 
 /**
