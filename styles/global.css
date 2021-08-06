@@ -79,7 +79,7 @@
   }
 
   blockquote {
-    @apply my-2 px-4 italic clear-both border-l-4;
+    @apply mt-2 mb-8 px-4 italic clear-both border-l-4;
 
     & p {
       @apply m-0 leading-snug tracking-wide;
