@@ -30,7 +30,7 @@ export default function BlogArchive({posts}) {
       description="The latest posts on code, projects, and personal stuff."
     >
       <PageHeader title="Articles" />
-      <div className="grid gap-12">
+      <div className="grid gap-8">
         <input
           aria-label="Search all articles"
           type="text"
@@ -54,7 +54,7 @@ export default function BlogArchive({posts}) {
           /* Render the search results. */
           !!searchResults?.length && (
             <>
-              <h3>Search Results:</h3>
+              <h3 className="mb-0">Search Results:</h3>
               {searchResults.map((post, index) => (
                 <Card key={index} {...post} path="blog" />
               ))}
