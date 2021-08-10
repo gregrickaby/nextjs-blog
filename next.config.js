@@ -1,4 +1,4 @@
-const redirects = require('./functions/redirects')
+const redirects = require('./lib/redirects')
 
 module.exports = {
   i18n: {

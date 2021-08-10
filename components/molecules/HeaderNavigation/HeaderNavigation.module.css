@@ -1,7 +1,7 @@
 .headerNavigation {
-  @apply self-center space-x-4 mt-4 md:mt-0 lg:text-lg text-gray-700 dark:text-gray-700;
+  @apply self-center space-x-4 mt-4 md:mt-0 md:text-xl text-gray-700 dark:text-gray-700;
 }
 
 .link {
-  @apply no-underline;
+  @apply no-underline hover:underline;
 }

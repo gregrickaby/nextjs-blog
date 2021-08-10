@@ -1,4 +1,4 @@
-import config from '@/functions/config'
+import config from '@/lib/config'
 import Link from 'next/link'
 import styles from './HeaderNavigation.module.css'
 

@@ -1,12 +1,12 @@
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
-import {PAGES_PATH} from '@/functions/helpers'
-import {getPostData} from '@/functions/posts'
+import config from '@/lib/config'
+import {PAGES_PATH} from '@/lib/helpers'
+import {getPostData} from '@/lib/posts'
 import {MDXRemote} from 'next-mdx-remote'
 import {SocialProfileJsonLd} from 'next-seo'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
-import RickabyFamily from '../public/blog/images/rickaby-family-2019.webp'
+import RickabyFamily from '../public/optimized/rickaby-family-2019.webp'
 
 /**
  * Pass components into MDX files.

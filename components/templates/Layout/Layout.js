@@ -1,6 +1,5 @@
 import Footer from '@/components/organisms/Footer/Footer'
 import Header from '@/components/organisms/Header/Header'
-import cn from 'classnames'
 import {NextSeo} from 'next-seo'
 import PropTypes from 'prop-types'
 import styles from './Layout.module.css'
@@ -15,7 +14,8 @@ import styles from './Layout.module.css'
  * @return {Element}              The Layout component.
  */
 export default function Layout({children, ...props}) {
-  const layout = props?.layout == 'wide' ? styles.layoutWide : styles.layout
+  // Which layout are we using?
+  const layout = 'wide' === props?.layout ? styles.layoutWide : styles.layout
   return (
     <>
       <NextSeo
@@ -24,7 +24,7 @@ export default function Layout({children, ...props}) {
         openGraph={props?.openGraph}
       />
       <Header />
-      <div className={cn(layout)}>
+      <div className={layout}>
         <main>{children}</main>
       </div>
       <Footer />

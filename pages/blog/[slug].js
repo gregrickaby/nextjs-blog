@@ -1,8 +1,9 @@
+import Separator from '@/components/atoms/Separator/Separator'
 import Article from '@/components/molecules/Article/Article'
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
-import {POSTS_PATH} from '@/functions/helpers'
-import {getPostData, getPostsPath} from '@/functions/posts'
+import config from '@/lib/config'
+import {POSTS_PATH} from '@/lib/helpers'
+import {getPostData, getPostsPath} from '@/lib/posts'
 import dayjs from 'dayjs'
 import {MDXRemote} from 'next-mdx-remote'
 import {BlogJsonLd} from 'next-seo'
@@ -15,7 +16,8 @@ import PropTypes from 'prop-types'
  * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
  */
 const components = {
-  Image
+  Image,
+  Separator
 }
 
 /**

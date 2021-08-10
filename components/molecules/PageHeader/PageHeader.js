@@ -1,5 +1,5 @@
-import Date from '@/components/atoms/Date/Date'
 import Excerpt from '@/components/atoms/Excerpt/Excerpt'
+import Meta from '@/components/atoms/Meta/Meta'
 import Title from '@/components/atoms/Title/Title'
 import PropTypes from 'prop-types'
 import styles from './PageHeader.module.css'
@@ -14,8 +14,12 @@ import styles from './PageHeader.module.css'
 export default function PageHeader(props) {
   return (
     <header className={styles.pageHeader}>
+      <Meta
+        date={props?.date}
+        category={props?.category}
+        readingTime={props?.readingtime?.text}
+      />
       <Title title={props?.title} />
-      <Date date={props?.date} category={props?.category} />
       <Excerpt excerpt={props?.excerpt} />
     </header>
   )

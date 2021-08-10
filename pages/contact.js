@@ -1,7 +1,7 @@
 import ContactForm from '@/components/molecules/ContactForm/ContactForm'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
+import config from '@/lib/config'
 import {formium} from '@/lib/formium/connector'
 import PropTypes from 'prop-types'
 
@@ -27,8 +27,8 @@ export default function ContactPage({form}) {
       <PageHeader title="Contact" />
       <article>
         <p>
-          Feel free to reach out via the form below. You could also send me a DM
-          on <a href="https://twitter.com/gregrickaby">Twitter</a> or{' '}
+          Feel free to reach out via the form below. You could also send me a
+          message on <a href="https://twitter.com/gregrickaby">Twitter</a> or{' '}
           <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
         </p>
         <ContactForm form={form} />

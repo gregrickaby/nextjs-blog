@@ -1,7 +1,7 @@
 import PlaceholderImage from '@/components/atoms/PlaceholderImage/PlaceholderImage'
 import Layout from '@/components/templates/Layout/Layout'
-import config from '@/functions/config'
-import {getPhotoByFileName, getPhotosPaths} from '@/functions/photos'
+import config from '@/lib/config'
+import {getPhotoByFileName, getPhotosPaths} from '@/lib/photos'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
@@ -19,6 +19,7 @@ export default function SinglePhoto({data}) {
     <Layout
       title={`Photo: ${photo?.description} - ${config?.siteName}`}
       description={photo?.description}
+      layout="wide"
       openGraph={{
         title: `Photo: ${photo?.description} - ${config?.siteName}`,
         description: photo?.description,
@@ -32,24 +33,22 @@ export default function SinglePhoto({data}) {
         ]
       }}
     >
-      <main className="max-w-3xl">
+      <main>
         {photo?.description && (
           <h1 className="post-title text-center my-8">{photo?.description}</h1>
         )}
         <div className="overflow-x-hidden full-width">
-          <a href={photo?.src} target="_blank" rel="noreferrer noopener">
-            <Image
-              alt={photo?.description}
-              blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
-                photo?.width,
-                photo?.height
-              )}`}
-              height={photo?.height}
-              placeholder="blur"
-              src={photo?.pathRelative}
-              width={photo?.width}
-            />
-          </a>
+          <Image
+            alt={photo?.description}
+            blurDataURL={`data:image/svg+xml;base64,${PlaceholderImage(
+              photo?.width,
+              photo?.height
+            )}`}
+            height={photo?.height}
+            placeholder="blur"
+            src={photo?.optimizedPath}
+            width={photo?.width}
+          />
         </div>
 
         <dl className="grid gap-8 md:grid-cols-3 mt-8 text-center">

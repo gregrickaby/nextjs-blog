@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply dark:bg-gray-900 dark:text-gray-200;
+    @apply dark:bg-gray-900 dark:text-gray-200 antialiased;
   }
 
   h1,
@@ -17,15 +21,15 @@
   }
 
   h1 {
-    @apply text-6xl;
+    @apply text-5xl lg:text-6xl;
   }
 
   h2 {
-    @apply text-5xl;
+    @apply text-4xl lg:text-5xl;
   }
 
   h3 {
-    @apply text-4xl;
+    @apply text-3xl lg:text-4xl;
   }
 
   h4 {
@@ -45,7 +49,7 @@
   }
 
   a {
-    @apply relative text-gray-800 dark:text-gray-200;
+    @apply relative text-gray-800 dark:text-gray-200 underline hover:no-underline;
   }
 
   ul,
@@ -62,7 +66,7 @@
   }
 
   hr {
-    @apply dark:bg-gray-200 mb-8;
+    @apply my-8 m-auto;
   }
 
   dt {
@@ -75,25 +79,11 @@
   }
 
   blockquote {
-    @apply my-2 px-4 italic clear-both border-l-4;
+    @apply mt-2 mb-8 px-4 italic clear-both border-l-4;
 
     & p {
       @apply m-0 leading-snug tracking-wide;
     }
-  }
-}
-
-a {
-  &::after {
-    @apply absolute w-full top-full right-0 bottom-0 left-0 bg-gray-400;
-
-    content: '';
-    height: 3px;
-    transition: background 0.3s;
-  }
-
-  &:hover::after {
-    @apply bg-gray-900;
   }
 }
 
@@ -121,11 +111,11 @@ a {
 }
 
 .align-left {
-  @apply lg:float-left lg:mt-2 lg:mr-8 lg:mb-4 lg:-ml-16;
+  @apply lg:float-left lg:mt-2 lg:mr-8 lg:mb-4 lg:-ml-48;
 }
 
 .align-right {
-  @apply lg:float-right lg:mt-2 lg:-mr-16 lg:mb-4 lg:ml-8;
+  @apply lg:float-right lg:mt-2 lg:-mr-48 lg:mb-4 lg:ml-8;
 }
 
 .align-center {

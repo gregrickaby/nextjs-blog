@@ -7,9 +7,5 @@
 }
 
 .cardTitle {
-  @apply text-4xl mt-2 mb-1;
-}
-
-.cardExcerpt {
-  @apply text-gray-700;
+  @apply text-4xl mt-2 mb-0;
 }
