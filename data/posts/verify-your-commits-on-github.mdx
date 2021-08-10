@@ -1,5 +1,5 @@
 ---
-title: Get Verified! Enable verified commits on Github
+title: Enable verified commits on Github
 excerpt: ''
 slug: verify-your-commits-on-github
 coverImage: /blog/images/generic.jpg
@@ -13,18 +13,38 @@ author:
   avatar: /blog/authors/greg.jpg
 ---
 
+When you work locally on your computer, Git allows you to set the author of your changes and the identity of the committer. This, potentially, makes it difficult for other people to be confident that commits and tags you create were actually created by you.
+
 ![screenshot](https://dl.dropbox.com/s/tj0srqlijcbgcn0/Screen%20Shot%202021-06-08%20at%2012.32.14.png?dl=0)
 
-1. (optional) Download [GPG Tools](https://gpgtools.org/) and install
-2. (optional) [Use CLI ](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key)
-3. Create a new key, must use RSA 4096 encryption. Be sure to use the same email you use for Github (which much be verified!)
-4. Get the GPG key ID:
+Using GPG or S/MIME, you can sign tags and commits locally. These tags or commits are marked as verified on GitHub so other people can be confident that the changes come from a trusted source. To quote privex.io:
+
+> GnuPG (more commonly known as GPG) is an implementation of a standard known as PGP (Pretty Good Privacy). It uses a system of "public" and "private" keys for the encryption and signing of messages or data.
+
+## How to enable verified commits on Github
+
+There are two tools available to help generate a GPG key pair:
+
+1. GUI based [GPG Tools](https://gpgtools.org/)
+2. [GPG CLI](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key)
+
+Once you have one of those tools installed (or both) you can generate a key pair.
+
+### Create a new key using RSA 4096 encryption:
+
+```bash
+gpg --full-generate-key
+```
+
+> Be sure to use the same email you use for Github (which much be verified!)
+
+### Retrieve your GPG Key ID:
 
 ```bash
 gpg --list-secret-keys --keyid-format=long
 ```
 
-Will show you something similar to this:
+This command will show you something similar to this:
 
 ```bash
 $ gpg --list-secret-keys --keyid-format=long
@@ -35,11 +55,17 @@ uid                          Greg Rickaby
 ssb   4096R/42B317FD4BA89E7A 2021-06-08
 ```
 
-1. Tell Git [about your signing key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key)
+### Configure your local Git
+
+Tell Git [about your signing key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key) with the command below. Swap out the ID with the one generated above.
 
 ```bash
 git config --global user.signingkey [3AA5C34371567BD2]
 ```
 
-6. Add new GPG key [to your Github account](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
-7. [Enable Vigilant Mode on Github](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits#enabling-vigilant-mode)
+### Configure Github
+
+![screenshot](https://dl.dropbox.com/s/6pyukcyp4g1aish/Screen%20Shot%202021-08-10%20at%202.25.45%20PM.png?dl=0)
+
+1. Add new GPG key [to your Github account](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
+2. [Enable Vigilant Mode on Github](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits#enabling-vigilant-mode)
