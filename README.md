@@ -9,13 +9,30 @@
 - [Local Development](#local-development)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
-  - [ENV Variables](#env-variables)
-- [Working with Next.js](#working-with-nextjs)
+  - [Setup ENV Variables](#setup-env-variables)
+  - [Working with Next.js](#working-with-nextjs)
 - [Content Management](#content-management)
   - [Posts & Pages](#posts--pages)
   - [Photo Management](#photo-management)
   - [Photo Optimization](#photo-optimization)
 - [Gotchas](#gotchas)
+  - [TailwindCSS](#tailwindcss)
+
+---
+
+## Table of Contents <!-- omit in toc -->
+
+- [Local Development](#local-development)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Setup ENV Variables](#setup-env-variables)
+  - [Working with Next.js](#working-with-nextjs)
+- [Content Management](#content-management)
+  - [Posts & Pages](#posts--pages)
+  - [Photo Management](#photo-management)
+  - [Photo Optimization](#photo-optimization)
+- [Gotchas](#gotchas)
+  - [TailwindCSS](#tailwindcss)
 
 ---
 
@@ -23,6 +40,7 @@
 
 ### Prerequisites
 
+- Node 14 and NPM 7
 - A [Formium](https://formium.io/) token
 - A [reCAPTCHA](https://developers.google.com/recaptcha/) site key
 
@@ -34,7 +52,7 @@ Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up a
 npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/gregrickaby-blog
 ```
 
-### ENV Variables
+### Setup ENV Variables
 
 Create an `.env` file in the root of the project.
 
@@ -62,7 +80,7 @@ NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
 
 ---
 
-## Working with Next.js
+### Working with Next.js
 
 Start local dev server:
 
@@ -82,6 +100,18 @@ Bulk linting:
 npm run lint
 ```
 
+Bulk formatting:
+
+```bash
+npm run format
+```
+
+Bypass Lefthook:
+
+```bash
+git commit -m "my commit message" --no-verify
+```
+
 ---
 
 ## Content Management
@@ -93,6 +123,8 @@ It's very simple:
 1. Create an `.mdx` file
 2. Add front matter and content
 3. Place the `.mdx` file in `data/posts`, `data/pages`, or `data/books`
+
+> The Front Matter slug _must_ match the blog post filename. This is because Next.js is querying data based on the post slug.
 
 ### Photo Management
 
@@ -114,9 +146,9 @@ You can also run `npm run optimize` to optimize all photos in `data/photos` and 
 
 ## Gotchas
 
-**Tailwind `font-*` and `dark` styles do not work in CSS Modules.**
+### TailwindCSS
 
-I don't know why. Instead, add the styles in the component and then use `cn()` to merge them.
+Tailwind `font-*` and `dark` styles do not work in CSS Modules. Instead, add the styles in the component using `cn()` to merge them.
 
 ```js
 className={cn(styles.date, 'font-roboto dark:text-gray-100')}
