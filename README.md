@@ -11,26 +11,10 @@
   - [Install](#install)
   - [Setup ENV Variables](#setup-env-variables)
   - [Working with Next.js](#working-with-nextjs)
+    - [Folder Structure](#folder-structure)
+    - [NPM Scripts](#npm-scripts)
 - [Content Management](#content-management)
   - [Posts & Pages](#posts--pages)
-  - [Photo Management](#photo-management)
-  - [Photo Optimization](#photo-optimization)
-- [Gotchas](#gotchas)
-  - [TailwindCSS](#tailwindcss)
-
----
-
-## Table of Contents <!-- omit in toc -->
-
-- [Local Development](#local-development)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Setup ENV Variables](#setup-env-variables)
-  - [Working with Next.js](#working-with-nextjs)
-- [Content Management](#content-management)
-  - [Posts & Pages](#posts--pages)
-  - [Photo Management](#photo-management)
-  - [Photo Optimization](#photo-optimization)
 - [Gotchas](#gotchas)
   - [TailwindCSS](#tailwindcss)
 
@@ -82,6 +66,63 @@ NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
 
 ### Working with Next.js
 
+#### Folder Structure
+
+```text
+├── components
+|  ├── atoms
+|  |  └── Title
+|  |     ├── Title.js
+|  |     └── Title.module.css
+|  ├── molecules
+|  ├── organisms
+|  └── templates
+├── data
+|  ├── books
+|  ├── pages
+|  └── posts
+├── lib
+├── pages
+|  ├── [slug].js
+|  ├── _app.js
+|  ├── _document.js
+|  ├── blog
+|  ├── books
+|  └── index.js
+├── public
+|  ├── blog
+|  ├── favicon
+|  ├── fonts
+|  ├── optimized
+├── scripts
+|  └── generate-rss.js
+├── styles
+|  ├── global.css
+|  └── prism.css
+```
+
+**Components** - This folder contains all of the components used on the blog, organized by the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principle.
+
+You'll see a folder with the same name as the component. For example, the `Title` component is contained in the `components/atoms/Title` folder.
+
+In addition, the component's styles are located in next to the component, in the form of CSS Modules: `components/atoms/Title/Title.module.css`.
+
+**Data** - This folder contains all of the MDX files which is what powers the content on the blog.
+
+**Lib** - This folder contains helper functions used throughout the blog.
+
+**Pages** - This folder contains standard Next.js pages and routes, which are used to render pages on the blog.
+
+**Public** - This folder contains all of the static assets used on the blog.
+
+**Scripts** - This folder contains scripts which are used at build time.
+
+**Styles** - This folder contains global styles used on the blog.
+
+---
+
+#### NPM Scripts
+
 Start local dev server:
 
 ```bash
@@ -121,26 +162,10 @@ git commit -m "my commit message" --no-verify
 It's very simple:
 
 1. Create an `.mdx` file
-2. Add front matter and content
-3. Place the `.mdx` file in `data/posts`, `data/pages`, or `data/books`
+2. Place the `.mdx` file in `data/posts`, `data/pages`, or `data/books`
+3. Add front matter and content
 
 > The Front Matter slug _must_ match the blog post filename. This is because Next.js is querying data based on the post slug.
-
-### Photo Management
-
-When I export photos from Lightroom, I just want to drag-n-drop them into the `data/photos` folder, then let a computer deal with serving an optimized version to a user.
-
-With that workflow in mind:
-
-1. Photos _must_ be a **JPG** have [Exif data](https://en.wikipedia.org/wiki/Exif)
-2. Add your `.jpg` photos to `data/photos`
-3. Your photo will be optimized at build time
-
-### Photo Optimization
-
-This blog uses Sharp, a Node.js module, in concert with Next.js' `<Image />` component for image optimization. At build time Sharp will optimize images, while preserving EXIF data, for you. This makes `<Image />` faster since it doesn't have to work as hard to optimize images in real-time.
-
-You can also run `npm run optimize` to optimize all photos in `data/photos` and `public/blog/images` manually.
 
 ---
 
