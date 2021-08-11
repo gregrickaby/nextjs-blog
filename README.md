@@ -103,9 +103,7 @@ NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
 
 **Components** - This folder contains all of the components used on the blog, organized by the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principle.
 
-You'll see a folder with the same name as the component. For example, the `Title` component is contained in the `components/atoms/Title` folder.
-
-In addition, the component's styles are located in next to the component, in the form of CSS Modules: `components/atoms/Title/Title.module.css`.
+You'll see a folder with the same name as the component. For example, the `Title` component is contained in the `components/atoms/Title` folder. In addition, the component's styles are located with the component: `components/atoms/Title/Title.module.css`
 
 **Data** - This folder contains all of the MDX files which is what powers the content on the blog.
 
