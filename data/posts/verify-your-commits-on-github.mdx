@@ -30,15 +30,25 @@ There are two tools available to help generate a GPG key pair:
 
 Once you have one of those tools installed (or both) you can generate a key pair.
 
+_In the instructions below I will show both CLI and GUI options._
+
 ### Create a new key using RSA 4096 encryption:
+
+**CLI**
 
 ```bash
 gpg --full-generate-key
 ```
 
+**_GUI - GPG Tools_**
+
+![screenshot](https://dl.dropbox.com/s/mp2wf5vcolmj6so/Screen%20Shot%202021-08-17%20at%202.05.21%20PM.png?dl=0)
+
 > Be sure to use the same email you use for Github (which much be verified!)
 
 ### Retrieve your GPG Key ID:
+
+**CLI**
 
 ```bash
 gpg --list-secret-keys --keyid-format=long
@@ -55,17 +65,38 @@ uid                          Greg Rickaby
 ssb   4096R/42B317FD4BA89E7A 2021-06-08
 ```
 
+**_GUI - GPG Tools_**
+
+Right-click on the columns bar, and select "Key ID" from the dropdown menu. The Key ID will now be shown as a column.
+
+![screenshot](https://dl.dropbox.com/s/ijf8yqrrzhv3uyz/Screen%20Shot%202021-08-17%20at%202.19.27%20PM.png?dl=0)
+
 ### Configure your local Git
 
 Tell Git [about your signing key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key) with the command below. Swap out the ID with the one generated above.
+
+**_CLI_**
 
 ```bash
 git config --global user.signingkey [3AA5C34371567BD2]
 ```
 
+**_GUI - Tower_**
+
+Open Tower and go to Preferences > Git Config:
+
+![screenshot](https://dl.dropbox.com/s/hhxresksa0s2cvu/Screen%20Shot%202021-08-17%20at%202.11.26%20PM.png?dl=0)
+
 ### Configure Github
+
+1. Visit <https://github.com/settings/profile> and look for "SSH & GPG Keys" in the sidebar
+2. Add new GPG key to your Github account [Learn more](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
+3. Enable Vigilant Mode on Github [Learn More](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits#enabling-vigilant-mode)
 
 ![screenshot](https://dl.dropbox.com/s/6pyukcyp4g1aish/Screen%20Shot%202021-08-10%20at%202.25.45%20PM.png?dl=0)
 
-1. Add new GPG key [to your Github account](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
-2. [Enable Vigilant Mode on Github](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits#enabling-vigilant-mode)
+## Wrap Up
+
+Nice! Your commits should now show up as "verified" on Github and you've taken an extra step toward a more secure Git workflow.
+
+![screenshot](https://dl.dropbox.com/s/zoj4v5asnddhy9g/Screen%20Shot%202021-08-17%20at%202.17.56%20PM.png?dl=0)
