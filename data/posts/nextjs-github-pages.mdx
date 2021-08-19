@@ -22,7 +22,15 @@ author:
 
 However, I feel like Vercel and Netlify really want you on _their SaaS_. If you're interested in owning your own data (like I am), hosting on a SaaS _could be problem_. I've also found almost no current documentation around deploying a static NextJS app to Github Pages. Well, I figured it out and I'm sharing my findings with you.
 
-> Vercel has since published [an official gh-pages example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). While the implementation below still works, I recommend looking at their example before making any major decisions.
+## Caveats
+
+Because Github Pages doesn't support serverless functions, some functionality, such as API Routes will be disabled. You can learn more here:
+
+- <https://nextjs.org/docs/advanced-features/static-html-export>
+- <https://nextjs.org/docs/api-routes/introduction#caveats>
+- [Dynamic Routes with Next Export (and say - Vercel) vercel/next.js#28216](https://github.com/vercel/next.js/discussions/28216#discussioncomment-1203150)
+
+Vercel has since published [an official gh-pages example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). While the implementation I wrote about below still works, I recommend looking at their example before making any major decisions.
 
 ## Getting Started
 
