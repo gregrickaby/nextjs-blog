@@ -26,6 +26,10 @@ const components = {
  * @return {Element}                 The BookPost component.
  */
 export default function BookPost({source, frontMatter}) {
+  const openGraphImage = frontMatter?.coverImage
+    ? frontMatter?.coverImage
+    : `${config?.siteUrl}${config?.ogImage}`
+
   return (
     <Layout
       title={`${frontMatter.title} - ${config?.siteName}`}
@@ -35,8 +39,7 @@ export default function BookPost({source, frontMatter}) {
         description: frontMatter?.excerpt,
         images: [
           {
-            url: `${config.siteUrl}${frontMatter?.coverImage}`,
-            alt: frontMatter?.title
+            url: openGraphImage
           }
         ]
       }}

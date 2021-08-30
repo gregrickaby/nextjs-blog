@@ -28,7 +28,12 @@ export default function App({Component, pageProps}) {
           type: 'website',
           locale: 'en_US',
           url: config?.siteUrl,
-          site_name: `${config?.siteName} - ${config?.siteDescription}`
+          site_name: `${config?.siteName} - ${config?.siteDescription}`,
+          images: [
+            {
+              url: `${config?.siteUrl}${config?.ogImage}`
+            }
+          ]
         }}
       />
       <Component {...pageProps} />

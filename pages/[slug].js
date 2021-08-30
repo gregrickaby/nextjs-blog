@@ -24,6 +24,10 @@ const components = {Image}
  * @return {Element}                 The BlogPost component.
  */
 export default function BlogPost({source, frontMatter}) {
+  const openGraphImage = frontMatter?.coverImage
+    ? frontMatter?.coverImage
+    : `${config?.siteUrl}${config?.ogImage}`
+
   return (
     <Layout
       title={`${frontMatter.title} - ${config?.siteName}`}
@@ -33,8 +37,7 @@ export default function BlogPost({source, frontMatter}) {
         description: frontMatter?.excerpt,
         images: [
           {
-            url: `${config.siteUrl}${frontMatter?.coverImage}`,
-            alt: frontMatter?.title
+            url: openGraphImage
           }
         ]
       }}

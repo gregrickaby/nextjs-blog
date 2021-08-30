@@ -17,11 +17,11 @@ export default function ContactPage({form}) {
   return (
     <Layout
       title={`Contact - ${config?.siteName}`}
-      description="Find out how to get in touch. Give me a couple of days to respond."
+      description="Find out how to get in touch. Please give me a few days to respond."
       openGraph={{
         title: `Contact - ${config?.siteName}`,
         description:
-          'Find out how to get in touch. Give me a couple of days to respond.'
+          'Find out how to get in touch. Please give me a few days to respond.'
       }}
     >
       <PageHeader title="Contact" />

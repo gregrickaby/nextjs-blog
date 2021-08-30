@@ -47,13 +47,7 @@ export default function HomePage({source, frontMatter}) {
       description={config?.ogDescription}
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
-        description: frontMatter?.excerpt,
-        images: [
-          {
-            url: `${config.siteUrl}${frontMatter?.coverImage}`,
-            alt: frontMatter?.title
-          }
-        ]
+        description: frontMatter?.excerpt
       }}
     >
       <SocialProfileJsonLd
