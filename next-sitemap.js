@@ -1,6 +1,7 @@
 // @see https://github.com/iamvishnusankar/next-sitemap
 module.exports = {
-  siteUrl: 'https://gregrickaby.com/',
+  changefreq: 'weekly',
+  exclude: ['/homepage'],
   generateRobotsTxt: true,
-  changefreq: 'weekly'
+  siteUrl: 'https://gregrickaby.com/'
 }
