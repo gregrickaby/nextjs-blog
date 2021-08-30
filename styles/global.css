@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply dark:bg-gray-900 dark:text-gray-200 antialiased;
+    @apply max-w-7xl mx-auto dark:bg-gray-900 dark:text-gray-200 antialiased;
   }
 
   h1,
