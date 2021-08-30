@@ -26,8 +26,8 @@ const components = {
  * @return {Element}                 The BookPost component.
  */
 export default function BookPost({source, frontMatter}) {
-  const openGraphImage = frontMatter?.coverImage
-    ? frontMatter?.coverImage
+  const openGraphImage = frontMatter?.ogImage
+    ? `${config?.siteUrl}${frontMatter?.ogImage}`
     : `${config?.siteUrl}${config?.ogImage}`
 
   return (

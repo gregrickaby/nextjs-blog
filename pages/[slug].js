@@ -24,8 +24,8 @@ const components = {Image}
  * @return {Element}                 The BlogPost component.
  */
 export default function BlogPost({source, frontMatter}) {
-  const openGraphImage = frontMatter?.coverImage
-    ? frontMatter?.coverImage
+  const openGraphImage = frontMatter?.ogImage
+    ? `${config?.siteUrl}${frontMatter?.ogImage}`
     : `${config?.siteUrl}${config?.ogImage}`
 
   return (

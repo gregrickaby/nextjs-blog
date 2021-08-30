@@ -30,8 +30,8 @@ const components = {
  * @return {Element}                 The BlogPost component.
  */
 export default function BlogPost({source, frontMatter}) {
-  const openGraphImage = frontMatter?.coverImage
-    ? frontMatter?.coverImage
+  const openGraphImage = frontMatter?.ogImage
+    ? `${config?.siteUrl}${frontMatter?.ogImage}`
     : `${config?.siteUrl}${config?.ogImage}`
 
   return (
@@ -51,7 +51,7 @@ export default function BlogPost({source, frontMatter}) {
       <BlogJsonLd
         url={`${config?.siteUrl}/${frontMatter?.slug}`}
         title={frontMatter?.title}
-        images={[`${config?.siteUrl}${frontMatter?.coverImage}`]}
+        images={[`${config?.siteUrl}${frontMatter?.ogImage}`]}
         datePublished={dayjs(frontMatter?.date).format('DD/MM/YYYY')}
         authorName={frontMatter?.author?.name}
         description={frontMatter?.excerpt}

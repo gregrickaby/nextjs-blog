@@ -26,7 +26,7 @@ export default function PageHeader(props) {
 }
 
 PageHeader.propTypes = {
-  coverImage: PropTypes.string,
+  ogImage: PropTypes.string,
   date: PropTypes.string,
   category: PropTypes.any,
   excerpt: PropTypes.string,
