@@ -47,7 +47,7 @@
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@formium/client": "^0.1.4",
     "@formium/react": "^0.2.0",
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.3",
     "babel-loader": "^8.2.2",
     "classnames": "2.3.1",
     "dayjs": "^1.10.6",
