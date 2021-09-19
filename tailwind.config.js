@@ -10,7 +10,7 @@ module.exports = {
       safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
     }
   },
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {

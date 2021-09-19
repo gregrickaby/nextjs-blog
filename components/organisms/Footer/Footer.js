@@ -1,17 +1,7 @@
 import Separator from '@/components/atoms/Separator/Separator'
 import config from '@/lib/config'
 import cn from 'classnames'
-import dynamic from 'next/dynamic'
 import styles from './Footer.module.css'
-
-/**
- * Only render <DarkMode /> client side.
- *
- * @see https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
- */
-const DarkMode = dynamic(() => import('@/components/atoms/DarkMode/DarkMode'), {
-  ssr: false
-})
 
 /**
  * Render the Footer component.
@@ -39,7 +29,6 @@ export default function Footer() {
           <a href="https://nextjs.org">Next.js</a>
         </div>
       </footer>
-      <DarkMode />
     </>
   )
 }
