@@ -3,5 +3,5 @@
 }
 
 .link {
-  @apply no-underline hover:underline;
+  @apply text-gray-800 dark:text-gray-200;
 }

@@ -1,5 +1,5 @@
-/* PrismJS 1.23.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+docker+editorconfig+git+graphql+javadoclike+markdown+markup-templating+php+phpdoc+php-extras+jsx+tsx+scss+sql+typescript+typoscript+yaml&plugins=line-highlight+line-numbers+show-invisibles+autolinker+file-highlight+show-language+inline-color+autoloader+command-line+normalize-whitespace+data-uri-highlight+toolbar+copy-to-clipboard+match-braces+diff-highlight+treeview */
+/* PrismJS 1.25.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+css-extras+diff+git+javadoclike+jsdoc+markup-templating+php+phpdoc+typescript&plugins=line-highlight+line-numbers+autolinker+inline-color+command-line+toolbar+copy-to-clipboard+diff-highlight+treeview */
 
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
@@ -12,7 +12,7 @@ pre[class*='language-'] {
   color: #ccc;
   background: none;
   font-family: monospace;
-  font-size: 14px;
+  font-size: 1em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -30,13 +30,9 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: 1rem;
-  margin: 2rem 0;
+  padding: 1em;
+  margin: 0.5em 0;
   overflow: auto;
-
-  & a {
-    color: white;
-  }
 }
 
 :not(pre) > code[class*='language-'],
@@ -46,10 +42,8 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
+  padding: 0.1em;
   border-radius: 0.3em;
-  line-height: inherit;
-  padding: 0.5rem;
-  vertical-align: text-top;
   white-space: normal;
 }
 
@@ -242,101 +236,8 @@ pre[class*='language-'].line-numbers > code {
   text-align: right;
 }
 
-.token.tab:not(:empty),
-.token.cr,
-.token.lf,
-.token.space {
-  position: relative;
-}
-
-.token.tab:not(:empty)::before,
-.token.cr::before,
-.token.lf::before,
-.token.space::before {
-  color: #808080;
-  opacity: 0.6;
-  position: absolute;
-}
-
-.token.cr::before {
-  content: '\240D';
-}
-
-.token.crlf::before {
-  content: '\240D\240A';
-}
-
-.token.space::before {
-  content: '\00B7';
-}
-
 .token a {
   color: inherit;
-}
-
-div.code-toolbar {
-  position: relative;
-}
-
-div.code-toolbar > .toolbar {
-  position: absolute;
-  top: 0.3em;
-  right: 0.2em;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-
-div.code-toolbar:hover > .toolbar {
-  opacity: 1;
-}
-
-/* Separate line b/c rules are thrown out if selector is invalid.
-   IE11 and old Edge versions don't support :focus-within. */
-div.code-toolbar:focus-within > .toolbar {
-  opacity: 1;
-}
-
-div.code-toolbar > .toolbar .toolbar-item {
-  display: inline-block;
-}
-
-div.code-toolbar > .toolbar a {
-  cursor: pointer;
-}
-
-div.code-toolbar > .toolbar button {
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none; /* for button */
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
-div.code-toolbar > .toolbar span {
-  color: #bbb;
-  font-size: 0.8em;
-  padding: 0 0.5em;
-  background: #f5f2f0;
-  background: rgba(224, 224, 224, 0.2);
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0.5em;
-}
-
-div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
-div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span:focus {
-  color: inherit;
-  text-decoration: none;
 }
 
 span.inline-color-wrapper {
@@ -407,37 +308,69 @@ span.inline-color {
   content: attr(data-prompt);
 }
 
-.token.punctuation.brace-hover,
-.token.punctuation.brace-selected {
-  outline: solid 1px;
+div.code-toolbar {
+  position: relative;
 }
 
-.rainbow-braces .token.punctuation.brace-level-1,
-.rainbow-braces .token.punctuation.brace-level-5,
-.rainbow-braces .token.punctuation.brace-level-9 {
-  color: #e50;
+div.code-toolbar > .toolbar {
+  position: absolute;
+  top: 0.3em;
+  right: 0.2em;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+div.code-toolbar:hover > .toolbar {
   opacity: 1;
 }
 
-.rainbow-braces .token.punctuation.brace-level-2,
-.rainbow-braces .token.punctuation.brace-level-6,
-.rainbow-braces .token.punctuation.brace-level-10 {
-  color: #0b3;
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
   opacity: 1;
 }
 
-.rainbow-braces .token.punctuation.brace-level-3,
-.rainbow-braces .token.punctuation.brace-level-7,
-.rainbow-braces .token.punctuation.brace-level-11 {
-  color: #26f;
-  opacity: 1;
+div.code-toolbar > .toolbar > .toolbar-item {
+  display: inline-block;
 }
 
-.rainbow-braces .token.punctuation.brace-level-4,
-.rainbow-braces .token.punctuation.brace-level-8,
-.rainbow-braces .token.punctuation.brace-level-12 {
-  color: #e0e;
-  opacity: 1;
+div.code-toolbar > .toolbar > .toolbar-item > a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+  color: #bbb;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+  background: #f5f2f0;
+  background: rgba(224, 224, 224, 0.2);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+  color: inherit;
+  text-decoration: none;
 }
 
 pre.diff-highlight > code .token.deleted:not(.prefix),
@@ -500,7 +433,7 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 
 /* @GENERATED-FONT */
 @font-face {
-  font-family: 'PrismTreeview';
+  font-family: 'PrismTreeview', monospace;
 
   /**
 	 * This font is generated from the .svg files in the `icons` folder. See the `treeviewIconFont` function in

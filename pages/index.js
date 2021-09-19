@@ -22,13 +22,7 @@ const components = {Image, HeroImage}
  * @returns {Element} The HeroImage component.
  */
 function HeroImage() {
-  return (
-    <Image
-      src={RickabyFamily}
-      alt="rickaby family in 2019"
-      placeholder="blur"
-    />
-  )
+  return <Image alt="" placeholder="blur" src={RickabyFamily} />
 }
 
 /**

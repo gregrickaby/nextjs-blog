@@ -16,28 +16,8 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;800&family=Lora:wght@400;700&display=swap"
-            rel="stylesheet"
-            crossOrigin="true"
-          />
-          <link
-            rel="preload"
-            href="https://fonts.gstatic.com/s/heebo/v12/NGS6v5_NC0k9P9H2TbFhsqMA.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="https://fonts.gstatic.com/s/lora/v17/0QIvMX1D_JOuMwr7I_FMl_E.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon/icon.png" />
           <link rel="icon" href="/favicon/icon.png" sizes="192x192" />

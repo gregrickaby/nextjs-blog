@@ -1,6 +1,5 @@
 import Excerpt from '@/components/atoms/Excerpt/Excerpt'
 import Meta from '@/components/atoms/Meta/Meta'
-import cn from 'classnames'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import styles from './Card.module.css'
@@ -22,7 +21,7 @@ export default function Card(props) {
           href={`/${props?.path}/[slug]`}
           prefetch={false}
         >
-          <a className={cn(styles.cardLink, 'no-underline hover:underline')}>
+          <a className={styles.cardLink}>
             <h2
               className={styles.cardTitle}
               dangerouslySetInnerHTML={{__html: props?.data?.title}}

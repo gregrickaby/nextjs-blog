@@ -9,3 +9,7 @@
 .cardTitle {
   @apply text-4xl mt-2 mb-0;
 }
+
+.cardLink {
+  @apply hover:no-underline;
+}

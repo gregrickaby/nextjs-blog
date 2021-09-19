@@ -10,7 +10,7 @@ export default function Logo() {
       <Link href="/" prefetch={false}>
         <a className={styles.logoLink}>
           <Image
-            alt={config?.siteAuthor}
+            alt=""
             className={styles.logo}
             height="70"
             loading="eager"
