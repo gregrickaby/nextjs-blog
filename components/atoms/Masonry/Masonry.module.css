@@ -1,7 +1,0 @@
-.masonryContainer {
-  @apply flex;
-}
-
-.itemWrap {
-  @apply flex-1;
-}
