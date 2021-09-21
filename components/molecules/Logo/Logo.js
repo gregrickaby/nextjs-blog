@@ -8,7 +8,7 @@ export default function Logo() {
   return (
     <div className={styles.logoWrap}>
       <Link href="/" prefetch={false}>
-        <a className={styles.logoLink}>
+        <a className={styles.logoLink} aria-label="click to go home">
           <Image
             alt=""
             className={styles.logo}
