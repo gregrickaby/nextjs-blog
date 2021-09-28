@@ -1,0 +1,3 @@
+.sideNote {
+  @apply flex items-center space-x-4 p-4 mb-6 border-l-8 shadow rounded-md;
+}
