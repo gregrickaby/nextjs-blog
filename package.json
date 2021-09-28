@@ -47,7 +47,7 @@
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@formium/client": "^0.1.4",
     "@formium/react": "^0.2.0",
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.6",
     "babel-loader": "^8.2.2",
     "classnames": "2.3.1",
     "dayjs": "^1.10.7",
@@ -62,7 +62,7 @@
     "next-seo": "^4.28.1",
     "next-sitemap": "^1.6.168",
     "nprogress": "^0.2.0",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.8",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.1",
     "prism-react-renderer": "^1.2.1",
@@ -76,7 +76,7 @@
     "sharp-cli": "^1.15.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "tailwindcss": "2.2.15",
+    "tailwindcss": "2.2.16",
     "use-dark-mode": "^2.3.1"
   }
 }
