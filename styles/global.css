@@ -87,6 +87,14 @@
       @apply m-0 leading-snug tracking-wide;
     }
   }
+
+  pre {
+    @apply shadow rounded-md;
+  }
+
+  code {
+    @apply rounded-md bg-gray-400 text-gray-900 text-sm;
+  }
 }
 
 .full-width {
@@ -126,17 +134,14 @@
 
 .remark-highlight {
   @apply mb-8;
-
-  & pre {
-    @apply rounded-md;
-  }
-}
-
-code {
-  @apply p-1 m-0 rounded-md bg-gray-800 dark:bg-gray-700 dark:text-gray-200 text-sm;
 }
 
 video,
 .remark-oembed-inline {
   @apply mb-12;
+}
+
+/* inline code not used in Prism */
+:not(pre) > code {
+  @apply p-1;
 }
