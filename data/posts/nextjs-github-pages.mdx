@@ -9,34 +9,23 @@ tags:
   -
 ---
 
-⬇️ Just show me the code! ⬇️
+Vercel promotes itself as _"The easiest way to deploy your Next.js app"_ and Netlify offers a similar service. However, both Vercel and Netlify really want you on _their platforms_.
 
-- [View the Github Repo](https://github.com/gregrickaby/nextjs-github-pages)
-- [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/)
-
-## Introduction
-
-[Vercel](https://vercel.com/) promotes itself as _"The easiest way to deploy your Next.js app"_ and [Netlify](https://www.netlify.com/) offers a similar service. However, both Vercel and Netlify really want you on _their platforms_.
-
-I'm interested in owning my own data, and wanted to see if I could deploy a Next.js app to Github Pages. During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** Well, I figured it out and I'm sharing what I learned with you.
+I'm interested in owning my own data and wanted to see if I could deploy a Next.js app to Github Pages. During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** Well, I figured it out and I'm sharing what I learned with you.
 
 <SideNote>
-  <p className="text-black mb-0">
     <strong>
       Update: Vercel has since published{' '}
       <a
-        className="text-black underline hover:no-underline"
         href="https://github.com/vercel/next.js/tree/canary/examples/gh-pages"
       >
         an official example.
       </a>
     </strong>{' '}
-    I recommend you research the official example before making any major
-    decisions.
-  </p>
+    I recommend you research the official example before making any major decisions.
 </SideNote>
 
-## Caveats
+### Caveats
 
 Because Github Pages doesn't support serverless functions, some functionality, such as API Routes will be disabled. You can learn more here:
 
@@ -46,20 +35,11 @@ Because Github Pages doesn't support serverless functions, some functionality, s
 
 ## Getting Started
 
-<SideNote>
-  I'm going to gloss over this part, because I assume you already know how to
-  <a href="https://help.github.com/en/github/getting-started-with-github/create-a-repo">
-    create a Github repository
-  </a> and <a href="https://nextjs.org/docs/getting-started#setup">
-    generate a Next.js app
-  </a>.
-</SideNote>
-
-You'll need to place a `.nojekyll` file in `/public` to bypass Github Pages from trying to [auto-generate a static Jekyll site](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
+I'm going to gloss over this part, because I assume you already know how to [create a Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo) and [generate a Next.js app](https://nextjs.org/docs/getting-started#setup). You'll also need to place a `.nojekyll` file in `/public` to bypass Github Pages from trying to auto-generate a static [Jekyll site](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
 
 ## Specify the Asset Directory
 
-Next.js [allows you to prefix the assets directory](https://nextjs.org/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) with the `assetPrefix` setting. You'll need to do this so assets served from `/_next/static` work correctly on Github pages.
+Next.js allows you to [prefix the assets directory](https://nextjs.org/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) with the `assetPrefix` setting. You'll need to do this so assets served from `/_next/static` work correctly on Github pages.
 
 1. Create `next.config.js` file
 2. Add the following and edit `your-github-repo-name` to match your Github repo name:
@@ -77,7 +57,7 @@ module.exports = {
 
 ## Generate Deploy Key
 
-Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate with itself (sorry, I find this hilarious 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys won't override your personal SSH keys._
+Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate. You'll need to generate new Public and Private keys. _Don't worry, these new keys won't override your personal SSH keys._
 
 In your next.js app directory, run the following command:
 
