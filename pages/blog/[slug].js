@@ -1,5 +1,6 @@
 import Separator from '@/components/atoms/Separator/Separator'
 import Article from '@/components/molecules/Article/Article'
+import SideNote from '@/components/molecules/SideNote/SideNote'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
 import {POSTS_PATH} from '@/lib/helpers'
@@ -17,7 +18,8 @@ import PropTypes from 'prop-types'
  */
 const components = {
   Image,
-  Separator
+  Separator,
+  SideNote
 }
 
 /**

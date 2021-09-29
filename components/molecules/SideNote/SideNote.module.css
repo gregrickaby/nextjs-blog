@@ -1,0 +1,15 @@
+.sideNote {
+  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-6 md:-ml-6 md:-mr-6 border-l-8 shadow rounded-md;
+}
+
+.icon svg {
+  fill: white;
+}
+
+.content {
+  @apply text-white;
+
+  & a {
+    @apply text-white underline hover:no-underline;
+  }
+}
