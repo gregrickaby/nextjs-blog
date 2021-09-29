@@ -13,25 +13,14 @@ Vercel promotes itself as _"The easiest way to deploy your Next.js app"_ and Net
 
 I'm interested in owning my own data and wanted to see if I could deploy a Next.js app to Github Pages. During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** Well, I figured it out and I'm sharing what I learned with you.
 
-<SideNote>
-    <strong>
-      Update: Vercel has since published{' '}
-      <a
-        href="https://github.com/vercel/next.js/tree/canary/examples/gh-pages"
-      >
-        an official example.
-      </a>
-    </strong>{' '}
-    I recommend you research the official example before making any major decisions.
+> Update... Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). I recommend you research the official example before making any major decisions.
+
+<SideNote type="warning">
+<strong>Heads up!</strong> Github Pages doesn't support serverless functions. This means dynamic functionality (such as API Routes) will be disabled. <a href="https://nextjs.org/docs/advanced-features/static-html-export#caveats">Learn more</a>.
 </SideNote>
 
-### Caveats
+<Separator />
 
-Because Github Pages doesn't support serverless functions, some functionality, such as API Routes will be disabled. You can learn more here:
-
-- <https://nextjs.org/docs/advanced-features/static-html-export>
-- <https://nextjs.org/docs/api-routes/introduction#caveats>
-- [Dynamic Routes with Next Export (and say - Vercel) vercel/next.js#28216](https://github.com/vercel/next.js/discussions/28216#discussioncomment-1203150)
 
 ## Getting Started
 
@@ -167,6 +156,7 @@ jobs:
 This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it'll automatically activate the Github Pages feature.
 
 You should be able to see your app right away at <https://your-username.github.io/your-repo-name/>
+
 
 ## Wrap up
 
