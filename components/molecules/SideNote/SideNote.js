@@ -2,7 +2,7 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 import styles from './SideNote.module.css'
 
-function Alert() {
+function Warning() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -35,15 +35,13 @@ export default function SideNote(props) {
     <aside
       className={cn(
         styles.sideNote,
-        props.type === 'alert'
-          ? 'bg-red-600 border-red-900'
-          : 'bg-blue-400 border-blue-800'
+        'warning' === props?.type ? styles.warning : styles.info
       )}
     >
       <div className={styles.icon}>
-        {props.type === 'alert' ? <Alert /> : <Info />}
+        {'warning' === props?.type ? <Warning /> : <Info />}
       </div>
-      <div className={styles.content}>{props.children}</div>
+      <div>{props.children}</div>
     </aside>
   )
 }

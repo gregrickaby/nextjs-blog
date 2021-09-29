@@ -1,15 +1,27 @@
 .sideNote {
-  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-6 md:-ml-6 md:-mr-6 border-l-8 shadow rounded-md;
+  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-6 border-l-8 shadow rounded-md;
 }
 
-.icon svg {
-  fill: white;
+.warning {
+  @apply text-black bg-yellow-500 border-yellow-900;
+
+  & a {
+    @apply text-black underline hover:no-underline;
+  }
+
+  & .icon svg {
+    fill: black;
+  }
 }
 
-.content {
-  @apply text-white;
+.info {
+  @apply bg-blue-400 border-blue-800;
 
   & a {
     @apply text-white underline hover:no-underline;
+  }
+
+  & .icon svg {
+    fill: white;
   }
 }
