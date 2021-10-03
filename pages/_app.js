@@ -1,6 +1,6 @@
 import config from '@/lib/config'
-import '@/styles/global.css'
 import '@/styles/prism.css'
+import '@/styles/styles.css'
 import {DefaultSeo} from 'next-seo'
 import Router from 'next/router'
 import NProgress from 'nprogress'

@@ -1,5 +1,5 @@
 .authorCard {
-  @apply grid grid-flow-col grid-cols-12 gap-4 items-center py-4 px-6 shadow-md rounded-md bg-blue-400;
+  @apply grid grid-flow-col grid-cols-12 gap-4 items-center py-4 px-6 sm:-ml-8 sm:-mr-8 shadow-md rounded-md bg-blue-400;
 }
 
 .avatarContainer {

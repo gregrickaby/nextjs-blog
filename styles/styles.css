@@ -84,7 +84,7 @@
     @apply mt-2 mb-8 px-4 italic clear-both border-l-4;
 
     & p {
-      @apply m-0 leading-snug tracking-wide;
+      @apply m-0 leading-snug;
     }
   }
 
@@ -93,7 +93,7 @@
   }
 
   code {
-    @apply rounded-md bg-gray-400 text-gray-900 text-sm;
+    @apply rounded-md bg-gray-300 text-sm;
   }
 }
 
@@ -132,13 +132,19 @@
   @apply m-auto text-center mb-4;
 }
 
-.remark-highlight {
-  @apply mb-8;
-}
-
 video,
 .remark-oembed-inline {
   @apply mb-12;
+}
+
+.remark-highlight {
+  @apply mb-10 sm:-ml-8 sm:-mr-8;
+}
+
+/* code blocks */
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  @apply bg-gray-800;
 }
 
 /* inline code not used in Prism */
