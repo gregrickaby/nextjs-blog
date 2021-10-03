@@ -149,5 +149,5 @@ pre[class*='language-'] {
 
 /* inline code not used in Prism */
 :not(pre) > code {
-  @apply p-1;
+  @apply p-1 dark:text-black;
 }
