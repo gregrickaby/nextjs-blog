@@ -22,7 +22,7 @@ export default function AuthorCard() {
         moonlights at <a href="https://www.dummies.com/">Dummies</a> writing and
         editing books.{' '}
         <a href="https://twitter.com/gregrickaby">Follow him on Twitter</a> for
-        lots of pictures of pepperoni pizza.
+        lots of pictures of pepperoni pizza and tidbits about Next.js.
       </div>
     </div>
   )

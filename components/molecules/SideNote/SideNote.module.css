@@ -1,5 +1,5 @@
 .sideNote {
-  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-6 border-l-8 shadow rounded-md;
+  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-10 sm:-ml-8 sm:-mr-8 border-l-8 shadow rounded-md;
 }
 
 .warning {
