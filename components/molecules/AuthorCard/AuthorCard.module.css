@@ -1,0 +1,19 @@
+.authorCard {
+  @apply grid grid-flow-col grid-cols-12 gap-4 items-center py-4 px-6 shadow-md rounded-md bg-blue-400;
+}
+
+.avatarContainer {
+  @apply rounded-full col-span-3 sm:col-span-2;
+}
+
+.avatar {
+  @apply rounded-full;
+}
+
+.info {
+  @apply text-black col-span-9 sm:col-span-10;
+
+  & > a {
+    @apply text-black underline hover:no-underline;
+  }
+}

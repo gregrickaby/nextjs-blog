@@ -3,7 +3,7 @@
 }
 
 .warning {
-  @apply text-black bg-yellow-500 border-yellow-900;
+  @apply text-black bg-yellow-500 border-yellow-600;
 
   & a {
     @apply text-black underline hover:no-underline;
