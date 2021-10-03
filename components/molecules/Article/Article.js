@@ -1,5 +1,6 @@
 import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import PropTypes from 'prop-types'
+import AuthorCard from '../AuthorCard/AuthorCard'
 
 /**
  * Render the Article component.
@@ -13,6 +14,7 @@ export default function Article(props) {
     <article>
       <PageHeader {...props} />
       {props?.children}
+      <AuthorCard />
     </article>
   )
 }
