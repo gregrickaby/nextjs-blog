@@ -43,6 +43,11 @@ export default function BlogPost({source, frontMatter}) {
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
         description: frontMatter?.excerpt,
+        url: `${config?.siteUrl}/${frontMatter?.slug}`,
+        type: 'article',
+        article: {
+          publishedTime: dayjs(frontMatter?.date).toISOString()
+        },
         images: [
           {
             url: openGraphImage
@@ -53,9 +58,9 @@ export default function BlogPost({source, frontMatter}) {
       <BlogJsonLd
         url={`${config?.siteUrl}/${frontMatter?.slug}`}
         title={frontMatter?.title}
-        images={[`${config?.siteUrl}${frontMatter?.ogImage}`]}
-        datePublished={dayjs(frontMatter?.date).format('DD/MM/YYYY')}
-        authorName={frontMatter?.author?.name}
+        images={[openGraphImage]}
+        datePublished={dayjs(frontMatter?.date).toISOString()}
+        authorName={config?.siteAuthor}
         description={frontMatter?.excerpt}
       />
       <Article {...frontMatter}>

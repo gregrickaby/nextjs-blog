@@ -46,7 +46,7 @@ export default function HomePage({source, frontMatter}) {
     >
       <SocialProfileJsonLd
         type="Person"
-        name={frontMatter?.author?.name}
+        name={config?.siteAuthor}
         url={config?.siteUrl}
         sameAs={config?.footerNavigation.map((item) => item?.url)}
       />
