@@ -7,7 +7,7 @@ import {POSTS_PATH} from '@/lib/helpers'
 import {getPostData, getPostsPath} from '@/lib/posts'
 import dayjs from 'dayjs'
 import {MDXRemote} from 'next-mdx-remote'
-import {BlogJsonLd} from 'next-seo'
+import Head from 'next/head'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
@@ -43,7 +43,7 @@ export default function BlogPost({source, frontMatter}) {
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
         description: frontMatter?.excerpt,
-        url: `${config?.siteUrl}/${frontMatter?.slug}`,
+        url: `${config?.siteUrl}/blog/${frontMatter?.slug}`,
         type: 'article',
         article: {
           publishedTime: dayjs(frontMatter?.date).toISOString()
@@ -55,14 +55,30 @@ export default function BlogPost({source, frontMatter}) {
         ]
       }}
     >
-      <BlogJsonLd
-        url={`${config?.siteUrl}/${frontMatter?.slug}`}
-        title={frontMatter?.title}
-        images={[openGraphImage]}
-        datePublished={dayjs(frontMatter?.date).toISOString()}
-        authorName={config?.siteAuthor}
-        description={frontMatter?.excerpt}
-      />
+      <Head>
+        <script type="application/ld+json">
+          {`{
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "${`${config?.siteUrl}/blog/${frontMatter?.slug}`}"
+              },
+              "headline": "${frontMatter?.title}",
+              "image": [
+                "${openGraphImage}"
+              ],
+              "datePublished": "${dayjs(frontMatter?.date).toISOString()}",
+              "dateModified": "${dayjs(frontMatter?.date).toISOString()}",
+              "author": {
+                "@type": "Person",
+                "name": "Greg Rickaby",
+                "url": "https://gregrickaby.com"
+              },
+              "description": "${frontMatter?.excerpt}"
+            }`}
+        </script>
+      </Head>
       <Article {...frontMatter}>
         <MDXRemote {...source} components={components} />
       </Article>
