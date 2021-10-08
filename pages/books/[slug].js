@@ -3,6 +3,7 @@ import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
 import {BOOKS_PATH} from '@/lib/helpers'
 import {getPostData, getPostsPath} from '@/lib/posts'
+import dayjs from 'dayjs'
 import {MDXRemote} from 'next-mdx-remote'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
@@ -37,9 +38,16 @@ export default function BookPost({source, frontMatter}) {
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
         description: frontMatter?.excerpt,
+        type: 'book',
+        book: {
+          releaseDate: dayjs(frontMatter?.releaseDate).toISOString(),
+          isbn: frontMatter?.isbn,
+          authors: [frontMatter?.bookAuthor]
+        },
         images: [
           {
-            url: openGraphImage
+            url: openGraphImage,
+            alt: 'cover of the book'
           }
         ]
       }}
