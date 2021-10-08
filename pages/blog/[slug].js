@@ -56,13 +56,16 @@ export default function BlogPost({source, frontMatter}) {
       }}
     >
       <Head>
-        <script type="application/ld+json">
-          {`{
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "${`${config?.siteUrl}/blog/${frontMatter?.slug}`}"
+                "@id": "${config?.siteUrl}/blog/${frontMatter?.slug}"
               },
               "headline": "${frontMatter?.title}",
               "image": [
@@ -76,8 +79,9 @@ export default function BlogPost({source, frontMatter}) {
                 "url": "https://gregrickaby.com"
               },
               "description": "${frontMatter?.excerpt}"
-            }`}
-        </script>
+            }`
+          }}
+        />
       </Head>
       <Article {...frontMatter}>
         <MDXRemote {...source} components={components} />
