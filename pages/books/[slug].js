@@ -5,6 +5,7 @@ import {BOOKS_PATH} from '@/lib/helpers'
 import {getPostData, getPostsPath} from '@/lib/posts'
 import dayjs from 'dayjs'
 import {MDXRemote} from 'next-mdx-remote'
+import Head from 'next/head'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
@@ -52,6 +53,40 @@ export default function BookPost({source, frontMatter}) {
         ]
       }}
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "https://schema.org",
+              "@type": "Book",
+              "@id": "${frontMatter?.trustedID}",
+              "name": "${frontMatter?.title}",
+              "datePublished": "${dayjs(frontMatter?.published).toISOString()}",
+              "author": {
+                "@type": "Person",
+                "name": "${frontMatter?.bookAuthor}",
+                "sameas": "${frontMatter?.bookAuthorISNI}"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "${frontMatter?.publisher}"
+              },
+              "url": "${config?.siteUrl}/books/${frontMatter?.slug}",
+              "image": "${openGraphImage}",
+              "description": "${frontMatter?.excerpt}",
+              "workExample": [{
+                "@type": "Book",
+                "isbn": "${frontMatter?.isbn13}",
+                "numberofpages": "${frontMatter?.numberOfPages}",
+                "bookFormat": "${frontMatter?.bookFormat}",
+                "exampleofwork": "${frontMatter?.trustedID}"
+              }]
+            }`
+          }}
+        />
+      </Head>
       <Article {...frontMatter}>
         <MDXRemote {...source} components={components} />
       </Article>
