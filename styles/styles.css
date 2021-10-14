@@ -161,7 +161,7 @@ pre[class*='language-'] {
 
   &::before {
     display: block;
-    content: "";
+    content: '';
     padding-top: 56.25%;
   }
 
