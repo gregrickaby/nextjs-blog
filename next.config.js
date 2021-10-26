@@ -1,6 +1,7 @@
 const redirects = require('./lib/redirects')
 
 module.exports = {
+  swcMinify: true,
   async redirects() {
     return redirects
   },
