@@ -142,8 +142,8 @@ video,
 }
 
 /* code blocks */
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
   @apply bg-gray-800;
 }
 
@@ -161,7 +161,7 @@ pre[class*='language-'] {
 
   &::before {
     display: block;
-    content: '';
+    content: "";
     padding-top: 56.25%;
   }
 

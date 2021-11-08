@@ -20,7 +20,7 @@
     @apply mb-2;
   }
 
-  & input[type='text'],
+  & input[type="text"],
   & textarea,
   & button {
     @apply p-4 mb-8 border rounded;
