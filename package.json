@@ -75,7 +75,7 @@
     "sharp": "^0.29.3",
     "sharp-cli": "^1.15.0",
     "stylelint": "^14.0.1",
-    "stylelint-config-standard": "^23.0.0",
+    "stylelint-config-standard": "^24.0.0",
     "tailwindcss": "2.2.19",
     "use-dark-mode": "^2.3.1"
   }
