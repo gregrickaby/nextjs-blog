@@ -63,7 +63,7 @@
     "next-sitemap": "^1.6.203",
     "nprogress": "^0.2.0",
     "postcss": "^8.3.11",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.0.1",
     "prettier": "^2.4.1",
     "prism-react-renderer": "^1.2.1",
     "react-google-recaptcha": "^2.1.0",
