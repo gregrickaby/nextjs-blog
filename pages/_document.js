@@ -22,28 +22,11 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/favicon/icon.png" />
           <link rel="icon" href="/favicon/icon.png" sizes="192x192" />
           <meta name="msapplication-TileImage" content="/favicon/icon.png" />
-          <script
-            defer
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-            page_path: window.location.pathname,
-          });
-        `
-          }}
-        />
       </Html>
     )
   }

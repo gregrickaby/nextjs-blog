@@ -3,6 +3,7 @@ import '@/styles/prism.css'
 import '@/styles/styles.css'
 import {DefaultSeo} from 'next-seo'
 import Router from 'next/router'
+import Script from 'next/script'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import PropTypes from 'prop-types'
@@ -34,6 +35,24 @@ export default function App({Component, pageProps}) {
               url: `${config?.siteUrl}${config?.ogImage}`
             }
           ]
+        }}
+      />
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `
         }}
       />
       <Component {...pageProps} />
