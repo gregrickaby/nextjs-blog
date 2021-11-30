@@ -1,12 +1,14 @@
 import config from '@/lib/config'
+import * as gtag from '@/lib/gtag'
 import '@/styles/prism.css'
 import '@/styles/styles.css'
 import {DefaultSeo} from 'next-seo'
-import Router from 'next/router'
+import Router, {useRouter} from 'next/router'
 import Script from 'next/script'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import PropTypes from 'prop-types'
+import {useEffect} from 'react'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -22,6 +24,16 @@ Router.events.on('routeChangeError', () => NProgress.done())
  * @return {Element}               The App component.
  */
 export default function App({Component, pageProps}) {
+  const router = useRouter()
+  useEffect(() => {
+    function handleRouteChange(url) {
+      return gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return (
     <>
       <DefaultSeo
@@ -39,7 +51,7 @@ export default function App({Component, pageProps}) {
       />
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
         id="gtag-init"
@@ -49,7 +61,7 @@ export default function App({Component, pageProps}) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
           `
