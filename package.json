@@ -17,10 +17,6 @@
   "bugs": {
     "url": "https://github.com/gregrickaby/gregrickaby-blog/issues"
   },
-  "engines": {
-    "node": "14",
-    "npm": "7"
-  },
   "scripts": {
     "build": "next build",
     "build:images": "sharp --input './public/blog/images/*.{jpg,jpeg,png,gif,webp}' --output './public/optimized' resize '1120'",
