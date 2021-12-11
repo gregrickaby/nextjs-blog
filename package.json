@@ -33,7 +33,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^12.0.4",
+    "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -48,7 +48,7 @@
     "classnames": "2.3.1",
     "dayjs": "^1.10.7",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.4",
+    "eslint-config-next": "^12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "gray-matter": "^4.0.3",
@@ -60,7 +60,7 @@
     "nprogress": "^0.2.0",
     "postcss": "^8.4.4",
     "postcss-preset-env": "^7.0.1",
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "prism-react-renderer": "^1.2.1",
     "react-google-recaptcha": "^2.1.0",
     "reading-time": "^1.5.0",
@@ -72,7 +72,7 @@
     "sharp-cli": "^1.15.0",
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
-    "tailwindcss": "2.2.19",
+    "tailwindcss": "3.0.1",
     "use-dark-mode": "^2.3.1"
   }
 }
