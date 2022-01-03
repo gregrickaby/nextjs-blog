@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
-    "@babel/core": "^7.16.5",
+    "@babel/core": "^7.16.7",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@formium/client": "^0.1.4",
     "@formium/react": "^0.2.0",
