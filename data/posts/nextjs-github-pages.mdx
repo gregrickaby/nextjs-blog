@@ -13,9 +13,9 @@ Vercel promotes itself as _"The easiest way to deploy your Next.js app"_ and Net
 
 During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** I spent an entire Saturday working through it and want to share what I learned with you.
 
-> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). I recommend you take a look at the official example before making any major decisions.
-
 👉 [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) or ⭐️ [Star the Github repo](https://github.com/gregrickaby/nextjs-github-pages)
+
+> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). I recommend you take a look at the official example before making any major decisions.
 
 ---
 
@@ -27,6 +27,7 @@ In order to get images to display correctly, you'll need to prefix your assets d
 2. Add the following:
 
 ```js[class="line-numbers"]
+// next.config.js
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -44,6 +45,7 @@ Finally, place a `.nojekyll` file in the `/public` directory to disable Github P
 ├── public/
 │   └── .nokjekyll
 ├── styles/
+├── next.config.js
 ```
 
 Perfect! This is all you need to configure Next.js to work on Github Pages.
@@ -145,7 +147,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Use NPM 7
+      - name: Update NPM
         run: npm i -g npm@latest
 
       - name: Cache dependencies
@@ -159,7 +161,7 @@ jobs:
 
       - name: Build
         run: |
-          npm i
+          npm i --legacy-peer-deps
           npm run build
           npm run export
 
