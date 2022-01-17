@@ -1,65 +1,80 @@
+import Card from '@/components/molecules/Card/Card'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader'
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
-import {PAGES_PATH} from '@/lib/helpers'
-import {getPostData} from '@/lib/posts'
-import {MDXRemote} from 'next-mdx-remote'
-import {SocialProfileJsonLd} from 'next-seo'
-import Image from 'next/image'
+import {POSTS_PATH} from '@/lib/helpers'
+import {getAllPosts} from '@/lib/posts'
+import {generateRssFeed} from '@/scripts/generate-rss'
 import PropTypes from 'prop-types'
-import RickabyFamily from '../public/optimized/rickaby-family-2019.webp'
+import {useState} from 'react'
 
 /**
- * Pass components into MDX files.
- *
- * @see https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote#conditional-custom-components
- */
-const components = {Image, HeroImage}
-
-/**
- * Render the HeroImage component.
- *
- * @author Greg Rickaby.
- * @returns {Element} The HeroImage component.
- */
-function HeroImage() {
-  return <Image alt="" placeholder="blur" src={RickabyFamily} />
-}
-
-/**
- * Render the HomePage component.
+ * Render the BlogArchive component.
  *
  * @author Greg Rickaby
- * @param {object} props             The component attributes as props.
- * @param {object} props.source      The page content.
- * @param {object} props.frontMatter The page meta data.
- * @return {Element}                 The HomePage component.
+ * @param {object} props       The component attributes as props.
+ * @param {any}    props.posts The post data.
+ * @return {Element} The BlogArchive component.
  */
-export default function HomePage({source, frontMatter}) {
+export default function BlogArchive({posts}) {
+  const [query, setQuery] = useState('')
+
+  // Filter the posts by the query value.
+  const searchResults = posts.filter((post) =>
+    post?.data?.title?.toLowerCase().includes(query.toLowerCase())
+  )
+
   return (
     <Layout
-      title={`${config?.siteName} - ${config?.siteDescription}`}
-      description={config?.ogDescription}
-      openGraph={{
-        title: `${frontMatter.title} - ${config?.siteName}`,
-        description: frontMatter?.excerpt
-      }}
+      title={`Articles - ${config?.siteName}`}
+      description="The latest posts on code, projects, and personal stuff."
     >
-      <SocialProfileJsonLd
-        type="Person"
-        name={config?.siteAuthor}
-        url={config?.siteUrl}
-        sameAs={config?.footerNavigation.map((item) => item?.url)}
-      />
-      <article>
-        <MDXRemote {...source} components={components} />
-      </article>
+      <PageHeader title="Articles" />
+      <div className="grid gap-8">
+        <input
+          aria-label="Search all articles"
+          type="text"
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search all articles"
+          className="py-3 px-4 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-sm"
+        />
+
+        {
+          /* On initial page load, render all blog posts. */
+          !query && !!posts?.length && (
+            <>
+              {posts.map((post, index) => (
+                <Card key={index} {...post} path="blog" />
+              ))}
+            </>
+          )
+        }
+
+        {
+          /* Render the search results. */
+          !!searchResults?.length && (
+            <>
+              <h3 className="mb-0">Search Results:</h3>
+              {searchResults.map((post, index) => (
+                <Card key={index} {...post} path="blog" />
+              ))}
+            </>
+          )
+        }
+
+        {
+          /* No search results? Render a message. */
+          !searchResults.length && (
+            <p className="font-bold">Bummer. No articles found.</p>
+          )
+        }
+      </div>
     </Layout>
   )
 }
 
-HomePage.propTypes = {
-  frontMatter: PropTypes.object.isRequired,
-  source: PropTypes.object.isRequired
+BlogArchive.propTypes = {
+  posts: PropTypes.any.isRequired
 }
 
 /**
@@ -67,15 +82,15 @@ HomePage.propTypes = {
  *
  * @author Greg Rickaby
  * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
- * @return {object} All page props.
+ * @return {object} All post props.
  */
 export async function getStaticProps() {
-  const post = await getPostData(PAGES_PATH, 'homepage')
+  const posts = getAllPosts(POSTS_PATH)
+  await generateRssFeed()
 
   return {
     props: {
-      source: post?.mdx,
-      frontMatter: post?.data
+      posts
     }
   }
 }
