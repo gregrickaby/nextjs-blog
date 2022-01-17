@@ -1,6 +1,6 @@
 # Greg Rickaby - Blog <!-- omit in toc -->
 
-✨ [My blog](https://gregrickaby.com) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
+✨ [My blog](https://blog.gregrickaby.com) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
 
 ---
 
