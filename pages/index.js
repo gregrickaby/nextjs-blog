@@ -44,7 +44,7 @@ export default function BlogArchive({posts}) {
           !query && !!posts?.length && (
             <>
               {posts.map((post, index) => (
-                <Card key={index} {...post} path="blog" />
+                <Card key={index} {...post} path="article" />
               ))}
             </>
           )
@@ -56,7 +56,7 @@ export default function BlogArchive({posts}) {
             <>
               <h3 className="mb-0">Search Results:</h3>
               {searchResults.map((post, index) => (
-                <Card key={index} {...post} path="blog" />
+                <Card key={index} {...post} path="article" />
               ))}
             </>
           )
