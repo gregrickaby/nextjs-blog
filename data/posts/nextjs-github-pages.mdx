@@ -53,7 +53,7 @@ Perfect! This is all you need to configure Next.js to work on Github Pages.
 <SideNote type="warning">
   <strong>Heads up!</strong> Github Pages doesn't support serverless functions.
   This means dynamic functionality (such as API Routes) will be disabled.{' '}
-  <a href="https://nextjs.org/docs/advanced-features/static-html-export#caveats">
+  <a href="https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features">
     Learn more
   </a>
   .
@@ -69,7 +69,7 @@ Now setup Github by adding some deploy keys and setting up a Github Action for a
 
 Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate. You'll need to generate new Public and Private keys. _Don't worry, these new keys won't override your personal SSH keys._
 
-In your next.js app directory, run the following command:
+In your Next.js app directory, run the following command:
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
@@ -101,7 +101,7 @@ In your Github repository:
 
 ![screenshot of github secrets](/blog/images/screenshot-of-github-secrets-screen.png)
 
-Now Github Actions will be able to authenticate with your Github repository. You can safely delete the two keys from your computer.
+Now Github Actions will be able to authenticate with your repository. You can safely delete the two keys from the Next.js app directory.
 
 ### Github Actions
 
