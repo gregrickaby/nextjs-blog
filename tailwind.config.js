@@ -7,7 +7,6 @@ module.exports = {
   options: {
     safelistPatterns: [/^(bg-)/, /^(text-)/, /^(w-)/]
   },
-  darkMode: 'media',
   theme: {
     extend: {
       container: {
@@ -17,7 +16,5 @@ module.exports = {
         }
       }
     }
-  },
-  plugins: [],
-  future: {}
+  }
 }

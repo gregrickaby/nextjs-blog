@@ -3,7 +3,7 @@ module.exports = {
   ci: {
     collect: {
       numberOfRuns: 3,
-      url: ['https://gregrickaby.com']
+      url: ['https://blog.gregrickaby.com']
     },
     assert: {
       preset: 'lighthouse:no-pwa',
