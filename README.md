@@ -33,7 +33,7 @@
 Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running quickly:
 
 ```bash
-npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/gregrickaby-blog
+npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/blog
 ```
 
 ### Setup ENV Variables
