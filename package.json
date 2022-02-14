@@ -1,5 +1,5 @@
 {
-  "name": "gregrickaby-blog",
+  "name": "blog",
   "version": "0.1.0",
   "private": true,
   "description": "My blog built on Next.js and hosted at Vercel.",
@@ -9,13 +9,13 @@
     "next.js",
     "blog"
   ],
-  "homepage": "https://github.com/gregrickaby/gregrickaby-blog/blob/main/README.md",
+  "homepage": "https://github.com/gregrickaby/blog/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gregrickaby/gregrickaby-blog.git"
+    "url": "git+https://github.com/gregrickaby/blog.git"
   },
   "bugs": {
-    "url": "https://github.com/gregrickaby/gregrickaby-blog/issues"
+    "url": "https://github.com/gregrickaby/blog/issues"
   },
   "scripts": {
     "build": "next build",
