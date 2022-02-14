@@ -6,7 +6,7 @@
 
       /* Validation message. */
       & div div {
-        @apply -mt-4 italic text-red-500 mb-4;
+        @apply -mt-4 mb-4 italic text-red-500;
       }
     }
   }
@@ -23,7 +23,7 @@
   & input[type="text"],
   & textarea,
   & button {
-    @apply p-4 mb-8 border rounded;
+    @apply mb-8 rounded border p-4;
   }
 
   .successMessage {
@@ -31,6 +31,6 @@
   }
 
   .errorMessage {
-    @apply text-red-500 italic text-sm mt-2;
+    @apply mt-2 text-sm italic text-red-500;
   }
 }

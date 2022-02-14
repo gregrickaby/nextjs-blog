@@ -36,7 +36,7 @@ export default function BlogArchive({posts}) {
           type="text"
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search all articles"
-          className="py-3 px-4 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-sm"
+          className="rounded-sm bg-gray-100 py-3 px-4 dark:bg-gray-700 dark:text-white"
         />
 
         {

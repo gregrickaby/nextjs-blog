@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply max-w-7xl mx-auto dark:bg-zinc-900 dark:text-zinc-200 antialiased;
+    @apply mx-auto max-w-7xl antialiased dark:bg-zinc-900 dark:text-zinc-200;
   }
 
   h1,
@@ -17,7 +17,7 @@
   h4,
   h5,
   h6 {
-    @apply text-zinc-800 dark:text-zinc-200 font-sans font-bold break-words mb-8;
+    @apply mb-8 break-words font-sans font-bold text-zinc-800 dark:text-zinc-200;
   }
 
   h1 {
@@ -29,24 +29,24 @@
   }
 
   h3 {
-    @apply text-2xl mb-2;
+    @apply mb-2 text-2xl;
   }
 
   h4 {
-    @apply text-lg mb-2;
+    @apply mb-2 text-lg;
   }
 
   p {
-    @apply text-zinc-800 dark:text-zinc-200 break-words font-normal text-lg leading-relaxed mb-8;
+    @apply mb-8 break-words text-lg font-normal leading-relaxed text-zinc-800 dark:text-zinc-200;
   }
 
   a {
-    @apply relative break-words text-blue-600 dark:text-blue-400 hover:underline;
+    @apply relative break-words text-blue-600 hover:underline dark:text-blue-400;
   }
 
   ul,
   ol {
-    @apply text-lg pl-6 pb-6;
+    @apply pl-6 pb-6 text-lg;
   }
 
   ul {
@@ -68,7 +68,7 @@
   }
 
   hr {
-    @apply my-8 m-auto;
+    @apply m-auto my-8;
   }
 
   dt {
@@ -81,7 +81,7 @@
   }
 
   blockquote {
-    @apply mt-2 mb-8 px-4 italic clear-both border-l-4;
+    @apply clear-both mt-2 mb-8 border-l-4 px-4 italic;
 
     & p {
       @apply m-0 leading-snug;
@@ -89,7 +89,7 @@
   }
 
   pre {
-    @apply shadow rounded-md;
+    @apply rounded-md shadow;
   }
 
   code {
@@ -129,7 +129,7 @@
 }
 
 .align-center {
-  @apply m-auto text-center mb-4;
+  @apply m-auto mb-4 text-center;
 }
 
 video,

@@ -7,7 +7,7 @@
 }
 
 .cardTitle {
-  @apply text-3xl lg:text-4xl my-2 tracking-tight;
+  @apply my-2 text-3xl tracking-tight lg:text-4xl;
 }
 
 .cardLink {

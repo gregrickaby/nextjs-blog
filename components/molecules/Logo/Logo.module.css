@@ -25,9 +25,9 @@
 }
 
 .title {
-  @apply text-2xl m-0;
+  @apply m-0 text-2xl;
 }
 
 .description {
-  @apply font-sans mb-0;
+  @apply mb-0 font-sans;
 }

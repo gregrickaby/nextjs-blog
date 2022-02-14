@@ -1,9 +1,9 @@
 .sideNote {
-  @apply flex flex-col sm:flex-row items-center space-x-4 p-6 mb-10 sm:-ml-8 sm:-mr-8 border-l-8 shadow rounded-md;
+  @apply mb-10 flex flex-col items-center space-x-4 rounded-md border-l-8 p-6 shadow sm:-ml-8 sm:-mr-8 sm:flex-row;
 }
 
 .warning {
-  @apply text-black bg-yellow-500 border-yellow-600;
+  @apply border-yellow-600 bg-yellow-500 text-black;
 
   & a {
     @apply text-black underline hover:no-underline;
@@ -15,7 +15,7 @@
 }
 
 .info {
-  @apply bg-blue-400 border-blue-800;
+  @apply border-blue-800 bg-blue-400;
 
   & a {
     @apply text-white underline hover:no-underline;
