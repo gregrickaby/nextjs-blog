@@ -10,5 +10,8 @@ module.exports = {
       {source: '/slides', destination: '/slides/index.html'},
       {source: '/meals', destination: '/meals/index.html'}
     ]
+  },
+  images: {
+    formats: ['image/avif', 'image/webp']
   }
 }
