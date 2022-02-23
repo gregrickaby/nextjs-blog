@@ -1,6 +1,6 @@
-# Greg Rickaby - Blog <!-- omit in toc -->
+# My Blog <!-- omit in toc -->
 
-✨ [My blog](https://blog.gregrickaby.com) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
+✨ [My blog](https://gregrickaby.blog) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
 
 ---
 
@@ -24,7 +24,7 @@
 
 ### Prerequisites
 
-- Node 14 and NPM 7
+- Node LTS and NPM 8
 - A [Formium](https://formium.io/) token
 - A [reCAPTCHA](https://developers.google.com/recaptcha/) site key
 
@@ -33,7 +33,7 @@
 Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running quickly:
 
 ```bash
-npx create-next-app gregrickaby-blog --example https://github.com/gregrickaby/blog
+npx create-next-app blog --example https://github.com/gregrickaby/blog
 ```
 
 ### Setup ENV Variables

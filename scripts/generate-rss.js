@@ -41,7 +41,7 @@ export async function generateRssFeed() {
         <item>
           <title>${post?.data?.title}</title>
           <description>${post?.data?.excerpt}</description>
-          <link>${config?.siteUrl}/blog/${post?.data?.slug}</link>
+          <link>${config?.siteUrl}/article/${post?.data?.slug}</link>
           <pubDate>${dayjs(post?.data?.date).format(
             'ddd, DD MMM YYYY HH:mm:ss ZZ'
           )}</pubDate>
