@@ -1,4 +1,4 @@
-name: 'CodeQL'
+name: 'Security'
 
 on:
   schedule:
@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  analyze:
-    name: Analyze
+  security:
+    name: Security Scan
     runs-on: ubuntu-latest
     permissions:
       actions: read
