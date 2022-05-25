@@ -44,15 +44,14 @@ export default function Homepage() {
 
         <h3>Photography</h3>
         <p>
-          In 2018, I started to take a deep interest in photography. I bought a
-          mirrorless camera and spent months of taking online courses, reading
-          books, practicing, and having my work critiqued by peers. What has
-          started as an enjoyable hobby, has turned into a passionate way to
-          express my creativity and exhaust my bank account!
+          In 2019, I took up photography. I bought a mirrorless camera and spent
+          months taking courses, reading, practicing, and having my work
+          critiqued by peers. What has started as an enjoyable hobby, has turned
+          into a passionate way to express my creativity (and exhaust my bank
+          account!)
         </p>
         <p>
-          Check out <a href="https://gregrickaby.com">my portfolio</a> to see my
-          photos.
+          View my portfolio on <a href="https://gregrickaby.com">SmugMug</a>.
         </p>
 
         <h3>Books</h3>
