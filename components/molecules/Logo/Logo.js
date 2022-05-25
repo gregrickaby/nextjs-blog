@@ -1,7 +1,7 @@
 import config from '@/lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
-import siteLogo from '../../../public/blog/authors/greg-original.jpg'
+import siteLogo from '../../../public/blog/authors/greg-rickaby.jpg'
 import styles from './Logo.module.css'
 
 export default function Logo() {
