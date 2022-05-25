@@ -1,6 +1,5 @@
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
-import Link from 'next/link'
 
 /**
  * Render the Homepage page.
@@ -20,23 +19,12 @@ export default function Homepage() {
       <article>
         <h2>About</h2>
         <p>
-          Way back in 1997, I built my first website on Geocities and have been
-          passionate about the web since! In my spare time, I am an{' '}
-          <Link href="/books">
-            <a>published author</a>
-          </Link>
-          , <a href="https://www.gregrickaby.com">photographer</a>, and an owner
-          of a <a href="https://www.packers.com/">professional football team</a>
-          .
-        </p>
-
-        <h3>Photography</h3>
-        <p>
-          In 2018, I started to take a deep interest in photography. I bought a
-          mirrorless camera and spent months of taking online courses, reading
-          books, practicing, and having my work critiqued by peers. What has
-          started as an enjoyable hobby, has turned into a passionate way to
-          express my creativity.
+          Hey there! I&apos;m Greg, a published author, photographer, and an
+          owner of a{' '}
+          <a href="https://www.packers.com/">professional sports team</a>.
+          Welcome to my personal blog where I share my thoughts on web
+          development, photography, and I like to throw in some personal stuff
+          here and there.
         </p>
 
         <h3>Web Development</h3>
@@ -48,6 +36,23 @@ export default function Homepage() {
           positively transform business practices. I lead a team of engineers as
           we partner with clients to rebuild their frontends with WordPress and
           Next.js.
+        </p>
+        <p>
+          Learn more about my professional history on{' '}
+          <a href="https://www.linkedin.com/in/gregrickaby/">LinkedIn</a>.
+        </p>
+
+        <h3>Photography</h3>
+        <p>
+          In 2018, I started to take a deep interest in photography. I bought a
+          mirrorless camera and spent months of taking online courses, reading
+          books, practicing, and having my work critiqued by peers. What has
+          started as an enjoyable hobby, has turned into a passionate way to
+          express my creativity and exhaust my bank account!
+        </p>
+        <p>
+          Check out <a href="https://gregrickaby.com">my portfolio</a> to see my
+          photos.
         </p>
 
         <h3>Books</h3>
