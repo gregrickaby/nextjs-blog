@@ -14,16 +14,20 @@ export default function Footer() {
     <>
       <Separator />
       <footer className={cn(styles.footer)}>
-        <div className={styles.social}>
+        <nav className={styles.footerNavigation}>
           {!!config.footerNavigation?.length &&
             config?.footerNavigation.map((item, index) => {
               return (
-                <a key={index} href={item?.url}>
-                  {item?.label}
-                </a>
+                <>
+                  {' '}
+                  {index === 0 ? '' : <>&middot;</>}{' '}
+                  <a className={styles.link} key={index} href={item?.url}>
+                    {item?.label}
+                  </a>
+                </>
               )
             })}
-        </div>
+        </nav>
         <div>
           &copy; 2008-{new Date().getFullYear()} &middot; Powered by{' '}
           <a href="https://nextjs.org">Next.js</a>

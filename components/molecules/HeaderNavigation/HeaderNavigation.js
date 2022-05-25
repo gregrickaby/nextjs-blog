@@ -14,9 +14,13 @@ export default function HeaderNavigation() {
       {!!config.headerNavigation?.length &&
         config?.headerNavigation.map((item, index) => {
           return (
-            <Link key={index} href={item?.url} prefetch={false}>
-              <a className={styles.link}>{item?.label}</a>
-            </Link>
+            <>
+              {' '}
+              {index === 0 ? '' : <>&middot;</>}{' '}
+              <Link key={index} href={item?.url} prefetch={false}>
+                <a className={styles.link}>{item?.label}</a>
+              </Link>
+            </>
           )
         })}
     </nav>

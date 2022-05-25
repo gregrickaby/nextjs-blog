@@ -1,11 +1,7 @@
 .footer {
-  @apply m-auto flex flex-col items-center justify-between space-y-12 p-12 lg:flex-row lg:space-y-0;
-
-  & a {
-    @apply text-gray-800 dark:text-gray-200;
-  }
+  @apply m-auto space-y-4 py-8 text-center xl:flex xl:flex-row xl:items-center xl:justify-between xl:space-y-0 xl:text-left;
 }
 
-.social {
-  @apply flex justify-between space-x-4;
+.link {
+  @apply text-gray-800 dark:text-gray-200;
 }

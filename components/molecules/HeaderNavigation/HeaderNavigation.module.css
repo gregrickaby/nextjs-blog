@@ -1,5 +1,5 @@
 .headerNavigation {
-  @apply mt-4 space-x-4 self-center text-gray-700 dark:text-gray-700 md:mt-0 md:text-xl;
+  @apply mt-4 text-center text-gray-700 dark:text-gray-700 md:mt-0 md:text-xl;
 }
 
 .link {
