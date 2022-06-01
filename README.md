@@ -1,6 +1,6 @@
 # My Blog <!-- omit in toc -->
 
-✨ [My blog](https://gregrickaby.blog) built with Next.js, MDX, TailwindCSS, Formik, and Vercel.
+✨ [My blog](https://gregrickaby.blog) built with Next.js, MDX, TailwindCSS, and Vercel.
 
 ---
 
@@ -24,9 +24,7 @@
 
 ### Prerequisites
 
-- Node LTS and NPM 8
-- A [Formium](https://formium.io/) token
-- A [reCAPTCHA](https://developers.google.com/recaptcha/) site key
+- Node LTS
 
 ### Install
 
@@ -48,18 +46,6 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="YOUR_VERIFICATION_CODE"
 
 ```bash
 NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
-```
-
-```bash
-NEXT_PUBLIC_FORMIUM_PROJECTID="YOUR_PROJECT_ID"
-```
-
-```bash
-FORMIUM_TOKEN="YOUR_FORMIUM_TOKEN"
-```
-
-```bash
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY="YOUR_SITE_KEY"
 ```
 
 ---
