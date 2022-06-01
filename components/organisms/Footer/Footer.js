@@ -1,6 +1,7 @@
 import Separator from '@/components/atoms/Separator/Separator'
 import config from '@/lib/config'
 import cn from 'classnames'
+import {Fragment} from 'react'
 import styles from './Footer.module.css'
 
 /**
@@ -18,13 +19,13 @@ export default function Footer() {
           {!!config.footerNavigation?.length &&
             config?.footerNavigation.map((item, index) => {
               return (
-                <>
+                <Fragment key={index}>
                   {' '}
                   {index === 0 ? '' : <>&middot;</>}{' '}
-                  <a className={styles.link} key={index} href={item?.url}>
+                  <a className={styles.link} href={item?.url}>
                     {item?.label}
                   </a>
-                </>
+                </Fragment>
               )
             })}
         </nav>

@@ -1,5 +1,6 @@
 import config from '@/lib/config'
 import Link from 'next/link'
+import {Fragment} from 'react'
 import styles from './HeaderNavigation.module.css'
 
 /**
@@ -14,13 +15,13 @@ export default function HeaderNavigation() {
       {!!config.headerNavigation?.length &&
         config?.headerNavigation.map((item, index) => {
           return (
-            <>
+            <Fragment key={index}>
               {' '}
               {index === 0 ? '' : <>&middot;</>}{' '}
-              <Link key={index} href={item?.url} prefetch={false}>
+              <Link href={item?.url} prefetch={false}>
                 <a className={styles.link}>{item?.label}</a>
               </Link>
-            </>
+            </Fragment>
           )
         })}
     </nav>
