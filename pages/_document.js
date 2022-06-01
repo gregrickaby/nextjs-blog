@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
                 "https://www.amazon.com/author/gregrickaby",
                 "https://www.goodreads.com/gregrickaby",
                 "https://www.gregrickaby.com",
-                "https://www.youtube.com/c/GregRickaby",
+                "https://www.youtube.com/c/GregRickaby"
                 ]
               }`
             }}
