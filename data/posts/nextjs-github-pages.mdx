@@ -136,10 +136,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: 'npm'
@@ -161,7 +161,7 @@ jobs:
 
 This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it'll automatically activate the Github Pages feature!
 
-In a moment, you should be able to see your Next.js app at <https://your-username.github.io/your-repo-name/>
+In a moment, you should be able to see your Next.js app at `https://your-username.github.io/your-repo-name/`
 
 ## Wrap up
 

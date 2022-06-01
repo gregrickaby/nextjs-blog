@@ -9,17 +9,17 @@ tags:
   - 'typography'
 ---
 
-When WordPress 3.5 beta 1 was released it came with, ["Twenty Twelve"](http://wordpress.org/extend/themes/twentytwelve). While looking at [style.css](http://core.trac.wordpress.org/browser/trunk/wp-content/themes/twentytwelve/style.css), I noticed the use of "REM" to set font sizes and margins. I had NO idea what an REM was. In fact, I just started using EM's in other child-themes. Immediately, I turned to Google and started researching.
+When WordPress 3.5 beta 1 was released it came with, ["Twenty Twelve"](http://wordpress.org/extend/themes/twentytwelve). While looking at `style.css`, I noticed the use of "REM" to set font sizes and margins. I had NO idea what an REM was. In fact, I just started using EM's in other child-themes. Immediately, I turned to Google and started researching.
 
 ## I thought REM was a band?
 
-By definition, the [REM unit](http://www.w3.org/TR/css3-values/#rem-unit) is: *"Equal to the computed value of ‘font-size’ on the root element. When specified on the ‘font-size’ property of the root element, the ‘rem’ units refer to the property's initial value.*"
+By definition, the [REM unit](http://www.w3.org/TR/css3-values/#rem-unit) is: _"Equal to the computed value of 'font-size' on the root element. When specified on the 'font-size' property of the root element, the 'rem' units refer to the property's initial value._"
 
 **TL;DR** The REM is one of the newest font-size standards for CSS3. It stands for "Root EM". You base your calculation on the _default font-size of the HTML element_ - NOT the parent like EM. **It's basically "EM v2.0".**
 
 ## So what?
 
-The problem with Pixels are, they absolutely do-not-scale in Internet Explorer. Furthermore, with the onset of Responsive Web Design, having fonts that scale (in relation to the screen width) has become paramount. Percentages (%) and EM's are better, but they're tricky and compound. Still not an answer. A real solution?
+The problem with Pixels are, they absolutely do-not-scale in Internet Explorer. Furthermore, with the onset of Responsive Web Design, having fonts that scale (in relation to the screen width) has become paramount. Percentages (%) and EM's are better, but they're tricky and compound. Still not an answer. A real solution?
 
 ## Use the REM
 
@@ -33,7 +33,7 @@ html {
 
 _Why 62.5% instead of 100%?_ Simplicity.
 
-Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This becomes our `$rembase`.
+Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This becomes our `$rembase`.
 
 Calculate other font sizes by dividing your desired size by the `$rembase` (in pixels). Let's say, you want your `h1` tags to be 26px?
 
@@ -73,7 +73,7 @@ h4 {
 }
 ```
 
-That looks simple enough right? Just move the decimal. Now your fonts will scale perfectly during a browser re-size (if using responsive design), or if a user were to zoom in or out.
+That looks simple enough right? Just move the decimal. Now your fonts will scale perfectly during a browser re-size (if using responsive design), or if a user were to zoom in or out.
 
 ## But what about Line Height?
 
@@ -83,13 +83,13 @@ Line heights have always given me headaches, that was until Chris Pearson releas
 2. Specify how wide your content box is (mine is 740px)
 3. Click "Set my type!"
 
-[The Golden Ratio Typography Calculator](http://www.pearsonified.com/typography/) spits out optimized typography values:
+[The Golden Ratio Typography Calculator](http://www.pearsonified.com/typography/) spits out optimized typography values:
 
-[![pearsons-golden-ratio-tool](/blog/images/pearsons-golden-ratio-tool.jpg)](http://www.pearsonified.com/typography/)
+[![pearsons-golden-ratio-tool](/optimized/pearsons-golden-ratio-tool.jpg)](http://www.pearsonified.com/typography/)
 
 The calculator tells us our default line height should be 26px. This variable is the `$line-height-base`.
 
-We're going to be using "[Unitless line heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)" as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the `body` tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
+We're going to be using [_Unitless line heights_](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/) as explained by Eric Meyer, so we can avoid unexpected results. What's so awesome about the unitless line height? You only have to specify it once in the `body` tag. Now, ALL other line height(s) are relative to the parent font-size. That's too easy! (Of course, you can still specify your own to maintain complete control.)
 
 To calculate, you divide the `$line-height-base` by the font-size for that particular element (in pixels).
 
@@ -132,7 +132,7 @@ _Note: We'll only use three decimal places to right since most browsers only cal
 
 ## What about margins?
 
-Yes, you can even use REM to set your margins. Margins, or "vertical rhythm" is calculated using either 24px or 48px. Let's divide 24px by our `$rembase`
+Yes, you can even use REM to set your margins. Margins, or "vertical rhythm" is calculated using either 24px or 48px. Let's divide 24px by our `$rembase`
 
 ```text
 24 ÷ 10 = 2.4rem
@@ -158,7 +158,7 @@ Here's our sample stylesheet:
 
 ## I'm convinced, now tell me about browser support
 
-REM's are supported in all browsers all the way down to IE9. Check out the list: [http://caniuse.com/rem](http://caniuse.com/rem)
+REM's are supported in all browsers all the way down to IE9. Check out the list: [http://caniuse.com/rem](http://caniuse.com/rem)
 
 ## Wrap up
 
@@ -247,9 +247,17 @@ $baseFontSize: 10; // Based on HTML reset html { font-size: 62.5%; }
 }
 ```
 
-REM unit explanation onYouTube
+REM unit explanation on YouTube:
 
-<https://www.youtube.com/watch?v=XbU-i1SE5JY>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/XbU-i1SE5JY"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
 
 ### Further reading
 

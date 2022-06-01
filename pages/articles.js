@@ -52,7 +52,7 @@ export default function BlogArchive({posts}) {
 
         {
           /* Render the search results. */
-          !!searchResults?.length && (
+          query && !!searchResults?.length && (
             <>
               <h3 className="mb-0">Search Results:</h3>
               {searchResults.map((post, index) => (

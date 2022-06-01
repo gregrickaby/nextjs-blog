@@ -43,7 +43,7 @@ export default function BlogPost({source, frontMatter}) {
       openGraph={{
         title: `${frontMatter.title} - ${config?.siteName}`,
         description: frontMatter?.excerpt,
-        url: `${config?.siteUrl}/blog/${frontMatter?.slug}`,
+        url: `${config?.siteUrl}/article/${frontMatter?.slug}`,
         type: 'article',
         article: {
           publishedTime: dayjs(frontMatter?.date).toISOString()
@@ -65,7 +65,7 @@ export default function BlogPost({source, frontMatter}) {
               "@type": "BlogPosting",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "${config?.siteUrl}/blog/${frontMatter?.slug}"
+                "@id": "${config?.siteUrl}/article/${frontMatter?.slug}"
               },
               "headline": "${frontMatter?.title}",
               "image": [
@@ -76,7 +76,7 @@ export default function BlogPost({source, frontMatter}) {
               "author": {
                 "@type": "Person",
                 "name": "Greg Rickaby",
-                "url": "https://gregrickaby.com"
+                "url": "https://gregrickaby.blog"
               },
               "description": "${frontMatter?.excerpt}"
             }`
@@ -124,7 +124,7 @@ export async function getStaticProps({params}) {
 
   return {
     props: {
-      source: post?.mdx,
+      source: post?.mdxSource,
       frontMatter: post?.data
     }
   }

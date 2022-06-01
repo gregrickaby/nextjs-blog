@@ -84,7 +84,7 @@ export async function getStaticProps({params}) {
 
   return {
     props: {
-      source: post?.mdx,
+      source: post?.mdxSource,
       frontMatter: post?.data
     }
   }
