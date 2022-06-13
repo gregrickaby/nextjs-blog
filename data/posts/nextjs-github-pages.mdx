@@ -37,7 +37,7 @@ module.exports = {
 
 3. Save the `next.config.js`
 
-Finally, place a `.nojekyll` file in the `/public` directory to disable Github Pages from trying to create a [Jekyll](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/) website.
+4. Finally, place a `.nojekyll` file in the `/public` directory to disable Github Pages from trying to create a [Jekyll](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/) website.
 
 ```treeview
 .
@@ -51,12 +51,12 @@ Finally, place a `.nojekyll` file in the `/public` directory to disable Github P
 Perfect! This is all you need to configure Next.js to work on Github Pages.
 
 <SideNote type="warning">
-  <strong>Heads up!</strong> Github Pages doesn't support serverless functions.
-  This means dynamic functionality (such as API Routes) will be disabled.{' '}
+  <strong>Heads up!</strong> Github Pages _does not_ support serverless
+  functions. This means dynamic functionality (such as API Routes and Image
+  Optimization) will be disabled.{' '}
   <a href="https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features">
     Learn more
   </a>
-  .
 </SideNote>
 
 ---
