@@ -23,7 +23,6 @@ export default function ContactPage() {
       <article>
         <p>
           Send an email to greg@gregrickaby.com or a DM on{' '}
-          <a href="https://twitter.com/gregrickaby">Twitter</a> or{' '}
           <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
         </p>
       </article>
