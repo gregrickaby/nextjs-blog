@@ -34,7 +34,7 @@ export default function Homepage() {
           <a href="https://americaneagle.com/">AmericanEagle.com</a>, an
           industry leader in web design, development, hosting, and digital
           marketing. I partner with clients and team members to build headless
-          websites with Next.js.
+          websites with Next.js and WordPress.
         </p>
         <p>
           Learn more about my professional history on{' '}
