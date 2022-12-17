@@ -22,8 +22,9 @@ export default function ContactPage() {
       <PageHeader title="Contact" />
       <article>
         <p>
-          Send an email to greg@gregrickaby.com or a DM on{' '}
-          <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
+          Send an email to{' '}
+          <a href="mailto:greg@gregrickaby.com">greg@gregrickaby.com</a> or a DM
+          on <a href="https://www.linkedin.com/in/gregrickaby">LinkedIn</a>.
         </p>
       </article>
     </Layout>
