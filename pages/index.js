@@ -52,7 +52,7 @@ export default function Homepage() {
           account!)
         </p>
         <p>
-          View my <Link href="/photos">photos</Link>.
+          View my favorite <Link href="/photos">photos</Link>.
         </p>
 
         <h3>Books</h3>
