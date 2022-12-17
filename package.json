@@ -66,7 +66,7 @@
     "rimraf": "^3.0.2",
     "sharp": "^0.30.6",
     "sharp-cli": "^2.1.0",
-    "stylelint": "^14.9.1",
+    "stylelint": "^14.16.0",
     "stylelint-config-standard": "^26.0.0",
     "tailwindcss": "3.1.3"
   }
