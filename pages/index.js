@@ -45,11 +45,11 @@ export default function Homepage() {
 
         <h3>Photography</h3>
         <p>
-          In 2019, I took up photography. I bought a mirrorless camera and spent
-          months taking courses, reading, practicing, and having my work
-          critiqued by peers. What has started as an enjoyable hobby, has turned
-          into a passionate way to express my creativity (and exhaust my bank
-          account!)
+          In 2019, I decided to take up photography. So I went out and bought a
+          mirrorless camera and spent months taking courses, reading,
+          practicing, and having my work critiqued by peers. What has started as
+          an enjoyable hobby, has turned into a passionate way to express my
+          creativity (and exhaust my bank account!)
         </p>
         <p>
           View my favorite <Link href="/photos">photos</Link>.
