@@ -1,5 +1,6 @@
 import Layout from '@/components/templates/Layout/Layout'
 import config from '@/lib/config'
+import Link from 'next/link'
 
 /**
  * Render the Homepage page.
@@ -29,7 +30,7 @@ export default function Homepage() {
 
         <h3>Web Development</h3>
         <p>
-          I&apos;m a WordPress Technical Lead at{' '}
+          I&apos;m a Technical Lead at{' '}
           <a href="https://americaneagle.com/">AmericanEagle.com,</a> an
           industry leader in web design, development, hosting, and digital
           marketing with a passionate belief in the power of technology to
@@ -51,7 +52,7 @@ export default function Homepage() {
           account!)
         </p>
         <p>
-          View my portfolio on <a href="https://gregrickaby.com">SmugMug</a>.
+          View my <Link href="/photos">photos</Link>.
         </p>
 
         <h3>Books</h3>
