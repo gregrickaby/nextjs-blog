@@ -7,7 +7,7 @@ import styles from './Logo.module.css'
 export default function Logo() {
   return (
     <div className={styles.logoWrap}>
-      <Link href="/" prefetch={false}>
+      <Link legacyBehavior href="/" prefetch={false}>
         <a className={styles.logoLink} aria-label="click to go home">
           <Image
             alt=""

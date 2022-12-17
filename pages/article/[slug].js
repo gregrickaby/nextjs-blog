@@ -76,7 +76,7 @@ export default function BlogPost({source, frontMatter}) {
               "author": {
                 "@type": "Person",
                 "name": "Greg Rickaby",
-                "url": "https://gregrickaby.blog"
+                "url": "https://gregrickaby.com"
               },
               "description": "${frontMatter?.excerpt}"
             }`

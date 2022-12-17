@@ -18,7 +18,7 @@ export default function HeaderNavigation() {
             <Fragment key={index}>
               {' '}
               {index === 0 ? '' : <>&middot;</>}{' '}
-              <Link href={item?.url} prefetch={false}>
+              <Link legacyBehavior href={item?.url} prefetch={false}>
                 <a className={styles.link}>{item?.label}</a>
               </Link>
             </Fragment>

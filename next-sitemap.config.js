@@ -2,5 +2,5 @@
 module.exports = {
   changefreq: 'weekly',
   generateRobotsTxt: true,
-  siteUrl: 'https://gregrickaby.blog'
+  siteUrl: 'https://gregrickaby.com'
 }

@@ -1,6 +1,6 @@
 # My Blog <!-- omit in toc -->
 
-✨ [My blog](https://gregrickaby.blog) built with Next.js, MDX, TailwindCSS, and Vercel.
+✨ [My blog](https://gregrickaby.com) built with Next.js, MDX, and TailwindCSS.
 
 ---
 
@@ -14,7 +14,7 @@
     - [Folder Structure](#folder-structure)
     - [NPM Scripts](#npm-scripts)
 - [Content Management](#content-management)
-  - [Posts & Pages](#posts--pages)
+  - [Posts \& Pages](#posts--pages)
 - [Gotchas](#gotchas)
   - [TailwindCSS](#tailwindcss)
 
@@ -66,6 +66,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS="UA-1234567-X"
 ├── data
 |  ├── books
 |  ├── pages
+|  ├── photos
 |  └── posts
 ├── lib
 ├── pages

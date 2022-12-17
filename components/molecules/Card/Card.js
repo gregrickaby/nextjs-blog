@@ -17,6 +17,7 @@ export default function Card(props) {
       <header>
         {!!props?.data?.date && <Meta {...props?.data} />}
         <Link
+          legacyBehavior
           as={`/${props?.path}/${props?.data?.slug}`}
           href={`/${props?.path}/[slug]`}
           prefetch={false}

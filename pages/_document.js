@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Greg Rickaby",
-              "url": "https://gregrickaby.blog",
+              "url": "https://gregrickaby.com",
               "sameAs": [
                 "https://500px.com/p/gregrickaby",
                 "https://codepen.io/gregrickaby",
