@@ -31,12 +31,10 @@ export default function Homepage() {
         <h3>Web Development</h3>
         <p>
           I&apos;m a Technical Lead at{' '}
-          <a href="https://americaneagle.com/">AmericanEagle.com,</a> an
+          <a href="https://americaneagle.com/">AmericanEagle.com</a>, an
           industry leader in web design, development, hosting, and digital
-          marketing with a passionate belief in the power of technology to
-          positively transform business practices. I lead a team of engineers as
-          we partner with clients to rebuild their frontends with WordPress and
-          Next.js.
+          marketing. I partner with clients and team members to build headless
+          websites with Next.js.
         </p>
         <p>
           Learn more about my professional history on{' '}
