@@ -47,7 +47,7 @@
     "classnames": "2.3.2",
     "dayjs": "^1.11.7",
     "eslint": "^8.30.0",
-    "eslint-config-next": "^13.0.7",
+    "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "exifr": "^7.1.3",
