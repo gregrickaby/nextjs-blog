@@ -54,7 +54,7 @@
     "fraction.js": "^4.2.0",
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.2",
-    "markdownlint": "^0.26.2",
+    "markdownlint": "^0.27.0",
     "markdownlint-cli": "^0.32.2",
     "next-mdx-remote": "4.2.0",
     "next-seo": "^5.15.0",
