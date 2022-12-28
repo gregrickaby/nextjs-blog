@@ -1,4 +1,4 @@
-# My Blog <!-- omit in toc -->
+# My Next.js Blog <!-- omit in toc -->
 
 ✨ [My blog](https://gregrickaby.com) built with Next.js, MDX, and TailwindCSS.
 
@@ -31,7 +31,7 @@
 Use [create-next-app](https://www.npmjs.com/package/create-next-app) to get up and running quickly:
 
 ```bash
-npx create-next-app blog --example https://github.com/gregrickaby/blog
+npx create-next-app blog --example https://github.com/gregrickaby/nextjs-blog
 ```
 
 ### Setup ENV Variables
